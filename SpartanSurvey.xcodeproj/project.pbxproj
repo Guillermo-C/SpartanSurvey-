@@ -13,6 +13,10 @@
 		CB7D4D241DC04D7C00CB73A7 /* SpartanSurvey.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB7D4D221DC04D7C00CB73A7 /* SpartanSurvey.xcdatamodeld */; };
 		CB7D4D261DC04D7C00CB73A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB7D4D251DC04D7C00CB73A7 /* Assets.xcassets */; };
 		CB7D4D291DC04D7C00CB73A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB7D4D271DC04D7C00CB73A7 /* LaunchScreen.storyboard */; };
+		CB7D4D321DC0557F00CB73A7 /* BWWalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7D4D301DC0557F00CB73A7 /* BWWalkthroughPageViewController.swift */; };
+		CB7D4D331DC0557F00CB73A7 /* BWWalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7D4D311DC0557F00CB73A7 /* BWWalkthroughViewController.swift */; };
+		CB7D4D361DC0650F00CB73A7 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7D4D351DC0650F00CB73A7 /* QRCodeViewController.swift */; };
+		CB7D4D381DC0655A00CB73A7 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7D4D371DC0655A00CB73A7 /* SignInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		CB7D4D251DC04D7C00CB73A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB7D4D281DC04D7C00CB73A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB7D4D2A1DC04D7C00CB73A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB7D4D301DC0557F00CB73A7 /* BWWalkthroughPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BWWalkthroughPageViewController.swift; path = SpartanSurvey/BWWalkthroughPageViewController.swift; sourceTree = "<group>"; };
+		CB7D4D311DC0557F00CB73A7 /* BWWalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BWWalkthroughViewController.swift; path = SpartanSurvey/BWWalkthroughViewController.swift; sourceTree = "<group>"; };
+		CB7D4D351DC0650F00CB73A7 /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
+		CB7D4D371DC0655A00CB73A7 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +71,21 @@
 				CB7D4D271DC04D7C00CB73A7 /* LaunchScreen.storyboard */,
 				CB7D4D2A1DC04D7C00CB73A7 /* Info.plist */,
 				CB7D4D221DC04D7C00CB73A7 /* SpartanSurvey.xcdatamodeld */,
+				CB7D4D341DC0559B00CB73A7 /* BMWalkthrough */,
+				CB7D4D351DC0650F00CB73A7 /* QRCodeViewController.swift */,
+				CB7D4D371DC0655A00CB73A7 /* SignInViewController.swift */,
 			);
 			path = SpartanSurvey;
+			sourceTree = "<group>";
+		};
+		CB7D4D341DC0559B00CB73A7 /* BMWalkthrough */ = {
+			isa = PBXGroup;
+			children = (
+				CB7D4D311DC0557F00CB73A7 /* BWWalkthroughViewController.swift */,
+				CB7D4D301DC0557F00CB73A7 /* BWWalkthroughPageViewController.swift */,
+			);
+			name = BMWalkthrough;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +160,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB7D4D381DC0655A00CB73A7 /* SignInViewController.swift in Sources */,
+				CB7D4D361DC0650F00CB73A7 /* QRCodeViewController.swift in Sources */,
 				CB7D4D241DC04D7C00CB73A7 /* SpartanSurvey.xcdatamodeld in Sources */,
+				CB7D4D321DC0557F00CB73A7 /* BWWalkthroughPageViewController.swift in Sources */,
+				CB7D4D331DC0557F00CB73A7 /* BWWalkthroughViewController.swift in Sources */,
 				CB7D4D1E1DC04D7C00CB73A7 /* ViewController.swift in Sources */,
 				CB7D4D1C1DC04D7C00CB73A7 /* AppDelegate.swift in Sources */,
 			);
@@ -301,6 +326,7 @@
 				CB7D4D2F1DC04D7C00CB73A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
