@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		CB0C22251DDD3AA80008E12F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0C22241DDD3AA80008E12F /* SignUpViewController.swift */; };
 		CB0C22271DDD3EB10008E12F /* funnybabypic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CB0C22261DDD3EB10008E12F /* funnybabypic.jpg */; };
+		CB0C28701DDD56AE0008E12F /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB0C286D1DDD56700008E12F /* ResearchKit.framework */; };
+		CB0C28711DDD56AE0008E12F /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CB0C286D1DDD56700008E12F /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CB6C2D3D1DD8146D008A3DD2 /* SurveyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6C2D3C1DD8146D008A3DD2 /* SurveyTableViewController.swift */; };
 		CB6C2D3F1DD822BF008A3DD2 /* McDonaldsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6C2D3E1DD822BF008A3DD2 /* McDonaldsViewController.swift */; };
 		CB7D4D1C1DC04D7C00CB73A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7D4D1B1DC04D7C00CB73A7 /* AppDelegate.swift */; };
@@ -21,11 +23,53 @@
 		CB7D4D331DC0557F00CB73A7 /* BWWalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7D4D311DC0557F00CB73A7 /* BWWalkthroughViewController.swift */; };
 		CB7D4D361DC0650F00CB73A7 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7D4D351DC0650F00CB73A7 /* QRCodeViewController.swift */; };
 		CB7D4D381DC0655A00CB73A7 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7D4D371DC0655A00CB73A7 /* SignInViewController.swift */; };
+		CBFECFF71DDD5A4000A4ECC6 /* ConsentDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFECFF61DDD5A4000A4ECC6 /* ConsentDocument.swift */; };
+		CBFECFFB1DDD5A5B00A4ECC6 /* ConsentTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFECFFA1DDD5A5B00A4ECC6 /* ConsentTask.swift */; };
+		CBFECFFE1DDD5C2400A4ECC6 /* UPHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFECFFD1DDD5C2400A4ECC6 /* UPHomeViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CB0C286C1DDD56700008E12F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB0C28661DDD566F0008E12F /* ResearchKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B183A5951A8535D100C76870;
+			remoteInfo = ResearchKit;
+		};
+		CB0C286E1DDD56700008E12F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB0C28661DDD566F0008E12F /* ResearchKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 86CC8E9A1AC09332001CCD89;
+			remoteInfo = ResearchKitTests;
+		};
+		CB0C28721DDD56AE0008E12F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB0C28661DDD566F0008E12F /* ResearchKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B183A4731A8535D100C76870;
+			remoteInfo = ResearchKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CB0C28741DDD56AF0008E12F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CB0C28711DDD56AE0008E12F /* ResearchKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		CB0C22241DDD3AA80008E12F /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		CB0C22261DDD3EB10008E12F /* funnybabypic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = funnybabypic.jpg; sourceTree = "<group>"; };
+		CB0C28661DDD566F0008E12F /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = "../../../Downloads/ResearchKit-master/ResearchKit.xcodeproj"; sourceTree = "<group>"; };
 		CB6C2D3C1DD8146D008A3DD2 /* SurveyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyTableViewController.swift; sourceTree = "<group>"; };
 		CB6C2D3E1DD822BF008A3DD2 /* McDonaldsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = McDonaldsViewController.swift; sourceTree = "<group>"; };
 		CB7D4D181DC04D7C00CB73A7 /* SpartanSurvey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpartanSurvey.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +84,9 @@
 		CB7D4D311DC0557F00CB73A7 /* BWWalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BWWalkthroughViewController.swift; path = SpartanSurvey/BWWalkthroughViewController.swift; sourceTree = "<group>"; };
 		CB7D4D351DC0650F00CB73A7 /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
 		CB7D4D371DC0655A00CB73A7 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		CBFECFF61DDD5A4000A4ECC6 /* ConsentDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentDocument.swift; sourceTree = "<group>"; };
+		CBFECFFA1DDD5A5B00A4ECC6 /* ConsentTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentTask.swift; sourceTree = "<group>"; };
+		CBFECFFD1DDD5C2400A4ECC6 /* UPHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UPHomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,12 +94,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB0C28701DDD56AE0008E12F /* ResearchKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB0C28671DDD566F0008E12F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CB0C286D1DDD56700008E12F /* ResearchKit.framework */,
+				CB0C286F1DDD56700008E12F /* ResearchKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		CB7D4D0F1DC04D7C00CB73A7 = {
 			isa = PBXGroup;
 			children = (
@@ -76,16 +133,20 @@
 				CB7D4D1D1DC04D7C00CB73A7 /* ViewController.swift */,
 				CB7D4D1F1DC04D7C00CB73A7 /* Main.storyboard */,
 				CB7D4D251DC04D7C00CB73A7 /* Assets.xcassets */,
+				CB0C28661DDD566F0008E12F /* ResearchKit.xcodeproj */,
 				CB0C22261DDD3EB10008E12F /* funnybabypic.jpg */,
 				CB7D4D271DC04D7C00CB73A7 /* LaunchScreen.storyboard */,
 				CB7D4D2A1DC04D7C00CB73A7 /* Info.plist */,
 				CB7D4D221DC04D7C00CB73A7 /* SpartanSurvey.xcdatamodeld */,
 				CB7D4D341DC0559B00CB73A7 /* BMWalkthrough */,
 				CB7D4D351DC0650F00CB73A7 /* QRCodeViewController.swift */,
+				CBFECFF61DDD5A4000A4ECC6 /* ConsentDocument.swift */,
+				CBFECFFA1DDD5A5B00A4ECC6 /* ConsentTask.swift */,
 				CB7D4D371DC0655A00CB73A7 /* SignInViewController.swift */,
 				CB6C2D3C1DD8146D008A3DD2 /* SurveyTableViewController.swift */,
 				CB6C2D3E1DD822BF008A3DD2 /* McDonaldsViewController.swift */,
 				CB0C22241DDD3AA80008E12F /* SignUpViewController.swift */,
+				CBFECFFD1DDD5C2400A4ECC6 /* UPHomeViewController.swift */,
 			);
 			path = SpartanSurvey;
 			sourceTree = "<group>";
@@ -110,10 +171,12 @@
 				CB7D4D141DC04D7C00CB73A7 /* Sources */,
 				CB7D4D151DC04D7C00CB73A7 /* Frameworks */,
 				CB7D4D161DC04D7C00CB73A7 /* Resources */,
+				CB0C28741DDD56AF0008E12F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CB0C28731DDD56AE0008E12F /* PBXTargetDependency */,
 			);
 			name = SpartanSurvey;
 			productName = SpartanSurvey;
@@ -143,16 +206,88 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
+				ca,
+				cs,
+				da,
+				de,
+				el,
+				en_AU,
+				en_GB,
+				es,
+				es_MX,
+				fi,
+				fr,
+				fr_CA,
+				he,
+				hi,
+				hr,
+				hu,
+				id,
+				it,
+				ja,
+				ko,
+				ms,
+				nl,
+				no,
+				pl,
+				pt,
+				pt_PT,
+				ro,
+				ru,
+				sk,
+				sv,
+				th,
+				tr,
+				uk,
+				vi,
+				zh_CN,
+				zh_HK,
+				zh_TW,
+				"en-AU",
+				"en-GB",
+				"es-MX",
+				nb,
+				"pt-BR",
+				"pt-PT",
+				"zh-Hans",
+				"zh-Hant-HK",
+				"zh-Hant",
+				"zh-HK",
+				"fr-CA",
 			);
 			mainGroup = CB7D4D0F1DC04D7C00CB73A7;
 			productRefGroup = CB7D4D191DC04D7C00CB73A7 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = CB0C28671DDD566F0008E12F /* Products */;
+					ProjectRef = CB0C28661DDD566F0008E12F /* ResearchKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				CB7D4D171DC04D7C00CB73A7 /* SpartanSurvey */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		CB0C286D1DDD56700008E12F /* ResearchKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ResearchKit.framework;
+			remoteRef = CB0C286C1DDD56700008E12F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CB0C286F1DDD56700008E12F /* ResearchKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ResearchKitTests.xctest;
+			remoteRef = CB0C286E1DDD56700008E12F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CB7D4D161DC04D7C00CB73A7 /* Resources */ = {
@@ -182,11 +317,22 @@
 				CB7D4D331DC0557F00CB73A7 /* BWWalkthroughViewController.swift in Sources */,
 				CB7D4D1E1DC04D7C00CB73A7 /* ViewController.swift in Sources */,
 				CB7D4D1C1DC04D7C00CB73A7 /* AppDelegate.swift in Sources */,
+				CBFECFFE1DDD5C2400A4ECC6 /* UPHomeViewController.swift in Sources */,
+				CBFECFFB1DDD5A5B00A4ECC6 /* ConsentTask.swift in Sources */,
 				CB6C2D3D1DD8146D008A3DD2 /* SurveyTableViewController.swift in Sources */,
+				CBFECFF71DDD5A4000A4ECC6 /* ConsentDocument.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CB0C28731DDD56AE0008E12F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ResearchKit;
+			targetProxy = CB0C28721DDD56AE0008E12F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CB7D4D1F1DC04D7C00CB73A7 /* Main.storyboard */ = {
@@ -304,6 +450,7 @@
 		CB7D4D2E1DC04D7C00CB73A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SpartanSurvey/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -316,6 +463,7 @@
 		CB7D4D2F1DC04D7C00CB73A7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SpartanSurvey/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

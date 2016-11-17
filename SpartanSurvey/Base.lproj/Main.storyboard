@@ -35,9 +35,8 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="tdm-Kw-yVC" secondAttribute="trailing" constant="150" id="AH5-Xh-KwW"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tdm-Kw-yVC" secondAttribute="bottom" constant="238" id="S5h-CD-guT"/>
                             <constraint firstItem="tdm-Kw-yVC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="149" id="Vv4-Lh-EOj"/>
-                            <constraint firstItem="tdm-Kw-yVC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="379" id="nvY-xI-4kJ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tdm-Kw-yVC" secondAttribute="bottom" constant="238" id="wxN-ot-MWQ"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -229,6 +228,9 @@
                                             <constraint firstAttribute="width" constant="46" id="weM-IG-gRV"/>
                                         </constraints>
                                         <state key="normal" title="Save"/>
+                                        <connections>
+                                            <action selector="saveButton:" destination="B7J-hg-ik5" eventType="touchUpInside" id="d5r-rH-pDN"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -289,6 +291,12 @@
                             <constraint firstItem="TPf-Pk-ICn" firstAttribute="centerX" secondItem="iOp-Br-eVK" secondAttribute="centerX" id="wRF-jx-dw0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="confirmPassEntry" destination="xqk-jO-oVd" id="0tV-1g-UtT"/>
+                        <outlet property="emailEntry" destination="LHs-3W-f5s" id="639-8P-1QQ"/>
+                        <outlet property="firstNameEntry" destination="N9X-US-gUX" id="hcK-7y-wJ3"/>
+                        <outlet property="passwordEntry" destination="2va-KM-l6b" id="SbS-FP-sTk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J4B-dt-3QI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -379,7 +387,7 @@
                                 </constraints>
                                 <state key="normal" title="Sign Up "/>
                                 <connections>
-                                    <segue destination="B7J-hg-ik5" kind="show" id="jPA-1D-Mgc"/>
+                                    <segue destination="B7J-hg-ik5" kind="show" id="aM4-y0-9ea"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not a member? " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWP-az-ZyS">
@@ -511,7 +519,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.94788271188735962" green="0.10510856658220291" blue="0.13147968053817749" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="UbG-Gv-72l" firstAttribute="top" secondItem="rOI-TG-1FK" secondAttribute="bottom" constant="232" id="JgS-wH-1pO"/>
                             <constraint firstItem="UbG-Gv-72l" firstAttribute="centerX" secondItem="Jxl-md-ioq" secondAttribute="centerX" id="mJQ-DK-xcT"/>
@@ -581,7 +589,7 @@
         <!--Home-->
         <scene sceneID="61d-ke-gyj">
             <objects>
-                <viewController id="poo-UM-vMr" sceneMemberID="viewController">
+                <viewController id="poo-UM-vMr" customClass="UPHomeViewController" customModule="SpartanSurvey" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zb5-ya-x3z"/>
                         <viewControllerLayoutGuide type="bottom" id="zrt-1v-imL"/>
@@ -636,6 +644,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTi-10-yU6">
                                 <rect key="frame" x="224" y="220" width="92" height="30"/>
                                 <state key="normal" title="Sign Consent"/>
+                                <connections>
+                                    <action selector="takeConsent:" destination="poo-UM-vMr" eventType="touchUpInside" id="Miv-KT-876"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -779,6 +790,6 @@
         <image name="funnybabypic.jpg" width="479" height="656"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Qre-Mo-Otd"/>
+        <segue reference="PA9-B6-jaZ"/>
     </inferredMetricsTieBreakers>
 </document>

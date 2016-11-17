@@ -10,6 +10,34 @@ import UIKit
 
 class SignUpViewController: UIViewController {
 
+    @IBOutlet weak var firstNameEntry: UITextField!
+    
+    @IBOutlet weak var emailEntry: UITextField!
+    
+    @IBOutlet weak var passwordEntry: UITextField!
+    
+    @IBOutlet weak var confirmPassEntry: UITextField!
+    
+    //  check if password matches when confirmed
+    func verifiedPassword(passW: UITextField, compareTopassW: UITextField) -> Bool{
+        var verify:Bool = false
+        
+        if (passW.text == compareTopassW.text){
+            verify = true
+        }
+        return verify
+    }
+    
+    @IBAction func saveButton(_ sender: UIButton) {
+        if (verifiedPassword(passW: passwordEntry, compareTopassW: confirmPassEntry)){
+            print("Password do match")
+        }
+        else{
+            print("Passwords do not match")
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,5 +59,11 @@ class SignUpViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    var updateStatusLabel:String?{
+        get{
+            return "something"
+        }
+    }
 
 }
