@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB6C2D3D1DD8146D008A3DD2 /* SurveyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6C2D3C1DD8146D008A3DD2 /* SurveyTableViewController.swift */; };
+		CB6C2D3F1DD822BF008A3DD2 /* McDonaldsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6C2D3E1DD822BF008A3DD2 /* McDonaldsViewController.swift */; };
 		CB7D4D1C1DC04D7C00CB73A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7D4D1B1DC04D7C00CB73A7 /* AppDelegate.swift */; };
 		CB7D4D1E1DC04D7C00CB73A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7D4D1D1DC04D7C00CB73A7 /* ViewController.swift */; };
 		CB7D4D211DC04D7C00CB73A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB7D4D1F1DC04D7C00CB73A7 /* Main.storyboard */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB6C2D3C1DD8146D008A3DD2 /* SurveyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyTableViewController.swift; sourceTree = "<group>"; };
+		CB6C2D3E1DD822BF008A3DD2 /* McDonaldsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = McDonaldsViewController.swift; sourceTree = "<group>"; };
 		CB7D4D181DC04D7C00CB73A7 /* SpartanSurvey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpartanSurvey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB7D4D1B1DC04D7C00CB73A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB7D4D1D1DC04D7C00CB73A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +78,8 @@
 				CB7D4D341DC0559B00CB73A7 /* BMWalkthrough */,
 				CB7D4D351DC0650F00CB73A7 /* QRCodeViewController.swift */,
 				CB7D4D371DC0655A00CB73A7 /* SignInViewController.swift */,
+				CB6C2D3C1DD8146D008A3DD2 /* SurveyTableViewController.swift */,
+				CB6C2D3E1DD822BF008A3DD2 /* McDonaldsViewController.swift */,
 			);
 			path = SpartanSurvey;
 			sourceTree = "<group>";
@@ -115,7 +121,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = SJSU;
 				TargetAttributes = {
 					CB7D4D171DC04D7C00CB73A7 = {
@@ -160,6 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB6C2D3F1DD822BF008A3DD2 /* McDonaldsViewController.swift in Sources */,
 				CB7D4D381DC0655A00CB73A7 /* SignInViewController.swift in Sources */,
 				CB7D4D361DC0650F00CB73A7 /* QRCodeViewController.swift in Sources */,
 				CB7D4D241DC04D7C00CB73A7 /* SpartanSurvey.xcdatamodeld in Sources */,
@@ -167,6 +174,7 @@
 				CB7D4D331DC0557F00CB73A7 /* BWWalkthroughViewController.swift in Sources */,
 				CB7D4D1E1DC04D7C00CB73A7 /* ViewController.swift in Sources */,
 				CB7D4D1C1DC04D7C00CB73A7 /* AppDelegate.swift in Sources */,
+				CB6C2D3D1DD8146D008A3DD2 /* SurveyTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +218,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -259,6 +268,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
