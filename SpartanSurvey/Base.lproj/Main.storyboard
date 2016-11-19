@@ -537,7 +537,7 @@
         <!--Kaiser Permanente View Controller-->
         <scene sceneID="Lu4-9c-R7X">
             <objects>
-                <viewController id="80S-oz-90q" customClass="KaiserPermanenteViewController" customModule="SpartanSurvey" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="kaiserScreen" id="80S-oz-90q" customClass="KaiserPermanenteViewController" customModule="SpartanSurvey" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="j4d-w1-vZI"/>
                         <viewControllerLayoutGuide type="bottom" id="hVH-CR-FZa"/>

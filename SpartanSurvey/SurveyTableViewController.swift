@@ -14,15 +14,13 @@ class SurveyTableViewController: UITableViewController {
     struct TableViewObjects {
         var sectionName:String
         var sectionObjects:[String]!
-       // var identities:[String]!
+        //var identities:[String]!
+        
+
+        
     }
     
-    
-    
     @IBAction func goBackToUserProfile(_ sender: AnyObject) {
-        //performSegue(withIdentifier: "goBackSurveysSegue", sender: self)
-        //_ = self.navigationController?.popViewController(animated: true)
-        
         dismiss(animated: true, completion: nil)
         _ = self.navigationController?.popViewController(animated: true)
     }
@@ -36,10 +34,17 @@ class SurveyTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        TableViewArray = [TableViewObjects(sectionName: "Restaurants", sectionObjects: ["McDonald's", "Subway"]), TableViewObjects(sectionName: "Health", sectionObjects: ["Kaiser Permanente"])]
-
         
-        identitites = ["redScreen", "greenScreen"]
+        //  code below for showing table with headers works
+        //  deleted just for testing purposes
+        TableViewArray = [TableViewObjects(sectionName: "Restaurants", sectionObjects: ["McDonald's", "Subway","something"]), TableViewObjects(sectionName: "Health", sectionObjects: ["Kaiser Permanente"])]
+
+        /*TableViewArray = [TableViewObjects(sectionName: "Restaurants", sectionObjects: ["McDonald's", "Subway","something"], identities:["redScreen","",""]), TableViewObjects(sectionName: "Health", sectionObjects: ["Kaiser Permanente"],identities:["greenScreen"])]*/
+        
+        //  identitites work, uncomment out when done testing
+        identitites = ["redScreen", "greenScreen", "kaiserScreen"]
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -72,9 +77,9 @@ class SurveyTableViewController: UITableViewController {
         return cell!
     }
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    /*override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return TableViewArray[section].sectionName
-    }
+    }*/
 
 
     /*
@@ -137,10 +142,14 @@ class SurveyTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //self.performSegue(withIdentifier: "McDShowView", sender: self)
-        ///self.performSegue(withIdentifier: "SubwayShowView", sender: self)
         
+        //  works, uncomment when done testing
         let vcName = identitites[indexPath.row]
+        
+        
+        //print("\n"+identitites[indexPath.section])
+
+        //  works, uncomment when done testing
         let viewController = storyboard?.instantiateViewController(withIdentifier: vcName)
         self.navigationController?.pushViewController(viewController!, animated: true)
         
