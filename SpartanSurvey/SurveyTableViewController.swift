@@ -130,7 +130,7 @@ class SurveyTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         //  Get the right view(as value by using a key) for the corresponding cell
-        let getValues = [String](TableViewArray[indexPath.section].sectionObjects.values)
+        let getValues = [String](TableViewArray[indexPath.section].sectionObjects.values.sorted(by: <))
         //  Get name of the view
         let vcName = getValues[indexPath.row]
         //  Instantiate the view
