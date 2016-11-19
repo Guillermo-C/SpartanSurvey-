@@ -30,7 +30,7 @@ class SurveyTableViewController: UITableViewController {
     
     
 
-    var identitites = [String]()
+    //var identitites = [String]()
     
     var TableViewArray = [TableViewObjects]()
     
@@ -42,15 +42,15 @@ class SurveyTableViewController: UITableViewController {
         //  code below for showing table with headers works
         //  deleted just for testing purposes
         /*TableViewArray = [TableViewObjects(sectionName: "Restaurants", sectionObjects: ["McDonald's", "Subway","something"]), TableViewObjects(sectionName: "Health", sectionObjects: ["Kaiser Permanente"])]*/
-        TableViewArray = [TableViewObjects(sectionName: "Restaurants", sectionObjects: ["McDonald's":"redScreen",
-                                                                                        "Subway":"greenScreen",
-                                                                                        "Kaiser":"kaiserScreen"]),
-                          TableViewObjects(sectionName:"Sports", sectionObjects:["Soccer":"nothing"])]
+        TableViewArray = [TableViewObjects(sectionName: "Restaurants", sectionObjects: ["Subway":"subwayScreen",
+                                                                                        "McDonald's":"mcDonaldsScreen"]),
+                          TableViewObjects(sectionName:"Sports", sectionObjects:["Soccer":"soccerScreen"]),
+                          TableViewObjects(sectionName:"Health", sectionObjects:["Kaiser":"kaiserScreen"])]
         
         
         
         //  identitites work, uncomment out when done testing
-        identitites = ["redScreen", "greenScreen", "kaiserScreen"]
+        //identitites = ["redScreen", "greenScreen", "kaiserScreen"]
         
         
         // Uncomment the following line to preserve selection between presentations
@@ -82,7 +82,7 @@ class SurveyTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as UITableViewCell!
         
-        let getKeys = [String](TableViewArray[indexPath.section].sectionObjects.keys)
+        let getKeys = [String](TableViewArray[indexPath.section].sectionObjects.keys.sorted(by: <))
         
        
         cell?.textLabel?.text = getKeys[indexPath.row]
@@ -159,8 +159,11 @@ class SurveyTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         //  works, uncomment when done testing
-        let vcName = identitites[indexPath.row]
+        //let vcName = identitites[indexPath.row]
         
+        //  get the right view for the corresponding cell
+        let getValues = [String](TableViewArray[indexPath.section].sectionObjects.values)
+        let vcName = getValues[indexPath.row]
 
 
         //  works, uncomment when done testing

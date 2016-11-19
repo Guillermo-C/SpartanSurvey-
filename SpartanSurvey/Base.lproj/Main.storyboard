@@ -492,6 +492,7 @@
                         <segue destination="NWw-PM-Hs6" kind="show" identifier="McDShowView" id="T0x-fB-G1u"/>
                         <segue destination="xCt-No-0bh" kind="show" identifier="SubwayShowView" id="ULz-JZ-wtR"/>
                         <segue destination="80S-oz-90q" kind="show" id="kQ6-st-lVa"/>
+                        <segue destination="tLn-Yw-QHR" kind="show" id="BCf-CN-C8g"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LhH-9J-iB0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -501,7 +502,7 @@
         <!--Mc Donalds View Controller-->
         <scene sceneID="AgV-J7-FE5">
             <objects>
-                <viewController storyboardIdentifier="redScreen" id="NWw-PM-Hs6" customClass="McDonaldsViewController" customModule="SpartanSurvey" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mcDonaldsScreen" id="NWw-PM-Hs6" customClass="McDonaldsViewController" customModule="SpartanSurvey" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rOI-TG-1FK"/>
                         <viewControllerLayoutGuide type="bottom" id="CVZ-xy-ZQN"/>
@@ -532,7 +533,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kmo-4k-N7k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5846" y="1485"/>
+            <point key="canvasLocation" x="5396" y="1485"/>
         </scene>
         <!--Kaiser Permanente View Controller-->
         <scene sceneID="Lu4-9c-R7X">
@@ -562,12 +563,42 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6xL-uB-s2z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4608.8000000000002" y="2525.4872563718145"/>
+            <point key="canvasLocation" x="6721" y="1485"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="1Ng-md-QKi">
+            <objects>
+                <viewController storyboardIdentifier="soccerScreen" id="tLn-Yw-QHR" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bvC-Fe-hNJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="szR-5P-okF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iSa-rW-Ias">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Soccer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1W-cA-El4">
+                                <rect key="frame" x="160.5" y="182" width="54" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96569520235061646" green="0.48696881532669067" blue="0.022994298487901688" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="f1W-cA-El4" firstAttribute="centerX" secondItem="iSa-rW-Ias" secondAttribute="centerX" id="3mm-5g-MpW"/>
+                            <constraint firstItem="f1W-cA-El4" firstAttribute="top" secondItem="bvC-Fe-hNJ" secondAttribute="bottom" constant="118" id="hHM-Ok-P5x"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XDB-ml-bnR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7418.3999999999996" y="1481.1094452773614"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ddW-WI-Kwj">
             <objects>
-                <viewController storyboardIdentifier="greenScreen" id="xCt-No-0bh" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="subwayScreen" id="xCt-No-0bh" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TZD-q8-Ues"/>
                         <viewControllerLayoutGuide type="bottom" id="4EM-wN-T1Q"/>
@@ -580,7 +611,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fs5-j9-CB7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5846" y="2242"/>
+            <point key="canvasLocation" x="6052" y="1485"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="s4t-ts-ZgJ">
