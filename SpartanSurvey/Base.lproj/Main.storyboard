@@ -458,7 +458,7 @@
             </objects>
             <point key="canvasLocation" x="3213.5999999999999" y="1484.7076461769116"/>
         </scene>
-        <!--Available Surveys-->
+        <!--Surveys-->
         <scene sceneID="gGl-Yz-ASa">
             <objects>
                 <tableViewController storyboardIdentifier="AvailableSurveysView" id="MWv-1o-wDG" customClass="SurveyTableViewController" customModule="SpartanSurvey" customModuleProvider="target" sceneMemberID="viewController">
@@ -481,7 +481,7 @@
                             <outlet property="delegate" destination="MWv-1o-wDG" id="dVk-jV-wbx"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Available Surveys" id="deP-li-bW5">
+                    <navigationItem key="navigationItem" title="Surveys" id="deP-li-bW5">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="GMR-Sl-cW3">
                             <connections>
                                 <action selector="goBackToUserProfile:" destination="MWv-1o-wDG" id="dK6-xD-IJo"/>
