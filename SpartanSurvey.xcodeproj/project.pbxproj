@@ -11,7 +11,6 @@
 		CB0C22271DDD3EB10008E12F /* funnybabypic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CB0C22261DDD3EB10008E12F /* funnybabypic.jpg */; };
 		CB0C28701DDD56AE0008E12F /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB0C286D1DDD56700008E12F /* ResearchKit.framework */; };
 		CB0C28711DDD56AE0008E12F /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CB0C286D1DDD56700008E12F /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		CB372EC41DE0F0260011DDDC /* AvailableSurveys.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB372EC31DE0F0260011DDDC /* AvailableSurveys.swift */; };
 		CB6C2D3D1DD8146D008A3DD2 /* SurveyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6C2D3C1DD8146D008A3DD2 /* SurveyTableViewController.swift */; };
 		CB6C2D3F1DD822BF008A3DD2 /* McDonaldsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6C2D3E1DD822BF008A3DD2 /* McDonaldsViewController.swift */; };
 		CB7D4D1C1DC04D7C00CB73A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7D4D1B1DC04D7C00CB73A7 /* AppDelegate.swift */; };
@@ -72,7 +71,6 @@
 		CB0C22241DDD3AA80008E12F /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		CB0C22261DDD3EB10008E12F /* funnybabypic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = funnybabypic.jpg; sourceTree = "<group>"; };
 		CB0C28661DDD566F0008E12F /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = "../../../Downloads/ResearchKit-master/ResearchKit.xcodeproj"; sourceTree = "<group>"; };
-		CB372EC31DE0F0260011DDDC /* AvailableSurveys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailableSurveys.swift; sourceTree = "<group>"; };
 		CB6C2D3C1DD8146D008A3DD2 /* SurveyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyTableViewController.swift; sourceTree = "<group>"; };
 		CB6C2D3E1DD822BF008A3DD2 /* McDonaldsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = McDonaldsViewController.swift; sourceTree = "<group>"; };
 		CB7D4D181DC04D7C00CB73A7 /* SpartanSurvey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpartanSurvey.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,7 +150,6 @@
 				CB0C22241DDD3AA80008E12F /* SignUpViewController.swift */,
 				CBFECFFD1DDD5C2400A4ECC6 /* UPHomeViewController.swift */,
 				CBCB71CB1DE0192800E6D3DE /* KaiserPermanenteViewController.swift */,
-				CB372EC31DE0F0260011DDDC /* AvailableSurveys.swift */,
 			);
 			path = SpartanSurvey;
 			sourceTree = "<group>";
@@ -327,7 +324,6 @@
 				CBCB71CC1DE0192800E6D3DE /* KaiserPermanenteViewController.swift in Sources */,
 				CBFECFFB1DDD5A5B00A4ECC6 /* ConsentTask.swift in Sources */,
 				CB6C2D3D1DD8146D008A3DD2 /* SurveyTableViewController.swift in Sources */,
-				CB372EC41DE0F0260011DDDC /* AvailableSurveys.swift in Sources */,
 				CBFECFF71DDD5A4000A4ECC6 /* ConsentDocument.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

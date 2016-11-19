@@ -11,46 +11,33 @@ import UIKit
 class SurveyTableViewController: UITableViewController {
 
     
-    
+    //  Create a struct that holds the name of the section, its sublist and its corresponding view controllers
     struct TableViewObjects {
         var sectionName:String
-        //var sectionObjects:[String]!  //  uncomment when done testing
-        //var identities:[String]!
+        //  First string value holds the name of the sublist
+        //  Second string value holds the name of the corresponding view controller
         var sectionObjects = [String: String]()
-
-        
     }
     
 
-    
+    //  Dismiss the available surveys table view when done
     @IBAction func goBackToUserProfile(_ sender: AnyObject) {
         dismiss(animated: true, completion: nil)
         _ = self.navigationController?.popViewController(animated: true)
     }
     
-    
-
-    //var identitites = [String]()
-    
+    //  Declare an array of type TableViewObjects for holding data of its type, for populating the table view
     var TableViewArray = [TableViewObjects]()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        //  code below for showing table with headers works
-        //  deleted just for testing purposes
-        /*TableViewArray = [TableViewObjects(sectionName: "Restaurants", sectionObjects: ["McDonald's", "Subway","something"]), TableViewObjects(sectionName: "Health", sectionObjects: ["Kaiser Permanente"])]*/
+        //  Declare values for TableViewArray
         TableViewArray = [TableViewObjects(sectionName: "Restaurants", sectionObjects: ["Subway":"subwayScreen",
                                                                                         "McDonald's":"mcDonaldsScreen"]),
                           TableViewObjects(sectionName:"Sports", sectionObjects:["Soccer":"soccerScreen"]),
                           TableViewObjects(sectionName:"Health", sectionObjects:["Kaiser":"kaiserScreen"])]
-        
-        
-        
-        //  identitites work, uncomment out when done testing
-        //identitites = ["redScreen", "greenScreen", "kaiserScreen"]
         
         
         // Uncomment the following line to preserve selection between presentations
@@ -65,34 +52,33 @@ class SurveyTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
-
+    //  Return the number of sections
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return TableViewArray.count
 
     }
 
+    //  Return the number of sublists
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return TableViewArray[section].sectionObjects.count
     }
 
-    
+    //  Print proper sublist for each section
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        //  Instantiate a cell, named 'Cell', to be reused again and again for all elements within the table view
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as UITableViewCell!
-        
+        //  Get keys for printing the sublist inside of 'section objects' and print it in ascending order
         let getKeys = [String](TableViewArray[indexPath.section].sectionObjects.keys.sorted(by: <))
         
-       
         cell?.textLabel?.text = getKeys[indexPath.row]
         
-        //  code below works, uncomment when done testing
-        //cell?.textLabel?.text = TableViewArray[indexPath.section].sectionObjects[indexPath.row]
+
         return cell!
     }
     
-    //  works, uncomment when done testing
+    //  Return the name of the sections in the table view
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return TableViewArray[section].sectionName
     }
@@ -137,37 +123,19 @@ class SurveyTableViewController: UITableViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        /*if (segue.identifier == "McDShowView") {
-            //let cell = sender as! UITableViewCell
-            //let indexPath = tableView.indexPath(for: cell)
-            let indexPath = self.tableView.indexPathForSelectedRow
-            let surveyController: McDonaldsViewController = segue.destination as! McDonaldsViewController
-            
-        
-            
-            surveyController.titleString = "McDShowView"
-            self.tableView.deselectRow(at: indexPath!, animated: true)
-            
-
-        }*/
-        
-
-    }
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    }*/
     
+    //  Return appropriate view for selected cell
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        //  works, uncomment when done testing
-        //let vcName = identitites[indexPath.row]
-        
-        //  get the right view for the corresponding cell
+        //  Get the right view(as value by using a key) for the corresponding cell
         let getValues = [String](TableViewArray[indexPath.section].sectionObjects.values)
+        //  Get name of the view
         let vcName = getValues[indexPath.row]
-
-
-        //  works, uncomment when done testing
+        //  Instantiate the view
         let viewController = storyboard?.instantiateViewController(withIdentifier: vcName)
+        //  Push the view controller for viewing
         self.navigationController?.pushViewController(viewController!, animated: true)
         
     }
