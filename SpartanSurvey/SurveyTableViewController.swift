@@ -9,16 +9,19 @@
 import UIKit
 
 class SurveyTableViewController: UITableViewController {
+
     
     
     struct TableViewObjects {
         var sectionName:String
-        var sectionObjects:[String]!
+        //var sectionObjects:[String]!  //  uncomment when done testing
         //var identities:[String]!
-        
+        var sectionObjects = [String: String]()
 
         
     }
+    
+
     
     @IBAction func goBackToUserProfile(_ sender: AnyObject) {
         dismiss(animated: true, completion: nil)
@@ -31,15 +34,20 @@ class SurveyTableViewController: UITableViewController {
     
     var TableViewArray = [TableViewObjects]()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
         //  code below for showing table with headers works
         //  deleted just for testing purposes
-        TableViewArray = [TableViewObjects(sectionName: "Restaurants", sectionObjects: ["McDonald's", "Subway","something"]), TableViewObjects(sectionName: "Health", sectionObjects: ["Kaiser Permanente"])]
-
-        /*TableViewArray = [TableViewObjects(sectionName: "Restaurants", sectionObjects: ["McDonald's", "Subway","something"], identities:["redScreen","",""]), TableViewObjects(sectionName: "Health", sectionObjects: ["Kaiser Permanente"],identities:["greenScreen"])]*/
+        /*TableViewArray = [TableViewObjects(sectionName: "Restaurants", sectionObjects: ["McDonald's", "Subway","something"]), TableViewObjects(sectionName: "Health", sectionObjects: ["Kaiser Permanente"])]*/
+        TableViewArray = [TableViewObjects(sectionName: "Restaurants", sectionObjects: ["McDonald's":"redScreen",
+                                                                                        "Subway":"greenScreen",
+                                                                                        "Kaiser":"kaiserScreen"]),
+                          TableViewObjects(sectionName:"Sports", sectionObjects:["Soccer":"nothing"])]
+        
+        
         
         //  identitites work, uncomment out when done testing
         identitites = ["redScreen", "greenScreen", "kaiserScreen"]
@@ -73,14 +81,21 @@ class SurveyTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as UITableViewCell!
-        cell?.textLabel?.text = TableViewArray[indexPath.section].sectionObjects[indexPath.row]
+        
+        let getKeys = [String](TableViewArray[indexPath.section].sectionObjects.keys)
+        
+       
+        cell?.textLabel?.text = getKeys[indexPath.row]
+        
+        //  code below works, uncomment when done testing
+        //cell?.textLabel?.text = TableViewArray[indexPath.section].sectionObjects[indexPath.row]
         return cell!
     }
     
-    /*override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    //  works, uncomment when done testing
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return TableViewArray[section].sectionName
-    }*/
-
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -146,8 +161,7 @@ class SurveyTableViewController: UITableViewController {
         //  works, uncomment when done testing
         let vcName = identitites[indexPath.row]
         
-        
-        //print("\n"+identitites[indexPath.section])
+
 
         //  works, uncomment when done testing
         let viewController = storyboard?.instantiateViewController(withIdentifier: vcName)
