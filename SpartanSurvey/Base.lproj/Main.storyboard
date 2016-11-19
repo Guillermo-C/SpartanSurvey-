@@ -499,10 +499,10 @@
             </objects>
             <point key="canvasLocation" x="4647" y="1485"/>
         </scene>
-        <!--Mc Donalds View Controller-->
+        <!--McDonald's-->
         <scene sceneID="AgV-J7-FE5">
             <objects>
-                <viewController storyboardIdentifier="mcDonaldsScreen" id="NWw-PM-Hs6" customClass="McDonaldsViewController" customModule="SpartanSurvey" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mcDonaldsScreen" title="McDonald's" id="NWw-PM-Hs6" customClass="McDonaldsViewController" customModule="SpartanSurvey" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rOI-TG-1FK"/>
                         <viewControllerLayoutGuide type="bottom" id="CVZ-xy-ZQN"/>
@@ -535,10 +535,10 @@
             </objects>
             <point key="canvasLocation" x="5396" y="1485"/>
         </scene>
-        <!--Kaiser Permanente View Controller-->
+        <!--Kaiser-->
         <scene sceneID="Lu4-9c-R7X">
             <objects>
-                <viewController storyboardIdentifier="kaiserScreen" id="80S-oz-90q" customClass="KaiserPermanenteViewController" customModule="SpartanSurvey" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="kaiserScreen" title="Kaiser" id="80S-oz-90q" customClass="KaiserPermanenteViewController" customModule="SpartanSurvey" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="j4d-w1-vZI"/>
                         <viewControllerLayoutGuide type="bottom" id="hVH-CR-FZa"/>
@@ -565,10 +565,10 @@
             </objects>
             <point key="canvasLocation" x="6721" y="1485"/>
         </scene>
-        <!--View Controller-->
+        <!--Soccer-->
         <scene sceneID="1Ng-md-QKi">
             <objects>
-                <viewController storyboardIdentifier="soccerScreen" id="tLn-Yw-QHR" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="soccerScreen" title="Soccer" id="tLn-Yw-QHR" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bvC-Fe-hNJ"/>
                         <viewControllerLayoutGuide type="bottom" id="szR-5P-okF"/>
@@ -595,10 +595,10 @@
             </objects>
             <point key="canvasLocation" x="7418.3999999999996" y="1481.1094452773614"/>
         </scene>
-        <!--View Controller-->
+        <!--Subway-->
         <scene sceneID="ddW-WI-Kwj">
             <objects>
-                <viewController storyboardIdentifier="subwayScreen" id="xCt-No-0bh" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="subwayScreen" title="Subway" id="xCt-No-0bh" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TZD-q8-Ues"/>
                         <viewControllerLayoutGuide type="bottom" id="4EM-wN-T1Q"/>
