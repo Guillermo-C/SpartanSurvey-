@@ -36,7 +36,7 @@ class SurveyTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        TableViewArray = [TableViewObjects(sectionName: "Restaurants", sectionObjects: ["one", "two"]), TableViewObjects(sectionName: "Health", sectionObjects: ["one"])]
+        TableViewArray = [TableViewObjects(sectionName: "Restaurants", sectionObjects: ["McDonald's", "Subway"]), TableViewObjects(sectionName: "Health", sectionObjects: ["Kaiser Permanente"])]
 
         
         identitites = ["redScreen", "greenScreen"]
