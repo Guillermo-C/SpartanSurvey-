@@ -302,6 +302,39 @@
             </objects>
             <point key="canvasLocation" x="80.799999999999997" y="1516.1919040479761"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="ET0-pz-SAe">
+            <objects>
+                <viewController id="Pz2-4p-cJV" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HRC-j9-ZMY"/>
+                        <viewControllerLayoutGuide type="bottom" id="rZe-dS-tO1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DGd-fJ-sph">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uCQ-ga-PAw">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Forgot Password" id="OcA-gW-QIv">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="cl2-WY-8o3">
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="show" id="GH3-qh-P2t"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dhj-H3-LUG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="765.60000000000002" y="1515.2923538230887"/>
+        </scene>
         <!--Sign In View Controller-->
         <scene sceneID="Nfm-l8-UBm">
             <objects>
@@ -351,6 +384,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Wr-bu-jsE">
                                         <rect key="frame" x="21" y="120" width="124" height="30"/>
                                         <state key="normal" title="Forgot password?"/>
+                                        <connections>
+                                            <segue destination="Pz2-4p-cJV" kind="show" id="wNV-2W-cbA"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Invalid Password?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvJ-25-1qW">
                                         <rect key="frame" x="85" y="8" width="135" height="20.5"/>
@@ -885,6 +921,6 @@
         <image name="funnybabypic.jpg" width="479" height="656"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Qre-Mo-Otd"/>
+        <segue reference="GH3-qh-P2t"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -17,7 +17,6 @@
 		CB7D4D1E1DC04D7C00CB73A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7D4D1D1DC04D7C00CB73A7 /* ViewController.swift */; };
 		CB7D4D211DC04D7C00CB73A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB7D4D1F1DC04D7C00CB73A7 /* Main.storyboard */; };
 		CB7D4D241DC04D7C00CB73A7 /* SpartanSurvey.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB7D4D221DC04D7C00CB73A7 /* SpartanSurvey.xcdatamodeld */; };
-		CB7D4D261DC04D7C00CB73A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB7D4D251DC04D7C00CB73A7 /* Assets.xcassets */; };
 		CB7D4D291DC04D7C00CB73A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB7D4D271DC04D7C00CB73A7 /* LaunchScreen.storyboard */; };
 		CB7D4D321DC0557F00CB73A7 /* BWWalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7D4D301DC0557F00CB73A7 /* BWWalkthroughPageViewController.swift */; };
 		CB7D4D331DC0557F00CB73A7 /* BWWalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7D4D311DC0557F00CB73A7 /* BWWalkthroughViewController.swift */; };
@@ -78,7 +77,6 @@
 		CB7D4D1D1DC04D7C00CB73A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CB7D4D201DC04D7C00CB73A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CB7D4D231DC04D7C00CB73A7 /* SpartanSurvey.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SpartanSurvey.xcdatamodel; sourceTree = "<group>"; };
-		CB7D4D251DC04D7C00CB73A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB7D4D281DC04D7C00CB73A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB7D4D2A1DC04D7C00CB73A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB7D4D301DC0557F00CB73A7 /* BWWalkthroughPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BWWalkthroughPageViewController.swift; path = SpartanSurvey/BWWalkthroughPageViewController.swift; sourceTree = "<group>"; };
@@ -134,9 +132,8 @@
 				CB7D4D1B1DC04D7C00CB73A7 /* AppDelegate.swift */,
 				CB7D4D1D1DC04D7C00CB73A7 /* ViewController.swift */,
 				CB7D4D1F1DC04D7C00CB73A7 /* Main.storyboard */,
-				CB7D4D251DC04D7C00CB73A7 /* Assets.xcassets */,
-				CB0C28661DDD566F0008E12F /* ResearchKit.xcodeproj */,
 				CB0C22261DDD3EB10008E12F /* funnybabypic.jpg */,
+				CB0C28661DDD566F0008E12F /* ResearchKit.xcodeproj */,
 				CB7D4D271DC04D7C00CB73A7 /* LaunchScreen.storyboard */,
 				CB7D4D2A1DC04D7C00CB73A7 /* Info.plist */,
 				CB7D4D221DC04D7C00CB73A7 /* SpartanSurvey.xcdatamodeld */,
@@ -299,7 +296,6 @@
 			files = (
 				CB7D4D291DC04D7C00CB73A7 /* LaunchScreen.storyboard in Resources */,
 				CB0C22271DDD3EB10008E12F /* funnybabypic.jpg in Resources */,
-				CB7D4D261DC04D7C00CB73A7 /* Assets.xcassets in Resources */,
 				CB7D4D211DC04D7C00CB73A7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
