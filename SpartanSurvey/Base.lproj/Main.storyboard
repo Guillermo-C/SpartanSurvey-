@@ -330,19 +330,19 @@
                                 <rect key="frame" x="35" y="161" width="304" height="188"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qSQ-7n-874">
-                                        <rect key="frame" x="8" y="8" width="55.5" height="30"/>
+                                        <rect key="frame" x="8" y="8" width="288" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HZP-6x-r7E">
-                                        <rect key="frame" x="8" y="150" width="138.5" height="30"/>
+                                        <rect key="frame" x="8" y="150" width="288" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vr6-3w-ehv">
-                                        <rect key="frame" x="8" y="79" width="116" height="30"/>
+                                        <rect key="frame" x="8" y="79" width="288" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -351,11 +351,16 @@
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="HZP-6x-r7E" firstAttribute="top" secondItem="vr6-3w-ehv" secondAttribute="bottom" constant="41" id="003-kD-vbx"/>
+                                    <constraint firstItem="qSQ-7n-874" firstAttribute="top" secondItem="Qas-Ql-3te" secondAttribute="top" constant="8" id="2UL-Vv-lX8"/>
                                     <constraint firstItem="vr6-3w-ehv" firstAttribute="top" secondItem="qSQ-7n-874" secondAttribute="bottom" constant="41" id="5rw-1K-QCa"/>
                                     <constraint firstItem="vr6-3w-ehv" firstAttribute="leading" secondItem="Qas-Ql-3te" secondAttribute="leading" constant="8" id="NYf-xx-UW6"/>
+                                    <constraint firstAttribute="trailing" secondItem="HZP-6x-r7E" secondAttribute="trailing" constant="8" id="UAT-7d-WMe"/>
                                     <constraint firstAttribute="bottom" secondItem="qSQ-7n-874" secondAttribute="bottom" constant="150" id="ZP8-Rd-C8P"/>
+                                    <constraint firstAttribute="trailing" secondItem="vr6-3w-ehv" secondAttribute="trailing" constant="8" id="amL-kQ-C1Q"/>
+                                    <constraint firstAttribute="trailing" secondItem="qSQ-7n-874" secondAttribute="trailing" constant="8" id="bXx-wh-i2D"/>
                                     <constraint firstItem="HZP-6x-r7E" firstAttribute="leading" secondItem="Qas-Ql-3te" secondAttribute="leading" constant="8" id="oDB-eU-Kph"/>
                                     <constraint firstItem="qSQ-7n-874" firstAttribute="leading" secondItem="Qas-Ql-3te" secondAttribute="leading" constant="8" id="xqZ-Nu-o8C"/>
+                                    <constraint firstAttribute="bottom" secondItem="HZP-6x-r7E" secondAttribute="bottom" constant="8" id="zcp-41-qUo"/>
                                 </constraints>
                             </view>
                         </subviews>
