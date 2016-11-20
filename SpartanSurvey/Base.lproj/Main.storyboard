@@ -177,6 +177,26 @@
             </objects>
             <point key="canvasLocation" x="80.799999999999997" y="847.82608695652175"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Vuj-DG-XL6">
+            <objects>
+                <viewController modalPresentationStyle="currentContext" id="hu9-SG-4bK" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TnR-XL-i0X"/>
+                        <viewControllerLayoutGuide type="bottom" id="OlF-gR-0eK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6Cs-YI-xbr">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="150" height="150"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mpj-gB-7cI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-470" y="800"/>
+        </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="GWb-YR-ZE9">
             <objects>

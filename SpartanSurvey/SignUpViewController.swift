@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UIPopoverPresentationControllerDelegate {
 
     @IBOutlet weak var firstNameEntry: UITextField!
     
@@ -23,6 +23,10 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     var securityQArray = [String]()
     
     
+    //  Alert for when password is not successfully validated 
+    let passwordValidationAlert = UIAlertController(title: "Passwords Don't Match", message: "Make sure to successfully confirm the chosen password.", preferredStyle: UIAlertControllerStyle.alert)
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         securityQPicker.delegate = self
@@ -30,6 +34,15 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         
         securityQArray = ["What's your pet's name?",
                           "Name your favorite drink", "Name your favorite number"]
+        
+        
+        passwordValidationAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+            print("Handle Ok logic here")
+        }))
+        
+        /*refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+            print("Handle Cancel Logic here")
+        }))*/
         // Do any additional setup after loading the view.
     }
     
@@ -52,11 +65,23 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     
     @IBAction func saveButton(_ sender: UIButton) {
+        
+        
+        
         let passwordConfirmed = validatePassword(passW: passwordEntry.text!, compareTo: confirmPassEntry.text!)
+        
         if (passwordConfirmed){print("\nPassword is confirmed")}
+        /*else if (){
+            
+        }*/
         else{
+            present(passwordValidationAlert, animated: true,completion: nil)
             print("\nPassword is NOT confirmed")
         }
+        
+        
+
+
     }
     
     
@@ -69,16 +94,23 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         return validation
     }
     
+    
+    
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-    }
-    */
+    }*/
+    
+    /*func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
+    }*/
+    
+    
     
     var updateStatusLabel:String?{
         get{
