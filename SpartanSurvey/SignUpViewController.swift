@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var firstNameEntry: UITextField!
     
@@ -17,6 +17,10 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordEntry: UITextField!
     
     @IBOutlet weak var confirmPassEntry: UITextField!
+    
+    @IBOutlet weak var securityQPicker: UIPickerView!
+    
+    var securityQArray = [String]()
     
     //  check if password matches when confirmed
     func verifiedPassword(passW: UITextField, compareTopassW: UITextField) -> Bool{
@@ -40,7 +44,11 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        securityQPicker.delegate = self
+        securityQPicker.dataSource = self
+        
+        securityQArray = ["What's your pet's name?",
+        "Name your favorite drink", "Name your favorite number"]
         // Do any additional setup after loading the view.
     }
 
@@ -64,6 +72,18 @@ class SignUpViewController: UIViewController {
         get{
             return "something"
         }
+    }
+    
+    public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return securityQArray[row]
+    }
+    
+    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+        return securityQArray.count
+    }
+    
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int{
+        return 1
     }
 
 }
