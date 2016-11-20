@@ -314,9 +314,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uCQ-ga-PAw">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uCQ-ga-PAw">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Forgot Password" id="OcA-gW-QIv">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="cl2-WY-8o3">
@@ -327,8 +326,49 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qas-Ql-3te">
+                                <rect key="frame" x="35" y="161" width="304" height="188"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qSQ-7n-874">
+                                        <rect key="frame" x="8" y="8" width="55.5" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HZP-6x-r7E">
+                                        <rect key="frame" x="8" y="150" width="138.5" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vr6-3w-ehv">
+                                        <rect key="frame" x="8" y="79" width="116" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="HZP-6x-r7E" firstAttribute="top" secondItem="vr6-3w-ehv" secondAttribute="bottom" constant="41" id="003-kD-vbx"/>
+                                    <constraint firstItem="vr6-3w-ehv" firstAttribute="top" secondItem="qSQ-7n-874" secondAttribute="bottom" constant="41" id="5rw-1K-QCa"/>
+                                    <constraint firstItem="vr6-3w-ehv" firstAttribute="leading" secondItem="Qas-Ql-3te" secondAttribute="leading" constant="8" id="NYf-xx-UW6"/>
+                                    <constraint firstAttribute="bottom" secondItem="qSQ-7n-874" secondAttribute="bottom" constant="150" id="ZP8-Rd-C8P"/>
+                                    <constraint firstItem="HZP-6x-r7E" firstAttribute="leading" secondItem="Qas-Ql-3te" secondAttribute="leading" constant="8" id="oDB-eU-Kph"/>
+                                    <constraint firstItem="qSQ-7n-874" firstAttribute="leading" secondItem="Qas-Ql-3te" secondAttribute="leading" constant="8" id="xqZ-Nu-o8C"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Qas-Ql-3te" firstAttribute="top" secondItem="uCQ-ga-PAw" secondAttribute="bottom" constant="89" id="7JU-Ie-LEH"/>
+                            <constraint firstItem="Qas-Ql-3te" firstAttribute="leading" secondItem="DGd-fJ-sph" secondAttribute="leadingMargin" constant="19" id="9xc-r0-1xO"/>
+                            <constraint firstItem="rZe-dS-tO1" firstAttribute="top" secondItem="Qas-Ql-3te" secondAttribute="bottom" constant="318" id="CYl-Hs-t12"/>
+                            <constraint firstItem="Qas-Ql-3te" firstAttribute="centerX" secondItem="uCQ-ga-PAw" secondAttribute="centerX" id="Fpp-vg-hMU"/>
+                            <constraint firstItem="Qas-Ql-3te" firstAttribute="top" secondItem="HRC-j9-ZMY" secondAttribute="bottom" constant="141" id="QIn-C1-dnr"/>
+                            <constraint firstItem="Qas-Ql-3te" firstAttribute="centerX" secondItem="DGd-fJ-sph" secondAttribute="centerX" id="XtU-uy-dP5"/>
+                            <constraint firstItem="uCQ-ga-PAw" firstAttribute="leading" secondItem="DGd-fJ-sph" secondAttribute="leading" id="rOB-5Q-BPH"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dhj-H3-LUG" userLabel="First Responder" sceneMemberID="firstResponder"/>
