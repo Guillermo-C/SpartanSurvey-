@@ -8,8 +8,9 @@
 
 import UIKit
 
-class McDonaldsViewController: UIViewController {
+class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource {
     
+    @IBOutlet weak var mcNuggetsPicker: UIPickerView!
 
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -21,6 +22,9 @@ class McDonaldsViewController: UIViewController {
         super.viewDidLoad()
         
         self.titleLabel.text = self.titleString
+        
+        mcNuggetsPicker.delegate = self
+        mcNuggetsPicker.dataSource = self
 
         // Do any additional setup after loading the view.
     }
@@ -30,20 +34,20 @@ class McDonaldsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    var numberOfNuggets = [1,2,3,5]
+    var numberOfNuggets = ["1","2","3","4"]
     
-
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
+    
+    public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return numberOfNuggets[row]
     }
     
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
         return numberOfNuggets.count
     }
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
-        return String(numberOfNuggets[row])
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int{
+        return 1
     }
     /*
     // MARK: - Navigation
