@@ -15,9 +15,9 @@ class CloudKitEngine{
     let publicDataBase = CKContainer.default().publicCloudDatabase
     
     
-    func saveRecordAt(saveR:String, recordT: String){
-        let store = CKRecord(recordType: recordT)
-        store.setObject(saveR as CKRecordValue?, forKey: recordT)
+    func saveRecord(saveR:String, rDestination: String){
+        let store = CKRecord(recordType: rDestination)
+        store.setObject(saveR as CKRecordValue?, forKey: rDestination)
     }
     
     
