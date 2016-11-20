@@ -348,6 +348,7 @@
                         <outlet property="firstNameEntry" destination="N9X-US-gUX" id="hcK-7y-wJ3"/>
                         <outlet property="passwordEntry" destination="2va-KM-l6b" id="SbS-FP-sTk"/>
                         <outlet property="securityQPicker" destination="FE7-8a-p4d" id="0ij-Eh-2OO"/>
+                        <outlet property="securityQuestionAnswer" destination="Zxc-H9-MfG" id="PsI-j9-1E7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J4B-dt-3QI" userLabel="First Responder" sceneMemberID="firstResponder"/>

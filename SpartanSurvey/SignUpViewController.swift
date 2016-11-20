@@ -20,11 +20,16 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     @IBOutlet weak var securityQPicker: UIPickerView!
     
+    @IBOutlet weak var securityQuestionAnswer: UITextField!
+    
     var securityQArray = [String]()
     
     
     //  Alert for when password is not successfully validated 
     let passwordValidationAlert = UIAlertController(title: "Passwords Don't Match", message: "Make sure to successfully confirm the chosen password.", preferredStyle: UIAlertControllerStyle.alert)
+    
+    //  Alert for when sign up form is not completed
+    let formCompletionAlert = UIAlertController(title: "Complete All Fields", message: "Make sure to fill out this form completely.", preferredStyle: UIAlertControllerStyle.alert)
     
     
     override func viewDidLoad() {
@@ -39,6 +44,9 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         passwordValidationAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
             print("Handle Ok logic here")
         }))
+        
+        formCompletionAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+            print("Handle Ok logic here")}))
         
         /*refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
             print("Handle Cancel Logic here")
@@ -70,15 +78,25 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         
         let passwordConfirmed = validatePassword(passW: passwordEntry.text!, compareTo: confirmPassEntry.text!)
         
-        if (passwordConfirmed){print("\nPassword is confirmed")}
+        /*if (passwordConfirmed){print("\nPassword is confirmed")}
         /*else if (){
             
         }*/
         else{
             present(passwordValidationAlert, animated: true,completion: nil)
             print("\nPassword is NOT confirmed")
-        }
+        }*/
         
+        let test = completedAllFields(field1: firstNameEntry, field2: emailEntry, field3: passwordEntry, field4: confirmPassEntry, field5: securityQuestionAnswer)
+        
+        if (test == true){
+            //present(formCompletionAlert, animated: true, completion: nil)
+            print("all fields were COMPLETED")
+        }
+        else{
+            present(formCompletionAlert, animated: true, completion: nil)
+            print("NOT ALL WAS FILLED OUT")
+        }
         
 
 
@@ -94,7 +112,14 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         return validation
     }
     
-    
+    func completedAllFields(field1: UITextField, field2: UITextField, field3: UITextField, field4: UITextField,field5: UITextField) -> Bool{
+        var validation:Bool = false
+        
+        if !(field1.text?.isEmpty)! && !(field2.text?.isEmpty)! && !(field3.text?.isEmpty)! && !(field4.text?.isEmpty)! && !(field5.text?.isEmpty)!{
+            validation = true
+        }
+        return validation
+    }
     
 
     
