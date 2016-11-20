@@ -22,25 +22,6 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     var securityQArray = [String]()
     
-    //  check if password matches when confirmed
-    func verifiedPassword(passW: UITextField, compareTopassW: UITextField) -> Bool{
-        var verify:Bool = false
-        
-        if (passW.text == compareTopassW.text){
-            verify = true
-        }
-        return verify
-    }
-    
-    @IBAction func saveButton(_ sender: UIButton) {
-        if (verifiedPassword(passW: passwordEntry, compareTopassW: confirmPassEntry)){
-            print("Password do match")
-        }
-        else{
-            print("Passwords do not match")
-        }
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,13 +29,44 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         securityQPicker.dataSource = self
         
         securityQArray = ["What's your pet's name?",
-        "Name your favorite drink", "Name your favorite number"]
+                          "Name your favorite drink", "Name your favorite number"]
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return securityQArray[row]
+    }
+    
+    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+        return securityQArray.count
+    }
+    
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int{
+        return 1
+    }
+    
+    
+    @IBAction func saveButton(_ sender: UIButton) {
+        let passwordConfirmed = validatePassword(passW: passwordEntry.text!, compareTo: confirmPassEntry.text!)
+        if (passwordConfirmed){print("\nPassword is confirmed")}
+        else{
+            print("\nPassword is NOT confirmed")
+        }
+    }
+    
+    
+    
+    func validatePassword(passW:String, compareTo: String) -> Bool {
+        var validation:Bool = false
+        if (passW == compareTo){
+            validation = true
+        }
+        return validation
     }
     
 
@@ -74,16 +86,5 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         }
     }
     
-    public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return securityQArray[row]
-    }
-    
-    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
-        return securityQArray.count
-    }
-    
-    public func numberOfComponents(in pickerView: UIPickerView) -> Int{
-        return 1
-    }
 
 }
