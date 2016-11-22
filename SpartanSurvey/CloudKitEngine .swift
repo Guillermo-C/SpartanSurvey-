@@ -14,18 +14,25 @@ class CloudKitEngine{
     
     let publicDataBase = CKContainer.default().publicCloudDatabase
     
+    //let privateDataBase = CKContainer.default().privateCloudDatabase
+    
     
     //  Create a method for saving data with a given record name
-    func saveNewDataWRecord(record_Name: String, recordTypeName: String, forKey: String, recordsToSave: [String], keyList: [String]){
+    func saveNewDataWRecord(record_Name: String, recordTypeName: String, recordsToSave: [String], keyList: [String]){
         let recordId = CKRecordID(recordName: record_Name)
         let store = CKRecord(recordType: recordTypeName, recordID: recordId)
         
         //  Save each attribute in its corresponding key
         for i in 0...keyList.count - 1{
-            store.setObject(recordsToSave[i] as CKRecordValue?, forKey: keyList[i])
+            let saveR = recordsToSave[i]
+            let recKey = keyList[i]
+            
+            
+            store.setObject(saveR as CKRecordValue?, forKey: recKey)
             publicDataBase.save(store) { (savedRecord, error) -> Void in
                 if (error != nil){
                     print("Error while saving data")
+                    print(error.debugDescription)
                 }
                 else{
                     print("\n\n\n\nSweet...it worked :)")

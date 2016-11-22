@@ -31,6 +31,17 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     //  Array containing the security questions for securityQPicker
     var securityQArray = [String]()
     
+    //  Array containing all input provided by the user to be saved 
+    var inputTextArray = [String]()
+    
+    
+    //  Array of keys 
+    
+    var keyArray = [String]()
+    
+    //  Current picker choice
+    var currentPickerChoice:String = ""
+    
     
     //  Alert for when password is not successfully validated 
     let passwordValidationAlert = UIAlertController(title: "Passwords Don't Match", message: "Make sure to successfully confirm the chosen password.", preferredStyle: UIAlertControllerStyle.alert)
@@ -70,6 +81,12 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         view.addSubview(activityIndicator)
         
         
+        keyArray.append("FirstName")
+        keyArray.append("Email")
+        keyArray.append("Password")
+        keyArray.append("SecurityQuestion")
+        keyArray.append("SecurityQuestionAnswer")
+        
         // Do any additional setup after loading the view.
     }
     
@@ -108,11 +125,16 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             present(passwordValidationAlert, animated: true,completion: nil)
         }
         else{
+            print("Selection: \(currentPickerChoice)")
+            let newRecordName = emailEntry.text!
+            let inputArray = inputAsArray(in0: firstNameEntry.text!, in1: emailEntry.text!, in2: passwordEntry.text!, in3: currentPickerChoice, in4: securityQuestionAnswer.text!)
             //  Continue process
-            activityIndicator.startAnimating()
+            //activityIndicator.startAnimating()
             //  Stop UI interaction while data process is running
-            UIApplication.shared.beginIgnoringInteractionEvents()
-            print("NOT ALL WAS FILLED OUT")
+            //UIApplication.shared.beginIgnoringInteractionEvents()
+            cloudKitEng.saveNewDataWRecord(record_Name: newRecordName, recordTypeName: "UserInfo", recordsToSave: inputArray, keyList: keyArray)
+            
+            
         }
 
     }
@@ -137,7 +159,23 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         return validation
     }
     
+    
+    func inputAsArray(in0:String, in1: String, in2: String, in3: String, in4: String) -> [String]{
+        var tempArray = [String]()
+        tempArray.append(in0)
+        tempArray.append(in1)
+        tempArray.append(in2)
+        tempArray.append(in3)
+        tempArray.append(in4)
 
+        return tempArray
+    }
+    
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        currentPickerChoice = securityQArray[row]
+        
+    }
     
     // MARK: - Navigation
 
@@ -151,9 +189,7 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         return .none
     }*/
     
-    /*func showActivityIndicator{
-        
-    }*/
+
     
     
 
