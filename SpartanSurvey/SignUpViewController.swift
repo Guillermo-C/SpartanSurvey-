@@ -34,14 +34,11 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     //  Array containing all input provided by the user to be saved 
     var inputTextArray = [String]()
     
-    
-    //  Array of keys 
-    
+    //  Array of keys
     var keyArray = [String]()
     
     //  Current picker choice
     var currentPickerChoice:String = ""
-    
     
     //  Alert for when password is not successfully validated 
     let passwordValidationAlert = UIAlertController(title: "Passwords Don't Match", message: "Make sure to successfully confirm the chosen password.", preferredStyle: UIAlertControllerStyle.alert)
@@ -80,7 +77,7 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
         view.addSubview(activityIndicator)
         
-        
+        //  Append key names to the keyArray for proper cloud storing
         keyArray.append("FirstName")
         keyArray.append("Email")
         keyArray.append("Password")
@@ -161,7 +158,7 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         return validation
     }
     
-    
+    //  func for putting all user's text input into an array for cloud storing
     func inputAsArray(in0:String, in1: String, in2: String, in3: String, in4: String) -> [String]{
         var tempArray = [String]()
         tempArray.append(in0)
@@ -173,7 +170,7 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         return tempArray
     }
     
-    
+    //  func for getting current picker choice 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         currentPickerChoice = securityQArray[row]
         
