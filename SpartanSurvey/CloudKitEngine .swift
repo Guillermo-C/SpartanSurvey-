@@ -15,20 +15,26 @@ class CloudKitEngine{
     let publicDataBase = CKContainer.default().publicCloudDatabase
     
     
-    fileprivate func saveRecord(saveR:String, rDestination: String){
-        let store = CKRecord(recordType: rDestination)
-        store.setObject(saveR as CKRecordValue?, forKey: rDestination)
+    //  Create a method for saving data with a given record name
+    func saveNewDataWRecord(record_Name: String, recordTypeName: String, forKey: String, recordsToSave: [String], keyList: [String]){
+        let recordId = CKRecordID(recordName: record_Name)
+        let store = CKRecord(recordType: recordTypeName, recordID: recordId)
         
-        publicDataBase.save(store){ (savedRecord, error) -> Void in
-            if (error != nil){
-                print("Data not successfully saved")
+        //  Save each attribute in its corresponding key
+        for i in 0...keyList.count - 1{
+            store.setObject(recordsToSave[i] as CKRecordValue?, forKey: keyList[i])
+            publicDataBase.save(store) { (savedRecord, error) -> Void in
+                if (error != nil){
+                    print("Error while saving data")
+                }
+                else{
+                    print("\n\n\n\nSweet...it worked :)")
+                }
             }
-            else{
-                print("Nice! it worked.")
-            }
-        }
-        
+        }        
     }
+    
+
     
     //  Detect if user was previously and still is logged into iCloud on his phone
     
