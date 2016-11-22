@@ -38,6 +38,11 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     //  Alert for when sign up form is not completed
     let formCompletionAlert = UIAlertController(title: "Complete All Fields", message: "Make sure to fill out this form completely.", preferredStyle: UIAlertControllerStyle.alert)
     
+    //  Invoke the class CloudKitEngine for saving data in the cloud
+    let cloudKitEng = CloudKitEngine()
+    
+    //  Activity indicator for when saving data to the cloud
+    var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +62,13 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         //  Add action "Ok" for the formCompletionAlert
         formCompletionAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
             print("Handle Ok logic here")}))
+        
+        //  Add an activity indicator to the UI and center it in the view
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        view.addSubview(activityIndicator)
+        
         
         // Do any additional setup after loading the view.
     }
@@ -95,7 +107,11 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         }else if(passwordConfirmed == false){
             present(passwordValidationAlert, animated: true,completion: nil)
         }
-        else{   //  Continue process
+        else{
+            //  Continue process
+            activityIndicator.startAnimating()
+            //  Stop UI interaction while data process is running
+            UIApplication.shared.beginIgnoringInteractionEvents()
             print("NOT ALL WAS FILLED OUT")
         }
 
@@ -111,7 +127,7 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         return validation
     }
     
-    //  func for validating completion of fields 
+    //  func for validating completion of fields
     func completedAllFields(field1: UITextField, field2: UITextField, field3: UITextField, field4: UITextField,field5: UITextField) -> Bool{
         var validation:Bool = false
         
@@ -135,13 +151,12 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         return .none
     }*/
     
+    /*func showActivityIndicator{
+        
+    }*/
     
     
-    var updateStatusLabel:String?{
-        get{
-            return "something"
-        }
-    }
+
     
 
 }
