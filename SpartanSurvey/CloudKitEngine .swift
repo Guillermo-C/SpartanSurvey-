@@ -14,7 +14,8 @@ class CloudKitEngine{
     
     let publicDataBase = CKContainer.default().publicCloudDatabase
     
-    //let privateDataBase = CKContainer.default().privateCloudDatabase
+    var record: CKRecord!
+    
     
     
     //  Create a method for saving data with a given record name
@@ -38,6 +39,9 @@ class CloudKitEngine{
                     print("\n\n\n\nSweet...it worked :)")
                 }
             }
+            DispatchQueue.main.async {
+                
+            }
         }        
     }
     
@@ -55,5 +59,27 @@ class CloudKitEngine{
         }
     }
     
+    /*var Email: String{
+        get{
+            return self.record!.object(forKey: "Email") as! String
+        }
+        set(newVal){
+            let myRecordId = CKRecordID(recordName: recordName1)
+            record = CKRecord(recordType: "UserInfo", recordID: myRecordId)
+            record.setObject(newVal as CKRecordValue?, forKey: "Email")
+            publicDataBase.save(record) { (savedRecord, error) -> Void in
+                if (error != nil){
+                    print("user has already registered!")
+                }
+                else{
+                    print("\n\n\n\nSweet...it worked :)")
+                }
+                
+            }
+        }
+    }*/
+    
+    
+
     
 }

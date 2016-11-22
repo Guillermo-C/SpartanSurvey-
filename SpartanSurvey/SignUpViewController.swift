@@ -127,14 +127,16 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         else{
             print("Selection: \(currentPickerChoice)")
             let newRecordName = emailEntry.text!
+            currentPickerChoice = pickerValue
             let inputArray = inputAsArray(in0: firstNameEntry.text!, in1: emailEntry.text!, in2: passwordEntry.text!, in3: currentPickerChoice, in4: securityQuestionAnswer.text!)
+            //let userUsedPicker = didUserPick(choice: currentPickerChoice)
             //  Continue process
             //activityIndicator.startAnimating()
             //  Stop UI interaction while data process is running
             //UIApplication.shared.beginIgnoringInteractionEvents()
             cloudKitEng.saveNewDataWRecord(record_Name: newRecordName, recordTypeName: "UserInfo", recordsToSave: inputArray, keyList: keyArray)
-            
-            
+            print("\(currentPickerChoice)")
+            //cloudKitEng.Email = "test@12:39pm"
         }
 
     }
@@ -175,6 +177,24 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         currentPickerChoice = securityQArray[row]
         
+    }
+    
+    //  func to check if user chose from the picker an option other than one on the 0 position
+    func didUserPick(choice: String)->Bool{
+        if (choice != ""){
+            return true
+        }
+        return false
+    }
+    
+    //  var for getting the right picker choice even when the picker was not moved
+    var pickerValue:String{
+        get{
+            if (currentPickerChoice == ""){
+                return securityQArray[0]
+            }
+            return currentPickerChoice
+        }
     }
     
     // MARK: - Navigation
