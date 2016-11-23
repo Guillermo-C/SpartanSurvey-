@@ -85,6 +85,10 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         keyArray.append("SecurityQuestionAnswer")
         
         // Do any additional setup after loading the view.
+        
+        //  Check if user has registered?
+        //  Revise query, it's querying through the DB but it's not logical 
+        cloudKitEng.checkIfUserRegistered()
     }
     
     override func didReceiveMemoryWarning() {
@@ -122,18 +126,26 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             present(passwordValidationAlert, animated: true,completion: nil)
         }
         else{
-            print("Selection: \(currentPickerChoice)")
-            let newRecordName = emailEntry.text!
-            currentPickerChoice = pickerValue
-            let inputArray = inputAsArray(in0: firstNameEntry.text!, in1: emailEntry.text!, in2: passwordEntry.text!, in3: currentPickerChoice, in4: securityQuestionAnswer.text!)
+            
+            //let newRecordName = emailEntry.text!
+            //currentPickerChoice = pickerValue
+            //let inputArray = inputAsArray(in0: firstNameEntry.text!, in1: emailEntry.text!, in2: passwordEntry.text!, in3: currentPickerChoice, in4: securityQuestionAnswer.text!)
             //let userUsedPicker = didUserPick(choice: currentPickerChoice)
             //  Continue process
             //activityIndicator.startAnimating()
             //  Stop UI interaction while data process is running
             //UIApplication.shared.beginIgnoringInteractionEvents()
-            cloudKitEng.saveNewDataWRecord(record_Name: newRecordName, recordTypeName: "UserInfo", recordsToSave: inputArray, keyList: keyArray)
-            print("\(currentPickerChoice)")
-            //cloudKitEng.Email = "test@12:39pm"
+            //cloudKitEng.saveNewDataWRecord(record_Name: newRecordName, recordTypeName: "UserInfo", recordsToSave: inputArray, keyList: keyArray)
+            
+            //  code below for checking if a user has registered works, programmatically not logically--delete after testing
+            //let checkEmail = cloudKitEng.emailAlreadyExists(email: emailEntry.text!)
+            //print("Email being tested is: \(emailEntry.text!)")
+            //print("\nContent of namesArray\n\(cloudKitEng.namesArray)\nEnd of content\n")
+            cloudKitEng.checkIfUserRegistered()
+            let something = cloudKitEng.checkIfDataAvailable()
+            
+            let whatever = cloudKitEng.valueOfCounter()
+            
         }
 
     }

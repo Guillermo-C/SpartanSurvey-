@@ -23,7 +23,7 @@
 		CB7D4D361DC0650F00CB73A7 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7D4D351DC0650F00CB73A7 /* QRCodeViewController.swift */; };
 		CB7D4D381DC0655A00CB73A7 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7D4D371DC0655A00CB73A7 /* SignInViewController.swift */; };
 		CBC58FBC1DE2343B006F2DC1 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBC58FBB1DE2343B006F2DC1 /* CloudKit.framework */; };
-		CBC58FBE1DE236E2006F2DC1 /* CloudKitEngine .swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC58FBD1DE236E2006F2DC1 /* CloudKitEngine .swift */; };
+		CBC58FBE1DE236E2006F2DC1 /* CloudKitEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC58FBD1DE236E2006F2DC1 /* CloudKitEngine.swift */; };
 		CBCB71CC1DE0192800E6D3DE /* KaiserPermanenteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCB71CB1DE0192800E6D3DE /* KaiserPermanenteViewController.swift */; };
 		CBFECFF71DDD5A4000A4ECC6 /* ConsentDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFECFF61DDD5A4000A4ECC6 /* ConsentDocument.swift */; };
 		CBFECFFB1DDD5A5B00A4ECC6 /* ConsentTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFECFFA1DDD5A5B00A4ECC6 /* ConsentTask.swift */; };
@@ -87,7 +87,7 @@
 		CB7D4D371DC0655A00CB73A7 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		CBC58FB71DE2342B006F2DC1 /* SpartanSurvey.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SpartanSurvey.entitlements; sourceTree = "<group>"; };
 		CBC58FBB1DE2343B006F2DC1 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		CBC58FBD1DE236E2006F2DC1 /* CloudKitEngine .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CloudKitEngine .swift"; sourceTree = "<group>"; };
+		CBC58FBD1DE236E2006F2DC1 /* CloudKitEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitEngine.swift; sourceTree = "<group>"; };
 		CBCB71CB1DE0192800E6D3DE /* KaiserPermanenteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KaiserPermanenteViewController.swift; sourceTree = "<group>"; };
 		CBFECFF61DDD5A4000A4ECC6 /* ConsentDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentDocument.swift; sourceTree = "<group>"; };
 		CBFECFFA1DDD5A5B00A4ECC6 /* ConsentTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentTask.swift; sourceTree = "<group>"; };
@@ -155,7 +155,7 @@
 				CB0C22241DDD3AA80008E12F /* SignUpViewController.swift */,
 				CBFECFFD1DDD5C2400A4ECC6 /* UPHomeViewController.swift */,
 				CBCB71CB1DE0192800E6D3DE /* KaiserPermanenteViewController.swift */,
-				CBC58FBD1DE236E2006F2DC1 /* CloudKitEngine .swift */,
+				CBC58FBD1DE236E2006F2DC1 /* CloudKitEngine.swift */,
 			);
 			path = SpartanSurvey;
 			sourceTree = "<group>";
@@ -333,7 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBC58FBE1DE236E2006F2DC1 /* CloudKitEngine .swift in Sources */,
+				CBC58FBE1DE236E2006F2DC1 /* CloudKitEngine.swift in Sources */,
 				CB6C2D3F1DD822BF008A3DD2 /* McDonaldsViewController.swift in Sources */,
 				CB7D4D381DC0655A00CB73A7 /* SignInViewController.swift in Sources */,
 				CB7D4D361DC0650F00CB73A7 /* QRCodeViewController.swift in Sources */,

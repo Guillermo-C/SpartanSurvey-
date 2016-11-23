@@ -9,12 +9,74 @@
 import Foundation
 import CloudKit
 
-
 class CloudKitEngine{
     
     let publicDataBase = CKContainer.default().publicCloudDatabase
     
+    
     var record: CKRecord!
+    
+    
+    var namesArray: Array<CKRecord> = []
+    
+    var emailArray = [String]()
+    
+    
+    var counter:Int = 0
+    
+    
+    func checkIfUserRegistered(){
+        namesArray = Array<CKRecord>()
+        
+        
+        //let targetEmail:String = "michael@sjsu.edu"
+        //let firstName: String = "Michael"
+        let predicate = NSPredicate(value: true)
+        let query = CKQuery(recordType: "UserInfo", predicate: predicate)
+        
+        publicDataBase.perform(query, inZoneWith: nil){ results, error in
+            if error != nil{
+                
+            }
+            else{
+                for result in results!{
+                    self.namesArray.append(result)
+                    print("\n\n\(result) would be appended\n\n")
+                    print("\n\(self.namesArray.count) is the size of the array")
+                    self.counter += 1
+                }
+            }
+        }
+        //print("\n\nThe contents of namesArray is \(namesArray)\nand its size is \(namesArray.count)\n\n")
+        print("\nConunter value at end is \(counter)")
+    }
+
+    
+    func checkIfDataAvailable() -> Bool {
+        if(namesArray.count > 0){
+            return true
+        }
+        return false
+    }
+    
+    func valueOfCounter(){
+        print("\ncounter outside of query is: \(counter)")
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -45,10 +107,12 @@ class CloudKitEngine{
         }        
     }
     
+    
+
+
 
     
     //  Detect if user was previously and still is logged into iCloud on his phone
-    
     func isiCloudAvailable() -> Bool {
         if FileManager.default.ubiquityIdentityToken != nil{
             
@@ -59,25 +123,11 @@ class CloudKitEngine{
         }
     }
     
-    /*var Email: String{
-        get{
-            return self.record!.object(forKey: "Email") as! String
-        }
-        set(newVal){
-            let myRecordId = CKRecordID(recordName: recordName1)
-            record = CKRecord(recordType: "UserInfo", recordID: myRecordId)
-            record.setObject(newVal as CKRecordValue?, forKey: "Email")
-            publicDataBase.save(record) { (savedRecord, error) -> Void in
-                if (error != nil){
-                    print("user has already registered!")
-                }
-                else{
-                    print("\n\n\n\nSweet...it worked :)")
-                }
-                
-            }
-        }
-    }*/
+    
+    func recordFetchBlock(record: CKRecord!){
+        print("Fetched a record\n\n \(record)")
+    }
+    
     
     
 
