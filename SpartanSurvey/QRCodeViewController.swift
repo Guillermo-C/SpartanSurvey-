@@ -12,7 +12,7 @@ import UIKit
     @objc optional func QRBackButtonPressed()
 }
 
-class QRCodeViewController: UIViewController {
+class QRCodeViewController: UIViewController, UIPopoverPresentationControllerDelegate {
     
     var delegate: QRCodeViewControllerDelegate?
 
@@ -31,16 +31,38 @@ class QRCodeViewController: UIViewController {
         
         delegate?.QRBackButtonPressed!()
     }
+    @IBAction func showInfo(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "qRInfoSegue", sender: self)
+    }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "qRInfoSegue"{
+            
+            let viewC = segue.destination 
+            let controller = viewC.popoverPresentationController
+            
+            if (controller != nil) {
+                controller?.delegate = self
+            }
+            
+        }
+            
     }
-    */
+
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
+    }
+    
+    
+    
+    
 
 }

@@ -144,6 +144,16 @@
                                         <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J5o-Y9-7a4">
+                                        <rect key="frame" x="262" y="12" width="22" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="showInfo:" destination="Q4k-1b-UBw" eventType="touchUpInside" id="ySs-zA-3sV"/>
+                                            <segue destination="hu9-SG-4bK" kind="popoverPresentation" identifier="qRInfoSegue" popoverAnchorView="J5o-Y9-7a4" id="tRD-Vp-PI9">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -188,14 +198,27 @@
                     <view key="view" contentMode="scaleToFill" id="6Cs-YI-xbr">
                         <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explain how to use this feature" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RIW-bO-7US">
+                                <rect key="frame" x="16" y="65" width="108" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="7"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="RIW-bO-7US" firstAttribute="top" secondItem="TnR-XL-i0X" secondAttribute="bottom" constant="45" id="D3X-g4-Zjd"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="RIW-bO-7US" secondAttribute="leading" id="qv7-zQ-Bsb"/>
+                            <constraint firstItem="OlF-gR-0eK" firstAttribute="top" secondItem="RIW-bO-7US" secondAttribute="bottom" constant="64" id="wdo-rR-GdP"/>
+                        </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="150" height="150"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mpj-gB-7cI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-470" y="800"/>
+            <point key="canvasLocation" x="-387.19999999999999" y="799.70014992503752"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="GWb-YR-ZE9">
