@@ -250,10 +250,10 @@
             </objects>
             <point key="canvasLocation" x="1314" y="712"/>
         </scene>
-        <!--View Controller-->
+        <!--SignUpInfoPopOver-->
         <scene sceneID="x4B-pe-06d">
             <objects>
-                <viewController id="Brg-pt-q0F" sceneMemberID="viewController">
+                <viewController title="SignUpInfoPopOver" id="Brg-pt-q0F" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dc9-TI-Anb"/>
                         <viewControllerLayoutGuide type="bottom" id="50a-9H-01m"/>
@@ -261,7 +261,19 @@
                     <view key="view" contentMode="scaleToFill" id="b7j-CS-SOy">
                         <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explain how to use this feature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0A-Zb-ezg">
+                                <rect key="frame" x="12" y="65" width="122" height="10"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="O0A-Zb-ezg" firstAttribute="leading" secondItem="b7j-CS-SOy" secondAttribute="leadingMargin" constant="-4" id="GlZ-Mt-X3c"/>
+                            <constraint firstItem="O0A-Zb-ezg" firstAttribute="top" secondItem="dc9-TI-Anb" secondAttribute="bottom" constant="45" id="M1l-B9-LwP"/>
+                        </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="150" height="150"/>
