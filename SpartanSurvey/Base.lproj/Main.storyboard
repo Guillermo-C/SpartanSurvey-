@@ -362,7 +362,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQE-op-zEj">
                                         <rect key="frame" x="250" y="8" width="22" height="22"/>
                                         <connections>
-                                            <segue destination="Brg-pt-q0F" kind="popoverPresentation" popoverAnchorView="KQE-op-zEj" id="bLm-Fw-aFt">
+                                            <segue destination="Brg-pt-q0F" kind="popoverPresentation" identifier="signUpInfoSegue" popoverAnchorView="KQE-op-zEj" id="bLm-Fw-aFt">
                                                 <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                             </segue>
                                         </connections>
