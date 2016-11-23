@@ -327,6 +327,9 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQE-op-zEj">
+                                        <rect key="frame" x="250" y="8" width="22" height="22"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -349,6 +352,7 @@
                                     <constraint firstItem="N9X-US-gUX" firstAttribute="width" secondItem="LHs-3W-f5s" secondAttribute="width" id="OmW-Zs-4Ul"/>
                                     <constraint firstAttribute="trailing" secondItem="N9X-US-gUX" secondAttribute="trailing" constant="8" id="PfT-tj-wZL"/>
                                     <constraint firstItem="6t5-jy-TXh" firstAttribute="leading" secondItem="TPf-Pk-ICn" secondAttribute="leading" constant="238" id="RM1-EV-DqO"/>
+                                    <constraint firstAttribute="trailing" secondItem="KQE-op-zEj" secondAttribute="trailing" constant="20" id="TZT-Zb-xKb"/>
                                     <constraint firstItem="xqk-jO-oVd" firstAttribute="leading" secondItem="TPf-Pk-ICn" secondAttribute="leading" constant="8" id="Vzj-dV-T55"/>
                                     <constraint firstItem="N9X-US-gUX" firstAttribute="height" secondItem="LHs-3W-f5s" secondAttribute="height" id="WsF-Fz-1c3"/>
                                     <constraint firstItem="WV6-3V-7Fo" firstAttribute="centerX" secondItem="xqk-jO-oVd" secondAttribute="centerX" id="Wwm-QI-Q28"/>
@@ -362,7 +366,9 @@
                                     <constraint firstItem="6t5-jy-TXh" firstAttribute="trailing" secondItem="xqk-jO-oVd" secondAttribute="trailing" id="hYq-1N-n9I"/>
                                     <constraint firstItem="WV6-3V-7Fo" firstAttribute="centerX" secondItem="TPf-Pk-ICn" secondAttribute="centerX" id="iZd-g0-Fih"/>
                                     <constraint firstItem="xqk-jO-oVd" firstAttribute="top" secondItem="2va-KM-l6b" secondAttribute="bottom" constant="8" id="irz-pz-i7G"/>
+                                    <constraint firstItem="KQE-op-zEj" firstAttribute="top" secondItem="TPf-Pk-ICn" secondAttribute="top" constant="8" id="jcC-CF-Yii"/>
                                     <constraint firstItem="WV6-3V-7Fo" firstAttribute="leading" secondItem="TPf-Pk-ICn" secondAttribute="leading" constant="53" id="nPE-M6-G06"/>
+                                    <constraint firstItem="KQE-op-zEj" firstAttribute="leading" secondItem="WV6-3V-7Fo" secondAttribute="trailing" constant="10" id="qVg-M5-lPy"/>
                                     <constraint firstItem="WV6-3V-7Fo" firstAttribute="centerX" secondItem="LHs-3W-f5s" secondAttribute="centerX" id="rS4-rM-ebB"/>
                                     <constraint firstItem="WV6-3V-7Fo" firstAttribute="top" secondItem="TPf-Pk-ICn" secondAttribute="top" constant="8" id="tlj-w4-Dl4"/>
                                     <constraint firstItem="2va-KM-l6b" firstAttribute="leading" secondItem="TPf-Pk-ICn" secondAttribute="leading" constant="8" id="uBZ-8f-ptH"/>
