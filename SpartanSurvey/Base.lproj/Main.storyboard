@@ -250,6 +250,26 @@
             </objects>
             <point key="canvasLocation" x="1314" y="712"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="x4B-pe-06d">
+            <objects>
+                <viewController id="Brg-pt-q0F" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dc9-TI-Anb"/>
+                        <viewControllerLayoutGuide type="bottom" id="50a-9H-01m"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="b7j-CS-SOy">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="150" height="150"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lVR-Ey-Iyp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="261" y="1634"/>
+        </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="GWb-YR-ZE9">
             <objects>
@@ -329,6 +349,11 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQE-op-zEj">
                                         <rect key="frame" x="250" y="8" width="22" height="22"/>
+                                        <connections>
+                                            <segue destination="Brg-pt-q0F" kind="popoverPresentation" popoverAnchorView="KQE-op-zEj" id="bLm-Fw-aFt">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -412,7 +437,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J4B-dt-3QI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="80.799999999999997" y="1516.1919040479761"/>
+            <point key="canvasLocation" x="-305" y="1709"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ET0-pz-SAe">
@@ -500,7 +525,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dhj-H3-LUG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="765.60000000000002" y="1515.2923538230887"/>
+            <point key="canvasLocation" x="966" y="1709"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="Nfm-l8-UBm">
