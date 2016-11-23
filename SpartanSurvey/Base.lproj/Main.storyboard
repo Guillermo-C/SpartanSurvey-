@@ -187,10 +187,10 @@
             </objects>
             <point key="canvasLocation" x="80.799999999999997" y="847.82608695652175"/>
         </scene>
-        <!--View Controller-->
+        <!--QRInfoPopOver-->
         <scene sceneID="Vuj-DG-XL6">
             <objects>
-                <viewController modalPresentationStyle="currentContext" id="hu9-SG-4bK" sceneMemberID="viewController">
+                <viewController title="QRInfoPopOver" modalPresentationStyle="currentContext" id="hu9-SG-4bK" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TnR-XL-i0X"/>
                         <viewControllerLayoutGuide type="bottom" id="OlF-gR-0eK"/>
@@ -219,6 +219,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mpj-gB-7cI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-387.19999999999999" y="799.70014992503752"/>
+        </scene>
+        <!--SignInPopOver-->
+        <scene sceneID="tzo-51-9n6">
+            <objects>
+                <viewController title="SignInPopOver" id="mPf-UF-8az" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mL0-AU-zDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="64g-Ob-0fl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bIy-CO-PfY">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Explain how to use this feature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETv-g6-qhU">
+                                <rect key="frame" x="16" y="65" width="127" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="150" height="150"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U3K-zV-L4E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1314" y="712"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="GWb-YR-ZE9">
@@ -525,6 +555,14 @@
                                         <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efZ-xk-RWE">
+                                        <rect key="frame" x="262" y="8" width="22" height="22"/>
+                                        <connections>
+                                            <segue destination="mPf-UF-8az" kind="popoverPresentation" identifier="signInInfoSegue" popoverAnchorView="efZ-xk-RWE" id="EwF-9M-aK3">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -532,6 +570,7 @@
                                     <constraint firstItem="8Wr-bu-jsE" firstAttribute="leading" secondItem="KcN-Ks-koK" secondAttribute="leading" constant="21" id="9lj-ar-wOj"/>
                                     <constraint firstAttribute="trailing" secondItem="sUf-2t-dFx" secondAttribute="trailing" constant="21" id="EBP-H2-Vny"/>
                                     <constraint firstItem="tV8-sM-R34" firstAttribute="height" secondItem="i44-2M-0PL" secondAttribute="height" id="GIi-Y2-z2o"/>
+                                    <constraint firstItem="efZ-xk-RWE" firstAttribute="top" secondItem="KcN-Ks-koK" secondAttribute="top" constant="8" id="GJK-Bf-SpA"/>
                                     <constraint firstItem="tV8-sM-R34" firstAttribute="leading" secondItem="KcN-Ks-koK" secondAttribute="leading" constant="21" id="LDo-p5-zjg"/>
                                     <constraint firstAttribute="trailing" secondItem="i44-2M-0PL" secondAttribute="trailing" constant="21" id="M7F-w6-qLW"/>
                                     <constraint firstAttribute="bottom" secondItem="8Wr-bu-jsE" secondAttribute="bottom" constant="38" id="NK2-gJ-AAf"/>
@@ -568,6 +607,7 @@
                         <constraints>
                             <constraint firstItem="PXL-UL-Yif" firstAttribute="top" secondItem="KcN-Ks-koK" secondAttribute="bottom" constant="2" id="3b7-wE-GFQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="PXL-UL-Yif" secondAttribute="trailing" constant="87" id="3mR-h7-95E"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="efZ-xk-RWE" secondAttribute="trailing" constant="40" id="NcZ-Tf-ncd"/>
                             <constraint firstItem="KcN-Ks-koK" firstAttribute="top" secondItem="B0s-tt-RWZ" secondAttribute="bottom" constant="89" id="OZA-Hm-ADC"/>
                             <constraint firstItem="H72-ay-Myt" firstAttribute="top" secondItem="KcN-Ks-koK" secondAttribute="bottom" constant="318" id="Szx-M5-5OQ"/>
                             <constraint firstItem="NWP-az-ZyS" firstAttribute="leading" secondItem="Yp4-sW-a6X" secondAttribute="leadingMargin" constant="66" id="TEc-0J-6Vh"/>
