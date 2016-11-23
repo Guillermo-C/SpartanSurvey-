@@ -500,20 +500,27 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRB-eO-JKt">
+                                        <rect key="frame" x="262" y="12" width="22" height="22"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="HZP-6x-r7E" firstAttribute="top" secondItem="vr6-3w-ehv" secondAttribute="bottom" constant="8" id="003-kD-vbx"/>
                                     <constraint firstItem="qSQ-7n-874" firstAttribute="width" secondItem="vr6-3w-ehv" secondAttribute="width" id="1Tm-EU-ROo"/>
+                                    <constraint firstItem="IRB-eO-JKt" firstAttribute="leading" secondItem="Qas-Ql-3te" secondAttribute="leading" constant="262" id="8sN-zG-KM0"/>
                                     <constraint firstItem="vr6-3w-ehv" firstAttribute="top" secondItem="qSQ-7n-874" secondAttribute="bottom" constant="8" id="GAH-Ad-P43"/>
                                     <constraint firstItem="vr6-3w-ehv" firstAttribute="leading" secondItem="Qas-Ql-3te" secondAttribute="leading" constant="8" id="NYf-xx-UW6"/>
                                     <constraint firstAttribute="trailing" secondItem="HZP-6x-r7E" secondAttribute="trailing" constant="8" id="UAT-7d-WMe"/>
                                     <constraint firstItem="SMV-k1-Pao" firstAttribute="leading" secondItem="Qas-Ql-3te" secondAttribute="leading" constant="258" id="UHk-N7-2uK"/>
                                     <constraint firstAttribute="trailing" secondItem="vr6-3w-ehv" secondAttribute="trailing" constant="8" id="amL-kQ-C1Q"/>
                                     <constraint firstItem="qSQ-7n-874" firstAttribute="leading" secondItem="Qas-Ql-3te" secondAttribute="leading" constant="8" id="bYj-Lz-DwL"/>
+                                    <constraint firstAttribute="trailing" secondItem="IRB-eO-JKt" secondAttribute="trailing" constant="20" id="bhX-ZN-pKJ"/>
                                     <constraint firstItem="qSQ-7n-874" firstAttribute="height" secondItem="vr6-3w-ehv" secondAttribute="height" id="dSa-5T-gZ7"/>
                                     <constraint firstItem="qSQ-7n-874" firstAttribute="top" secondItem="Qas-Ql-3te" secondAttribute="top" constant="41" id="fK2-Iw-Myv"/>
                                     <constraint firstAttribute="bottom" secondItem="SMV-k1-Pao" secondAttribute="bottom" id="h3Q-fo-CYu"/>
+                                    <constraint firstItem="qSQ-7n-874" firstAttribute="top" secondItem="IRB-eO-JKt" secondAttribute="bottom" constant="7" id="jQ4-sk-7fh"/>
+                                    <constraint firstItem="IRB-eO-JKt" firstAttribute="top" secondItem="Qas-Ql-3te" secondAttribute="top" constant="12" id="lSs-SW-IDd"/>
                                     <constraint firstItem="HZP-6x-r7E" firstAttribute="leading" secondItem="Qas-Ql-3te" secondAttribute="leading" constant="8" id="oDB-eU-Kph"/>
                                     <constraint firstAttribute="bottom" secondItem="HZP-6x-r7E" secondAttribute="bottom" constant="41" id="zcp-41-qUo"/>
                                 </constraints>
