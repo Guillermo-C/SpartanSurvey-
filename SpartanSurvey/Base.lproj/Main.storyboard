@@ -986,6 +986,10 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="zl7-Sz-QPg"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="tLn-Yw-QHR" id="9dg-56-8wJ"/>
+                                    <outlet property="delegate" destination="tLn-Yw-QHR" id="Kb6-AE-BXk"/>
+                                </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorite soccer team: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PGk-bL-XU4">
                                 <rect key="frame" x="16" y="213" width="343" height="21"/>
@@ -998,6 +1002,10 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="kUF-Xo-JZb"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="tLn-Yw-QHR" id="K1M-xM-tYC"/>
+                                    <outlet property="delegate" destination="tLn-Yw-QHR" id="r5m-7H-6Iy"/>
+                                </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorite national team:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TYX-Q2-aeL">
                                 <rect key="frame" x="16" y="310" width="343" height="21"/>
@@ -1010,6 +1018,10 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="f3l-Gh-GJR"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="tLn-Yw-QHR" id="FnP-8W-7Ha"/>
+                                    <outlet property="delegate" destination="tLn-Yw-QHR" id="QzW-cZ-SCD"/>
+                                </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desired position:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eze-PF-g21">
                                 <rect key="frame" x="16" y="399" width="343" height="21"/>
@@ -1022,6 +1034,10 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="WN6-4z-YcX"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="tLn-Yw-QHR" id="Tn2-Rd-Rmq"/>
+                                    <outlet property="delegate" destination="tLn-Yw-QHR" id="5ni-ar-kb1"/>
+                                </connections>
                             </pickerView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N0a-xo-IVI">
                                 <rect key="frame" x="16" y="545" width="343" height="30"/>
@@ -1079,6 +1095,12 @@
                             <constraint firstItem="gps-qy-Fey" firstAttribute="top" secondItem="Eze-PF-g21" secondAttribute="bottom" constant="8" symbolic="YES" id="zjT-E5-oMh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="desiredPositionPicker" destination="gps-qy-Fey" id="z80-IF-BA2"/>
+                        <outlet property="nationalTeamPicker" destination="1Wx-TZ-x0w" id="sc4-hA-isp"/>
+                        <outlet property="soccerPlayerPicker" destination="a2F-5X-ofY" id="KUs-Rl-jtd"/>
+                        <outlet property="soccerTeamPicker" destination="OEK-9w-496" id="E1I-KS-kAW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XDB-ml-bnR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
