@@ -968,7 +968,21 @@
                     <view key="view" contentMode="scaleToFill" id="teg-Zw-CYy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l3h-FU-BnB">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Answers" id="zwz-u1-8SE"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="l3h-FU-BnB" firstAttribute="centerX" secondItem="teg-Zw-CYy" secondAttribute="centerX" id="4X3-H6-ehT"/>
+                            <constraint firstItem="l3h-FU-BnB" firstAttribute="leading" secondItem="teg-Zw-CYy" secondAttribute="leadingMargin" constant="-16" id="HuF-WD-fSR"/>
+                            <constraint firstItem="l3h-FU-BnB" firstAttribute="top" secondItem="eYo-8g-Fhq" secondAttribute="bottom" constant="8" id="cMf-5V-Um8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="l3h-FU-BnB" secondAttribute="trailing" constant="-16" id="gib-va-xYz"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Answers" id="OGQ-J2-eiZ"/>
                 </viewController>
