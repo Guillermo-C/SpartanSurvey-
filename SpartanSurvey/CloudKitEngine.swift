@@ -8,6 +8,7 @@
 
 import Foundation
 import CloudKit
+import UIKit
 
 class CloudKitEngine{
     
@@ -18,6 +19,8 @@ class CloudKitEngine{
     
     
     var namesArray: Array<CKRecord> = []
+    
+    var registeredEmails: Array <String> = []
     
     var emailArray = [String]()
     
@@ -47,6 +50,9 @@ class CloudKitEngine{
                 }
             }
         }
+        
+        
+        
         //print("\n\nThe contents of namesArray is \(namesArray)\nand its size is \(namesArray.count)\n\n")
         print("\nConunter value at end is \(counter)")
     }
@@ -64,13 +70,26 @@ class CloudKitEngine{
     }
     
     
+    func retrieveEmails(){
+        print("Here would print them values")
+        
+        for i in 0...namesArray.count - 1 {
+            let email = namesArray[i].value(forKey: "Email") as! NSString
+            self.emailArray.append(email as String)
+            print("Email: \(email)\n")
+        }
+    }
     
     
     
     
     
-    
-    
+    func userRegistered(email: String) -> Bool{
+        if (emailArray.contains(email)){
+            return true
+        }
+        return false
+    }
     
     
     
@@ -127,6 +146,53 @@ class CloudKitEngine{
     func recordFetchBlock(record: CKRecord!){
         print("Fetched a record\n\n \(record)")
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    func registeredUsers(){
+        //var registration: Bool = false
+        //let emailToLookFor:String = email
+        //actInd.startAnimating()
+        namesArray = Array<CKRecord>()
+        let predicate = NSPredicate(value:true)
+        let query = CKQuery(recordType: "UserInfo", predicate: predicate)
+        
+        publicDataBase.perform(query, inZoneWith: nil){ results, error in
+            if error != nil{
+                
+            }
+            else{
+                for result in results!{
+                    self.namesArray.append(result)
+                }
+            }
+        }
+
+        
+        if(namesArray.count > 0 ){
+            //registration = true
+            print("\n\nThe size of namesArray is: \(namesArray.count)\n")
+
+        }
+        
+        for i in 0...namesArray.count - 1{
+            print("\nEmail: ")
+            print("\(namesArray[i].value(forKey: "Email"))\n")
+        }
+        
+        print("\nsize of namesArray is \(namesArray.count)")
+        //return registration
+    }
+    
+    
+    
+    
     
     
     

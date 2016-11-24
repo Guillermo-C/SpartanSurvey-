@@ -89,6 +89,8 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         //  Check if user has registered?
         //  Revise query, it's querying through the DB but it's not logical 
         cloudKitEng.checkIfUserRegistered()
+        //cloudKitEng.registeredUsers()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -126,7 +128,7 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             present(passwordValidationAlert, animated: true,completion: nil)
         }
         else{
-            
+            let email = emailEntry.text!
             //let newRecordName = emailEntry.text!
             //currentPickerChoice = pickerValue
             //let inputArray = inputAsArray(in0: firstNameEntry.text!, in1: emailEntry.text!, in2: passwordEntry.text!, in3: currentPickerChoice, in4: securityQuestionAnswer.text!)
@@ -143,7 +145,18 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             //cloudKitEng.checkIfUserRegistered()
             //let something = cloudKitEng.checkIfDataAvailable()
             //let whatever = cloudKitEng.valueOfCounter()
+            //print("\nSize of namesArray: \(cloudKitEng.namesArray.count)")
+            cloudKitEng.retrieveEmails()
             
+            
+            
+            
+            if (cloudKitEng.userRegistered(email: email)){
+                print("\nUser registed before son")
+            }
+            else{
+                print("user has not registered yet")
+            }
         }
 
     }
