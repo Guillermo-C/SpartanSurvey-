@@ -17,6 +17,12 @@ class SignInViewController: UIViewController, UIPopoverPresentationControllerDel
 
     var delegate: SignInViewControllerDelegate?
     
+    @IBOutlet weak var emailEntry: UITextField!
+    
+    @IBOutlet weak var passwordEmail: UITextField!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
