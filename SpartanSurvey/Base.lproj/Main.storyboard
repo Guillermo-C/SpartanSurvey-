@@ -502,6 +502,11 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRB-eO-JKt">
                                         <rect key="frame" x="262" y="12" width="22" height="22"/>
+                                        <connections>
+                                            <segue destination="Qi1-0E-cH2" kind="popoverPresentation" popoverAnchorView="IRB-eO-JKt" id="sJa-ZT-mra">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -542,6 +547,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dhj-H3-LUG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="965.60000000000002" y="1708.6956521739132"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="sq1-gF-wda">
+            <objects>
+                <viewController id="Qi1-0E-cH2" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qeM-d2-qTp"/>
+                        <viewControllerLayoutGuide type="bottom" id="cfo-sy-KHG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Bdf-Z0-lUA">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="150" height="150"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t7I-Fx-Pge" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1605" y="1682"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="Nfm-l8-UBm">
