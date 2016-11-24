@@ -14,6 +14,7 @@
 		CB6684461DE666EC003FB7CB /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6684451DE666EC003FB7CB /* ForgotPasswordViewController.swift */; };
 		CB66844A1DE66A75003FB7CB /* TakeaSurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6684491DE66A75003FB7CB /* TakeaSurveyViewController.swift */; };
 		CB66844C1DE6912F003FB7CB /* SubwayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB66844B1DE6912F003FB7CB /* SubwayViewController.swift */; };
+		CB66844E1DE69F51003FB7CB /* SoccerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB66844D1DE69F51003FB7CB /* SoccerViewController.swift */; };
 		CB6C2D3D1DD8146D008A3DD2 /* SurveyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6C2D3C1DD8146D008A3DD2 /* SurveyTableViewController.swift */; };
 		CB6C2D3F1DD822BF008A3DD2 /* McDonaldsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6C2D3E1DD822BF008A3DD2 /* McDonaldsViewController.swift */; };
 		CB7D4D1C1DC04D7C00CB73A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7D4D1B1DC04D7C00CB73A7 /* AppDelegate.swift */; };
@@ -78,6 +79,7 @@
 		CB6684451DE666EC003FB7CB /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		CB6684491DE66A75003FB7CB /* TakeaSurveyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakeaSurveyViewController.swift; sourceTree = "<group>"; };
 		CB66844B1DE6912F003FB7CB /* SubwayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubwayViewController.swift; sourceTree = "<group>"; };
+		CB66844D1DE69F51003FB7CB /* SoccerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoccerViewController.swift; sourceTree = "<group>"; };
 		CB6C2D3C1DD8146D008A3DD2 /* SurveyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyTableViewController.swift; sourceTree = "<group>"; };
 		CB6C2D3E1DD822BF008A3DD2 /* McDonaldsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = McDonaldsViewController.swift; sourceTree = "<group>"; };
 		CB7D4D181DC04D7C00CB73A7 /* SpartanSurvey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpartanSurvey.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,6 +167,7 @@
 				CB6684451DE666EC003FB7CB /* ForgotPasswordViewController.swift */,
 				CB6684491DE66A75003FB7CB /* TakeaSurveyViewController.swift */,
 				CB66844B1DE6912F003FB7CB /* SubwayViewController.swift */,
+				CB66844D1DE69F51003FB7CB /* SoccerViewController.swift */,
 			);
 			path = SpartanSurvey;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				CB7D4D361DC0650F00CB73A7 /* QRCodeViewController.swift in Sources */,
 				CB7D4D241DC04D7C00CB73A7 /* SpartanSurvey.xcdatamodeld in Sources */,
 				CB0C22251DDD3AA80008E12F /* SignUpViewController.swift in Sources */,
+				CB66844E1DE69F51003FB7CB /* SoccerViewController.swift in Sources */,
 				CB7D4D321DC0557F00CB73A7 /* BWWalkthroughPageViewController.swift in Sources */,
 				CB7D4D331DC0557F00CB73A7 /* BWWalkthroughViewController.swift in Sources */,
 				CB7D4D1E1DC04D7C00CB73A7 /* ViewController.swift in Sources */,

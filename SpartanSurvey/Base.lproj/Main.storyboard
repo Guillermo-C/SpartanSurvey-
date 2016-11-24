@@ -966,7 +966,7 @@
         <!--Soccer-->
         <scene sceneID="1Ng-md-QKi">
             <objects>
-                <viewController storyboardIdentifier="soccerScreen" title="Soccer" id="tLn-Yw-QHR" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="soccerScreen" title="Soccer" id="tLn-Yw-QHR" customClass="SoccerViewController" customModule="SpartanSurvey" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bvC-Fe-hNJ"/>
                         <viewControllerLayoutGuide type="bottom" id="szR-5P-okF"/>
