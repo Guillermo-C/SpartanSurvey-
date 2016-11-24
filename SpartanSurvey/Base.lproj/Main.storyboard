@@ -714,7 +714,9 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q7u-GI-oFH">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <items>
-                                    <navigationItem title="Take a Survey" id="phn-Qc-QzQ"/>
+                                    <navigationItem title="Take a Survey" id="phn-Qc-QzQ">
+                                        <barButtonItem key="rightBarButtonItem" title="Sign Out" id="tE8-ax-R9T"/>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ky-H4-AMO">
