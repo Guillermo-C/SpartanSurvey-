@@ -22,6 +22,8 @@ class CloudKitEngine{
     
     var registeredEmails: Array <String> = []
     
+    var loginCredentials: Array<CKRecord> = []
+    
     var emailArray = [String]()
     
     
@@ -190,6 +192,31 @@ class CloudKitEngine{
         //return registration
     }
     
+    
+    func getLogInCredentials(email: String, password: String) -> Bool{
+        var login:Bool = false
+        let lookEmail = email
+        let predicate = NSPredicate(format: "Email  = %@", lookEmail)
+        let query = CKQuery(recordType: "UserInfo", predicate: predicate)
+        
+        publicDataBase.perform(query, inZoneWith: nil){ results, error in
+            if error != nil{
+                
+            }
+            else{
+                for result in results!{
+                    self.loginCredentials.append(result)
+                    print("\n\n\(result) would be appended\n\n")
+                    print("\n\(self.namesArray.count) is the size of the array")
+                    self.counter += 1
+                }
+            }
+        }
+        
+        if (loginCredentials.count > 0 ){ login = true}
+        
+        return login
+    }
     
     
     

@@ -21,7 +21,8 @@ class SignInViewController: UIViewController, UIPopoverPresentationControllerDel
     
     @IBOutlet weak var passwordEmail: UITextField!
     
-    
+    //  Invoke the class CloudKitEngine for saving data in the cloud
+    let cloudKitEng = CloudKitEngine()
     
     override func viewDidLoad() {
         super.viewDidLoad()

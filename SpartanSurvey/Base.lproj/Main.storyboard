@@ -610,9 +610,6 @@
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUf-2t-dFx">
                                         <rect key="frame" x="233" y="120" width="51" height="30"/>
                                         <state key="normal" title="Sign In "/>
-                                        <connections>
-                                            <segue destination="Od4-BU-Q6j" kind="show" id="WnY-ui-c6T"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Wr-bu-jsE">
                                         <rect key="frame" x="21" y="120" width="124" height="30"/>
