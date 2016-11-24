@@ -1023,17 +1023,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="RdH-CU-6aI">
-                                <rect key="frame" x="0.0" y="149" width="375" height="0.0"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" id="VbZ-XB-BNG"/>
-                                </constraints>
-                                <date key="date" timeIntervalSinceReferenceDate="501648301.12416601">
-                                    <!--2016-11-24 02:45:01 +0000-->
-                                </date>
-                            </datePicker>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tgE-j0-nhz">
+                            <pickerView contentMode="scaleToFill" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="tgE-j0-nhz">
                                 <rect key="frame" x="16" y="145" width="343" height="60"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="xCt-No-0bh" id="7ka-Cm-fx5"/>
+                                    <outlet property="delegate" destination="xCt-No-0bh" id="GCS-Tl-ao2"/>
+                                </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorite breakfast: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27l-fv-t3A">
                                 <rect key="frame" x="16" y="213" width="343" height="21"/>
@@ -1043,6 +1038,10 @@
                             </label>
                             <pickerView contentMode="scaleToFill" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="otG-9b-ZIe">
                                 <rect key="frame" x="16" y="238" width="343" height="60"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="xCt-No-0bh" id="wFO-Hb-gOm"/>
+                                    <outlet property="delegate" destination="xCt-No-0bh" id="HZg-w4-va9"/>
+                                </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorite salad: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UOS-Bl-qgR">
                                 <rect key="frame" x="16" y="302" width="343" height="21"/>
@@ -1055,6 +1054,10 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="czp-Bz-F38"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="xCt-No-0bh" id="fbQ-Wd-Nuv"/>
+                                    <outlet property="delegate" destination="xCt-No-0bh" id="jgd-8r-Jj5"/>
+                                </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorite extra:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3I-I4-Hpv">
                                 <rect key="frame" x="16" y="399" width="343" height="21"/>
@@ -1064,6 +1067,10 @@
                             </label>
                             <pickerView contentMode="scaleToFill" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="EZW-qd-jUy">
                                 <rect key="frame" x="16" y="428" width="343" height="60"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="xCt-No-0bh" id="cgE-CG-1sy"/>
+                                    <outlet property="delegate" destination="xCt-No-0bh" id="XE3-jT-apz"/>
+                                </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What would you like to see in our store?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aqo-wK-YiD">
                                 <rect key="frame" x="16" y="496" width="343" height="21"/>
@@ -1088,7 +1095,6 @@
                         <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="otG-9b-ZIe" firstAttribute="top" secondItem="27l-fv-t3A" secondAttribute="bottom" constant="4" id="1FT-IO-Cf5"/>
-                            <constraint firstItem="27l-fv-t3A" firstAttribute="top" secondItem="RdH-CU-6aI" secondAttribute="bottom" constant="64" id="1UH-r9-82P"/>
                             <constraint firstItem="ta0-9T-Khy" firstAttribute="top" secondItem="Vlw-VK-UGq" secondAttribute="bottom" constant="5" id="2GV-uu-3mH"/>
                             <constraint firstItem="27l-fv-t3A" firstAttribute="top" secondItem="tgE-j0-nhz" secondAttribute="bottom" constant="8" symbolic="YES" id="2lf-FU-oel"/>
                             <constraint firstItem="27l-fv-t3A" firstAttribute="top" secondItem="tgE-j0-nhz" secondAttribute="bottom" constant="8" id="4Cc-df-sU2"/>
@@ -1105,7 +1111,6 @@
                             <constraint firstItem="AI0-Cf-Uy8" firstAttribute="top" secondItem="UOS-Bl-qgR" secondAttribute="bottom" constant="8" id="Dst-0u-Dwo"/>
                             <constraint firstItem="Aqo-wK-YiD" firstAttribute="trailing" secondItem="Vlw-VK-UGq" secondAttribute="trailing" id="F3e-u0-TuY"/>
                             <constraint firstItem="27l-fv-t3A" firstAttribute="leading" secondItem="otG-9b-ZIe" secondAttribute="leading" id="GSK-pr-JAn"/>
-                            <constraint firstItem="27l-fv-t3A" firstAttribute="centerX" secondItem="RdH-CU-6aI" secondAttribute="centerX" id="H7O-Uz-WYY"/>
                             <constraint firstItem="27l-fv-t3A" firstAttribute="trailing" secondItem="bne-WF-ZG6" secondAttribute="trailing" id="HkC-G5-lLy"/>
                             <constraint firstAttribute="leadingMargin" secondItem="otG-9b-ZIe" secondAttribute="leading" id="Jej-73-EKk"/>
                             <constraint firstItem="AI0-Cf-Uy8" firstAttribute="top" secondItem="UOS-Bl-qgR" secondAttribute="bottom" constant="8" symbolic="YES" id="MQO-CE-9pp"/>
@@ -1116,14 +1121,12 @@
                             <constraint firstItem="27l-fv-t3A" firstAttribute="trailing" secondItem="0lb-ga-3Fh" secondAttribute="trailingMargin" id="Sr7-bh-AoY"/>
                             <constraint firstItem="AI0-Cf-Uy8" firstAttribute="top" secondItem="0lb-ga-3Fh" secondAttribute="top" constant="331" id="c7C-jT-mVl"/>
                             <constraint firstItem="tgE-j0-nhz" firstAttribute="top" secondItem="bne-WF-ZG6" secondAttribute="bottom" constant="8" id="dFj-3V-wOk"/>
-                            <constraint firstItem="RdH-CU-6aI" firstAttribute="leading" secondItem="0lb-ga-3Fh" secondAttribute="leading" id="eBE-SY-3lM"/>
                             <constraint firstAttribute="leadingMargin" secondItem="a3I-I4-Hpv" secondAttribute="leading" id="fMh-oF-aJ6"/>
                             <constraint firstItem="27l-fv-t3A" firstAttribute="trailing" secondItem="otG-9b-ZIe" secondAttribute="trailing" id="gF1-rG-ReQ"/>
                             <constraint firstItem="27l-fv-t3A" firstAttribute="trailing" secondItem="a3I-I4-Hpv" secondAttribute="trailing" id="hbr-SD-99l"/>
                             <constraint firstAttribute="leadingMargin" secondItem="bne-WF-ZG6" secondAttribute="leading" id="kxL-Lh-Zbc"/>
                             <constraint firstItem="27l-fv-t3A" firstAttribute="trailing" secondItem="tgE-j0-nhz" secondAttribute="trailing" id="mVR-jF-FSg"/>
                             <constraint firstItem="EZW-qd-jUy" firstAttribute="top" secondItem="a3I-I4-Hpv" secondAttribute="bottom" constant="8" id="moR-T2-6Xg"/>
-                            <constraint firstItem="RdH-CU-6aI" firstAttribute="top" secondItem="bne-WF-ZG6" secondAttribute="bottom" constant="12" id="mr1-wv-GiH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ta0-9T-Khy" secondAttribute="trailing" id="njG-tp-WLp"/>
                             <constraint firstItem="bne-WF-ZG6" firstAttribute="top" secondItem="TZD-q8-Ues" secondAttribute="bottom" constant="52" id="o6s-cT-wmA"/>
                             <constraint firstItem="Aqo-wK-YiD" firstAttribute="top" secondItem="EZW-qd-jUy" secondAttribute="bottom" constant="8" symbolic="YES" id="th7-6F-nkJ"/>
@@ -1134,6 +1137,12 @@
                             <constraint firstAttribute="leadingMargin" secondItem="tgE-j0-nhz" secondAttribute="leading" id="zSd-hu-1bX"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="breakFastPicker" destination="otG-9b-ZIe" id="ohc-cm-nja"/>
+                        <outlet property="extrasPicker" destination="EZW-qd-jUy" id="IOv-Fa-gw6"/>
+                        <outlet property="saladPicker" destination="AI0-Cf-Uy8" id="ibO-SA-JmN"/>
+                        <outlet property="subOfDayPicker" destination="tgE-j0-nhz" id="nCB-F8-gJP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fs5-j9-CB7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
