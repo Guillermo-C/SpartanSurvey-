@@ -15,7 +15,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SpartanSurvey" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="welcomeScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="SpartanSurvey" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -25,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdm-Kw-yVC">
-                                <rect key="frame" x="165" y="399" width="44" height="30"/>
+                                <rect key="frame" x="165" y="350" width="44" height="30"/>
                                 <state key="normal" title="Begin!"/>
                                 <connections>
                                     <action selector="showWalkThrough" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rb5-43-qnd"/>
@@ -702,7 +702,7 @@
         <!--Surveys-->
         <scene sceneID="5SJ-pd-XcI">
             <objects>
-                <viewController storyboardIdentifier="UserProfile-SurveysView" id="yCU-hR-lbM" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserProfile-SurveysView" id="yCU-hR-lbM" customClass="TakeaSurveyViewController" customModule="SpartanSurvey" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1EJ-QV-qXK"/>
                         <viewControllerLayoutGuide type="bottom" id="ucn-oS-O6G"/>
@@ -715,7 +715,11 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="Take a Survey" id="phn-Qc-QzQ">
-                                        <barButtonItem key="rightBarButtonItem" title="Sign Out" id="tE8-ax-R9T"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Sign Out" id="tE8-ax-R9T">
+                                            <connections>
+                                                <action selector="signOut:" destination="yCU-hR-lbM" id="Dgj-Pl-BPJ"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>

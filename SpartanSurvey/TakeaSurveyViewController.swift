@@ -21,6 +21,11 @@ class TakeaSurveyViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func signOut(_ sender: UIBarButtonItem) {
+        let viewC:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "welcomeScreen") as UIViewController
+        
+        self.present(viewC, animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation
