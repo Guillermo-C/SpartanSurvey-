@@ -62,7 +62,8 @@ class SignInViewController: UIViewController, UIPopoverPresentationControllerDel
             self.present(viewC, animated: true, completion: nil)
             print("Not able to find credentials")
             
-        }else{
+        }
+        if (letUserIn == false){
             present(wrongCredentialsAlert, animated: true,completion: nil)
         }
     }
