@@ -13,6 +13,7 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
     @IBOutlet weak var mcNuggetsPicker: UIPickerView!
     @IBOutlet weak var burgerPicker: UIPickerView!
     @IBOutlet weak var mcCaféPicker: UIPickerView!
+    @IBOutlet weak var saladPicker: UIPickerView!
 
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -42,6 +43,7 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
     var numberOfNuggets = ["4","6","10","20"]
     var burgerTypes = ["Big Mac", "McDouble", "Double Cheeseburger"]
     var mcCafeTypes = ["McCafé Coffee","McCafé Caramel Mocha","McCafe Latte","McCafé Peppermint Mocha","McCafé Peppermint Hot Chocolate","McCafé® Hot Chocolate"]
+    var saladTypes = ["Bacon Ranch Salad & Buttermilk Crispy Chicken","Bacon Ranch Grilled Chicken Salad","Southwest Buttermilk Crispy Chicken Salad","Southwest Grilled Chicken Salad","Side Salad"]
     
     public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
@@ -50,6 +52,9 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
         }
         if (pickerView == mcCaféPicker){
             return mcCafeTypes[row]
+        }
+        if (pickerView == saladPicker){
+            return saladTypes[row]
         }
         
         return numberOfNuggets[row]
@@ -62,6 +67,9 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
         }
         if (pickerView == mcCaféPicker){
             return mcCafeTypes.count
+        }
+        if (pickerView == saladPicker){
+            return saladTypes.count
         }
         
         return numberOfNuggets.count

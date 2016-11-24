@@ -813,7 +813,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your favorite burger?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4g-x4-Wx6">
                                 <rect key="frame" x="16" y="116" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="688-bE-tNt">
@@ -828,6 +828,7 @@
                             </pickerView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4A9-fx-b55">
                                 <rect key="frame" x="0.0" y="145" width="375" height="60"/>
+                                <color key="tintColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="UvN-mh-caI"/>
                                 </constraints>
@@ -869,6 +870,10 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Yrz-9r-oCH"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="NWw-PM-Hs6" id="9eh-VJ-JOT"/>
+                                    <outlet property="delegate" destination="NWw-PM-Hs6" id="5At-lS-OJt"/>
+                                </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Describe your overall experience with us: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcf-6U-EyJ">
                                 <rect key="frame" x="16" y="496" width="343" height="21"/>
@@ -882,8 +887,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9S-Qa-5BJ">
+                                <rect key="frame" x="313" y="580" width="46" height="30"/>
+                                <state key="normal" title="Done"/>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.94788271188735962" green="0.10510856658220291" blue="0.13147968053817749" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="688-bE-tNt" firstAttribute="leading" secondItem="M1t-fA-O93" secondAttribute="leading" id="0Af-KW-ieL"/>
                             <constraint firstItem="8PQ-oz-PlC" firstAttribute="trailing" secondItem="85d-kM-7Xv" secondAttribute="trailing" id="1K4-7u-vRe"/>
@@ -905,16 +914,19 @@
                             <constraint firstItem="KDB-3l-31G" firstAttribute="leading" secondItem="fCn-er-qxL" secondAttribute="leading" id="XUp-K3-eY1"/>
                             <constraint firstItem="r4g-x4-Wx6" firstAttribute="top" secondItem="rOI-TG-1FK" secondAttribute="bottom" constant="52" id="YtV-Aj-cfe"/>
                             <constraint firstItem="85d-kM-7Xv" firstAttribute="top" secondItem="xOh-UQ-Ylb" secondAttribute="bottom" constant="8" id="ab9-Br-aN2"/>
+                            <constraint firstItem="K9S-Qa-5BJ" firstAttribute="leading" secondItem="Jxl-md-ioq" secondAttribute="leadingMargin" constant="297" id="bgq-os-ll0"/>
                             <constraint firstItem="fcf-6U-EyJ" firstAttribute="leading" secondItem="xOh-UQ-Ylb" secondAttribute="leading" id="ddt-xE-lzl"/>
                             <constraint firstItem="r4g-x4-Wx6" firstAttribute="leading" secondItem="Jxl-md-ioq" secondAttribute="leadingMargin" id="eT8-Jd-siW"/>
                             <constraint firstItem="688-bE-tNt" firstAttribute="trailing" secondItem="4A9-fx-b55" secondAttribute="trailing" id="fdi-01-gqE"/>
                             <constraint firstItem="fcf-6U-EyJ" firstAttribute="top" secondItem="85d-kM-7Xv" secondAttribute="bottom" constant="8" id="gb7-Jm-S44"/>
                             <constraint firstItem="688-bE-tNt" firstAttribute="top" secondItem="fCn-er-qxL" secondAttribute="bottom" constant="8" symbolic="YES" id="gv6-8A-etv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="K9S-Qa-5BJ" secondAttribute="trailing" id="j4C-zB-qVU"/>
                             <constraint firstItem="fCn-er-qxL" firstAttribute="trailing" secondItem="r4g-x4-Wx6" secondAttribute="trailing" id="lUX-oA-u2H"/>
                             <constraint firstItem="8PQ-oz-PlC" firstAttribute="leading" secondItem="85d-kM-7Xv" secondAttribute="leading" id="la4-Le-24E"/>
                             <constraint firstItem="85d-kM-7Xv" firstAttribute="trailing" secondItem="M1t-fA-O93" secondAttribute="trailing" id="m5E-Gf-3DG"/>
                             <constraint firstItem="M1t-fA-O93" firstAttribute="top" secondItem="KDB-3l-31G" secondAttribute="bottom" constant="8" id="mW1-lt-MFu"/>
                             <constraint firstItem="4A9-fx-b55" firstAttribute="top" secondItem="r4g-x4-Wx6" secondAttribute="bottom" constant="8" id="rKV-Wk-VWk"/>
+                            <constraint firstItem="K9S-Qa-5BJ" firstAttribute="top" secondItem="8PQ-oz-PlC" secondAttribute="bottom" constant="9" id="tqq-mb-OxS"/>
                             <constraint firstItem="xOh-UQ-Ylb" firstAttribute="trailing" secondItem="KDB-3l-31G" secondAttribute="trailing" id="uRz-FU-TJz"/>
                             <constraint firstItem="85d-kM-7Xv" firstAttribute="leading" secondItem="M1t-fA-O93" secondAttribute="leading" id="vrH-ec-k5G"/>
                             <constraint firstItem="fcf-6U-EyJ" firstAttribute="trailing" secondItem="xOh-UQ-Ylb" secondAttribute="trailing" id="wap-wX-clX"/>
@@ -925,6 +937,7 @@
                         <outlet property="burgerPicker" destination="4A9-fx-b55" id="BgO-TW-xsA"/>
                         <outlet property="mcCaféPicker" destination="M1t-fA-O93" id="cQX-kh-nTX"/>
                         <outlet property="mcNuggetsPicker" destination="688-bE-tNt" id="UX9-RJ-XuO"/>
+                        <outlet property="saladPicker" destination="85d-kM-7Xv" id="pXZ-jf-Fc5"/>
                         <outlet property="titleLabel" destination="UbG-Gv-72l" id="okM-0C-aSI"/>
                     </connections>
                 </viewController>
