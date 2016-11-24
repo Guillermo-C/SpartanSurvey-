@@ -11,6 +11,7 @@ import UIKit
 class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var mcNuggetsPicker: UIPickerView!
+    @IBOutlet weak var burgerPicker: UIPickerView!
 
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -25,6 +26,9 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
         
         mcNuggetsPicker.delegate = self
         mcNuggetsPicker.dataSource = self
+        
+        burgerPicker.delegate = self
+        burgerPicker.dataSource = self
 
         // Do any additional setup after loading the view.
     }
@@ -35,18 +39,29 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
     }
     
     var numberOfNuggets = ["1","2","3","4"]
-    
+    var burgerTypes = ["Big Mac", "McDouble", "Double Cheeseburger"]
     
     
     public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        if (pickerView == burgerPicker){
+            return burgerTypes[row]
+        }
+        
         return numberOfNuggets[row]
     }
     
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+        
+        if (pickerView == burgerPicker){
+            return burgerTypes.count
+        }
+        
         return numberOfNuggets.count
     }
     
     public func numberOfComponents(in pickerView: UIPickerView) -> Int{
+        
         return 1
     }
     /*

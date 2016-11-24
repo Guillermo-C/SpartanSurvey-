@@ -816,21 +816,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C8J-wo-jGU">
-                                <rect key="frame" x="16" y="156" width="343" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="688-bE-tNt">
-                                <rect key="frame" x="0.0" y="214" width="375" height="216"/>
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="688-bE-tNt">
+                                <rect key="frame" x="0.0" y="290" width="375" height="56"/>
                                 <connections>
                                     <outlet property="dataSource" destination="NWw-PM-Hs6" id="t6Y-0j-Yki"/>
                                     <outlet property="delegate" destination="NWw-PM-Hs6" id="GFs-cu-Xsi"/>
                                 </connections>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Chicken McNuggets you prefer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQY-pj-btU">
-                                <rect key="frame" x="16" y="194" width="323.5" height="21"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4A9-fx-b55">
+                                <rect key="frame" x="0.0" y="145" width="375" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="UvN-mh-caI"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="NWw-PM-Hs6" id="ukF-VE-kyP"/>
+                                    <outlet property="delegate" destination="NWw-PM-Hs6" id="8pb-JD-PRj"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCn-er-qxL">
+                                <rect key="frame" x="16" y="209" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -838,23 +843,22 @@
                         </subviews>
                         <color key="backgroundColor" red="0.94788271188735962" green="0.10510856658220291" blue="0.13147968053817749" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="688-bE-tNt" firstAttribute="centerX" secondItem="FQY-pj-btU" secondAttribute="centerX" constant="9.75" id="5Mb-6A-o3y"/>
+                            <constraint firstItem="4A9-fx-b55" firstAttribute="centerX" secondItem="r4g-x4-Wx6" secondAttribute="centerX" id="59g-iI-rgi"/>
+                            <constraint firstItem="4A9-fx-b55" firstAttribute="leading" secondItem="Jxl-md-ioq" secondAttribute="leading" id="71o-0O-ltk"/>
                             <constraint firstItem="UbG-Gv-72l" firstAttribute="centerX" secondItem="Jxl-md-ioq" secondAttribute="centerX" id="8dc-O3-hn8"/>
                             <constraint firstItem="r4g-x4-Wx6" firstAttribute="top" secondItem="UbG-Gv-72l" secondAttribute="bottom" constant="23" id="HlV-tu-23j"/>
+                            <constraint firstItem="688-bE-tNt" firstAttribute="top" secondItem="4A9-fx-b55" secondAttribute="bottom" constant="89" id="Lgr-aE-dd3"/>
                             <constraint firstItem="r4g-x4-Wx6" firstAttribute="centerX" secondItem="UbG-Gv-72l" secondAttribute="centerX" id="MjL-11-Yyf"/>
                             <constraint firstItem="UbG-Gv-72l" firstAttribute="top" secondItem="rOI-TG-1FK" secondAttribute="bottom" constant="8" id="RxR-rl-6zF"/>
                             <constraint firstItem="r4g-x4-Wx6" firstAttribute="top" secondItem="rOI-TG-1FK" secondAttribute="bottom" constant="52" id="YtV-Aj-cfe"/>
+                            <constraint firstItem="4A9-fx-b55" firstAttribute="trailing" secondItem="688-bE-tNt" secondAttribute="trailing" id="Zjg-B4-l6o"/>
                             <constraint firstItem="r4g-x4-Wx6" firstAttribute="leading" secondItem="Jxl-md-ioq" secondAttribute="leadingMargin" id="eT8-Jd-siW"/>
-                            <constraint firstItem="688-bE-tNt" firstAttribute="centerX" secondItem="C8J-wo-jGU" secondAttribute="centerX" id="i0x-cc-MFS"/>
-                            <constraint firstItem="r4g-x4-Wx6" firstAttribute="leading" secondItem="C8J-wo-jGU" secondAttribute="leading" id="jgN-ZK-eYQ"/>
-                            <constraint firstItem="688-bE-tNt" firstAttribute="leading" secondItem="Jxl-md-ioq" secondAttribute="leading" id="l6C-pl-H1D"/>
-                            <constraint firstItem="r4g-x4-Wx6" firstAttribute="trailing" secondItem="C8J-wo-jGU" secondAttribute="trailing" id="q8H-GC-hbg"/>
-                            <constraint firstItem="C8J-wo-jGU" firstAttribute="top" secondItem="r4g-x4-Wx6" secondAttribute="bottom" constant="19" id="qke-BW-3AM"/>
-                            <constraint firstItem="688-bE-tNt" firstAttribute="top" secondItem="FQY-pj-btU" secondAttribute="bottom" constant="-1" id="w7Y-2T-X9Y"/>
-                            <constraint firstItem="FQY-pj-btU" firstAttribute="top" secondItem="C8J-wo-jGU" secondAttribute="bottom" constant="8" id="wb5-GY-CMY"/>
+                            <constraint firstItem="4A9-fx-b55" firstAttribute="top" secondItem="r4g-x4-Wx6" secondAttribute="bottom" constant="8" id="rKV-Wk-VWk"/>
+                            <constraint firstItem="4A9-fx-b55" firstAttribute="leading" secondItem="688-bE-tNt" secondAttribute="leading" id="yAj-P6-VFj"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="burgerPicker" destination="4A9-fx-b55" id="BgO-TW-xsA"/>
                         <outlet property="mcNuggetsPicker" destination="688-bE-tNt" id="UX9-RJ-XuO"/>
                         <outlet property="titleLabel" destination="UbG-Gv-72l" id="okM-0C-aSI"/>
                     </connections>
@@ -988,7 +992,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3S5-L9-GgQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2849" y="2243"/>
+            <point key="canvasLocation" x="2848.8000000000002" y="2242.1289355322342"/>
         </scene>
         <!--Home-->
         <scene sceneID="61d-ke-gyj">
@@ -1194,6 +1198,6 @@
         <image name="funnybabypic.jpg" width="479" height="656"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Qre-Mo-Otd"/>
+        <segue reference="PA9-B6-jaZ"/>
     </inferredMetricsTieBreakers>
 </document>
