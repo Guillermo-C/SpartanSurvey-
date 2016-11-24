@@ -1008,7 +1008,7 @@
         <!--Subway-->
         <scene sceneID="ddW-WI-Kwj">
             <objects>
-                <viewController storyboardIdentifier="subwayScreen" title="Subway" id="xCt-No-0bh" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="subwayScreen" title="Subway" id="xCt-No-0bh" customClass="SubwayViewController" customModule="SpartanSurvey" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TZD-q8-Ues"/>
                         <viewControllerLayoutGuide type="bottom" id="4EM-wN-T1Q"/>
@@ -1124,6 +1124,7 @@
                             <constraint firstItem="27l-fv-t3A" firstAttribute="trailing" secondItem="tgE-j0-nhz" secondAttribute="trailing" id="mVR-jF-FSg"/>
                             <constraint firstItem="EZW-qd-jUy" firstAttribute="top" secondItem="a3I-I4-Hpv" secondAttribute="bottom" constant="8" id="moR-T2-6Xg"/>
                             <constraint firstItem="RdH-CU-6aI" firstAttribute="top" secondItem="bne-WF-ZG6" secondAttribute="bottom" constant="12" id="mr1-wv-GiH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ta0-9T-Khy" secondAttribute="trailing" id="njG-tp-WLp"/>
                             <constraint firstItem="bne-WF-ZG6" firstAttribute="top" secondItem="TZD-q8-Ues" secondAttribute="bottom" constant="52" id="o6s-cT-wmA"/>
                             <constraint firstItem="Aqo-wK-YiD" firstAttribute="top" secondItem="EZW-qd-jUy" secondAttribute="bottom" constant="8" symbolic="YES" id="th7-6F-nkJ"/>
                             <constraint firstItem="a3I-I4-Hpv" firstAttribute="top" secondItem="AI0-Cf-Uy8" secondAttribute="bottom" constant="8" symbolic="YES" id="vsG-6I-LrS"/>
