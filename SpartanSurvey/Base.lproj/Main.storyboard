@@ -503,7 +503,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRB-eO-JKt">
                                         <rect key="frame" x="262" y="12" width="22" height="22"/>
                                         <connections>
-                                            <segue destination="Qi1-0E-cH2" kind="popoverPresentation" popoverAnchorView="IRB-eO-JKt" id="sJa-ZT-mra">
+                                            <segue destination="Qi1-0E-cH2" kind="popoverPresentation" identifier="forgotPassInfoSegue" popoverAnchorView="IRB-eO-JKt" id="sJa-ZT-mra">
                                                 <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                             </segue>
                                         </connections>
@@ -1169,6 +1169,6 @@
         <image name="funnybabypic.jpg" width="479" height="656"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GH3-qh-P2t"/>
+        <segue reference="PA9-B6-jaZ"/>
     </inferredMetricsTieBreakers>
 </document>
