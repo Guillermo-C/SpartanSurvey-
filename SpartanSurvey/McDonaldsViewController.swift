@@ -12,6 +12,7 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
     
     @IBOutlet weak var mcNuggetsPicker: UIPickerView!
     @IBOutlet weak var burgerPicker: UIPickerView!
+    @IBOutlet weak var mcCaféPicker: UIPickerView!
 
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -38,14 +39,17 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
         // Dispose of any resources that can be recreated.
     }
     
-    var numberOfNuggets = ["1","2","3","4"]
+    var numberOfNuggets = ["4","6","10","20"]
     var burgerTypes = ["Big Mac", "McDouble", "Double Cheeseburger"]
-    
+    var mcCafeTypes = ["McCafé Coffee","McCafé Caramel Mocha","McCafe Latte","McCafé Peppermint Mocha","McCafé Peppermint Hot Chocolate","McCafé® Hot Chocolate"]
     
     public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
         if (pickerView == burgerPicker){
             return burgerTypes[row]
+        }
+        if (pickerView == mcCaféPicker){
+            return mcCafeTypes[row]
         }
         
         return numberOfNuggets[row]
@@ -55,6 +59,9 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
         
         if (pickerView == burgerPicker){
             return burgerTypes.count
+        }
+        if (pickerView == mcCaféPicker){
+            return mcCafeTypes.count
         }
         
         return numberOfNuggets.count
