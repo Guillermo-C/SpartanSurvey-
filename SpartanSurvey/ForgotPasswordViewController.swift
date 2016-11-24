@@ -29,6 +29,20 @@ class ForgotPasswordViewController: UIViewController, UIPopoverPresentationContr
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "forgotPassInfoSegue"{
+            
+            let viewC = segue.destination
+            let controller = viewC.popoverPresentationController
+            
+            if (controller != nil) {
+                controller?.delegate = self
+            }
+            
+        }
+    }
+    
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
     }
     
 
