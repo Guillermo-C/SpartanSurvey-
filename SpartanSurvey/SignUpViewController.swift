@@ -46,6 +46,9 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     //  Alert for when sign up form is not completed
     let formCompletionAlert = UIAlertController(title: "Complete All Fields", message: "Make sure to fill out this form completely.", preferredStyle: UIAlertControllerStyle.alert)
     
+    //  Alert for email was already registered
+    let emailRegisteredAlert = UIAlertController(title: "Invalid Email", message: "This email has already been registered.", preferredStyle: UIAlertControllerStyle.alert)
+    
     //  Invoke the class CloudKitEngine for saving data in the cloud
     let cloudKitEng = CloudKitEngine()
     
@@ -70,6 +73,11 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         //  Add action "Ok" for the formCompletionAlert
         formCompletionAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
             print("Handle Ok logic here")}))
+        
+        //  Add action "Ok" for the emailRegisteredAlert
+        emailRegisteredAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+            print("Handle Ok logic here")}))
+        
         
         //  Add an activity indicator to the UI and center it in the view
         activityIndicator.center = self.view.center
@@ -129,6 +137,7 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         }
         else{
             let email = emailEntry.text!
+            let previouslyRegistered = cloudKitEng.userRegistered(email: email)
             //let newRecordName = emailEntry.text!
             //currentPickerChoice = pickerValue
             //let inputArray = inputAsArray(in0: firstNameEntry.text!, in1: emailEntry.text!, in2: passwordEntry.text!, in3: currentPickerChoice, in4: securityQuestionAnswer.text!)
@@ -151,7 +160,8 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             
             
             
-            if (cloudKitEng.userRegistered(email: email)){
+            if (previouslyRegistered){
+                present(emailRegisteredAlert, animated: true,completion: nil)
                 print("\nUser registed before son")
             }
             else{
