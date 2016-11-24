@@ -138,7 +138,7 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         else{
             let email:String = emailEntry.text!
             let previouslyRegistered = cloudKitEng.userRegistered(email: email)
-            
+            activityIndicator.startAnimating()
             //  Continue process
             //activityIndicator.startAnimating()
             //  Stop UI interaction while data process is running
@@ -148,6 +148,7 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             
             if (previouslyRegistered){
                 present(emailRegisteredAlert, animated: true,completion: nil)
+                DispatchQueue.main.async { self.activityIndicator.stopAnimating()}
             }
             else{
                 let newRecordName:String = email
@@ -156,6 +157,7 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                 cloudKitEng.saveNewDataWRecord(record_Name: newRecordName, recordTypeName: "UserInfo", recordsToSave: inputArray, keyList: keyArray, actInd: activityIndicator)
                 print("user has not registered yet")
             }
+            
         }
 
     }
