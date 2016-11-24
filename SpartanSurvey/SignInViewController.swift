@@ -21,11 +21,20 @@ class SignInViewController: UIViewController, UIPopoverPresentationControllerDel
     
     @IBOutlet weak var passwordEntry: UITextField!
     
+    
+    //  Alert for wrong credentials
+    let wrongCredentialsAlert = UIAlertController(title: "Invalid Credentials", message: "Double-check your email and password. Or,sign up!", preferredStyle: UIAlertControllerStyle.alert)
+    
     //  Invoke the class CloudKitEngine for saving data in the cloud
     let cloudKitEng = CloudKitEngine()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //  Add action "Ok" for the wrongCredentialsAlert
+        wrongCredentialsAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+            print("Handle Ok logic here")
+        }))
 
         // Do any additional setup after loading the view.
     }
@@ -54,7 +63,7 @@ class SignInViewController: UIViewController, UIPopoverPresentationControllerDel
             print("Not able to find credentials")
             
         }else{
-
+            present(wrongCredentialsAlert, animated: true,completion: nil)
         }
     }
 
