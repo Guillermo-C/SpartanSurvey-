@@ -100,7 +100,7 @@ class CloudKitEngine{
     
     
     //  Create a method for saving data with a given record name
-    func saveNewDataWRecord(record_Name: String, recordTypeName: String, recordsToSave: [String], keyList: [String]){
+    func saveNewDataWRecord(record_Name: String, recordTypeName: String, recordsToSave: [String], keyList: [String], actInd: UIActivityIndicatorView){
         let recordId = CKRecordID(recordName: record_Name)
         let store = CKRecord(recordType: recordTypeName, recordID: recordId)
         
@@ -121,7 +121,7 @@ class CloudKitEngine{
                 }
             }
             DispatchQueue.main.async {
-                
+                actInd.stopAnimating()
             }
         }        
     }

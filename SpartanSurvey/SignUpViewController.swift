@@ -136,35 +136,24 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             present(passwordValidationAlert, animated: true,completion: nil)
         }
         else{
-            let email = emailEntry.text!
+            let email:String = emailEntry.text!
             let previouslyRegistered = cloudKitEng.userRegistered(email: email)
-            //let newRecordName = emailEntry.text!
-            //currentPickerChoice = pickerValue
-            //let inputArray = inputAsArray(in0: firstNameEntry.text!, in1: emailEntry.text!, in2: passwordEntry.text!, in3: currentPickerChoice, in4: securityQuestionAnswer.text!)
+            
             //  Continue process
             //activityIndicator.startAnimating()
             //  Stop UI interaction while data process is running
             //UIApplication.shared.beginIgnoringInteractionEvents()
-            //cloudKitEng.saveNewDataWRecord(record_Name: newRecordName, recordTypeName: "UserInfo", recordsToSave: inputArray, keyList: keyArray)
-            
-            
-            //  Code below works! 
-            //  mainly for querying through the database
-            //  might delete it soon since it's not logical having it this way
-            //cloudKitEng.checkIfUserRegistered()
-            //let something = cloudKitEng.checkIfDataAvailable()
-            //let whatever = cloudKitEng.valueOfCounter()
-            //print("\nSize of namesArray: \(cloudKitEng.namesArray.count)")
             cloudKitEng.retrieveEmails()
-            
-            
             
             
             if (previouslyRegistered){
                 present(emailRegisteredAlert, animated: true,completion: nil)
-                print("\nUser registed before son")
             }
             else{
+                let newRecordName:String = email
+                currentPickerChoice = pickerValue
+                let inputArray = inputAsArray(in0: firstNameEntry.text!, in1: emailEntry.text!, in2: passwordEntry.text!, in3: currentPickerChoice, in4: securityQuestionAnswer.text!)
+                cloudKitEng.saveNewDataWRecord(record_Name: newRecordName, recordTypeName: "UserInfo", recordsToSave: inputArray, keyList: keyArray, actInd: activityIndicator)
                 print("user has not registered yet")
             }
         }
