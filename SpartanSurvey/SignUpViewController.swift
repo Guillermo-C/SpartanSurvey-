@@ -130,21 +130,19 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             //let newRecordName = emailEntry.text!
             //currentPickerChoice = pickerValue
             //let inputArray = inputAsArray(in0: firstNameEntry.text!, in1: emailEntry.text!, in2: passwordEntry.text!, in3: currentPickerChoice, in4: securityQuestionAnswer.text!)
-            //let userUsedPicker = didUserPick(choice: currentPickerChoice)
             //  Continue process
             //activityIndicator.startAnimating()
             //  Stop UI interaction while data process is running
             //UIApplication.shared.beginIgnoringInteractionEvents()
             //cloudKitEng.saveNewDataWRecord(record_Name: newRecordName, recordTypeName: "UserInfo", recordsToSave: inputArray, keyList: keyArray)
             
-            //  code below for checking if a user has registered works, programmatically not logically--delete after testing
-            //let checkEmail = cloudKitEng.emailAlreadyExists(email: emailEntry.text!)
-            //print("Email being tested is: \(emailEntry.text!)")
-            //print("\nContent of namesArray\n\(cloudKitEng.namesArray)\nEnd of content\n")
-            cloudKitEng.checkIfUserRegistered()
-            let something = cloudKitEng.checkIfDataAvailable()
             
-            let whatever = cloudKitEng.valueOfCounter()
+            //  Code below works! 
+            //  mainly for querying through the database
+            //  might delete it soon since it's not logical having it this way
+            //cloudKitEng.checkIfUserRegistered()
+            //let something = cloudKitEng.checkIfDataAvailable()
+            //let whatever = cloudKitEng.valueOfCounter()
             
         }
 
@@ -186,14 +184,6 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         currentPickerChoice = securityQArray[row]
         
-    }
-    
-    //  func to check if user chose from the picker an option other than one on the 0 position
-    func didUserPick(choice: String)->Bool{
-        if (choice != ""){
-            return true
-        }
-        return false
     }
     
     //  var for getting the right picker choice even when the picker was not moved

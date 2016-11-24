@@ -159,15 +159,12 @@
 				CBFECFFA1DDD5A5B00A4ECC6 /* ConsentTask.swift */,
 				CB7D4D371DC0655A00CB73A7 /* SignInViewController.swift */,
 				CB6C2D3C1DD8146D008A3DD2 /* SurveyTableViewController.swift */,
-				CB6C2D3E1DD822BF008A3DD2 /* McDonaldsViewController.swift */,
 				CB0C22241DDD3AA80008E12F /* SignUpViewController.swift */,
 				CBFECFFD1DDD5C2400A4ECC6 /* UPHomeViewController.swift */,
-				CBCB71CB1DE0192800E6D3DE /* KaiserPermanenteViewController.swift */,
-				CBC58FBD1DE236E2006F2DC1 /* CloudKitEngine.swift */,
+				CBCED22B1DE76F510046897D /* Cloud */,
 				CB6684451DE666EC003FB7CB /* ForgotPasswordViewController.swift */,
 				CB6684491DE66A75003FB7CB /* TakeaSurveyViewController.swift */,
-				CB66844B1DE6912F003FB7CB /* SubwayViewController.swift */,
-				CB66844D1DE69F51003FB7CB /* SoccerViewController.swift */,
+				CBCED22E1DE772040046897D /* Surveys */,
 			);
 			path = SpartanSurvey;
 			sourceTree = "<group>";
@@ -188,6 +185,25 @@
 				CBC58FBB1DE2343B006F2DC1 /* CloudKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CBCED22B1DE76F510046897D /* Cloud */ = {
+			isa = PBXGroup;
+			children = (
+				CBC58FBD1DE236E2006F2DC1 /* CloudKitEngine.swift */,
+			);
+			name = Cloud;
+			sourceTree = "<group>";
+		};
+		CBCED22E1DE772040046897D /* Surveys */ = {
+			isa = PBXGroup;
+			children = (
+				CBCB71CB1DE0192800E6D3DE /* KaiserPermanenteViewController.swift */,
+				CB6C2D3E1DD822BF008A3DD2 /* McDonaldsViewController.swift */,
+				CB66844B1DE6912F003FB7CB /* SubwayViewController.swift */,
+				CB66844D1DE69F51003FB7CB /* SoccerViewController.swift */,
+			);
+			name = Surveys;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
