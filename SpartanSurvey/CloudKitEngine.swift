@@ -224,6 +224,20 @@ class CloudKitEngine{
         return false
     }
     
+    func getEmailFromCred(record: [CKRecord]) -> String{
+        let email:String = record[0].value(forKey: "Email") as! String
+        print("\nEmail found is \(email)")
+        
+        return email
+    }
+    
+    func getPassFromCred(record: [CKRecord]) -> String{
+        let pass:String = record[0].value(forKey: "Password") as! String
+        print("\nEmail found is \(pass)")
+        
+        return pass
+    }
+    
     
 
     

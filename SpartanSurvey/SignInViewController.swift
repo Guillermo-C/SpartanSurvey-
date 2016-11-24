@@ -21,6 +21,11 @@ class SignInViewController: UIViewController, UIPopoverPresentationControllerDel
     
     @IBOutlet weak var passwordEntry: UITextField!
     
+    //  Save the sign in credentials 
+    var emailCred:String = ""
+    var passwordCred:String = ""
+    
+    
     
     //  Alert for wrong credentials
     let wrongCredentialsAlert = UIAlertController(title: "Invalid Credentials", message: "Double-check your email and password. Or,sign up!", preferredStyle: UIAlertControllerStyle.alert)
@@ -60,7 +65,8 @@ class SignInViewController: UIViewController, UIPopoverPresentationControllerDel
             print("\nFound credentials")
             let viewC:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "userProfileView") as UIViewController
             self.present(viewC, animated: true, completion: nil)
-            print("Not able to find credentials")
+            var email = cloudKitEng.getEmailFromCred(record: cloudKitEng.loginCredentials)
+            var password = cloudKitEng.getPassFromCred(record: cloudKitEng.loginCredentials)
             
         }
         if (letUserIn == false){
