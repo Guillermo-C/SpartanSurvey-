@@ -19,7 +19,7 @@ class SignInViewController: UIViewController, UIPopoverPresentationControllerDel
     
     @IBOutlet weak var emailEntry: UITextField!
     
-    @IBOutlet weak var passwordEmail: UITextField!
+    @IBOutlet weak var passwordEntry: UITextField!
     
     //  Invoke the class CloudKitEngine for saving data in the cloud
     let cloudKitEng = CloudKitEngine()
@@ -42,6 +42,21 @@ class SignInViewController: UIViewController, UIPopoverPresentationControllerDel
     }
     
     
+    @IBAction func signIn(_ sender: UIButton) {
+        let email = emailEntry.text!
+        let password = passwordEntry.text!
+        let checkLogin = cloudKitEng.getLogInCredentials(email: email, password: password)
+        let letUserIn = cloudKitEng.logUserIn()
+        if(letUserIn == true){
+            print("\nFound credentials")
+            let viewC:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "userProfileView") as UIViewController
+            self.present(viewC, animated: true, completion: nil)
+            print("Not able to find credentials")
+            
+        }else{
+
+        }
+    }
 
     
     // MARK: - Navigation

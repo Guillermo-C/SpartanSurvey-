@@ -610,6 +610,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUf-2t-dFx">
                                         <rect key="frame" x="233" y="120" width="51" height="30"/>
                                         <state key="normal" title="Sign In "/>
+                                        <connections>
+                                            <action selector="signIn:" destination="1Jy-PA-haE" eventType="touchUpInside" id="v9r-tz-kvP"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Wr-bu-jsE">
                                         <rect key="frame" x="21" y="120" width="124" height="30"/>
@@ -693,7 +696,7 @@
                     </view>
                     <connections>
                         <outlet property="emailEntry" destination="tV8-sM-R34" id="kUB-zP-gba"/>
-                        <outlet property="passwordEmail" destination="i44-2M-0PL" id="4yS-JT-meo"/>
+                        <outlet property="passwordEntry" destination="i44-2M-0PL" id="XS3-Kt-J0I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="grA-bJ-Hlx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1392,7 +1395,7 @@
         <!--User Profile-->
         <scene sceneID="1No-eS-sPB">
             <objects>
-                <tabBarController title="userProfileView" id="Od4-BU-Q6j" userLabel="User Profile" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="userProfileView" title="userProfileView" id="Od4-BU-Q6j" userLabel="User Profile" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Tle-qp-aNa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

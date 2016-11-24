@@ -207,20 +207,22 @@ class CloudKitEngine{
                 for result in results!{
                     self.loginCredentials.append(result)
                     print("\n\n\(result) would be appended\n\n")
-                    print("\n\(self.namesArray.count) is the size of the array")
-                    self.counter += 1
                 }
             }
         }
         
-        if (loginCredentials.count > 0 ){ login = true}
         
         return login
     }
     
     
     
-    
+    func logUserIn() -> Bool{
+        if (loginCredentials.count > 1){
+            return true
+        }
+        return false
+    }
     
     
 
