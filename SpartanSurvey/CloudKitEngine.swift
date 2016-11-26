@@ -179,7 +179,7 @@ class CloudKitEngine{
     }
     
     //  func to get the name of the user with the associated email
-    func getNameofUser(record: [CKRecord]) -> String{
+    func getNameOfUser(record: [CKRecord]) -> String{
         let pass:String = record[0].value(forKey: "FirstName") as! String
         
         return pass

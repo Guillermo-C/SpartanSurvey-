@@ -36,9 +36,11 @@ class UPHomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //welcomeLabel.text = userC.userEmail + "something"
+        //  Display greeting with proper user's name.
+        displayGreeting(label: welcomeLabel)
         
-        welcomeLabel.text = stringHoldingEmail
+        
+
         // Do any additional setup after loading the view.
     }
 
@@ -53,6 +55,10 @@ class UPHomeViewController: UIViewController {
         present(taskViewController, animated: true, completion: nil)
     }
     
+    //  func to display proper user's name
+    func displayGreeting(label: UILabel){
+        label.text = "Welcome " + nameOfUser + "!"
+    }
     
     
     

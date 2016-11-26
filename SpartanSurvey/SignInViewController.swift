@@ -13,8 +13,8 @@ import UIKit
     @objc optional func signInBackButtonPressed()
 }
 
-//  Delete this var when done testing
-var stringHoldingEmail:String = ""
+//  Name of user that logged in
+var nameOfUser:String = ""
 
 
 
@@ -79,7 +79,7 @@ class SignInViewController: UIViewController, UIPopoverPresentationControllerDel
             
             
             //  For testing only, delete when done
-            stringHoldingEmail = email
+            nameOfUser = cloudKitEng.getNameOfUser(record: cloudKitEng.loginCredentials)
             
         }
         if (letUserIn == false){
