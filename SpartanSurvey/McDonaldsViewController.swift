@@ -62,7 +62,7 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
     var mcCafeTypes = ["McCafé Coffee","McCafé Caramel Mocha","McCafe Latte","McCafé Peppermint Mocha","McCafé Peppermint Hot Chocolate","McCafé® Hot Chocolate"]
     var saladTypes = ["Bacon Ranch Salad & Buttermilk Crispy Chicken","Bacon Ranch Grilled Chicken Salad","Southwest Buttermilk Crispy Chicken Salad","Southwest Grilled Chicken Salad","Side Salad"]
     
-    var questionKeys = ["Question1","Question2","Question3","Question4","Question5"]
+    var answerKeys = ["Email","Answer1","Answer2","Answer3","Answer4","Answer5"]
     
     
     public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -118,25 +118,17 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
     }
     
     @IBAction func done(_ sender: UIButton) {
-        answerArray = getAnswerAsArray(in0: ans1, in1: ans2, in2: ans3, in3: ans4, in4: textAnswer.text!)
-        cloudKitEng.saveUserAnswerData(recordTypeName: "SurveyData", questions: questionKeys, answers: answerArray)
+        answerArray = getAnswerAsArray(email: emailOfUser,in0: ans1, in1: ans2, in2: ans3, in3: ans4, in4: textAnswer.text!)
+        cloudKitEng.saveUserAnswerData(recordTypeName: "SurveyData", answerKey: answerKeys, answers: answerArray)
         
     }
-    //  var for getting the right picker choice even when the picker was not moved
-    /*var pickerValue:String{
-        get{
-            if (currentPickerChoice == ""){
-                return securityQArray[0]
-            }
-            return currentPickerChoice
-        }
-    }*/
     
     
     //  func to put answers into an array
-    func getAnswerAsArray(in0:String, in1: String, in2:String, in3:String, in4: String) -> [String]{
+    func getAnswerAsArray(email: String, in0:String, in1: String, in2:String, in3:String, in4: String) -> [String]{
         var tempArray = [String]()
         
+        tempArray.append(email)
         tempArray.append(in0)
         tempArray.append(in1)
         tempArray.append(in2)
