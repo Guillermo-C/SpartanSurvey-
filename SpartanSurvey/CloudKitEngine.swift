@@ -254,16 +254,53 @@ class CloudKitEngine{
     
     func printAnswers(recordArray: [CKRecord], canvas: UITextView) -> [String]{
         var stringArray = [String]()
+        var count:Int = 0                    // Keep track of counter for printing values from database
+        var sizeToGo:Int = recordArray.count // Number of surveys found taken by the user
         var answerKey = ["Answer1", "Answer2", "Answer3", "Answer4", "Answer5"]
         canvas.text = ""
-        
-        for i in 0...answerKey.count - 2 {
+        var loadedAll:Bool = false
+        //  code below works, uncomment when done testing
+        /*for var i in 0...answerKey.count - 1 {
+
             let currentKey = answerKey[i]
-            let answer = recordArray[0].value(forKey: currentKey) as! NSString
+            let answer = recordArray[count].value(forKey: currentKey) as! NSString
             canvas.text = canvas.text! + (answer as String) + "\n"
             stringArray.append(answer as String)
             
+            if((i == answerKey.count - 1) && (sizeToGo > 0)){
+                i = 0
+                count = 0
+                sizeToGo -= 1
+                canvas.text = canvas.text! + "\ndid go in last if"
+                
+            }
+
             
+        }*/
+        
+        //  Code below for testing only, delete after
+        while ((sizeToGo >= 0)){
+            
+            for var i in 0...answerKey.count - 1 {
+                
+                let currentKey = answerKey[i]
+                let answer = recordArray[count].value(forKey: currentKey) as! NSString
+                canvas.text = canvas.text! + (answer as String) + "\n"
+                stringArray.append(answer as String)
+                
+                if((i == answerKey.count - 1) && (sizeToGo > 0)){
+                    i = 0
+                    count = 0
+                    sizeToGo -= 1
+                }
+
+                
+            }
+            canvas.text = canvas.text! + "\n"
+            count += 1
+            sizeToGo -= 1
+            
+           
         }
         
         
