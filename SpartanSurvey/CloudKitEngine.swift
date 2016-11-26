@@ -12,30 +12,31 @@ import UIKit
 
 class CloudKitEngine{
     
+    //  Connect to the default public database in iCloud.
     let publicDataBase = CKContainer.default().publicCloudDatabase
     
-    
+    //  Variable holding a record.
     var record: CKRecord!
     
-    
+    //  Array containing records of specified queries.
     var namesArray: Array<CKRecord> = []
     
-    var registeredEmails: Array <String> = []
-    
+    //  Array containing the login credentials (email & pasword).
     var loginCredentials: Array<CKRecord> = []
     
+    //  Array holding the registered emails.
     var emailArray = [String]()
     
-    
+    //  Var used as a counter, mainly for testing. Might delete it in the future.
     var counter:Int = 0
+    
     
     
     func checkIfUserRegistered(){
         namesArray = Array<CKRecord>()
         
         
-        //let targetEmail:String = "michael@sjsu.edu"
-        //let firstName: String = "Michael"
+
         let predicate = NSPredicate(value: true)
         let query = CKQuery(recordType: "UserInfo", predicate: predicate)
         
