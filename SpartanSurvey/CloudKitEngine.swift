@@ -166,7 +166,6 @@ class CloudKitEngine{
     //  func to retrieve the email of the user from the record obtained previously with a query
     func getEmailFromCred(record: [CKRecord]) -> String{
         let email:String = record[0].value(forKey: "Email") as! String
-        print("\nEmail found is \(email)")
         
         return email
     }
@@ -175,11 +174,16 @@ class CloudKitEngine{
     //  func to retrieve the password of the user from the record obtained previously with a query
     func getPassFromCred(record: [CKRecord]) -> String{
         let pass:String = record[0].value(forKey: "Password") as! String
-        print("\nEmail found is \(pass)")
         
         return pass
     }
     
+    //  func to get the name of the user with the associated email
+    func getNameofUser(record: [CKRecord]) -> String{
+        let pass:String = record[0].value(forKey: "FirstName") as! String
+        
+        return pass
+    }
     
 
     

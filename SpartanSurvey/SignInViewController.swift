@@ -40,9 +40,6 @@ class SignInViewController: UIViewController, UIPopoverPresentationControllerDel
     //  Invoke the class CloudKitEngine for saving data in the cloud
     let cloudKitEng = CloudKitEngine()
     
-    //  Invoke the UserCredentials class for temporary use of credentials
-    let userC = UserCredentials()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -78,8 +75,7 @@ class SignInViewController: UIViewController, UIPopoverPresentationControllerDel
             var email:String = cloudKitEng.getEmailFromCred(record: cloudKitEng.loginCredentials)
             var password = cloudKitEng.getPassFromCred(record: cloudKitEng.loginCredentials)
             
-            userC.userEmail = email
-            userC.userPassword = password
+
             
             
             //  For testing only, delete when done
