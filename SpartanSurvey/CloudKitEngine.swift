@@ -10,6 +10,13 @@ import Foundation
 import CloudKit
 import UIKit
 
+
+
+//  For testing purposes
+var recordFound = [CKRecord]()
+
+
+
 class CloudKitEngine{
     
     //  Connect to the default public database in iCloud.
@@ -215,11 +222,14 @@ class CloudKitEngine{
     }
     
     
+    //  For testing purposes
+    //var recordFound = [CKRecord]()
+    
     
     //  func to retrieve all answers with the specified email
-    func getAllAnswers(email: String) -> [CKRecord]{
+    func getAllAnswers(email: String){
         
-        var recordFound = [CKRecord]()
+        //var recordFound = [CKRecord]()
         let lookEmail = email
         let predicate = NSPredicate(format: "Email  = %@", lookEmail)
         let query = CKQuery(recordType: "SurveyData", predicate: predicate)
@@ -232,25 +242,25 @@ class CloudKitEngine{
             }
             else{
                 for result in results!{
+                    
                     recordFound.append(result)
                     print("\n\n\(result) would be appended\n\n")
                 }
             }
              print("\nThe size of the answer record is \(recordFound.count)\n")
         }
-        
-        //print("\nThe size of the answer record is \(recordFound.count)\n")
-        return recordFound
+
     }
     
-    func printAnswers(recordArray: [CKRecord]) -> [String]{
+    func printAnswers(recordArray: [CKRecord], canvas: UITextView) -> [String]{
         var stringArray = [String]()
         var answerKey = ["Answer1", "Answer2", "Answer3", "Answer4", "Answer5"]
-        
+        canvas.text = ""
         
         for i in 0...answerKey.count - 2 {
             let currentKey = answerKey[i]
             let answer = recordArray[0].value(forKey: currentKey) as! NSString
+            canvas.text = canvas.text! + (answer as String) + "\n"
             stringArray.append(answer as String)
             
             

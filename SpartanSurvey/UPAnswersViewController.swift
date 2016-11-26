@@ -9,6 +9,8 @@
 import UIKit
 import CloudKit
 
+
+
 class UPAnswersViewController: UIViewController {
 
     @IBOutlet weak var answersBlock: UITextView!
@@ -16,15 +18,27 @@ class UPAnswersViewController: UIViewController {
     //  Invoke the class CloudKitEngine for saving data in the cloud
     let cloudKitEng = CloudKitEngine()
     
-    var retrieveAns = [CKRecord]()
+    //var retrieveAns = [CKRecord]()
     
     var answerArray = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //retrieveAns = cloudKitEng.getAllAnswers(email: emailOfUser)
+        //var retrieveAns = [CKRecord]()
+        //cloudKitEng.getAllAnswers(email: emailOfUser)
+        print("\nif we were to dump the array in cloudkiteng")
+        //dump(cloudKitEng.recordFound)
+        //print("size of retrieveAns \(retrieveAns.count)")
         //answerArray = cloudKitEng.printAnswers(recordArray: retrieveAns)
-        //answersBlock.text = cloudKitEng.printAnswers(recordArray: retrieveAns)
+        //print("\n\nFrom the viewDidLoad()")
+        if(recordFound.count > 0){
+            answersBlock.text = "There is something in the recordFound array."
+        }
+        else{
+            answersBlock.text = "No data about \(nameOfUser) was found."
+        }
+        //retrieveAns = cloudKitEng.getAllAnswers(email: emailOfUser)
+
         answersBlock.isEditable = false
         // Do any additional setup after loading the view.
     }
@@ -36,14 +50,18 @@ class UPAnswersViewController: UIViewController {
     
     
     @IBAction func refresh(_ sender: UIBarButtonItem) {
-        //answerArray = cloudKitEng.printAnswers(recordArray: retrieveAns)
-        retrieveAns = cloudKitEng.getAllAnswers(email: emailOfUser)
-        dump(answerArray)
-        //answersBlock.text =  String(describing: cloudKitEng.getAllAnswers(email: emailOfUser))
+        cloudKitEng.getAllAnswers(email: emailOfUser)
+        if(recordFound.count>0){
+            //answersBlock.text = "Wait!, some data came in"
+            cloudKitEng.printAnswers(recordArray: recordFound, canvas: answersBlock)
+        }
+        
     }
     
 
-    
+    //  TODO
+    /* Apparently I am getting the answers saved in the array as wanted but still need to display them properly for the user to see
+     */
     
 
 
