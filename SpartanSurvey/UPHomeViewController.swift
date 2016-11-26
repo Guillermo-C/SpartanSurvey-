@@ -28,7 +28,7 @@ class UPHomeViewController: UIViewController {
     //  UILabel for greeting user.
     @IBOutlet weak var welcomeLabel: UILabel!
     
-    //  UILabel for displaying points earned by the user. 
+    //  UILabel for displaying points earned by the user.
     @IBOutlet weak var pointsLabel: UILabel!
     
     
@@ -39,7 +39,8 @@ class UPHomeViewController: UIViewController {
         //  Display greeting with proper user's name.
         displayGreeting(label: welcomeLabel)
         
-        
+        //  Display the points earned by the user. 
+        displayPoints(label: pointsLabel)
 
         // Do any additional setup after loading the view.
     }
@@ -60,7 +61,10 @@ class UPHomeViewController: UIViewController {
         label.text = "Welcome " + nameOfUser + "!"
     }
     
-    
+    //  func to display user's points 
+    func displayPoints(label: UILabel){
+        label.text = label.text! + userPoints
+    }
     
 
     /*
