@@ -19,7 +19,8 @@ var nameOfUser:String = ""
 //  Points of the logged in user.
 var userPoints:String = ""
 
-
+//  Email of the logged in user.
+var emailOfUser:String = ""
 
 class SignInViewController: UIViewController, UIPopoverPresentationControllerDelegate {
 
@@ -73,15 +74,14 @@ class SignInViewController: UIViewController, UIPopoverPresentationControllerDel
             print("\nFound credentials")
             let viewC:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "userProfileView") as UIViewController
             self.present(viewC, animated: true, completion: nil)
-            var email:String = cloudKitEng.getEmailFromCred(record: cloudKitEng.loginCredentials)
+            
             var password = cloudKitEng.getPassFromCred(record: cloudKitEng.loginCredentials)
             
 
-            
-            
-            //  For testing only, delete when done
+            //  Data of the user about to log in.
             nameOfUser = cloudKitEng.getNameOfUser(record: cloudKitEng.loginCredentials)
             userPoints = cloudKitEng.pointsOfUser(record: cloudKitEng.loginCredentials)
+            emailOfUser = cloudKitEng.getEmailFromCred(record: cloudKitEng.loginCredentials)
         }
         if (letUserIn == false){
             present(wrongCredentialsAlert, animated: true,completion: nil)

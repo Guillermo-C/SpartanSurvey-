@@ -193,4 +193,55 @@ class CloudKitEngine{
     }
 
     
+    //  func to save the questions 
+    func saveUserAnswerData(recordTypeName: String, questions: [String], answers: [String]){
+        let store = CKRecord(recordType: recordTypeName)
+        
+        
+        for i in 0...questions.count - 1{
+            let saveR = answers[i]
+            let recKey = questions[i]
+            
+            
+            store.setObject(saveR as CKRecordValue?, forKey: recKey)
+            publicDataBase.save(store) { (savedRecord, error) -> Void in
+                if (error != nil){
+                    print("Error, perhaps not answers were properly saved in the database")
+                }else{
+                    print("All user's responses were saved")
+                }
+            }
+            
+            
+        }
+        /*
+         
+         func saveNewDataWRecord(record_Name: String, recordTypeName: String, recordsToSave: [String], keyList: [String], actInd: UIActivityIndicatorView){
+         
+         
+         
+        let store = CKRecord(recordType: recordTypeName, recordID: recordId)
+        
+        //  Save each attribute in its corresponding key
+        for i in 0...keyList.count - 1{
+            let saveR = recordsToSave[i]
+            let recKey = keyList[i]
+            
+            
+            store.setObject(saveR as CKRecordValue?, forKey: recKey)
+            publicDataBase.save(store) { (savedRecord, error) -> Void in
+                if (error != nil){
+                    print("Error while saving data")
+                    print(error.debugDescription)
+                }
+                else{
+                    print("\n\n\n\nSweet...it worked :)")
+                }
+            }
+            DispatchQueue.main.async {
+                actInd.stopAnimating()
+            }
+        }*/
+    }
+    
 }
