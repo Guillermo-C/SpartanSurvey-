@@ -25,8 +25,12 @@ extension UPHomeViewController : ORKTaskViewControllerDelegate {
 
 class UPHomeViewController: UIViewController {
     
-    //  UILable for greeting user. 
+    //  UILabel for greeting user.
     @IBOutlet weak var welcomeLabel: UILabel!
+    
+    //  UILabel for displaying points earned by the user. 
+    @IBOutlet weak var pointsLabel: UILabel!
+    
     
 
     override func viewDidLoad() {

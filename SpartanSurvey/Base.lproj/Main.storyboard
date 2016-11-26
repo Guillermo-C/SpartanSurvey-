@@ -25,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdm-Kw-yVC">
-                                <rect key="frame" x="165" y="399" width="44" height="30"/>
+                                <rect key="frame" x="165" y="350" width="44" height="30"/>
                                 <state key="normal" title="Begin!"/>
                                 <connections>
                                     <action selector="showWalkThrough" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rb5-43-qnd"/>
@@ -1388,6 +1388,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" id="7mp-I1-GeZ"/>
                     <connections>
+                        <outlet property="pointsLabel" destination="haP-fc-FrN" id="aix-KZ-Lmq"/>
                         <outlet property="welcomeLabel" destination="Eci-9O-YoJ" id="KRS-W3-Cka"/>
                     </connections>
                 </viewController>
