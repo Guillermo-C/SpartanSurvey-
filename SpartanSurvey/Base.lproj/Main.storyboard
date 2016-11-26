@@ -25,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdm-Kw-yVC">
-                                <rect key="frame" x="165" y="350" width="44" height="30"/>
+                                <rect key="frame" x="165" y="399" width="44" height="30"/>
                                 <state key="normal" title="Begin!"/>
                                 <connections>
                                     <action selector="showWalkThrough" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rb5-43-qnd"/>
@@ -113,7 +113,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HAv-Ft-kk2">
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HAv-Ft-kk2">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44.5"/>
                                 <items>
                                     <navigationItem title="QR Code" id="jgD-Au-7z7">
@@ -125,20 +125,20 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="083-mV-5ZQ">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="083-mV-5ZQ">
                                 <rect key="frame" x="35" y="161.5" width="304" height="187.5"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="QR Code Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ADM-3U-lFl">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="QR Code Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ADM-3U-lFl">
                                         <rect key="frame" x="21" y="43.5" width="262" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FYc-Qi-vuN">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FYc-Qi-vuN">
                                         <rect key="frame" x="136.5" y="149.5" width="49" height="30"/>
                                         <state key="normal" title="Submit"/>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invalid number?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4m-9S-IZC">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Invalid number?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4m-9S-IZC">
                                         <rect key="frame" x="92" y="8" width="138" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -765,7 +765,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fac-et-EpT" id="uTJ-df-W4E">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -1276,7 +1276,7 @@
         <!--Answers-->
         <scene sceneID="YMp-Vu-VfC">
             <objects>
-                <viewController id="YPA-jj-ZSA" sceneMemberID="viewController">
+                <viewController id="YPA-jj-ZSA" customClass="UPAnswersViewController" customModule="SpartanSurvey" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eYo-8g-Fhq"/>
                         <viewControllerLayoutGuide type="bottom" id="Kla-Ac-3FC"/>
@@ -1291,11 +1291,22 @@
                                     <navigationItem title="Answers" id="zwz-u1-8SE"/>
                                 </items>
                             </navigationBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QMR-Or-QxR">
+                                <rect key="frame" x="16" y="89" width="343" height="529"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="QMR-Or-QxR" firstAttribute="bottom" secondItem="Kla-Ac-3FC" secondAttribute="top" id="3sW-cw-sgf"/>
                             <constraint firstItem="l3h-FU-BnB" firstAttribute="centerX" secondItem="teg-Zw-CYy" secondAttribute="centerX" id="4X3-H6-ehT"/>
+                            <constraint firstItem="QMR-Or-QxR" firstAttribute="centerX" secondItem="l3h-FU-BnB" secondAttribute="centerX" id="7uz-SA-TJx"/>
                             <constraint firstItem="l3h-FU-BnB" firstAttribute="leading" secondItem="teg-Zw-CYy" secondAttribute="leadingMargin" constant="-16" id="HuF-WD-fSR"/>
+                            <constraint firstItem="QMR-Or-QxR" firstAttribute="top" secondItem="l3h-FU-BnB" secondAttribute="bottom" constant="17" id="T2w-AH-fkW"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="QMR-Or-QxR" secondAttribute="leading" id="bzA-Z2-0tk"/>
                             <constraint firstItem="l3h-FU-BnB" firstAttribute="top" secondItem="eYo-8g-Fhq" secondAttribute="bottom" constant="8" id="cMf-5V-Um8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="l3h-FU-BnB" secondAttribute="trailing" constant="-16" id="gib-va-xYz"/>
                         </constraints>

@@ -29,6 +29,7 @@
 		CBC58FBC1DE2343B006F2DC1 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBC58FBB1DE2343B006F2DC1 /* CloudKit.framework */; };
 		CBC58FBE1DE236E2006F2DC1 /* CloudKitEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC58FBD1DE236E2006F2DC1 /* CloudKitEngine.swift */; };
 		CBCB71CC1DE0192800E6D3DE /* KaiserPermanenteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCB71CB1DE0192800E6D3DE /* KaiserPermanenteViewController.swift */; };
+		CBDDAF1C1DEA068000EFE0A7 /* UPAnswersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDDAF1B1DEA068000EFE0A7 /* UPAnswersViewController.swift */; };
 		CBFECFF71DDD5A4000A4ECC6 /* ConsentDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFECFF61DDD5A4000A4ECC6 /* ConsentDocument.swift */; };
 		CBFECFFB1DDD5A5B00A4ECC6 /* ConsentTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFECFFA1DDD5A5B00A4ECC6 /* ConsentTask.swift */; };
 		CBFECFFE1DDD5C2400A4ECC6 /* UPHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFECFFD1DDD5C2400A4ECC6 /* UPHomeViewController.swift */; };
@@ -97,6 +98,7 @@
 		CBC58FBB1DE2343B006F2DC1 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		CBC58FBD1DE236E2006F2DC1 /* CloudKitEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitEngine.swift; sourceTree = "<group>"; };
 		CBCB71CB1DE0192800E6D3DE /* KaiserPermanenteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KaiserPermanenteViewController.swift; sourceTree = "<group>"; };
+		CBDDAF1B1DEA068000EFE0A7 /* UPAnswersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UPAnswersViewController.swift; sourceTree = "<group>"; };
 		CBFECFF61DDD5A4000A4ECC6 /* ConsentDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentDocument.swift; sourceTree = "<group>"; };
 		CBFECFFA1DDD5A5B00A4ECC6 /* ConsentTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentTask.swift; sourceTree = "<group>"; };
 		CBFECFFD1DDD5C2400A4ECC6 /* UPHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UPHomeViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				CB6684451DE666EC003FB7CB /* ForgotPasswordViewController.swift */,
 				CB6684491DE66A75003FB7CB /* TakeaSurveyViewController.swift */,
 				CBCED22E1DE772040046897D /* Surveys */,
+				CBDDAF1B1DEA068000EFE0A7 /* UPAnswersViewController.swift */,
 			);
 			path = SpartanSurvey;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				CB66844A1DE66A75003FB7CB /* TakeaSurveyViewController.swift in Sources */,
 				CB6C2D3D1DD8146D008A3DD2 /* SurveyTableViewController.swift in Sources */,
 				CBFECFF71DDD5A4000A4ECC6 /* ConsentDocument.swift in Sources */,
+				CBDDAF1C1DEA068000EFE0A7 /* UPAnswersViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
