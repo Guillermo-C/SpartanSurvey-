@@ -31,12 +31,10 @@ class CloudKitEngine{
     var counter:Int = 0
     
     
-    
+    //  func to be used in the ViewDidLoad() in the SignUpViewController. Mainly for query-testing purposes.
     func checkIfUserRegistered(){
         namesArray = Array<CKRecord>()
         
-        
-
         let predicate = NSPredicate(value: true)
         let query = CKQuery(recordType: "UserInfo", predicate: predicate)
         
@@ -53,14 +51,10 @@ class CloudKitEngine{
                 }
             }
         }
-        
-        
-        
-        //print("\n\nThe contents of namesArray is \(namesArray)\nand its size is \(namesArray.count)\n\n")
         print("\nConunter value at end is \(counter)")
     }
 
-    
+    //  func to get all emails from the retrieved records (users registed in the system).
     func retrieveEmails(){
         print("Here would print them values")
         
@@ -71,10 +65,7 @@ class CloudKitEngine{
         }
     }
     
-    
-    
-    
-    
+    //  func that detects if the user's email is registered and exists in the system.
     func userRegistered(email: String) -> Bool{
         if (emailArray.contains(email)){
             return true
@@ -82,15 +73,7 @@ class CloudKitEngine{
         return false
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    //  Create a method for saving data with a given record name
+    //  Create a method for saving data with a given record name.
     func saveNewDataWRecord(record_Name: String, recordTypeName: String, recordsToSave: [String], keyList: [String], actInd: UIActivityIndicatorView){
         let recordId = CKRecordID(recordName: record_Name)
         let store = CKRecord(recordType: recordTypeName, recordID: recordId)
@@ -117,11 +100,6 @@ class CloudKitEngine{
         }        
     }
     
-    
-
-
-
-    
     //  Detect if user was previously and still is logged into iCloud on his phone
     func isiCloudAvailable() -> Bool {
         if FileManager.default.ubiquityIdentityToken != nil{
@@ -133,14 +111,13 @@ class CloudKitEngine{
         }
     }
     
-    //  func for printing a fetched block of data
+    //  func for printing a fetched block of data.
     func recordFetchBlock(record: CKRecord!){
         print("Fetched a record\n\n \(record)")
     }
 
     
-    
-    
+    //  func to retrieve all users registered in the system.
     func registeredUsers(){
         namesArray = Array<CKRecord>()
         let predicate = NSPredicate(value:true)
@@ -156,21 +133,6 @@ class CloudKitEngine{
                 }
             }
         }
-
-        
-        if(namesArray.count > 0 ){
-            //registration = true
-            print("\n\nThe size of namesArray is: \(namesArray.count)\n")
-
-        }
-        
-        for i in 0...namesArray.count - 1{
-            print("\nEmail: ")
-            print("\(namesArray[i].value(forKey: "Email"))\n")
-        }
-        
-        print("\nsize of namesArray is \(namesArray.count)")
-        //return registration
     }
     
     //  func get user's login credentials with the associated email
@@ -191,7 +153,6 @@ class CloudKitEngine{
             }
         }
     }
-    
     
     //  func that check is user is in fact registered with the system. If a record associated with the user, then user might log in.
     func logUserIn() -> Bool{
