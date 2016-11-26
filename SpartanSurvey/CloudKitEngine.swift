@@ -212,7 +212,54 @@ class CloudKitEngine{
                 }
             }
         }
-
     }
+    
+    
+    
+    //  func to retrieve all answers with the specified email
+    func getAllAnswers(email: String) -> [CKRecord]{
+        
+        var recordFound = [CKRecord]()
+        let lookEmail = email
+        let predicate = NSPredicate(format: "Email  = %@", lookEmail)
+        let query = CKQuery(recordType: "SurveyData", predicate: predicate)
+        
+        print("\nThe result for the 'Answers' part would be as follows. \n")
+        
+        publicDataBase.perform(query, inZoneWith: nil){ results, error in
+            if error != nil{
+                
+            }
+            else{
+                for result in results!{
+                    recordFound.append(result)
+                    print("\n\n\(result) would be appended\n\n")
+                }
+            }
+             print("\nThe size of the answer record is \(recordFound.count)\n")
+        }
+        
+        //print("\nThe size of the answer record is \(recordFound.count)\n")
+        return recordFound
+    }
+    
+    func printAnswers(recordArray: [CKRecord]) -> [String]{
+        var stringArray = [String]()
+        var answerKey = ["Answer1", "Answer2", "Answer3", "Answer4", "Answer5"]
+        
+        
+        for i in 0...answerKey.count - 2 {
+            let currentKey = answerKey[i]
+            let answer = recordArray[0].value(forKey: currentKey) as! NSString
+            stringArray.append(answer as String)
+            
+            
+        }
+        
+        
+        return stringArray
+    }
+    
+    
     
 }

@@ -162,12 +162,11 @@
 				CB7D4D371DC0655A00CB73A7 /* SignInViewController.swift */,
 				CB6C2D3C1DD8146D008A3DD2 /* SurveyTableViewController.swift */,
 				CB0C22241DDD3AA80008E12F /* SignUpViewController.swift */,
-				CBFECFFD1DDD5C2400A4ECC6 /* UPHomeViewController.swift */,
 				CBCED22B1DE76F510046897D /* Cloud */,
 				CB6684451DE666EC003FB7CB /* ForgotPasswordViewController.swift */,
 				CB6684491DE66A75003FB7CB /* TakeaSurveyViewController.swift */,
 				CBCED22E1DE772040046897D /* Surveys */,
-				CBDDAF1B1DEA068000EFE0A7 /* UPAnswersViewController.swift */,
+				CBDDAF1F1DEA0B3C00EFE0A7 /* User Profile */,
 			);
 			path = SpartanSurvey;
 			sourceTree = "<group>";
@@ -207,6 +206,15 @@
 				CB66844D1DE69F51003FB7CB /* SoccerViewController.swift */,
 			);
 			name = Surveys;
+			sourceTree = "<group>";
+		};
+		CBDDAF1F1DEA0B3C00EFE0A7 /* User Profile */ = {
+			isa = PBXGroup;
+			children = (
+				CBFECFFD1DDD5C2400A4ECC6 /* UPHomeViewController.swift */,
+				CBDDAF1B1DEA068000EFE0A7 /* UPAnswersViewController.swift */,
+			);
+			name = "User Profile";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

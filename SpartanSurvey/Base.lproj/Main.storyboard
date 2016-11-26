@@ -1288,18 +1288,23 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l3h-FU-BnB">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <items>
-                                    <navigationItem title="Answers" id="zwz-u1-8SE"/>
+                                    <navigationItem title="Answers" id="zwz-u1-8SE">
+                                        <barButtonItem key="rightBarButtonItem" title="Refresh" id="sLS-KS-gjm">
+                                            <connections>
+                                                <action selector="refresh:" destination="YPA-jj-ZSA" id="QOZ-IT-KAR"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QMR-Or-QxR">
                                 <rect key="frame" x="16" y="89" width="343" height="529"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="QMR-Or-QxR" firstAttribute="bottom" secondItem="Kla-Ac-3FC" secondAttribute="top" id="3sW-cw-sgf"/>
                             <constraint firstItem="l3h-FU-BnB" firstAttribute="centerX" secondItem="teg-Zw-CYy" secondAttribute="centerX" id="4X3-H6-ehT"/>
@@ -1312,6 +1317,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Answers" id="OGQ-J2-eiZ"/>
+                    <connections>
+                        <outlet property="answersBlock" destination="QMR-Or-QxR" id="MgN-Ca-l4F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3S5-L9-GgQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
