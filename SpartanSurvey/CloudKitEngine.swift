@@ -185,6 +185,12 @@ class CloudKitEngine{
         return pass
     }
     
+    //  func to get the points of the loggedin user
+    func pointsOfUser(record: [CKRecord]) -> String{
+        let pass:String = record[0].value(forKey: "Points") as! String
+        
+        return pass
+    }
 
     
 }

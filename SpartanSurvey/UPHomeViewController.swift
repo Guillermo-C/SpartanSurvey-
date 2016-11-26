@@ -25,13 +25,9 @@ extension UPHomeViewController : ORKTaskViewControllerDelegate {
 
 class UPHomeViewController: UIViewController {
     
-    
+    //  UILable for greeting user. 
     @IBOutlet weak var welcomeLabel: UILabel!
     
-    //  Invoke the UserCredentials class for temporary use of credentials
-    
-    
-    let signInClass = SignInViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()

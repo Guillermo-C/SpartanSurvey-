@@ -13,10 +13,11 @@ import UIKit
     @objc optional func signInBackButtonPressed()
 }
 
-//  Name of user that logged in
+//  Name of user that logged in.
 var nameOfUser:String = ""
 
-
+//  Points of the logged in user.
+var userPoints:String = ""
 
 
 
@@ -80,7 +81,7 @@ class SignInViewController: UIViewController, UIPopoverPresentationControllerDel
             
             //  For testing only, delete when done
             nameOfUser = cloudKitEng.getNameOfUser(record: cloudKitEng.loginCredentials)
-            
+            userPoints = cloudKitEng.pointsOfUser(record: cloudKitEng.loginCredentials)
         }
         if (letUserIn == false){
             present(wrongCredentialsAlert, animated: true,completion: nil)
