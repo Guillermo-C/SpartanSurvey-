@@ -17,9 +17,14 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
 
     @IBOutlet weak var titleLabel: UILabel!
     
+    //  Current picker choice
+    var currentPickerChoice:String = ""
     
+    //
     var titleString: String!
     
+    //  Array holding the answers of the user. 
+    var answerArray = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +49,9 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
     var burgerTypes = ["Big Mac", "McDouble", "Double Cheeseburger"]
     var mcCafeTypes = ["McCafé Coffee","McCafé Caramel Mocha","McCafe Latte","McCafé Peppermint Mocha","McCafé Peppermint Hot Chocolate","McCafé® Hot Chocolate"]
     var saladTypes = ["Bacon Ranch Salad & Buttermilk Crispy Chicken","Bacon Ranch Grilled Chicken Salad","Southwest Buttermilk Crispy Chicken Salad","Southwest Grilled Chicken Salad","Side Salad"]
+    
+    var questionKeys = ["Question1","Question2","Question3","Question4","Question5"]
+    
     
     public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
@@ -79,6 +87,51 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
         
         return 1
     }
+    
+    //  func for getting current picker choice
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        if (pickerView == mcNuggetsPicker){
+            currentPickerChoice = numberOfNuggets[row]
+        }
+        if (pickerView == mcCaféPicker){
+            currentPickerChoice = mcCafeTypes[row]
+        }
+        if (pickerView == saladPicker){
+            currentPickerChoice = saladTypes[row]
+        }
+        
+        currentPickerChoice = burgerTypes[row]
+        
+    }
+    
+    //  var for getting the right picker choice even when the picker was not moved
+    /*var pickerValue:String{
+        get{
+            if (currentPickerChoice == ""){
+                return securityQArray[0]
+            }
+            return currentPickerChoice
+        }
+    }*/
+    
+    
+    //  func to put answers into an array
+    func getAnswerAsArray(in0:String, in1: String, in2:String, in3:String, in4: String) -> [String]{
+        var tempArray = [String]()
+        
+        tempArray.append(in0)
+        tempArray.append(in1)
+        tempArray.append(in2)
+        tempArray.append(in3)
+        tempArray.append(in4)
+        
+        
+        return tempArray
+        
+    }
+    
+    
     /*
     // MARK: - Navigation
 
