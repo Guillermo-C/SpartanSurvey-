@@ -192,9 +192,8 @@ class CloudKitEngine{
         //return registration
     }
     
-    
-    func getLogInCredentials(email: String, password: String) -> Bool{
-        var login:Bool = false
+    //  func get user's login credentials with the associated email
+    func getLogInCredentials(email: String, password: String){
         let lookEmail = email
         let predicate = NSPredicate(format: "Email  = %@", lookEmail)
         let query = CKQuery(recordType: "UserInfo", predicate: predicate)
@@ -210,13 +209,10 @@ class CloudKitEngine{
                 }
             }
         }
-        
-        
-        return login
     }
     
     
-    
+    //  func that check is user is in fact registered with the system. If a record associated with the user, then user might log in.
     func logUserIn() -> Bool{
         if (loginCredentials.count > 1){
             return true
@@ -224,6 +220,8 @@ class CloudKitEngine{
         return false
     }
     
+    
+    //  func to retrieve the email of the user from the record obtained previously with a query
     func getEmailFromCred(record: [CKRecord]) -> String{
         let email:String = record[0].value(forKey: "Email") as! String
         print("\nEmail found is \(email)")
@@ -231,6 +229,8 @@ class CloudKitEngine{
         return email
     }
     
+    
+    //  func to retrieve the password of the user from the record obtained previously with a query
     func getPassFromCred(record: [CKRecord]) -> String{
         let pass:String = record[0].value(forKey: "Password") as! String
         print("\nEmail found is \(pass)")

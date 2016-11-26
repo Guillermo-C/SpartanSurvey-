@@ -1333,7 +1333,7 @@
                                     <constraint firstAttribute="width" constant="100" id="nVu-73-01y"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome + Name!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eci-9O-YoJ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eci-9O-YoJ">
                                 <rect key="frame" x="124" y="95" width="235" height="21"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1387,6 +1387,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" id="7mp-I1-GeZ"/>
+                    <connections>
+                        <outlet property="welcomeLabel" destination="Eci-9O-YoJ" id="KRS-W3-Cka"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F6p-JZ-StF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1506,6 +1509,6 @@
         <image name="funnybabypic.jpg" width="479" height="656"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PA9-B6-jaZ"/>
+        <segue reference="Qre-Mo-Otd"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -29,6 +29,7 @@
 		CBC58FBC1DE2343B006F2DC1 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBC58FBB1DE2343B006F2DC1 /* CloudKit.framework */; };
 		CBC58FBE1DE236E2006F2DC1 /* CloudKitEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC58FBD1DE236E2006F2DC1 /* CloudKitEngine.swift */; };
 		CBCB71CC1DE0192800E6D3DE /* KaiserPermanenteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCB71CB1DE0192800E6D3DE /* KaiserPermanenteViewController.swift */; };
+		CBCED2301DE7B7510046897D /* UserCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCED22F1DE7B7510046897D /* UserCredentials.swift */; };
 		CBFECFF71DDD5A4000A4ECC6 /* ConsentDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFECFF61DDD5A4000A4ECC6 /* ConsentDocument.swift */; };
 		CBFECFFB1DDD5A5B00A4ECC6 /* ConsentTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFECFFA1DDD5A5B00A4ECC6 /* ConsentTask.swift */; };
 		CBFECFFE1DDD5C2400A4ECC6 /* UPHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFECFFD1DDD5C2400A4ECC6 /* UPHomeViewController.swift */; };
@@ -97,6 +98,7 @@
 		CBC58FBB1DE2343B006F2DC1 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		CBC58FBD1DE236E2006F2DC1 /* CloudKitEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitEngine.swift; sourceTree = "<group>"; };
 		CBCB71CB1DE0192800E6D3DE /* KaiserPermanenteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KaiserPermanenteViewController.swift; sourceTree = "<group>"; };
+		CBCED22F1DE7B7510046897D /* UserCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCredentials.swift; sourceTree = "<group>"; };
 		CBFECFF61DDD5A4000A4ECC6 /* ConsentDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentDocument.swift; sourceTree = "<group>"; };
 		CBFECFFA1DDD5A5B00A4ECC6 /* ConsentTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentTask.swift; sourceTree = "<group>"; };
 		CBFECFFD1DDD5C2400A4ECC6 /* UPHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UPHomeViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				CB6684451DE666EC003FB7CB /* ForgotPasswordViewController.swift */,
 				CB6684491DE66A75003FB7CB /* TakeaSurveyViewController.swift */,
 				CBCED22E1DE772040046897D /* Surveys */,
+				CBCED22F1DE7B7510046897D /* UserCredentials.swift */,
 			);
 			path = SpartanSurvey;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				CB0C22251DDD3AA80008E12F /* SignUpViewController.swift in Sources */,
 				CB66844E1DE69F51003FB7CB /* SoccerViewController.swift in Sources */,
 				CB7D4D321DC0557F00CB73A7 /* BWWalkthroughPageViewController.swift in Sources */,
+				CBCED2301DE7B7510046897D /* UserCredentials.swift in Sources */,
 				CB7D4D331DC0557F00CB73A7 /* BWWalkthroughViewController.swift in Sources */,
 				CB7D4D1E1DC04D7C00CB73A7 /* ViewController.swift in Sources */,
 				CB7D4D1C1DC04D7C00CB73A7 /* AppDelegate.swift in Sources */,

@@ -24,10 +24,21 @@ extension UPHomeViewController : ORKTaskViewControllerDelegate {
 }
 
 class UPHomeViewController: UIViewController {
+    
+    
+    @IBOutlet weak var welcomeLabel: UILabel!
+    
+    //  Invoke the UserCredentials class for temporary use of credentials
+    
+    
+    let signInClass = SignInViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //welcomeLabel.text = userC.userEmail + "something"
+        
+        welcomeLabel.text = stringHoldingEmail
         // Do any additional setup after loading the view.
     }
 
@@ -41,6 +52,9 @@ class UPHomeViewController: UIViewController {
         taskViewController.delegate = self
         present(taskViewController, animated: true, completion: nil)
     }
+    
+    
+    
     
 
     /*

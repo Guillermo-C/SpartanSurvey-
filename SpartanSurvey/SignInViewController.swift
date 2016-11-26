@@ -13,6 +13,13 @@ import UIKit
     @objc optional func signInBackButtonPressed()
 }
 
+//  Delete this var when done testing
+var stringHoldingEmail:String = ""
+
+
+
+
+
 class SignInViewController: UIViewController, UIPopoverPresentationControllerDelegate {
 
     var delegate: SignInViewControllerDelegate?
@@ -32,6 +39,9 @@ class SignInViewController: UIViewController, UIPopoverPresentationControllerDel
     
     //  Invoke the class CloudKitEngine for saving data in the cloud
     let cloudKitEng = CloudKitEngine()
+    
+    //  Invoke the UserCredentials class for temporary use of credentials
+    let userC = UserCredentials()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,8 +75,15 @@ class SignInViewController: UIViewController, UIPopoverPresentationControllerDel
             print("\nFound credentials")
             let viewC:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "userProfileView") as UIViewController
             self.present(viewC, animated: true, completion: nil)
-            var email = cloudKitEng.getEmailFromCred(record: cloudKitEng.loginCredentials)
+            var email:String = cloudKitEng.getEmailFromCred(record: cloudKitEng.loginCredentials)
             var password = cloudKitEng.getPassFromCred(record: cloudKitEng.loginCredentials)
+            
+            userC.userEmail = email
+            userC.userPassword = password
+            
+            
+            //  For testing only, delete when done
+            stringHoldingEmail = email
             
         }
         if (letUserIn == false){
