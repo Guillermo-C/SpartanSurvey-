@@ -16,6 +16,7 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
     @IBOutlet weak var saladPicker: UIPickerView!
 
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var textAnswer: UITextField!
     
     //  Current picker choice
     var currentPickerChoice:String = ""
@@ -26,9 +27,20 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
     //  Array holding the answers of the user. 
     var answerArray = [String]()
     
+    //  Invoke the class CloudKitEngine for saving data in the cloud
+    let cloudKitEng = CloudKitEngine()
+    
+    var ans1:String = ""
+    var ans2:String = ""
+    var ans3:String = ""
+    var ans4:String = ""
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.titleString = "Did I even put this?"
         self.titleLabel.text = self.titleString
         
         mcNuggetsPicker.delegate = self
@@ -92,19 +104,24 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         if (pickerView == mcNuggetsPicker){
-            currentPickerChoice = numberOfNuggets[row]
+            ans2 = numberOfNuggets[row]
         }
         if (pickerView == mcCaféPicker){
-            currentPickerChoice = mcCafeTypes[row]
+            ans3 = mcCafeTypes[row]
         }
         if (pickerView == saladPicker){
-            currentPickerChoice = saladTypes[row]
+            ans4 = saladTypes[row]
         }
         
-        currentPickerChoice = burgerTypes[row]
+        ans1 = burgerTypes[row]
         
     }
     
+    @IBAction func done(_ sender: UIButton) {
+        answerArray = getAnswerAsArray(in0: ans1, in1: ans2, in2: ans3, in3: ans4, in4: textAnswer.text!)
+        cloudKitEng.saveUserAnswerData(recordTypeName: "SurveyData", questions: questionKeys, answers: answerArray)
+        
+    }
     //  var for getting the right picker choice even when the picker was not moved
     /*var pickerValue:String{
         get{

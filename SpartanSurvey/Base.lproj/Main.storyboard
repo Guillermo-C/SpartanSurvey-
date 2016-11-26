@@ -894,6 +894,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9S-Qa-5BJ">
                                 <rect key="frame" x="313" y="580" width="46" height="30"/>
                                 <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="done:" destination="NWw-PM-Hs6" eventType="touchUpInside" id="daB-o9-E7r"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -942,6 +945,7 @@
                         <outlet property="mcCaféPicker" destination="M1t-fA-O93" id="cQX-kh-nTX"/>
                         <outlet property="mcNuggetsPicker" destination="688-bE-tNt" id="UX9-RJ-XuO"/>
                         <outlet property="saladPicker" destination="85d-kM-7Xv" id="pXZ-jf-Fc5"/>
+                        <outlet property="textAnswer" destination="8PQ-oz-PlC" id="Ozt-zZ-0RZ"/>
                         <outlet property="titleLabel" destination="UbG-Gv-72l" id="okM-0C-aSI"/>
                     </connections>
                 </viewController>
@@ -1510,6 +1514,6 @@
         <image name="funnybabypic.jpg" width="479" height="656"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Qre-Mo-Otd"/>
+        <segue reference="PA9-B6-jaZ"/>
     </inferredMetricsTieBreakers>
 </document>
