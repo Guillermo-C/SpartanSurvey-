@@ -61,18 +61,6 @@ class CloudKitEngine{
     }
 
     
-    func checkIfDataAvailable() -> Bool {
-        if(namesArray.count > 0){
-            return true
-        }
-        return false
-    }
-    
-    func valueOfCounter(){
-        print("\ncounter outside of query is: \(counter)")
-    }
-    
-    
     func retrieveEmails(){
         print("Here would print them values")
         
@@ -145,23 +133,15 @@ class CloudKitEngine{
         }
     }
     
-    
+    //  func for printing a fetched block of data
     func recordFetchBlock(record: CKRecord!){
         print("Fetched a record\n\n \(record)")
     }
-    
-    
-    
-    
-    
-    
+
     
     
     
     func registeredUsers(){
-        //var registration: Bool = false
-        //let emailToLookFor:String = email
-        //actInd.startAnimating()
         namesArray = Array<CKRecord>()
         let predicate = NSPredicate(value:true)
         let query = CKQuery(recordType: "UserInfo", predicate: predicate)

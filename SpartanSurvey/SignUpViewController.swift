@@ -99,7 +99,6 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         //  Check if user has registered?
         //  Revise query, it's querying through the DB but it's not logical 
         cloudKitEng.checkIfUserRegistered()
-        //cloudKitEng.registeredUsers()
         
     }
     
