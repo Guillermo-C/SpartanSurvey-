@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var mcNuggetsPicker: UIPickerView!
@@ -113,14 +114,16 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
             ans4 = saladTypes[row]
         }
         
-        ans1 = burgerTypes[row]
+        if (pickerView == burgerPicker){
+            ans1 = burgerTypes[row]
+        }
+
         
     }
     
     @IBAction func done(_ sender: UIButton) {
         answerArray = getAnswerAsArray(email: emailOfUser,in0: ans1, in1: ans2, in2: ans3, in3: ans4, in4: textAnswer.text!)
         cloudKitEng.saveUserAnswerData(recordTypeName: "SurveyData", answerKey: answerKeys, answers: answerArray)
-        
     }
     
     

@@ -15,31 +15,18 @@ class UPAnswersViewController: UIViewController {
 
     @IBOutlet weak var answersBlock: UITextView!
     
-    //  Invoke the class CloudKitEngine for saving data in the cloud
+    //  Invoke the class CloudKitEngine for saving data in the cloud.
     let cloudKitEng = CloudKitEngine()
     
-    //var retrieveAns = [CKRecord]()
     
-    var answerArray = [String]()
-    
+    //  var to tell user to refresh to see the answers.
+    var screenDisplay:String = "Please refresh!"
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        //var retrieveAns = [CKRecord]()
-        //cloudKitEng.getAllAnswers(email: emailOfUser)
-        print("\nif we were to dump the array in cloudkiteng")
-        //dump(cloudKitEng.recordFound)
-        //print("size of retrieveAns \(retrieveAns.count)")
-        //answerArray = cloudKitEng.printAnswers(recordArray: retrieveAns)
-        //print("\n\nFrom the viewDidLoad()")
-        if(recordFound.count > 0){
-            answersBlock.text = "There is something in the recordFound array."
-        }
-        else{
-            answersBlock.text = "No data about \(nameOfUser) was found."
-        }
-        //retrieveAns = cloudKitEng.getAllAnswers(email: emailOfUser)
 
         answersBlock.isEditable = false
+        answersBlock.text = screenDisplay
         // Do any additional setup after loading the view.
     }
 
@@ -51,7 +38,7 @@ class UPAnswersViewController: UIViewController {
     
     @IBAction func refresh(_ sender: UIBarButtonItem) {
         cloudKitEng.getAllAnswers(email: emailOfUser)
-        if(recordFound.count>0){
+        if((recordFound.count > 0) && (!didRefresh(canvas: answersBlock, word: screenDisplay))){
             //answersBlock.text = "Wait!, some data came in"
             cloudKitEng.printAnswers(recordArray: recordFound, canvas: answersBlock)
         }
@@ -59,6 +46,13 @@ class UPAnswersViewController: UIViewController {
     }
     
 
+    
+    
+    //  func to check initial refreshing
+    func didRefresh(canvas: UITextView, word:String)->Bool{
+        if (canvas.text != word){ return true}
+        return false
+    }
     //  TODO
     /* Apparently I am getting the answers saved in the array as wanted but still need to display them properly for the user to see
      */

@@ -148,7 +148,6 @@
 			children = (
 				CBC58FB71DE2342B006F2DC1 /* SpartanSurvey.entitlements */,
 				CB7D4D1B1DC04D7C00CB73A7 /* AppDelegate.swift */,
-				CB7D4D1D1DC04D7C00CB73A7 /* ViewController.swift */,
 				CB7D4D1F1DC04D7C00CB73A7 /* Main.storyboard */,
 				CB0C22261DDD3EB10008E12F /* funnybabypic.jpg */,
 				CB0C28661DDD566F0008E12F /* ResearchKit.xcodeproj */,
@@ -156,15 +155,9 @@
 				CB7D4D2A1DC04D7C00CB73A7 /* Info.plist */,
 				CB7D4D221DC04D7C00CB73A7 /* SpartanSurvey.xcdatamodeld */,
 				CB7D4D341DC0559B00CB73A7 /* BMWalkthrough */,
-				CB7D4D351DC0650F00CB73A7 /* QRCodeViewController.swift */,
-				CBFECFF61DDD5A4000A4ECC6 /* ConsentDocument.swift */,
-				CBFECFFA1DDD5A5B00A4ECC6 /* ConsentTask.swift */,
-				CB7D4D371DC0655A00CB73A7 /* SignInViewController.swift */,
-				CB6C2D3C1DD8146D008A3DD2 /* SurveyTableViewController.swift */,
-				CB0C22241DDD3AA80008E12F /* SignUpViewController.swift */,
+				CB8D130A1DEA7959009BC72A /* Consent */,
+				CB8D13071DEA7916009BC72A /* Program Flow */,
 				CBCED22B1DE76F510046897D /* Cloud */,
-				CB6684451DE666EC003FB7CB /* ForgotPasswordViewController.swift */,
-				CB6684491DE66A75003FB7CB /* TakeaSurveyViewController.swift */,
 				CBCED22E1DE772040046897D /* Surveys */,
 				CBDDAF1F1DEA0B3C00EFE0A7 /* User Profile */,
 			);
@@ -179,6 +172,29 @@
 			);
 			name = BMWalkthrough;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		CB8D13071DEA7916009BC72A /* Program Flow */ = {
+			isa = PBXGroup;
+			children = (
+				CB7D4D1D1DC04D7C00CB73A7 /* ViewController.swift */,
+				CB6C2D3C1DD8146D008A3DD2 /* SurveyTableViewController.swift */,
+				CB7D4D351DC0650F00CB73A7 /* QRCodeViewController.swift */,
+				CB7D4D371DC0655A00CB73A7 /* SignInViewController.swift */,
+				CB0C22241DDD3AA80008E12F /* SignUpViewController.swift */,
+				CB6684451DE666EC003FB7CB /* ForgotPasswordViewController.swift */,
+				CB6684491DE66A75003FB7CB /* TakeaSurveyViewController.swift */,
+			);
+			name = "Program Flow";
+			sourceTree = "<group>";
+		};
+		CB8D130A1DEA7959009BC72A /* Consent */ = {
+			isa = PBXGroup;
+			children = (
+				CBFECFF61DDD5A4000A4ECC6 /* ConsentDocument.swift */,
+				CBFECFFA1DDD5A5B00A4ECC6 /* ConsentTask.swift */,
+			);
+			name = Consent;
 			sourceTree = "<group>";
 		};
 		CBC58FB81DE23436006F2DC1 /* Frameworks */ = {
