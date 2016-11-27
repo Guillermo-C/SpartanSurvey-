@@ -213,9 +213,9 @@ class CloudKitEngine{
 
     
     //  func to save the questions 
-    func saveUserAnswerData(recordTypeName: String, answerKey: [String], answers: [String]){
+    func saveUserAnswerData(recordTypeName: String, answerKey: [String], answers: [String], actInd: UIActivityIndicatorView, targetVC: UIViewController){
         let store = CKRecord(recordType: recordTypeName)
-        
+        actInd.startAnimating()
         
         for i in 0...answerKey.count - 1{
             let saveR = answers[i]
@@ -228,6 +228,11 @@ class CloudKitEngine{
                     print("Error, perhaps not answers were properly saved in the database")
                 }else{
                     print("All user's responses were saved")
+                }
+                DispatchQueue.main.async {
+                    actInd.stopAnimating()
+                    let viewC:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "userProfileView") as UIViewController
+                    targetVC.present(viewC, animated: true, completion: nil)
                 }
             }
         }

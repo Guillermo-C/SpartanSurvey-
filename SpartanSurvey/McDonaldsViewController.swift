@@ -11,6 +11,7 @@ import UIKit
 
 class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource {
     
+    
     @IBOutlet weak var mcNuggetsPicker: UIPickerView!
     @IBOutlet weak var burgerPicker: UIPickerView!
     @IBOutlet weak var mcCaféPicker: UIPickerView!
@@ -19,11 +20,9 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var textAnswer: UITextField!
     
-    //  Current picker choice
-    var currentPickerChoice:String = ""
     
     //
-    var titleString: String!
+    var titleString: String = "McDonald's"
     
     //  Array holding the answers of the user. 
     var answerArray = [String]()
@@ -31,6 +30,9 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
     //  Invoke the class CloudKitEngine for saving data in the cloud
     let cloudKitEng = CloudKitEngine()
     
+    
+    //  Activity indicator.
+    var actIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
     
     
     var numberOfNuggets = ["↓ Scroll down ↓","4","6","10","20"]
@@ -45,11 +47,11 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
     
         self.titleLabel.text = self.titleString
         
-        mcNuggetsPicker.delegate = self
-        mcNuggetsPicker.dataSource = self
-        
-        burgerPicker.delegate = self
-        burgerPicker.dataSource = self
+        //  For activity indicator
+        actIndicator.center = self.view.center
+        actIndicator.hidesWhenStopped = true
+        actIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        view.addSubview(actIndicator)
 
         // Do any additional setup after loading the view.
     }
@@ -153,7 +155,7 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
     
     @IBAction func done(_ sender: UIButton) {
         answerArray = getAnswerAsArray(email: emailOfUser,in0: ans1, in1: ans2, in2: ans3, in3: ans4, in4: textAnswer.text!)
-        cloudKitEng.saveUserAnswerData(recordTypeName: "SurveyData", answerKey: answerKeys, answers: answerArray)
+        cloudKitEng.saveUserAnswerData(recordTypeName: "SurveyData", answerKey: answerKeys, answers: answerArray, actInd: actIndicator, targetVC: self)
     }
     
     
