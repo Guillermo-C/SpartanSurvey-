@@ -143,7 +143,7 @@ class CloudKitEngine{
     }
     
     //  func get user's login credentials with the associated email
-    func getLogInCredentials(email: String, password: String, actInd: UIActivityIndicatorView, targetVC: UIViewController) -> Bool{
+    func getLogInCredentials(email: String, password: String, actInd: UIActivityIndicatorView, targetVC: UIViewController, alert: UIAlertController) -> Bool{
         let lookEmail = email
         let predicate = NSPredicate(format: "Email  = %@", lookEmail)
         let query = CKQuery(recordType: "UserInfo", predicate: predicate)
@@ -178,6 +178,7 @@ class CloudKitEngine{
                     
                 }
                 else{
+                    targetVC.present(alert, animated: true, completion: nil)
                     print("\nWRONG PASSWORD!")
                 }
             }
