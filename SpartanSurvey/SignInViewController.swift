@@ -22,6 +22,9 @@ var userPoints:String = ""
 //  Email of the logged in user.
 var emailOfUser:String = ""
 
+//  Activity indicator. 
+var actIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
+
 class SignInViewController: UIViewController, UIPopoverPresentationControllerDelegate {
 
     var delegate: SignInViewControllerDelegate?
@@ -50,6 +53,12 @@ class SignInViewController: UIViewController, UIPopoverPresentationControllerDel
             print("Handle Ok logic here")
         }))
 
+        
+        //  For activity indicator 
+        actIndicator.center = self.view.center
+        actIndicator.hidesWhenStopped = true
+        actIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        view.addSubview(actIndicator)
         // Do any additional setup after loading the view.
     }
 
@@ -68,16 +77,51 @@ class SignInViewController: UIViewController, UIPopoverPresentationControllerDel
     @IBAction func signIn(_ sender: UIButton) {
         let email = emailEntry.text!
         let password = passwordEntry.text!
-        let checkLogin = cloudKitEng.getLogInCredentials(email: email, password: password)
-        let letUserIn = cloudKitEng.logUserIn()
-        if(letUserIn == true){
+        
+        //  code below works
+        //actIndicator.startAnimating()
+        //_ = cloudKitEng.getLogInCredentials(email: email, password: password, actInd: actIndicator)
+        //let letUserIn = cloudKitEng.logUserIn()
+        
+        
+        var access:Bool = cloudKitEng.getLogInCredentials(email: email, password: password, actInd: actIndicator, targetVC: self)
+        
+
+        
+        
+        // for testing only
+        /*DispatchQueue.main.async {
+            var usrPassword = self.cloudKitEng.getPassFromCred(record: self.cloudKitEng.loginCredentials)
+            let grantAccess:Bool = self.cloudKitEng.comfirmedCred(pass: password, passCompareTo: usrPassword)
+            if(grantAccess == true){print("\nWe would grant access!")}
+        }*/
+        //var usrPassword = cloudKitEng.getPassFromCred(record: cloudKitEng.loginCredentials)
+        //let grantAccess:Bool = cloudKitEng.comfirmedCred(pass: password, passCompareTo: usrPassword)
+        //  end of for testing
+        
+        //  Delete after testing
+        /*if (grantAccess == true){
+            let viewC:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "userProfileView") as UIViewController
+            self.present(viewC, animated: true, completion: nil)
+        }*/
+
+
+        
+        
+        
+        
+        
+        
+        //  Code below works, uncomment when done testing
+        
+        /*if(letUserIn == true){
             print("\nFound credentials")
             let viewC:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "userProfileView") as UIViewController
             self.present(viewC, animated: true, completion: nil)
             
-            var password = cloudKitEng.getPassFromCred(record: cloudKitEng.loginCredentials)
+            var usrPassword = cloudKitEng.getPassFromCred(record: cloudKitEng.loginCredentials)
             
-
+            print("password of user is: \(usrPassword)")
             //  Data of the user about to log in.
             nameOfUser = cloudKitEng.getNameOfUser(record: cloudKitEng.loginCredentials)
             userPoints = cloudKitEng.pointsOfUser(record: cloudKitEng.loginCredentials)
@@ -85,7 +129,7 @@ class SignInViewController: UIViewController, UIPopoverPresentationControllerDel
         }
         if (letUserIn == false){
             present(wrongCredentialsAlert, animated: true,completion: nil)
-        }
+        }*/
     }
 
     

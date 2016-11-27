@@ -143,10 +143,13 @@ class CloudKitEngine{
     }
     
     //  func get user's login credentials with the associated email
-    func getLogInCredentials(email: String, password: String){
+    func getLogInCredentials(email: String, password: String, actInd: UIActivityIndicatorView, targetVC: UIViewController) -> Bool{
         let lookEmail = email
         let predicate = NSPredicate(format: "Email  = %@", lookEmail)
         let query = CKQuery(recordType: "UserInfo", predicate: predicate)
+        var access:Bool = false
+        actInd.startAnimating()
+        
         
         publicDataBase.perform(query, inZoneWith: nil){ results, error in
             if error != nil{
@@ -158,7 +161,30 @@ class CloudKitEngine{
                     print("\n\n\(result) would be appended\n\n")
                 }
             }
+            DispatchQueue.main.async {
+                
+                let retrievedPass:String = self.loginCredentials[0].value(forKey: "Password") as! String
+                actInd.stopAnimating()
+                
+                if (password == retrievedPass){
+                    access = true
+                    let viewC:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "userProfileView") as UIViewController
+                    targetVC.present(viewC, animated: true, completion: nil)
+                    nameOfUser = self.getNameOfUser(record: self.loginCredentials)
+                    
+        
+                    userPoints = self.pointsOfUser(record: self.loginCredentials)
+                    emailOfUser = self.getEmailFromCred(record: self.loginCredentials)
+                    
+                }
+                else{
+                    print("\nWRONG PASSWORD!")
+                }
+            }
         }
+        
+        return access
+
     }
     
     //  func that check is user is in fact registered with the system. If a record associated with the user, then user might log in.
@@ -307,6 +333,16 @@ class CloudKitEngine{
         return stringArray
     }
     
+    
+    //  func to confirm the user's credentials
+    func comfirmedCred(pass:String, passCompareTo: String)  -> Bool{
+        var confirmed:Bool = false
+        if((loginCredentials.count > 1) && (pass == passCompareTo)){
+            confirmed = true
+        }
+        
+        return confirmed
+    }
     
     
 }
