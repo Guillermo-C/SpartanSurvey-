@@ -31,17 +31,18 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
     //  Invoke the class CloudKitEngine for saving data in the cloud
     let cloudKitEng = CloudKitEngine()
     
-    var ans1:String = ""
-    var ans2:String = ""
-    var ans3:String = ""
-    var ans4:String = ""
     
     
+    var numberOfNuggets = ["↓ Scroll down ↓","4","6","10","20"]
+    var burgerTypes = ["↓ Scroll down ↓","Big Mac", "McDouble", "Double Cheeseburger"]
+    var mcCafeTypes = ["↓ Scroll down ↓","McCafé Coffee","McCafé Caramel Mocha","McCafe Latte","McCafé Peppermint Mocha","McCafé Peppermint Hot Chocolate","McCafé® Hot Chocolate"]
+    var saladTypes = ["↓ Scroll down ↓","Bacon Ranch Salad & Buttermilk Crispy Chicken","Bacon Ranch Grilled Chicken Salad","Southwest Buttermilk Crispy Chicken Salad","Southwest Grilled Chicken Salad","Side Salad"]
     
+    var answerKeys = ["Email","Answer1","Answer2","Answer3","Answer4","Answer5"]
+  
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.titleString = "Did I even put this?"
+    
         self.titleLabel.text = self.titleString
         
         mcNuggetsPicker.delegate = self
@@ -58,18 +59,47 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
         // Dispose of any resources that can be recreated.
     }
     
-    var numberOfNuggets = ["4","6","10","20"]
-    var burgerTypes = ["Big Mac", "McDouble", "Double Cheeseburger"]
-    var mcCafeTypes = ["McCafé Coffee","McCafé Caramel Mocha","McCafe Latte","McCafé Peppermint Mocha","McCafé Peppermint Hot Chocolate","McCafé® Hot Chocolate"]
-    var saladTypes = ["Bacon Ranch Salad & Buttermilk Crispy Chicken","Bacon Ranch Grilled Chicken Salad","Southwest Buttermilk Crispy Chicken Salad","Southwest Grilled Chicken Salad","Side Salad"]
+
     
-    var answerKeys = ["Email","Answer1","Answer2","Answer3","Answer4","Answer5"]
     
+    var ans1:String = ""
+    var ans2:String = ""
+    var ans3:String = ""
+    var ans4:String = ""
+    
+
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let pickerLabel = UILabel()
+        pickerLabel.textColor = UIColor.black
+        //pickerLabel.text = burgerTypes[row]
+        // pickerLabel.font = UIFont(name: pickerLabel.font.fontName, size: 15)
+        pickerLabel.font = UIFont(name: "Arial-BoldMT", size: 12) // In this use your custom font
+        pickerLabel.textAlignment = NSTextAlignment.center
+        
+        
+        if(pickerView == burgerPicker){
+            pickerLabel.text = burgerTypes[row]
+        }
+        if(pickerView == saladPicker){
+            pickerLabel.text = saladTypes[row]
+        }
+        if(pickerView == mcCaféPicker){
+            pickerLabel.text = mcCafeTypes[row]
+        }
+        if(pickerView == mcNuggetsPicker){
+            pickerLabel.text = numberOfNuggets[row]
+        }
+        
+        return pickerLabel
+    }
     
     public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        var choice:String = ""
         
         if (pickerView == burgerPicker){
-            return burgerTypes[row]
+            choice = burgerTypes[row]
+            return choice
+            //return burgerTypes[row]
         }
         if (pickerView == mcCaféPicker){
             return mcCafeTypes[row]
@@ -143,6 +173,13 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
         
     }
     
+    
+    //  func to make sure all questions involving picker get a value 
+    func checkPickVals(inString: String, array: [String]) -> String{
+        let same:String = inString
+        if(inString == ""){return array[0]}
+        return same
+    }
     
     /*
     // MARK: - Navigation

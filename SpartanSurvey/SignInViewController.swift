@@ -33,10 +33,6 @@ class SignInViewController: UIViewController, UIPopoverPresentationControllerDel
     
     @IBOutlet weak var passwordEntry: UITextField!
     
-    //  Save the sign in credentials 
-    var emailCred:String = ""
-    var passwordCred:String = ""
-    
     
     
     //  Alert for wrong credentials
