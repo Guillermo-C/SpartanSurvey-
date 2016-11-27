@@ -142,12 +142,11 @@ class CloudKitEngine{
         }
     }
     
-    //  func get user's login credentials with the associated email
-    func getLogInCredentials(email: String, password: String, actInd: UIActivityIndicatorView, targetVC: UIViewController, alert: UIAlertController) -> Bool{
+    //  func get user's login credentials with the associated email. Grant access if user provides the right credentials, alert the user otherwise.
+    func getLogInCredentials(email: String, password: String, actInd: UIActivityIndicatorView, targetVC: UIViewController, alert: UIAlertController){
         let lookEmail = email
         let predicate = NSPredicate(format: "Email  = %@", lookEmail)
         let query = CKQuery(recordType: "UserInfo", predicate: predicate)
-        var access:Bool = false
         actInd.startAnimating()
         
         
@@ -158,44 +157,30 @@ class CloudKitEngine{
             else{
                 for result in results!{
                     self.loginCredentials.append(result)
-                    print("\n\n\(result) would be appended\n\n")
                 }
             }
+            
             DispatchQueue.main.async {
-                
                 let retrievedPass:String = self.loginCredentials[0].value(forKey: "Password") as! String
                 actInd.stopAnimating()
                 
                 if (password == retrievedPass){
-                    access = true
                     let viewC:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "userProfileView") as UIViewController
                     targetVC.present(viewC, animated: true, completion: nil)
-                    nameOfUser = self.getNameOfUser(record: self.loginCredentials)
                     
-        
+                    nameOfUser = self.getNameOfUser(record: self.loginCredentials)
                     userPoints = self.pointsOfUser(record: self.loginCredentials)
                     emailOfUser = self.getEmailFromCred(record: self.loginCredentials)
                     
                 }
                 else{
                     targetVC.present(alert, animated: true, completion: nil)
-                    print("\nWRONG PASSWORD!")
                 }
             }
         }
-        
-        return access
 
     }
-    
-    //  func that check is user is in fact registered with the system. If a record associated with the user, then user might log in.
-    func logUserIn() -> Bool{
-        if (loginCredentials.count > 1){
-            return true
-        }
-        return false
-    }
-    
+
     
     //  func to retrieve the email of the user from the record obtained previously with a query
     func getEmailFromCred(record: [CKRecord]) -> String{
@@ -248,15 +233,9 @@ class CloudKitEngine{
         }
     }
     
-    
-    //  For testing purposes
-    //var recordFound = [CKRecord]()
-    
-    
     //  func to retrieve all answers with the specified email
     func getAllAnswers(email: String){
         
-        //var recordFound = [CKRecord]()
         let lookEmail = email
         let predicate = NSPredicate(format: "Email  = %@", lookEmail)
         let query = CKQuery(recordType: "SurveyData", predicate: predicate)
@@ -333,17 +312,7 @@ class CloudKitEngine{
         
         return stringArray
     }
-    
-    
-    //  func to confirm the user's credentials
-    func comfirmedCred(pass:String, passCompareTo: String)  -> Bool{
-        var confirmed:Bool = false
-        if((loginCredentials.count > 1) && (pass == passCompareTo)){
-            confirmed = true
-        }
-        
-        return confirmed
-    }
+
     
     
 }
