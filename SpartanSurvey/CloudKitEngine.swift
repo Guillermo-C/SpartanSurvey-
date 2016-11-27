@@ -213,7 +213,7 @@ class CloudKitEngine{
 
     
     //  func to save the questions 
-    func saveUserAnswerData(recordTypeName: String, answerKey: [String], answers: [String], actInd: UIActivityIndicatorView, targetVC: UIViewController){
+    func saveUserAnswerData(recordTypeName: String, answerKey: [String], answers: [String], actInd: UIActivityIndicatorView, targetVC: UIViewController, alert: UIAlertController){
         let store = CKRecord(recordType: recordTypeName)
         actInd.startAnimating()
         
@@ -231,8 +231,10 @@ class CloudKitEngine{
                 }
                 DispatchQueue.main.async {
                     actInd.stopAnimating()
-                    let viewC:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "userProfileView") as UIViewController
-                    targetVC.present(viewC, animated: true, completion: nil)
+                    //targetVC.present(alert, animated: true, completion: nil)
+                    
+                    /*let viewC:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "userProfileView") as UIViewController
+                    targetVC.present(viewC, animated: true, completion: nil)*/
                 }
             }
         }

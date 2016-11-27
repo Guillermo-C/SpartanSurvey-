@@ -41,6 +41,10 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
     var saladTypes = ["↓ Scroll down ↓","Bacon Ranch Salad & Buttermilk Crispy Chicken","Bacon Ranch Grilled Chicken Salad","Southwest Buttermilk Crispy Chicken Salad","Southwest Grilled Chicken Salad","Side Salad"]
     
     var answerKeys = ["Email","Answer1","Answer2","Answer3","Answer4","Answer5"]
+    
+    
+    //  Alert for email was already registered
+    let completionAlert = UIAlertController(title: "Congrats!", message: "You just earned 5 points. Note: points might take long to reflect", preferredStyle: UIAlertControllerStyle.alert)
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +57,15 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
         actIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
         view.addSubview(actIndicator)
 
+        
+        //  Add action "Ok" for the passwordValidationAlert
+
+        /*completionAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+            let viewC:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "userProfileView") as UIViewController
+            present(viewC, animated: true, completion: nil)
+        }))*/
+
+        
         // Do any additional setup after loading the view.
     }
 
@@ -155,7 +168,12 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
     
     @IBAction func done(_ sender: UIButton) {
         answerArray = getAnswerAsArray(email: emailOfUser,in0: ans1, in1: ans2, in2: ans3, in3: ans4, in4: textAnswer.text!)
-        cloudKitEng.saveUserAnswerData(recordTypeName: "SurveyData", answerKey: answerKeys, answers: answerArray, actInd: actIndicator, targetVC: self)
+        cloudKitEng.saveUserAnswerData(recordTypeName: "SurveyData", answerKey: answerKeys, answers: answerArray, actInd: actIndicator, targetVC: self, alert: completionAlert)
+        completionAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+            let viewC:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "userProfileView") as UIViewController
+            self.present(viewC, animated: true, completion: nil)
+        }))
+        present(completionAlert, animated: true, completion: nil)
     }
     
     
@@ -183,6 +201,8 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
         return same
     }
     
+    
+
     /*
     // MARK: - Navigation
 
