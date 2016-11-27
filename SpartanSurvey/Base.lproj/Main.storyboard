@@ -493,6 +493,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMV-k1-Pao">
                                         <rect key="frame" x="258" y="158" width="46" height="30"/>
                                         <state key="normal" title="Go "/>
+                                        <connections>
+                                            <action selector="go:" destination="Pz2-4p-cJV" eventType="touchUpInside" id="dEZ-UD-fJs"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HZP-6x-r7E">
                                         <rect key="frame" x="8" y="117" width="288" height="30"/>

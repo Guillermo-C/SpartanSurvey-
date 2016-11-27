@@ -321,5 +321,27 @@ class CloudKitEngine{
     }
 
     
+    //  func to get the answer to the security question given by the user, returns answer as String. 
+    func getSecurityQuetionAns(email: String) -> String {
+        var tempRecord = [CKRecord]()
+        let Email = email
+        let predicate = NSPredicate(format: "Email  = %@", Email)
+        let query = CKQuery(recordType: "UserInfo", predicate: predicate)
+        publicDataBase.perform(query, inZoneWith: nil){ results, error in
+            if error != nil{
+                
+            }
+            else{
+                for result in results!{
+                    tempRecord.append(result)
+                }
+            }
+
+            }
+        
+        
+        return tempRecord[0].value(forKey: "SecurityQuestionAnswer") as! String
+    }
+    
     
 }

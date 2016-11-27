@@ -12,7 +12,7 @@ class ForgotPasswordViewController: UIViewController, UIPopoverPresentationContr
     
     //  for testing only
     //  Alert for wrong credentials
-    let secQuesAlert = UIAlertController(title: "Sec Question", message: "The actual answer would come here...", preferredStyle: UIAlertControllerStyle.alert)
+    let secQuesAlert = UIAlertController(title: "Security Question", message: "The actual answer would come here...", preferredStyle: UIAlertControllerStyle.alert)
     //  end for testing
     
     
@@ -68,6 +68,11 @@ class ForgotPasswordViewController: UIViewController, UIPopoverPresentationContr
             
         }
     }
+    
+    @IBAction func go(_ sender: UIButton) {
+        present(secQuesAlert, animated: true, completion: nil)
+    }
+    
     
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
