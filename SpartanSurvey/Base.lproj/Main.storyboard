@@ -546,6 +546,9 @@
                             <constraint firstItem="uCQ-ga-PAw" firstAttribute="leading" secondItem="DGd-fJ-sph" secondAttribute="leading" id="rOB-5Q-BPH"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailEntry" destination="qSQ-7n-874" id="EKG-3s-Vy3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dhj-H3-LUG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

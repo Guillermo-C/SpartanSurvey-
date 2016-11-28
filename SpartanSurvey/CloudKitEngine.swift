@@ -320,27 +320,76 @@ class CloudKitEngine{
         return stringArray
     }
 
+    var tempRecord = [CKRecord]()
     
     //  func to get the answer to the security question given by the user, returns answer as String. 
-    func getSecurityQuetionAns(email: String) -> String {
-        var tempRecord = [CKRecord]()
+    func getSecurityQuetionAns(email: String){
+        //var tempRecord = [CKRecord]()
+        //var answer:String = ""
         let Email = email
+        var answer:String = ""
         let predicate = NSPredicate(format: "Email  = %@", Email)
         let query = CKQuery(recordType: "UserInfo", predicate: predicate)
-        publicDataBase.perform(query, inZoneWith: nil){ results, error in
+        
+        
+        if (answer == ""){
+            publicDataBase.perform(query, inZoneWith: nil){ results, error in
+                if error != nil{
+                    
+                }
+                else{
+                    for result in results!{
+                        //answer = result.value(forKey: "SecurityQuestionAnswer") as! String
+                        
+                        self.tempRecord.append(result)
+                        //temp = self.answer
+                        //answer = "Was modified"
+                        //print("\nThe answer retrieved was: \(answer)")
+                        //break
+                        //tempRecord.append(result)
+                    }
+                    //answer = tempRecord[0].value(forKey: "SecurityQuestionAnswer") as! String
+                }
+                /*DispatchQueue.main.async {
+                    answer = tempRecord[0].value(forKey: "SecurityQuestionAnswer") as! String
+                }*/
+                
+                
+            }
+        }
+
+        /*publicDataBase.perform(query, inZoneWith: nil){ results, error in
             if error != nil{
                 
             }
             else{
                 for result in results!{
-                    tempRecord.append(result)
+                    answer = result.value(forKey: "SecurityQuestionAnswer") as! String
+                    //temp = self.answer
+                    //answer = "Was modified"
+                    print("\nThe answer retrieved was: \(answer)")
+                    break
+                    //tempRecord.append(result)
                 }
+                //answer = tempRecord[0].value(forKey: "SecurityQuestionAnswer") as! String
             }
 
-            }
+            
+        }*/
+
+
         
+        //return answer
+    }
+    
+    func getAns() -> String{
         
-        return tempRecord[0].value(forKey: "SecurityQuestionAnswer") as! String
+        if(self.tempRecord.count > 0){
+            let answer:String = tempRecord[0].value(forKey: "SecurityQuestionAnswer") as! String
+            tempRecord.removeAll()
+            return answer
+        }
+        return "Nothing"
     }
     
     
