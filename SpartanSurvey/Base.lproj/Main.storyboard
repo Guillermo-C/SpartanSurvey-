@@ -547,6 +547,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="answerDisplay" destination="vr6-3w-ehv" id="4Ih-5A-3oG"/>
                         <outlet property="emailEntry" destination="qSQ-7n-874" id="EKG-3s-Vy3"/>
                     </connections>
                 </viewController>

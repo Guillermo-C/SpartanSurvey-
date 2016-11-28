@@ -21,6 +21,7 @@ class ForgotPasswordViewController: UIViewController, UIPopoverPresentationContr
     
     @IBOutlet weak var emailEntry: UITextField!
     
+    @IBOutlet weak var answerDisplay: UITextField!
     
 
     //  Invoke the class CloudKitEngine for saving data in the cloud
@@ -46,7 +47,7 @@ class ForgotPasswordViewController: UIViewController, UIPopoverPresentationContr
             self.realAnswer = self.cloudKitEng.getAns()
             self.userAnswer = textField.text!
             if(self.userAnswer == self.realAnswer){
-                
+                self.answerDisplay.text = self.realAnswer
                 print("\nThe user provided the right password\n")
             }
             //print("Text field: \(textField.text)")
