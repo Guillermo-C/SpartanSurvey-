@@ -353,11 +353,13 @@ class CloudKitEngine{
                 }
                 DispatchQueue.main.async {
                     if (self.tempRecord.count > 0){
+                        alert.textFields?.last?.isUserInteractionEnabled = true
                         alert.message = self.tempRecord[0].value(forKey: "SecurityQuestion") as! String
                         
                     }
                     if (self.tempRecord.count == 0){
                         alert.textFields?.last?.isUserInteractionEnabled = false
+                        alert.textFields?.last?.text = ""
                         alert.message = "No records were found with the email provided."
                     }
 
