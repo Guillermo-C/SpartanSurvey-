@@ -357,6 +357,7 @@ class CloudKitEngine{
                         
                     }
                     if (self.tempRecord.count == 0){
+                        alert.textFields?.last?.isUserInteractionEnabled = false
                         alert.message = "No records were found with the email provided."
                     }
 

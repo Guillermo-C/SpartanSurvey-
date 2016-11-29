@@ -50,6 +50,7 @@ class ForgotPasswordViewController: UIViewController, UIPopoverPresentationContr
         secQuesAlert.addTextField{(passwordTextField) in
             //passwordTextField.text = "Testing"
             passwordTextField.placeholder = "Type your answer here"
+            
         }
         
         
