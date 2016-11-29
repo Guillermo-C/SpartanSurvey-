@@ -27,7 +27,7 @@ class ForgotPasswordViewController: UIViewController, UIPopoverPresentationContr
     //  Invoke the class CloudKitEngine for saving data in the cloud
     let cloudKitEng = CloudKitEngine()
     
-    var realAnswer:String = ""
+   // var realAnswer:String = ""
     var userAnswer:String = ""
     
     override func viewDidLoad() {
@@ -44,13 +44,13 @@ class ForgotPasswordViewController: UIViewController, UIPopoverPresentationContr
         secQuesAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
             print("Handle Ok logic here")
             let textField = self.secQuesAlert.textFields![0] // Force unwrapping because we know it exists.
-            self.realAnswer = self.cloudKitEng.getAns()
-            self.userAnswer = textField.text!
-            if(self.userAnswer == self.realAnswer){
-                self.answerDisplay.text = self.realAnswer
+            let passW = self.cloudKitEng.getPass()  //  Password of user to be displayed if answered security question correctly.
+            let realAnswer:String = self.cloudKitEng.getAns()
+            let userAnswer:String = textField.text!
+            if(userAnswer == realAnswer){
+                self.answerDisplay.text = passW
                 print("\nThe user provided the right password\n")
             }
-            //print("Text field: \(textField.text)")
             
         }))
         

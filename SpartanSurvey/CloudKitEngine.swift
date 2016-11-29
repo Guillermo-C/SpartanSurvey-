@@ -382,6 +382,7 @@ class CloudKitEngine{
         //return answer
     }
     
+    //  func to get the answer to the security question to later on compare to user's answer.
     func getAns() -> String{
         
         if(self.tempRecord.count > 0){
@@ -389,8 +390,25 @@ class CloudKitEngine{
             tempRecord.removeAll()
             return answer
         }
-        return "Nothing"
+        return ""
     }
     
+    // func to get the password of the user. Delete the tempRecord when done.
+    func getPass() -> String{
+        if (self.tempRecord.count > 0){
+            let pass:String = tempRecord[0].value(forKey: "Password") as! String
+            return pass
+        }
+        return ""
+    }
+    
+    //  func to get the security question to be answered by the user.
+    func getSecQ() -> String{
+        if (self.tempRecord.count > 0){
+            let secQ:String = tempRecord[0].value(forKey: "SecurityQuestion") as! String
+            return secQ
+        }
+        return ""
+    }
     
 }
