@@ -13,7 +13,7 @@ class ForgotPasswordViewController: UIViewController, UIPopoverPresentationContr
     
     //  for testing only
     //  Alert for wrong credentials
-    let secQuesAlert = UIAlertController(title: "Security Question", message: "The actual answer would come here...", preferredStyle: UIAlertControllerStyle.alert)
+    let secQuesAlert = UIAlertController(title: "Security Question", message: "", preferredStyle: UIAlertControllerStyle.alert)
     //  end for testing
     
     
@@ -29,6 +29,9 @@ class ForgotPasswordViewController: UIViewController, UIPopoverPresentationContr
     
    // var realAnswer:String = ""
     var userAnswer:String = ""
+    
+    //  Activity indicator.
+    var actIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +58,14 @@ class ForgotPasswordViewController: UIViewController, UIPopoverPresentationContr
             }
             
         }))
+        
+        //  For activity indicator
+        actIndicator.center = self.view.center
+        actIndicator.hidesWhenStopped = true
+        actIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        view.addSubview(actIndicator)
+        
+        
         
 
         // Do any additional setup after loading the view.
@@ -87,14 +98,20 @@ class ForgotPasswordViewController: UIViewController, UIPopoverPresentationContr
     
     @IBAction func go(_ sender: UIButton) {
         
-        _ = cloudKitEng.getSecurityQuetionAns(email: emailEntry.text!)
+        //let alert:UIAlertController = cloudKitEng.presentAlertForForgotPass(answerDis: answerDisplay, passField: passwordTextField!, targetVC: self)
+        
+        _ = cloudKitEng.getSecurityQuetionAns(email: emailEntry.text!, alert: secQuesAlert)
+        
         
         //var doit:String = cloudKitEng.getAns()
         //print("\nThe realAnswer is: \(doit)")
         //present(secQuesAlert, animated: true, completion: nil)
         //realAnswer = cloudKitEng.getAns()
-        secQuesAlert.message = cloudKitEng.getSecQ(alert: secQuesAlert)
+        
         present(secQuesAlert, animated: true, completion: nil)
+
+        
+        
     }
     
     

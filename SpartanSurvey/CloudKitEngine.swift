@@ -323,7 +323,7 @@ class CloudKitEngine{
     var tempRecord = [CKRecord]()
     
     //  func to get the answer to the security question given by the user, returns answer as String. 
-    func getSecurityQuetionAns(email: String){
+    func getSecurityQuetionAns(email: String, alert: UIAlertController){
         //var tempRecord = [CKRecord]()
         //var answer:String = ""
         let Email = email
@@ -350,13 +350,14 @@ class CloudKitEngine{
                     }
                     //answer = tempRecord[0].value(forKey: "SecurityQuestionAnswer") as! String
                 }
-                /*DispatchQueue.main.async {
-                    answer = tempRecord[0].value(forKey: "SecurityQuestionAnswer") as! String
-                }*/
-                
+                DispatchQueue.main.async {
+                    alert.message = self.tempRecord[0].value(forKey: "SecurityQuestion") as! String
+                }
                 
             }
         }
+        
+        
 
         /*publicDataBase.perform(query, inZoneWith: nil){ results, error in
             if error != nil{
@@ -402,14 +403,6 @@ class CloudKitEngine{
         return ""
     }
     
-    //  func to get the security question to be answered by the user.
-    func getSecQ(alert: UIAlertController) -> String{
-        alert.message = "would modify it tho"
-        if (self.tempRecord.count > 0){
-            let secQ:String = tempRecord[0].value(forKey: "SecurityQuestion") as! String
-            return secQ
-        }
-        return ""
-    }
+
     
 }
