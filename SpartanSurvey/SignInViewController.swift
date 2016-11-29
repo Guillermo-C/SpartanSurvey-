@@ -75,7 +75,14 @@ class SignInViewController: UIViewController, UIPopoverPresentationControllerDel
         let password = passwordEntry.text!
         
         
-        _ = cloudKitEng.getLogInCredentials(email: email, password: password, actInd: actIndicator, targetVC: self, alert: wrongCredentialsAlert)
+        //_ = cloudKitEng.getLogInCredentials(email: email, password: password, actInd: actIndicator, targetVC: self, alert: wrongCredentialsAlert)
+        
+        // testing
+        let userProvidedCred:Bool = userProvidedCreds(emailField: emailEntry, passWField: passwordEntry)
+        
+        if (userProvidedCred == true){
+            _ = cloudKitEng.getLogInCredentials(email: email, password: password, actInd: actIndicator, targetVC: self, alert: wrongCredentialsAlert)
+        }
 
     }
 
@@ -98,6 +105,14 @@ class SignInViewController: UIViewController, UIPopoverPresentationControllerDel
     
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
+    }
+    
+    //  func to check if user provided login credentials
+    func userProvidedCreds(emailField: UITextField, passWField: UITextField) -> Bool{
+        if ((!(emailField.text?.isEmpty)!) && (!(passWField.text?.isEmpty)!)){
+            return true
+        }
+        return false
     }
     
 
