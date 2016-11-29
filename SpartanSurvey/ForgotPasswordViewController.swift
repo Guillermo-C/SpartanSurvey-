@@ -9,7 +9,7 @@
 import UIKit
 
 
-class ForgotPasswordViewController: UIViewController, UIPopoverPresentationControllerDelegate {
+class ForgotPasswordViewController: UIViewController, UIPopoverPresentationControllerDelegate, UITextFieldDelegate{
     
     //  for testing only
     //  Alert for wrong credentials
@@ -36,9 +36,16 @@ class ForgotPasswordViewController: UIViewController, UIPopoverPresentationContr
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
+        
+        
+
+        
         // user shouldn't be able to type into the answerDisplay
         answerDisplay.textColor = UIColor.blue
         answerDisplay.isUserInteractionEnabled = false
+        
         
         secQuesAlert.addTextField{(passwordTextField) in
             //passwordTextField.text = "Testing"
@@ -65,7 +72,7 @@ class ForgotPasswordViewController: UIViewController, UIPopoverPresentationContr
         actIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
         view.addSubview(actIndicator)
         
-        
+        emailEntry.delegate = self
         
 
         // Do any additional setup after loading the view.
@@ -100,7 +107,7 @@ class ForgotPasswordViewController: UIViewController, UIPopoverPresentationContr
         
         //let alert:UIAlertController = cloudKitEng.presentAlertForForgotPass(answerDis: answerDisplay, passField: passwordTextField!, targetVC: self)
         
-        _ = cloudKitEng.getSecurityQuetionAns(email: emailEntry.text!, alert: secQuesAlert)
+        _ = cloudKitEng.getSecurityQuetionAns(email: emailEntry.text!, alert: secQuesAlert, actInd: actIndicator)
         
         
         //var doit:String = cloudKitEng.getAns()
@@ -113,6 +120,17 @@ class ForgotPasswordViewController: UIViewController, UIPopoverPresentationContr
         
         
     }
+    
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if string == " " && textField == emailEntry{
+            return false
+        } else {
+            return true
+        }
+    }
+    
+
     
     
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {

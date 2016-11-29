@@ -323,11 +323,12 @@ class CloudKitEngine{
     var tempRecord = [CKRecord]()
     
     //  func to get the answer to the security question given by the user, returns answer as String. 
-    func getSecurityQuetionAns(email: String, alert: UIAlertController){
+    func getSecurityQuetionAns(email: String, alert: UIAlertController, actInd: UIActivityIndicatorView){
         //var tempRecord = [CKRecord]()
         //var answer:String = ""
+        actInd.startAnimating()
         let Email = email
-        var answer:String = ""
+        let answer:String = ""
         let predicate = NSPredicate(format: "Email  = %@", Email)
         let query = CKQuery(recordType: "UserInfo", predicate: predicate)
         
@@ -352,6 +353,7 @@ class CloudKitEngine{
                 }
                 DispatchQueue.main.async {
                     alert.message = self.tempRecord[0].value(forKey: "SecurityQuestion") as! String
+                    actInd.stopAnimating()
                 }
                 
             }
