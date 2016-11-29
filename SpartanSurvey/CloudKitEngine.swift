@@ -352,7 +352,14 @@ class CloudKitEngine{
                     //answer = tempRecord[0].value(forKey: "SecurityQuestionAnswer") as! String
                 }
                 DispatchQueue.main.async {
-                    alert.message = self.tempRecord[0].value(forKey: "SecurityQuestion") as! String
+                    if (self.tempRecord.count > 0){
+                        alert.message = self.tempRecord[0].value(forKey: "SecurityQuestion") as! String
+                        
+                    }
+                    if (self.tempRecord.count == 0){
+                        alert.message = "No records were found with the email provided."
+                    }
+
                     actInd.stopAnimating()
                 }
                 
