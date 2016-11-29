@@ -83,6 +83,9 @@ class SignInViewController: UIViewController, UIPopoverPresentationControllerDel
         if (userProvidedCred == true){
             _ = cloudKitEng.getLogInCredentials(email: email, password: password, actInd: actIndicator, targetVC: self, alert: wrongCredentialsAlert)
         }
+        else if (userProvidedCred == false){
+            present(wrongCredentialsAlert, animated: true, completion: nil)
+        }
 
     }
 

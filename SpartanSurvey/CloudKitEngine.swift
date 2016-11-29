@@ -161,7 +161,30 @@ class CloudKitEngine{
             }
             
             DispatchQueue.main.async {
-                let retrievedPass:String = self.loginCredentials[0].value(forKey: "Password") as! String
+                
+                if (self.loginCredentials.count > 0){
+                    let retrievedPass:String = self.loginCredentials[0].value(forKey: "Password") as! String
+                    actInd.stopAnimating()
+                    
+                    if (password == retrievedPass){
+                        let viewC:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "userProfileView") as UIViewController
+                        targetVC.present(viewC, animated: true, completion: nil)
+                        
+                        nameOfUser = self.getNameOfUser(record: self.loginCredentials)
+                        userPoints = self.pointsOfUser(record: self.loginCredentials)
+                        emailOfUser = self.getEmailFromCred(record: self.loginCredentials)
+                        
+                    }
+                    else{
+                        targetVC.present(alert, animated: true, completion: nil)
+                    }
+                    
+                    
+                    
+                    
+                    
+                }
+                /*let retrievedPass:String = self.loginCredentials[0].value(forKey: "Password") as! String
                 actInd.stopAnimating()
                 
                 if (password == retrievedPass){
@@ -175,7 +198,7 @@ class CloudKitEngine{
                 }
                 else{
                     targetVC.present(alert, animated: true, completion: nil)
-                }
+                }*/
             }
         }
 
