@@ -403,7 +403,8 @@ class CloudKitEngine{
     }
     
     //  func to get the security question to be answered by the user.
-    func getSecQ() -> String{
+    func getSecQ(alert: UIAlertController) -> String{
+        alert.message = "would modify it tho"
         if (self.tempRecord.count > 0){
             let secQ:String = tempRecord[0].value(forKey: "SecurityQuestion") as! String
             return secQ

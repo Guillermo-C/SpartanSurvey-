@@ -33,7 +33,9 @@ class ForgotPasswordViewController: UIViewController, UIPopoverPresentationContr
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        // user shouldn't be able to type into the answerDisplay
+        answerDisplay.textColor = UIColor.blue
+        answerDisplay.isUserInteractionEnabled = false
         
         secQuesAlert.addTextField{(passwordTextField) in
             //passwordTextField.text = "Testing"
@@ -91,6 +93,7 @@ class ForgotPasswordViewController: UIViewController, UIPopoverPresentationContr
         //print("\nThe realAnswer is: \(doit)")
         //present(secQuesAlert, animated: true, completion: nil)
         //realAnswer = cloudKitEng.getAns()
+        secQuesAlert.message = cloudKitEng.getSecQ(alert: secQuesAlert)
         present(secQuesAlert, animated: true, completion: nil)
     }
     
@@ -99,6 +102,10 @@ class ForgotPasswordViewController: UIViewController, UIPopoverPresentationContr
         return .none
     }
     
+    //  func to show the alert according to the user's settings
+    func setAlertProperly(alert: UIAlertController){
+        
+    }
     
 
 
