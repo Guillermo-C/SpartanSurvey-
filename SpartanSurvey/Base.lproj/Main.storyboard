@@ -1034,6 +1034,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sDW-SB-sWh">
                                 <rect key="frame" x="313" y="583" width="46" height="30"/>
                                 <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="done:" destination="80S-oz-90q" eventType="touchUpInside" id="Uty-Rv-gKi"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.051669247448444366" green="0.89556598663330078" blue="0.90662133693695068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1080,6 +1083,7 @@
                         <outlet property="exerciseImportancePicker" destination="CUC-yT-NuE" id="803-y6-Tf9"/>
                         <outlet property="mealsPicker" destination="dAL-aT-mPg" id="x0b-jQ-Ftl"/>
                         <outlet property="physicallyHealthyPicker" destination="2fX-aA-CfE" id="FnF-x8-nzF"/>
+                        <outlet property="textAnswer" destination="c5n-Ae-8D6" id="SV3-xw-kfQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6xL-uB-s2z" userLabel="First Responder" sceneMemberID="firstResponder"/>

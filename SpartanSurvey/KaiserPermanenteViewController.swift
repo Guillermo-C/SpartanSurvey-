@@ -26,6 +26,12 @@ class KaiserPermanenteViewController: UIViewController, UIPickerViewDelegate, UI
     @IBOutlet weak var exerciseFrequencyPicker: UIPickerView!
     @IBOutlet weak var mealsPicker: UIPickerView!
     
+    
+    @IBOutlet weak var textAnswer: UITextField!
+    
+    
+    
+    
     var physicallyHealthyTypes = ["Extremely healthy","Healthy","Not at all healthy"]
     
     var exerciseImportanceTypes = ["Extremely important","Not at all important","N/A"]
@@ -34,11 +40,26 @@ class KaiserPermanenteViewController: UIViewController, UIPickerViewDelegate, UI
     
     var mealsTypes = ["1","2","3","4", "5", "more than 5"]
     
+    //  name of the survey for identification when querying through the database
+    var companyName:String = "Kaiser"
+    
+    //  Array holding the key names to properly store the answers of the user.
+    var answerKeys = ["SurveyCompany","Email","Answer1","Answer2","Answer3","Answer4","Answer5"]
+    
     //  vars for storing the answers from the pickers.
     var ans1:String = ""
     var ans2:String = ""
     var ans3:String = ""
     var ans4:String = ""
+
+    //  Array holding the answers of the user.
+    var answerArray = [String]()
+    
+    //  Invoke the class CloudKitEngine for saving data in the cloud
+    let cloudKitEng = CloudKitEngine()
+    
+    
+    var survey =  Survey()
 
     
     //  func to apply custom font to the pickers.
@@ -127,6 +148,30 @@ class KaiserPermanenteViewController: UIViewController, UIPickerViewDelegate, UI
         return 1
     }
     
+    @IBAction func done(_ sender: Any) {
+        
+        let allPickerQsAnswered = survey.pickerQuesAnswered(in0: ans1, in1: ans2, in2: ans3, in3: ans4)
+        
+        
+        
+        
+        let missingQ = survey.missingQuestionAlert(aTitle: "default", aMessage: "default")
+        let completionAlert = survey.completionAlert(aTitle: "default", aMessage: "default", targetVC: self)
+        
+        
+        if ( allPickerQsAnswered == false){
+            
+            print("Now with the latest code.")
+            self.present(missingQ, animated: true, completion: nil)
+        }
+        else{
+            answerArray = survey.getAnswerAsArray(company: companyName,email: emailOfUser,in0: ans1, in1: ans2, in2: ans3, in3: ans4, in4: textAnswer.text!)
+            
+            cloudKitEng.saveUserAnswerData(recordTypeName: "SurveyData", answerKey: answerKeys, answers: answerArray, actInd: actIndicator, targetVC: self, alert: completionAlert)
+            
+            present(completionAlert, animated: true, completion: nil)
+        }
+    }
 
     /*
     // MARK: - Navigation
