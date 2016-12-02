@@ -963,12 +963,128 @@
                     <view key="view" contentMode="scaleToFill" id="j1N-Ri-SKC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How physically healthy are you?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZY-LF-NkG">
+                                <rect key="frame" x="16" y="116" width="244" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2fX-aA-CfE">
+                                <rect key="frame" x="16" y="145" width="343" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="p0G-8A-VQN"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="80S-oz-90q" id="zU1-UT-wMc"/>
+                                    <outlet property="delegate" destination="80S-oz-90q" id="ldP-tb-K19"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How important is exercise for you?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPm-rG-FqO">
+                                <rect key="frame" x="16" y="213" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" verticalCompressionResistancePriority="745" translatesAutoresizingMaskIntoConstraints="NO" id="CUC-yT-NuE">
+                                <rect key="frame" x="16" y="238" width="343" height="60"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="80S-oz-90q" id="vZG-dr-iQ7"/>
+                                    <outlet property="delegate" destination="80S-oz-90q" id="01E-D1-TLZ"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you do most often for exercise?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9EZ-FX-VvM">
+                                <rect key="frame" x="16" y="302" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" verticalCompressionResistancePriority="746" translatesAutoresizingMaskIntoConstraints="NO" id="ZXv-Yt-kPl">
+                                <rect key="frame" x="16" y="331" width="343" height="60"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="80S-oz-90q" id="CmQ-Sf-BCK"/>
+                                    <outlet property="delegate" destination="80S-oz-90q" id="zUE-h9-mGY"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many of your meals include fruits?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ko-TB-LO5">
+                                <rect key="frame" x="16" y="399" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="dAL-aT-mPg">
+                                <rect key="frame" x="16" y="428" width="343" height="60"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="80S-oz-90q" id="mS3-qn-d8r"/>
+                                    <outlet property="delegate" destination="80S-oz-90q" id="5iQ-Kt-sGq"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let us know what you think of this survey: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Oh-2f-rma">
+                                <rect key="frame" x="16" y="496" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="I think that this survey was..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c5n-Ae-8D6">
+                                <rect key="frame" x="16" y="545" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sDW-SB-sWh">
+                                <rect key="frame" x="313" y="583" width="46" height="30"/>
+                                <state key="normal" title="Done"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.051669247448444366" green="0.89556598663330078" blue="0.90662133693695068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="c5n-Ae-8D6" firstAttribute="top" secondItem="9Oh-2f-rma" secondAttribute="bottom" constant="28" id="07D-bd-QHi"/>
+                            <constraint firstItem="2ko-TB-LO5" firstAttribute="trailing" secondItem="sDW-SB-sWh" secondAttribute="trailing" id="0Ne-Y0-NyG"/>
+                            <constraint firstItem="2ko-TB-LO5" firstAttribute="leading" secondItem="ZXv-Yt-kPl" secondAttribute="leading" id="0Ob-D8-hzX"/>
+                            <constraint firstItem="CUC-yT-NuE" firstAttribute="top" secondItem="fPm-rG-FqO" secondAttribute="bottom" constant="4" id="1hg-wd-u3D"/>
+                            <constraint firstItem="2ko-TB-LO5" firstAttribute="trailing" secondItem="dAL-aT-mPg" secondAttribute="trailing" id="1mx-sj-FVM"/>
+                            <constraint firstItem="2ko-TB-LO5" firstAttribute="trailing" secondItem="c5n-Ae-8D6" secondAttribute="trailing" id="5N4-TZ-NTG"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="dAL-aT-mPg" secondAttribute="leading" id="7ZA-Lc-AtN"/>
+                            <constraint firstItem="2fX-aA-CfE" firstAttribute="trailing" secondItem="fPm-rG-FqO" secondAttribute="trailing" id="E9Q-yV-X9h"/>
+                            <constraint firstItem="fPm-rG-FqO" firstAttribute="trailing" secondItem="CUC-yT-NuE" secondAttribute="trailing" id="GbW-1v-xfC"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="ZXv-Yt-kPl" secondAttribute="leading" id="LZI-vO-INh"/>
+                            <constraint firstItem="9EZ-FX-VvM" firstAttribute="leading" secondItem="CUC-yT-NuE" secondAttribute="leading" id="QQP-MF-Pmo"/>
+                            <constraint firstItem="2ko-TB-LO5" firstAttribute="top" secondItem="ZXv-Yt-kPl" secondAttribute="bottom" constant="8" symbolic="YES" id="QnF-Tf-Lcp"/>
+                            <constraint firstItem="fPm-rG-FqO" firstAttribute="top" secondItem="j1N-Ri-SKC" secondAttribute="top" constant="213" id="SdX-16-xWK"/>
+                            <constraint firstItem="2fX-aA-CfE" firstAttribute="top" secondItem="uZY-LF-NkG" secondAttribute="bottom" constant="8" symbolic="YES" id="TR1-VX-PIK"/>
+                            <constraint firstItem="uZY-LF-NkG" firstAttribute="top" secondItem="j4d-w1-vZI" secondAttribute="bottom" constant="52" id="Tdp-L9-b6J"/>
+                            <constraint firstItem="2fX-aA-CfE" firstAttribute="leading" secondItem="uZY-LF-NkG" secondAttribute="leading" id="UZW-ui-KKt"/>
+                            <constraint firstAttribute="bottom" secondItem="2ko-TB-LO5" secondAttribute="bottom" constant="247" id="VxX-dv-d5e"/>
+                            <constraint firstItem="fPm-rG-FqO" firstAttribute="leading" secondItem="CUC-yT-NuE" secondAttribute="leading" id="WaO-sa-2Ub"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="c5n-Ae-8D6" secondAttribute="leading" id="Yee-4E-j8U"/>
+                            <constraint firstItem="sDW-SB-sWh" firstAttribute="top" secondItem="c5n-Ae-8D6" secondAttribute="bottom" constant="8" id="ZtG-WL-aiR"/>
+                            <constraint firstItem="hVH-CR-FZa" firstAttribute="top" secondItem="sDW-SB-sWh" secondAttribute="bottom" constant="5" id="btL-PG-UTk"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="uZY-LF-NkG" secondAttribute="leading" id="etP-kj-LvQ"/>
+                            <constraint firstItem="2ko-TB-LO5" firstAttribute="trailing" secondItem="CUC-yT-NuE" secondAttribute="trailing" id="h1o-5H-nqd"/>
+                            <constraint firstItem="2ko-TB-LO5" firstAttribute="trailing" secondItem="ZXv-Yt-kPl" secondAttribute="trailing" id="iI9-qa-q03"/>
+                            <constraint firstItem="dAL-aT-mPg" firstAttribute="top" secondItem="2ko-TB-LO5" secondAttribute="bottom" constant="8" symbolic="YES" id="inp-Aj-RbK"/>
+                            <constraint firstItem="2ko-TB-LO5" firstAttribute="trailing" secondItem="9Oh-2f-rma" secondAttribute="trailing" id="mU1-hq-puj"/>
+                            <constraint firstItem="9EZ-FX-VvM" firstAttribute="top" secondItem="j1N-Ri-SKC" secondAttribute="top" constant="302" id="mbX-3q-dAU"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="CUC-yT-NuE" secondAttribute="leading" id="oMo-72-cUO"/>
+                            <constraint firstItem="9EZ-FX-VvM" firstAttribute="top" secondItem="CUC-yT-NuE" secondAttribute="bottom" constant="4" id="oZh-ZF-GCH"/>
+                            <constraint firstItem="ZXv-Yt-kPl" firstAttribute="top" secondItem="9EZ-FX-VvM" secondAttribute="bottom" constant="8" symbolic="YES" id="r2J-dj-gk0"/>
+                            <constraint firstItem="9Oh-2f-rma" firstAttribute="top" secondItem="dAL-aT-mPg" secondAttribute="bottom" constant="8" id="rgz-Gh-0gD"/>
+                            <constraint firstItem="sDW-SB-sWh" firstAttribute="leading" secondItem="j1N-Ri-SKC" secondAttribute="leadingMargin" constant="297" id="sD1-nF-HkD"/>
+                            <constraint firstItem="9EZ-FX-VvM" firstAttribute="trailing" secondItem="CUC-yT-NuE" secondAttribute="trailing" id="xEg-ZL-exO"/>
+                            <constraint firstItem="2ko-TB-LO5" firstAttribute="trailing" secondItem="j1N-Ri-SKC" secondAttribute="trailingMargin" id="yeO-yf-b2P"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="9Oh-2f-rma" secondAttribute="leading" id="zgX-jI-Zle"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="exerciseFrequencyPicker" destination="ZXv-Yt-kPl" id="5wW-vL-SL0"/>
+                        <outlet property="exerciseImportancePicker" destination="CUC-yT-NuE" id="803-y6-Tf9"/>
+                        <outlet property="mealsPicker" destination="dAL-aT-mPg" id="x0b-jQ-Ftl"/>
+                        <outlet property="physicallyHealthyPicker" destination="2fX-aA-CfE" id="FnF-x8-nzF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6xL-uB-s2z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6720.8000000000002" y="1484.7076461769116"/>
+            <point key="canvasLocation" x="6729" y="1485"/>
         </scene>
         <!--Soccer-->
         <scene sceneID="1Ng-md-QKi">
@@ -1111,7 +1227,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XDB-ml-bnR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7418.3999999999996" y="1481.1094452773614"/>
+            <point key="canvasLocation" x="7415" y="1485"/>
         </scene>
         <!--Subway-->
         <scene sceneID="ddW-WI-Kwj">
@@ -1189,7 +1305,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vlw-VK-UGq">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="In my Subway, I would like to see..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vlw-VK-UGq">
                                 <rect key="frame" x="16" y="545" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>

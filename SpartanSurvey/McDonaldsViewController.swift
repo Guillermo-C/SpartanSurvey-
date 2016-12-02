@@ -54,8 +54,11 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
     //  Array with possible answers for the salads question.
     var saladTypes = ["↓ Scroll down ↓","Bacon Ranch Salad & Buttermilk Crispy Chicken","Bacon Ranch Grilled Chicken Salad","Southwest Buttermilk Crispy Chicken Salad","Southwest Grilled Chicken Salad","Side Salad"]
     
+    //  name of the survey for identification when querying through the database
+    var companyName:String = "McDonald's"
+    
     //  Array holding the key names to properly store the answers of the user.
-    var answerKeys = ["Email","Answer1","Answer2","Answer3","Answer4","Answer5"]
+    var answerKeys = ["SurveyCompany","Email","Answer1","Answer2","Answer3","Answer4","Answer5"]
     
     //  Alert for user when the survey is completed.
     /*let completionAlert = UIAlertController(title: "Congrats!", message: "You just earned 5 points. Note: points might take long to reflect", preferredStyle: UIAlertControllerStyle.alert)*/
@@ -203,7 +206,7 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
             self.present(missingQ, animated: true, completion: nil)
         }
         else{
-            answerArray = survey.getAnswerAsArray(email: emailOfUser,in0: ans1, in1: ans2, in2: ans3, in3: ans4, in4: textAnswer.text!)
+            answerArray = survey.getAnswerAsArray(company: companyName,email: emailOfUser,in0: ans1, in1: ans2, in2: ans3, in3: ans4, in4: textAnswer.text!)
             
             cloudKitEng.saveUserAnswerData(recordTypeName: "SurveyData", answerKey: answerKeys, answers: answerArray, actInd: actIndicator, targetVC: self, alert: completionAlert)
             

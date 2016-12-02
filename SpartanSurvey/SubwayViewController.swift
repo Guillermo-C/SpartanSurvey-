@@ -34,8 +34,11 @@ class SubwayViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     var extrasTypes = ["Pepperoni","Cheese","Bacon"]
     
+    //  name of the survey for identification when querying through the database
+    var companyName:String = "Subway"
+    
     //  Array holding the key names to properly store the answers of the user.
-    var answerKeys = ["Email","Answer1","Answer2","Answer3","Answer4","Answer5"]
+    var answerKeys = ["SurveyCompany","Email","Answer1","Answer2","Answer3","Answer4","Answer5"]
     
     //  vars for storing the answers from the pickers.
     var ans1:String = ""
@@ -113,6 +116,29 @@ class SubwayViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         return subOfDayTypes.count
     }
     
+    //  func for getting current picker choice
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        if (pickerView == breakFastPicker){
+            ans2 = breakFastTypes[row]
+        }
+        if (pickerView == saladPicker){
+            ans3 = saladTypes[row]
+        }
+        if (pickerView == extrasPicker){
+            ans4 = extrasTypes[row]
+        }
+        
+        if (pickerView == subOfDayPicker){
+            ans1 = subOfDayTypes[row]
+        }
+        
+        
+    }
+    
+    
+    
+    
     public func numberOfComponents(in pickerView: UIPickerView) -> Int{
         
         return 1
@@ -130,7 +156,7 @@ class SubwayViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             self.present(missingQ, animated: true, completion: nil)
         }
         else{
-            answerArray = survey.getAnswerAsArray(email: emailOfUser,in0: ans1, in1: ans2, in2: ans3, in3: ans4, in4: textAnswer.text!)
+            answerArray = survey.getAnswerAsArray(company: companyName,email: emailOfUser,in0: ans1, in1: ans2, in2: ans3, in3: ans4, in4: textAnswer.text!)
             
             cloudKitEng.saveUserAnswerData(recordTypeName: "SurveyData", answerKey: answerKeys, answers: answerArray, actInd: actIndicator, targetVC: self, alert: completionAlert)
             

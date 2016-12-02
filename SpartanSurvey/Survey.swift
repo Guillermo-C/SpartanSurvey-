@@ -66,9 +66,10 @@ class Survey{
     }
     
     //  func to put answers into an array
-    func getAnswerAsArray(email: String, in0:String, in1: String, in2:String, in3:String, in4: String) -> [String]{
+    func getAnswerAsArray(company:String, email: String, in0:String, in1: String, in2:String, in3:String, in4: String) -> [String]{
         var tempArray = [String]()
         
+        tempArray.append(company)
         tempArray.append(email)
         tempArray.append(in0)
         tempArray.append(in1)
