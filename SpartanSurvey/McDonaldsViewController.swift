@@ -59,6 +59,10 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
     
     //  Alert for user when the survey is completed.
     let completionAlert = UIAlertController(title: "Congrats!", message: "You just earned 5 points. Note: points might take long to reflect", preferredStyle: UIAlertControllerStyle.alert)
+    
+    
+    
+    let missingQuestionAlert = UIAlertController(title: "Check your answers", message: "You are almost there! Make sure that you answered all the questions.", preferredStyle: UIAlertControllerStyle.alert)
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +75,10 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
         actIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
         view.addSubview(actIndicator)
 
+        
+        
+        missingQuestionAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+        }))
         
         // Do any additional setup after loading the view.
     }
@@ -173,13 +181,25 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
     
     //  When the user's done then save the user's answers on the database and alert the user of survey completion success.
     @IBAction func done(_ sender: UIButton) {
-        answerArray = getAnswerAsArray(email: emailOfUser,in0: ans1, in1: ans2, in2: ans3, in3: ans4, in4: textAnswer.text!)
+        let allPickerQsAnswered = pickerQuesAnswered(in0: ans1, in1: ans2, in2: ans3, in3: ans4)
+        
+        if ( allPickerQsAnswered == false){
+            self.present(missingQuestionAlert, animated: true, completion: nil)
+            
+        }
+        
+        //  Code below works
+        //  Uncomment after testing
+        /*answerArray = getAnswerAsArray(email: emailOfUser,in0: ans1, in1: ans2, in2: ans3, in3: ans4, in4: textAnswer.text!)
+        
         cloudKitEng.saveUserAnswerData(recordTypeName: "SurveyData", answerKey: answerKeys, answers: answerArray, actInd: actIndicator, targetVC: self, alert: completionAlert)
+        
         completionAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
             let viewC:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "userProfileView") as UIViewController
             self.present(viewC, animated: true, completion: nil)
         }))
-        present(completionAlert, animated: true, completion: nil)
+        
+        present(completionAlert, animated: true, completion: nil)*/
     }
     
     //  func to put answers into an array
@@ -199,6 +219,18 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
     }
     
 
+    
+    // func to check all picker questions were answer 
+    func pickerQuesAnswered(in0: String, in1: String, in2: String, in3: String) -> Bool {
+        var answeredAll:Bool = false
+        
+        if ((in0 != "↓ Scroll down ↓") && (in1 != "↓ Scroll down ↓") && (in2 != "↓ Scroll down ↓") && (in3 != "↓ Scroll down ↓")){
+            answeredAll = true
+        }
+        
+        return answeredAll
+    }
+    
     /*
     // MARK: - Navigation
 
