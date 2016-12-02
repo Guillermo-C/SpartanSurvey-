@@ -24,6 +24,7 @@ class SubwayViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet weak var breakFastPicker: UIPickerView!
     @IBOutlet weak var saladPicker: UIPickerView!
     @IBOutlet weak var extrasPicker: UIPickerView!
+    @IBOutlet weak var textAnswer: UITextField!
     
     var subOfDayTypes = ["Sweet Onion Chicken Teriyaki","Oven Roasted Chicken","Turkey Breast","Classic Tuna","Black Forest Ham"]
     
@@ -32,6 +33,50 @@ class SubwayViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     var saladTypes = ["Corned Beef Reuben Salad","Turkey Reuben Salad","Spicy Italian Salad","Veggie Delite Salad","Tuna Salad","Subway Club Salad"]
     
     var extrasTypes = ["Pepperoni","Cheese","Bacon"]
+    
+    //  Array holding the key names to properly store the answers of the user.
+    var answerKeys = ["Email","Answer1","Answer2","Answer3","Answer4","Answer5"]
+    
+    //  vars for storing the answers from the pickers.
+    var ans1:String = ""
+    var ans2:String = ""
+    var ans3:String = ""
+    var ans4:String = ""
+    
+    //  Array holding the answers of the user.
+    var answerArray = [String]()
+    
+    //  Invoke the class CloudKitEngine for saving data in the cloud
+    let cloudKitEng = CloudKitEngine()
+    
+    
+    var survey =  Survey()
+    
+    //  func to apply custom font to the pickers.
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let pickerLabel = UILabel()
+        pickerLabel.textColor = UIColor.black
+        pickerLabel.font = UIFont(name: "Arial-BoldMT", size: 12)
+        pickerLabel.textAlignment = NSTextAlignment.center
+        
+        
+        if(pickerView == subOfDayPicker){
+            pickerLabel.text = subOfDayTypes[row]
+        }
+        if(pickerView == breakFastPicker){
+            pickerLabel.text = breakFastTypes[row]
+        }
+        if(pickerView == saladPicker){
+            pickerLabel.text = saladTypes[row]
+        }
+        if(pickerView == extrasPicker){
+            pickerLabel.text = extrasTypes[row]
+        }
+        
+        return pickerLabel
+    }
+    
+    
     
     public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
@@ -72,6 +117,33 @@ class SubwayViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         
         return 1
     }
+    
+    @IBAction func done(_ sender: UIButton) {
+        let allPickerQsAnswered = survey.pickerQuesAnswered(in0: ans1, in1: ans2, in2: ans3, in3: ans4)
+        
+        let missingQ = survey.missingQuestionAlert(aTitle: "default", aMessage: "default")
+        let completionAlert = survey.completionAlert(aTitle: "default", aMessage: "default", targetVC: self)
+        
+        if ( allPickerQsAnswered == false){
+            
+            print("Now with the latest code.")
+            self.present(missingQ, animated: true, completion: nil)
+        }
+        else{
+            answerArray = survey.getAnswerAsArray(email: emailOfUser,in0: ans1, in1: ans2, in2: ans3, in3: ans4, in4: textAnswer.text!)
+            
+            cloudKitEng.saveUserAnswerData(recordTypeName: "SurveyData", answerKey: answerKeys, answers: answerArray, actInd: actIndicator, targetVC: self, alert: completionAlert)
+            
+            /*completionAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+             let viewC:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "userProfileView") as UIViewController
+             self.present(viewC, animated: true, completion: nil)
+             }))*/
+            
+            present(completionAlert, animated: true, completion: nil)
+        }
+        
+    }
+    
     
     /*
     // MARK: - Navigation
