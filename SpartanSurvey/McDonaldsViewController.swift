@@ -187,6 +187,18 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
             self.present(missingQuestionAlert, animated: true, completion: nil)
             
         }
+        else{
+            answerArray = getAnswerAsArray(email: emailOfUser,in0: ans1, in1: ans2, in2: ans3, in3: ans4, in4: textAnswer.text!)
+            
+            cloudKitEng.saveUserAnswerData(recordTypeName: "SurveyData", answerKey: answerKeys, answers: answerArray, actInd: actIndicator, targetVC: self, alert: completionAlert)
+            
+            completionAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+                let viewC:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "userProfileView") as UIViewController
+                self.present(viewC, animated: true, completion: nil)
+            }))
+            
+            present(completionAlert, animated: true, completion: nil)
+        }
         
         //  Code below works
         //  Uncomment after testing
@@ -224,12 +236,14 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
     func pickerQuesAnswered(in0: String, in1: String, in2: String, in3: String) -> Bool {
         var answeredAll:Bool = false
         
-        if ((in0 != "↓ Scroll down ↓") && (in1 != "↓ Scroll down ↓") && (in2 != "↓ Scroll down ↓") && (in3 != "↓ Scroll down ↓")){
+        if ((in0 != "") && (in1 != "") && (in2 != "") && (in3 != "")){
             answeredAll = true
         }
         
         return answeredAll
     }
+    
+
     
     /*
     // MARK: - Navigation

@@ -178,11 +178,7 @@ class CloudKitEngine{
                     else{
                         targetVC.present(alert, animated: true, completion: nil)
                     }
-                    
-                    
-                    
-                    
-                    
+                  
                 }
                 /*let retrievedPass:String = self.loginCredentials[0].value(forKey: "Password") as! String
                 actInd.stopAnimating()
