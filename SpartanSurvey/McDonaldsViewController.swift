@@ -61,9 +61,17 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
     let completionAlert = UIAlertController(title: "Congrats!", message: "You just earned 5 points. Note: points might take long to reflect", preferredStyle: UIAlertControllerStyle.alert)
     
     
+
+    var survey =  Survey()
     
-    let missingQuestionAlert = UIAlertController(title: "Check your answers", message: "You are almost there! Make sure that you answered all the questions.", preferredStyle: UIAlertControllerStyle.alert)
-  
+
+    
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -77,8 +85,6 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
 
         
         
-        missingQuestionAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
-        }))
         
         // Do any additional setup after loading the view.
     }
@@ -183,11 +189,16 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
     @IBAction func done(_ sender: UIButton) {
         let allPickerQsAnswered = pickerQuesAnswered(in0: ans1, in1: ans2, in2: ans3, in3: ans4)
         
+        
+        
+        
+        let missingQ = survey.missingQuestionAlert(aTitle: "default", aMessage: "default")
         if ( allPickerQsAnswered == false){
-            self.present(missingQuestionAlert, animated: true, completion: nil)
-            
+
+            print("Now with the latest code.")
+            self.present(missingQ, animated: true, completion: nil)
         }
-        else{
+        /*else{
             answerArray = getAnswerAsArray(email: emailOfUser,in0: ans1, in1: ans2, in2: ans3, in3: ans4, in4: textAnswer.text!)
             
             cloudKitEng.saveUserAnswerData(recordTypeName: "SurveyData", answerKey: answerKeys, answers: answerArray, actInd: actIndicator, targetVC: self, alert: completionAlert)
@@ -198,7 +209,7 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
             }))
             
             present(completionAlert, animated: true, completion: nil)
-        }
+        }*/
         
         //  Code below works
         //  Uncomment after testing
