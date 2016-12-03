@@ -580,7 +580,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B0s-tt-RWZ">
-                                <rect key="frame" x="0.0" y="28" width="374" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="374" height="43"/>
                                 <items>
                                     <navigationItem title="Sign In" id="qvB-5X-Bv9">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="lXF-43-eaC">
@@ -592,7 +592,7 @@
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KcN-Ks-koK">
-                                <rect key="frame" x="34.5" y="161" width="305" height="188"/>
+                                <rect key="frame" x="34.5" y="160" width="305" height="189"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tV8-sM-R34">
                                         <rect key="frame" x="21" y="44" width="263" height="31"/>
@@ -604,20 +604,20 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i44-2M-0PL">
-                                        <rect key="frame" x="21" y="82" width="263" height="30"/>
+                                        <rect key="frame" x="21" y="82" width="263" height="31"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUf-2t-dFx">
-                                        <rect key="frame" x="233" y="120" width="51" height="30"/>
+                                        <rect key="frame" x="233" y="121" width="51" height="30"/>
                                         <state key="normal" title="Sign In "/>
                                         <connections>
                                             <action selector="signIn:" destination="1Jy-PA-haE" eventType="touchUpInside" id="v9r-tz-kvP"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Wr-bu-jsE">
-                                        <rect key="frame" x="21" y="120" width="124" height="30"/>
+                                        <rect key="frame" x="21" y="121" width="124" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="124" id="crN-Cv-bW2"/>
                                         </constraints>
@@ -639,13 +639,17 @@
                                 <constraints>
                                     <constraint firstItem="8Wr-bu-jsE" firstAttribute="leading" secondItem="i44-2M-0PL" secondAttribute="leading" id="4r1-db-wmP"/>
                                     <constraint firstAttribute="bottom" secondItem="sUf-2t-dFx" secondAttribute="bottom" constant="38" id="8sb-Gy-39v"/>
+                                    <constraint firstItem="tV8-sM-R34" firstAttribute="top" secondItem="KcN-Ks-koK" secondAttribute="top" constant="44" id="9FU-WC-ZJg"/>
                                     <constraint firstAttribute="trailing" secondItem="sUf-2t-dFx" secondAttribute="trailing" constant="21" id="EBP-H2-Vny"/>
                                     <constraint firstItem="efZ-xk-RWE" firstAttribute="top" secondItem="KcN-Ks-koK" secondAttribute="top" constant="8" id="GJK-Bf-SpA"/>
                                     <constraint firstItem="sUf-2t-dFx" firstAttribute="leading" secondItem="8Wr-bu-jsE" secondAttribute="trailing" constant="88" id="JMz-wN-K0l"/>
+                                    <constraint firstItem="tV8-sM-R34" firstAttribute="height" secondItem="i44-2M-0PL" secondAttribute="height" id="PKX-M7-xKg"/>
+                                    <constraint firstItem="tV8-sM-R34" firstAttribute="width" secondItem="i44-2M-0PL" secondAttribute="width" id="Yo0-0w-AXB"/>
                                     <constraint firstItem="i44-2M-0PL" firstAttribute="leading" secondItem="tV8-sM-R34" secondAttribute="leading" id="dCZ-VY-sNA"/>
                                     <constraint firstItem="i44-2M-0PL" firstAttribute="top" secondItem="tV8-sM-R34" secondAttribute="bottom" constant="7" id="db2-P2-5hS"/>
                                     <constraint firstItem="8Wr-bu-jsE" firstAttribute="baseline" secondItem="sUf-2t-dFx" secondAttribute="baseline" id="eNv-nv-t3L"/>
                                     <constraint firstItem="i44-2M-0PL" firstAttribute="trailing" secondItem="tV8-sM-R34" secondAttribute="trailing" id="iot-2D-mKn"/>
+                                    <constraint firstItem="sUf-2t-dFx" firstAttribute="top" secondItem="i44-2M-0PL" secondAttribute="bottom" constant="8" id="mCh-al-cQ3"/>
                                     <constraint firstItem="8Wr-bu-jsE" firstAttribute="leading" secondItem="KcN-Ks-koK" secondAttribute="leading" constant="21" id="ma0-F8-wCl"/>
                                     <constraint firstItem="8Wr-bu-jsE" firstAttribute="top" secondItem="i44-2M-0PL" secondAttribute="bottom" constant="8" symbolic="YES" id="rPO-pu-9C6"/>
                                     <constraint firstItem="i44-2M-0PL" firstAttribute="centerX" secondItem="KcN-Ks-koK" secondAttribute="centerX" id="tqM-So-Xj0"/>
