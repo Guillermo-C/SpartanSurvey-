@@ -118,5 +118,25 @@ class SignInViewController: UIViewController, UIPopoverPresentationControllerDel
         return false
     }
     
+    
+    //  Show or hide the password when the "eye" button is pressed
+    @IBAction func showOrHide(_ sender: UIButton) {
+        showOrHidePassword(textF: passwordEntry)
+    }
+    
+    //  func to show or hide the password 
+    func showOrHidePassword(textF: UITextField){
+        var isVisible:Bool = textF.isSecureTextEntry
+        //var textField:UITextField
+        
+        switch isVisible {
+        case true:
+            textF.isSecureTextEntry = false
+        default:
+            textF.isSecureTextEntry = true
+        }
+        //return textField
+    }
+    
 
 }

@@ -592,7 +592,7 @@
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KcN-Ks-koK">
-                                <rect key="frame" x="34.5" y="160" width="305" height="189"/>
+                                <rect key="frame" x="35" y="160" width="305" height="189"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tV8-sM-R34">
                                         <rect key="frame" x="21" y="44" width="263" height="31"/>
@@ -627,11 +627,22 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efZ-xk-RWE">
-                                        <rect key="frame" x="262.5" y="8" width="22" height="22"/>
+                                        <rect key="frame" x="262" y="8" width="22" height="22"/>
                                         <connections>
                                             <segue destination="mPf-UF-8az" kind="popoverPresentation" identifier="signInInfoSegue" popoverAnchorView="efZ-xk-RWE" id="EwF-9M-aK3">
                                                 <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                             </segue>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkY-9v-oOo">
+                                        <rect key="frame" x="263" y="88" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="yGR-3S-mYY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <state key="normal" title="👁"/>
+                                        <connections>
+                                            <action selector="showOrHide:" destination="1Jy-PA-haE" eventType="touchUpInside" id="7GH-jk-xnQ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -648,11 +659,15 @@
                                     <constraint firstItem="i44-2M-0PL" firstAttribute="leading" secondItem="tV8-sM-R34" secondAttribute="leading" id="dCZ-VY-sNA"/>
                                     <constraint firstItem="i44-2M-0PL" firstAttribute="top" secondItem="tV8-sM-R34" secondAttribute="bottom" constant="7" id="db2-P2-5hS"/>
                                     <constraint firstItem="8Wr-bu-jsE" firstAttribute="baseline" secondItem="sUf-2t-dFx" secondAttribute="baseline" id="eNv-nv-t3L"/>
+                                    <constraint firstItem="fkY-9v-oOo" firstAttribute="centerY" secondItem="i44-2M-0PL" secondAttribute="centerY" id="ilw-s9-OHY"/>
                                     <constraint firstItem="i44-2M-0PL" firstAttribute="trailing" secondItem="tV8-sM-R34" secondAttribute="trailing" id="iot-2D-mKn"/>
                                     <constraint firstItem="sUf-2t-dFx" firstAttribute="top" secondItem="i44-2M-0PL" secondAttribute="bottom" constant="8" id="mCh-al-cQ3"/>
                                     <constraint firstItem="8Wr-bu-jsE" firstAttribute="leading" secondItem="KcN-Ks-koK" secondAttribute="leading" constant="21" id="ma0-F8-wCl"/>
+                                    <constraint firstItem="fkY-9v-oOo" firstAttribute="leading" secondItem="i44-2M-0PL" secondAttribute="trailing" constant="-21" id="r1S-SL-kb9"/>
                                     <constraint firstItem="8Wr-bu-jsE" firstAttribute="top" secondItem="i44-2M-0PL" secondAttribute="bottom" constant="8" symbolic="YES" id="rPO-pu-9C6"/>
                                     <constraint firstItem="i44-2M-0PL" firstAttribute="centerX" secondItem="KcN-Ks-koK" secondAttribute="centerX" id="tqM-So-Xj0"/>
+                                    <constraint firstItem="fkY-9v-oOo" firstAttribute="centerX" secondItem="efZ-xk-RWE" secondAttribute="centerX" id="y8g-9F-OmW"/>
+                                    <constraint firstItem="fkY-9v-oOo" firstAttribute="top" secondItem="tV8-sM-R34" secondAttribute="bottom" constant="13" id="zhz-0F-SKD"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PXL-UL-Yif">
@@ -695,7 +710,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="grA-bJ-Hlx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="766" y="848"/>
+            <point key="canvasLocation" x="765.60000000000002" y="846.9265367316342"/>
         </scene>
         <!--Surveys-->
         <scene sceneID="5SJ-pd-XcI">
