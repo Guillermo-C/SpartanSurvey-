@@ -55,6 +55,8 @@ class SignInViewController: UIViewController, UIPopoverPresentationControllerDel
         actIndicator.hidesWhenStopped = true
         actIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
         view.addSubview(actIndicator)
+        
+        passwordEntry.isSecureTextEntry = true
         // Do any additional setup after loading the view.
     }
 
@@ -126,8 +128,7 @@ class SignInViewController: UIViewController, UIPopoverPresentationControllerDel
     
     //  func to show or hide the password 
     func showOrHidePassword(textF: UITextField){
-        var isVisible:Bool = textF.isSecureTextEntry
-        //var textField:UITextField
+        let isVisible:Bool = textF.isSecureTextEntry
         
         switch isVisible {
         case true:
@@ -135,7 +136,6 @@ class SignInViewController: UIViewController, UIPopoverPresentationControllerDel
         default:
             textF.isSecureTextEntry = true
         }
-        //return textField
     }
     
 
