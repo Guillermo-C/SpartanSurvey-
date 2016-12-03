@@ -25,7 +25,7 @@ var emailOfUser:String = ""
 //  Activity indicator. 
 var actIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
 
-class SignInViewController: UIViewController, UIPopoverPresentationControllerDelegate {
+class SignInViewController: UIViewController, UIPopoverPresentationControllerDelegate, UITextFieldDelegate{
 
     var delegate: SignInViewControllerDelegate?
     
@@ -57,6 +57,8 @@ class SignInViewController: UIViewController, UIPopoverPresentationControllerDel
         view.addSubview(actIndicator)
         
         passwordEntry.isSecureTextEntry = true
+        
+        emailEntry.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -108,6 +110,15 @@ class SignInViewController: UIViewController, UIPopoverPresentationControllerDel
         }
     }
     
+    //  func to prevent spaces in the email text field
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if string == " " && textField == emailEntry{
+            return false
+        } else {
+            return true
+        }
+    }
+    
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
     }
@@ -137,6 +148,8 @@ class SignInViewController: UIViewController, UIPopoverPresentationControllerDel
             textF.isSecureTextEntry = true
         }
     }
+    
+
     
 
 }

@@ -122,7 +122,7 @@ class ForgotPasswordViewController: UIViewController, UIPopoverPresentationContr
         
     }
     
-    
+    //  func to prevent spaces in the email text field 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if string == " " && textField == emailEntry{
             return false
