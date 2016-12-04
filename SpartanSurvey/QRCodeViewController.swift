@@ -21,11 +21,13 @@ class QRCodeViewController: UIViewController, UIPopoverPresentationControllerDel
     
     @IBOutlet weak var qRCodeEntry: UITextField!
     
-    
+    let wrongQRAlert = UIAlertController(title: "Wrong QR Code", message: "Please verify your QR code.", preferredStyle: UIAlertControllerStyle.alert)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        wrongQRAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+        }))
         // Do any additional setup after loading the view.
     }
 
@@ -47,11 +49,9 @@ class QRCodeViewController: UIViewController, UIPopoverPresentationControllerDel
     
     var cloud = CloudKitEngine()
     @IBAction func submit(_ sender: UIButton) {
-        //var number:Int = cloud.getPoints(email: qRCodeEntry.text!)
-        //print("Total number of points: \(number)")
-        let viewC:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "yogurtLScreen") as UIViewController
-        
-        self.present(viewC, animated: true, completion: nil)
+        let userQREntry = qRCodeEntry.text!
+
+        validateQRCode(userEntry: userQREntry, qrCode: qrCode, targetVC: self, alert: wrongQRAlert)
     }
 
     
@@ -79,7 +79,17 @@ class QRCodeViewController: UIViewController, UIPopoverPresentationControllerDel
         return .none
     }
     
-    
+    //  Validate the QR Code that the user enters.
+    func validateQRCode(userEntry:String, qrCode: String, targetVC: UIViewController, alert: UIAlertController){
+        if (userEntry == qrCode){
+            let viewC:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "yogurtLScreen") as UIViewController
+            
+            self.present(viewC, animated: true, completion: nil)
+        }
+        else{
+            targetVC.present(alert, animated: true, completion: nil)
+        }
+    }
     
     
 
