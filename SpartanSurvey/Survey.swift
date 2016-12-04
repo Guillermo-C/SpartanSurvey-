@@ -33,22 +33,30 @@ class Survey{
     }
     
     // func to alert user of a successful survey completion, and take the user to the userProfileView when done.
-    func completionAlert(aTitle: String, aMessage: String, targetVC: UIViewController) -> UIAlertController{
+    func completionAlert(aTitle: String, aMessage: String, targetVC: UIViewController, email:Bool) -> UIAlertController{
         var alertTitle =  aTitle
         var alertMessage = aMessage
         
         if((alertTitle == "default") && (alertMessage == "default")){
-            alertTitle = "Check your answers"
-            alertMessage = "You are almost there! Make sure that you answered all the questions."
+            alertTitle = "Congrats!"
+            alertMessage = "You just earned 5 points. Note: points might take long to reflect"
         }
         
         
-        let completionAlert = UIAlertController(title: "Congrats!", message: "You just earned 5 points. Note: points might take long to reflect", preferredStyle: UIAlertControllerStyle.alert)
+        let completionAlert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: UIAlertControllerStyle.alert)
         
-        completionAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
-            let viewC:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "userProfileView") as UIViewController
-            targetVC.present(viewC, animated: true, completion: nil)
-        }))
+        if (email == true){
+            completionAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+                let viewC:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "userProfileView") as UIViewController
+                targetVC.present(viewC, animated: true, completion: nil)
+            }))
+        }
+        else{
+            completionAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+                let viewC:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "welcomeScreen") as UIViewController
+                targetVC.present(viewC, animated: true, completion: nil)
+            }))
+        }
         
         return completionAlert
     }

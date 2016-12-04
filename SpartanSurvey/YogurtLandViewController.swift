@@ -66,6 +66,11 @@ class YogurtLandViewController: UIViewController, UIPickerViewDelegate, UIPicker
     //  name of the survey for identification when querying through the database
     let companyName:String = "Yogurtland"
     
+    //  Specify the custom title on the completion alert.
+    let customTitle:String = "Congratulations!"
+    
+    //  Specify the custom message on the completion alert. The message in the completion alert should be different since it's done using the QR Code.
+    let customMessage:String = "Thank you for taking the survey. Consider registering 😀"
     
     //  Number of points this survey will give the user.
     let worthPoints:Int = 0
@@ -161,20 +166,16 @@ class YogurtLandViewController: UIViewController, UIPickerViewDelegate, UIPicker
         
         
         let missingQ = survey.missingQuestionAlert(aTitle: "default", aMessage: "default")
-        let completionAlert = survey.completionAlert(aTitle: "default", aMessage: "default", targetVC: self)
+        let completionAlert = survey.completionAlert(aTitle: customTitle, aMessage: customMessage, targetVC: self, email: false)
         
         
         if ( allPickerQsAnswered == false){
-            
-            print("Now with the latest code.")
             self.present(missingQ, animated: true, completion: nil)
         }
         else{
-            answerArray = survey.getAnswerAsArray(company: companyName,email: emailOfUser,in0: ans1, in1: ans2, in2: ans3, in3: ans4, in4: textAnswer.text!)
+            answerArray = survey.getAnswerAsArray(company: companyName,email: emailQR,in0: ans1, in1: ans2, in2: ans3, in3: ans4, in4: textAnswer.text!)
             
             cloudKitEng.saveUserAnswerData(recordTypeName: "SurveyData", answerKey: answerKeys, answers: answerArray, actInd: actIndicator, targetVC: self, alert: completionAlert)
-            
-            cloudKitEng.updatePoints(email: emailQR, worthPts: worthPoints)
             
             present(completionAlert, animated: true, completion: nil)
         }

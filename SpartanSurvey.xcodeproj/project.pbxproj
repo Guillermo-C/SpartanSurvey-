@@ -176,7 +176,6 @@
 				CBDDAF1F1DEA0B3C00EFE0A7 /* User Profile */,
 				CB36C46D1DF10FDA00A59EA1 /* Survey.swift */,
 				CBE8A1E01DF3D03D00871CEA /* GiftCardViewController.swift */,
-				CB05CC2D1DF499D200C46525 /* YogurtLandViewController.swift */,
 			);
 			path = SpartanSurvey;
 			sourceTree = "<group>";
@@ -237,6 +236,7 @@
 				CB6C2D3E1DD822BF008A3DD2 /* McDonaldsViewController.swift */,
 				CB66844B1DE6912F003FB7CB /* SubwayViewController.swift */,
 				CB66844D1DE69F51003FB7CB /* SoccerViewController.swift */,
+				CB05CC2D1DF499D200C46525 /* YogurtLandViewController.swift */,
 			);
 			name = Surveys;
 			sourceTree = "<group>";

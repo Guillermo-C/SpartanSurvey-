@@ -199,7 +199,7 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
         
         
         let missingQ = survey.missingQuestionAlert(aTitle: "default", aMessage: "default")
-        let completionAlert = survey.completionAlert(aTitle: "default", aMessage: "default", targetVC: self)
+        let completionAlert = survey.completionAlert(aTitle: "default", aMessage: "default", targetVC: self, email: true)
         
         
         if ( allPickerQsAnswered == false){

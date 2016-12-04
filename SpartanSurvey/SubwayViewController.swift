@@ -148,7 +148,7 @@ class SubwayViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         let allPickerQsAnswered = survey.pickerQuesAnswered(in0: ans1, in1: ans2, in2: ans3, in3: ans4)
         
         let missingQ = survey.missingQuestionAlert(aTitle: "default", aMessage: "default")
-        let completionAlert = survey.completionAlert(aTitle: "default", aMessage: "default", targetVC: self)
+        let completionAlert = survey.completionAlert(aTitle: "default", aMessage: "default", targetVC: self, email: true)
         
         if ( allPickerQsAnswered == false){
             
