@@ -171,7 +171,7 @@ class CloudKitEngine{
                         targetVC.present(viewC, animated: true, completion: nil)
                         
                         nameOfUser = self.getNameOfUser(record: self.loginCredentials)
-                        userPoints = self.pointsOfUser(record: self.loginCredentials)
+                        userPoints = self.pointsOfUser(record: self.loginCredentials) 
                         emailOfUser = self.getEmailFromCred(record: self.loginCredentials)
                         
                     }
