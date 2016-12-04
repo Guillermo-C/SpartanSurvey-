@@ -446,7 +446,7 @@ class CloudKitEngine{
     
     //  func to update user's points 
     var fetchedRecord:CKRecord!
-    func updatePoints(email: String){
+    func updatePoints(email: String, worthPts: Int){
         let recordID:CKRecordID = CKRecordID(recordName: email)
         var points:Int = getPoints()
         publicDataBase.fetch(withRecordID: recordID){ (record, error) in
@@ -454,12 +454,8 @@ class CloudKitEngine{
                 
             }else{
                 self.fetchedRecord = record!
-                //record?.setObject(100 as CKRecordValue?, forKey: "Points")
-                points += 5
+                points += worthPts
                 self.fetchedRecord?.setObject(points as CKRecordValue?, forKey: "Points")
-                
-                    
-                    
                 }
             DispatchQueue.main.async {
                 self.publicDataBase.save(self.fetchedRecord){ (savedRecord, error) -> Void in

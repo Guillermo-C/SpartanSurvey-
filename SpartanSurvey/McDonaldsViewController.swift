@@ -29,6 +29,8 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
     // UITextField to hold the answer of text. 
     @IBOutlet weak var textAnswer: UITextField!
     
+    //  Number of points this survey will give the user. 
+    let worthPoints:Int = 5
     
     //
     var titleString: String = "McDonald's"
@@ -215,7 +217,7 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
                 self.present(viewC, animated: true, completion: nil)
             }))*/
             
-            cloudKitEng.updatePoints(email: emailOfUser)
+            cloudKitEng.updatePoints(email: emailOfUser, worthPts: worthPoints)
             
             present(completionAlert, animated: true, completion: nil)
         }
