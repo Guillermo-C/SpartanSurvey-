@@ -249,24 +249,40 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="5Sd-kg-ySZ"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="tST-d8-rpu" id="7Y4-H3-9br"/>
+                                    <outlet property="delegate" destination="tST-d8-rpu" id="mU0-gJ-j6w"/>
+                                </connections>
                             </pickerView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="anR-5v-PFY">
                                 <rect key="frame" x="16" y="242" width="343" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="rO6-31-One"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="tST-d8-rpu" id="3S6-jS-LHb"/>
+                                    <outlet property="delegate" destination="tST-d8-rpu" id="JLA-93-hO6"/>
+                                </connections>
                             </pickerView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NPU-8e-hXx">
                                 <rect key="frame" x="16" y="339" width="343" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="AnW-ot-CVD"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="tST-d8-rpu" id="HRW-uH-mKO"/>
+                                    <outlet property="delegate" destination="tST-d8-rpu" id="8wj-GA-wO7"/>
+                                </connections>
                             </pickerView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QJP-IF-W7e">
                                 <rect key="frame" x="16" y="428" width="343" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Iga-kq-f8U"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="tST-d8-rpu" id="bik-9Z-Mra"/>
+                                    <outlet property="delegate" destination="tST-d8-rpu" id="EnE-hZ-NYV"/>
+                                </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day you usually come to our store:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mZ-7z-BZP">
                                 <rect key="frame" x="16" y="310" width="343" height="21"/>
@@ -354,6 +370,13 @@
                             <constraint firstAttribute="leadingMargin" secondItem="anR-5v-PFY" secondAttribute="leading" id="zlV-L8-9RN"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dayPicker" destination="NPU-8e-hXx" id="uw3-Mx-eUN"/>
+                        <outlet property="flavorPicker" destination="746-y2-DXm" id="GPu-GK-wJH"/>
+                        <outlet property="friendsPicker" destination="QJP-IF-W7e" id="t9R-uG-zSA"/>
+                        <outlet property="textAnswer" destination="6yB-GC-YCs" id="ART-0V-afH"/>
+                        <outlet property="weatherPicker" destination="anR-5v-PFY" id="B6P-xF-yQT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eBX-dZ-FRq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
