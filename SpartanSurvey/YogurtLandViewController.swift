@@ -41,6 +41,34 @@ class YogurtLandViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     var friendTypes = ["0","1","2","3", "more than 3"]
     
+    //  Array holding the key names to properly store the answers of the user.
+    var answerKeys = ["SurveyCompany","Email","Answer1","Answer2","Answer3","Answer4","Answer5"]
+    
+    //  vars for storing the answers from the pickers.
+    var ans1:String = ""
+    var ans2:String = ""
+    var ans3:String = ""
+    var ans4:String = ""
+    
+    //  change the value of the user email since survey won't affect the user's account. 
+    var emailQR:String = "No Email"
+    
+    
+    //  Invoke the class CloudKitEngine for saving data in the cloud.
+    let cloudKitEng = CloudKitEngine()
+    
+    //  Invoke the class Survey for implementing survey completion elements.
+    var survey =  Survey()
+    
+    //  Array holding the answers of the user.
+    var answerArray = [String]()
+    
+    //  name of the survey for identification when querying through the database
+    let companyName:String = "Yogurtland"
+    
+    
+    //  Number of points this survey will give the user.
+    let worthPoints:Int = 0
     
     //  func to apply custom font to the pickers.
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
@@ -110,22 +138,48 @@ class YogurtLandViewController: UIViewController, UIPickerViewDelegate, UIPicker
     //  func for getting current picker choice
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        /*if (pickerView == mcNuggetsPicker){
-            ans2 = numberOfNuggets[row]
+        if (pickerView == flavorPicker){
+            ans2 = flavorTypes[row]
         }
-        if (pickerView == mcCaféPicker){
-            ans3 = mcCafeTypes[row]
+        if (pickerView == weatherPicker){
+            ans3 = weatherTypes[row]
         }
-        if (pickerView == saladPicker){
-            ans4 = saladTypes[row]
+        if (pickerView == dayPicker){
+            ans4 = dayTypes[row]
         }
         
-        if (pickerView == burgerPicker){
-            ans1 = burgerTypes[row]
-        }*/
-        
+        if (pickerView == friendsPicker){
+            ans1 = friendTypes[row]
+        }
         
     }
+    
+    @IBAction func done(_ sender: UIButton) {
+        let allPickerQsAnswered = survey.pickerQuesAnswered(in0: ans1, in1: ans2, in2: ans3, in3: ans4)
+        
+        
+        
+        
+        let missingQ = survey.missingQuestionAlert(aTitle: "default", aMessage: "default")
+        let completionAlert = survey.completionAlert(aTitle: "default", aMessage: "default", targetVC: self)
+        
+        
+        if ( allPickerQsAnswered == false){
+            
+            print("Now with the latest code.")
+            self.present(missingQ, animated: true, completion: nil)
+        }
+        else{
+            answerArray = survey.getAnswerAsArray(company: companyName,email: emailOfUser,in0: ans1, in1: ans2, in2: ans3, in3: ans4, in4: textAnswer.text!)
+            
+            cloudKitEng.saveUserAnswerData(recordTypeName: "SurveyData", answerKey: answerKeys, answers: answerArray, actInd: actIndicator, targetVC: self, alert: completionAlert)
+            
+            cloudKitEng.updatePoints(email: emailQR, worthPts: worthPoints)
+            
+            present(completionAlert, animated: true, completion: nil)
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
