@@ -34,6 +34,7 @@
 		CBE8A1D61DF3CCB500871CEA /* McDon'sGiftCard.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CBE8A1D51DF3CCB500871CEA /* McDon'sGiftCard.jpg */; };
 		CBE8A1DB1DF3CD6F00871CEA /* SubwayGiftCard.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CBE8A1DA1DF3CD6F00871CEA /* SubwayGiftCard.jpg */; };
 		CBE8A1DF1DF3CE1300871CEA /* yogurtLGiftCard.png in Resources */ = {isa = PBXBuildFile; fileRef = CBE8A1DE1DF3CE1300871CEA /* yogurtLGiftCard.png */; };
+		CBE8A1E11DF3D03D00871CEA /* GiftCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE8A1E01DF3D03D00871CEA /* GiftCardViewController.swift */; };
 		CBFECFF71DDD5A4000A4ECC6 /* ConsentDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFECFF61DDD5A4000A4ECC6 /* ConsentDocument.swift */; };
 		CBFECFFB1DDD5A5B00A4ECC6 /* ConsentTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFECFFA1DDD5A5B00A4ECC6 /* ConsentTask.swift */; };
 		CBFECFFE1DDD5C2400A4ECC6 /* UPHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFECFFD1DDD5C2400A4ECC6 /* UPHomeViewController.swift */; };
@@ -107,6 +108,7 @@
 		CBE8A1D51DF3CCB500871CEA /* McDon'sGiftCard.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "McDon'sGiftCard.jpg"; sourceTree = "<group>"; };
 		CBE8A1DA1DF3CD6F00871CEA /* SubwayGiftCard.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SubwayGiftCard.jpg; sourceTree = "<group>"; };
 		CBE8A1DE1DF3CE1300871CEA /* yogurtLGiftCard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yogurtLGiftCard.png; sourceTree = "<group>"; };
+		CBE8A1E01DF3D03D00871CEA /* GiftCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftCardViewController.swift; sourceTree = "<group>"; };
 		CBFECFF61DDD5A4000A4ECC6 /* ConsentDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentDocument.swift; sourceTree = "<group>"; };
 		CBFECFFA1DDD5A5B00A4ECC6 /* ConsentTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentTask.swift; sourceTree = "<group>"; };
 		CBFECFFD1DDD5C2400A4ECC6 /* UPHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UPHomeViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				CBCED22E1DE772040046897D /* Surveys */,
 				CBDDAF1F1DEA0B3C00EFE0A7 /* User Profile */,
 				CB36C46D1DF10FDA00A59EA1 /* Survey.swift */,
+				CBE8A1E01DF3D03D00871CEA /* GiftCardViewController.swift */,
 			);
 			path = SpartanSurvey;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				CB66844A1DE66A75003FB7CB /* TakeaSurveyViewController.swift in Sources */,
 				CB6C2D3D1DD8146D008A3DD2 /* SurveyTableViewController.swift in Sources */,
 				CBFECFF71DDD5A4000A4ECC6 /* ConsentDocument.swift in Sources */,
+				CBE8A1E11DF3D03D00871CEA /* GiftCardViewController.swift in Sources */,
 				CBDDAF1C1DEA068000EFE0A7 /* UPAnswersViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
