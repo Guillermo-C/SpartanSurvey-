@@ -434,10 +434,10 @@ class CloudKitEngine{
         return ""
     }
     
-    //  func to update the number of points earned by the user after taking a survey 
+    //  func to get the number of points earned by the user after taking a survey
     func getPoints() -> Int{
         if (self.tempRecord.count > 0){
-            let pts:Int = tempRecord[0].value(forKey: "Password") as! Int
+            let pts:Int = tempRecord[0].value(forKey: "Points") as! Int
             return pts
         }
         return 0
@@ -448,14 +448,15 @@ class CloudKitEngine{
     var fetchedRecord:CKRecord!
     func updatePoints(email: String){
         let recordID:CKRecordID = CKRecordID(recordName: email)
-        //var fetchedRecord:CKRecord!
+        var points:Int = getPoints()
         publicDataBase.fetch(withRecordID: recordID){ (record, error) in
             if error != nil{
                 
             }else{
                 self.fetchedRecord = record!
                 //record?.setObject(100 as CKRecordValue?, forKey: "Points")
-                self.fetchedRecord?.setObject(100 as CKRecordValue?, forKey: "Points")
+                points += 5
+                self.fetchedRecord?.setObject(points as CKRecordValue?, forKey: "Points")
                 
                     
                     
