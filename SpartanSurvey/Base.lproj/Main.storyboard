@@ -538,6 +538,7 @@
                                         <state key="normal" title="👁"/>
                                         <connections>
                                             <action selector="showOrHide:" destination="1Jy-PA-haE" eventType="touchUpInside" id="BZu-mc-NmX"/>
+                                            <action selector="showOrHide:" destination="B7J-hg-ik5" eventType="touchUpInside" id="brV-ZZ-QAS"/>
                                         </connections>
                                     </button>
                                 </subviews>

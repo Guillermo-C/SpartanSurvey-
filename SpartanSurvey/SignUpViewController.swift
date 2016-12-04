@@ -100,6 +100,10 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         //  Revise query, it's querying through the DB but it's not logical 
         cloudKitEng.checkIfUserRegistered()
         
+        //  Have both fields, 'password' and 'confirm password', 
+        passwordEntry.isSecureTextEntry = true
+        confirmPassEntry.isSecureTextEntry = true
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -237,9 +241,25 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         return .none
     }
     
-
     
+    @IBAction func showOrHide(_ sender: UIButton) {
+        showOrHidePassword(passF: passwordEntry, confPassF: confirmPassEntry)
+    }
     
+    //  func to show or hide the password
+    func showOrHidePassword(passF: UITextField, confPassF:UITextField){
+        let isVisible:Bool = passF.isSecureTextEntry
+        
+        switch isVisible {
+        case true:
+            passF.isSecureTextEntry = false
+            confPassF.isSecureTextEntry = false
+            
+        default:
+            passF.isSecureTextEntry = true
+            confPassF.isSecureTextEntry = true
+        }
+    }
 
     
 
