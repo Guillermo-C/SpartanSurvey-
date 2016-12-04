@@ -31,6 +31,8 @@
 		CBC58FBE1DE236E2006F2DC1 /* CloudKitEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC58FBD1DE236E2006F2DC1 /* CloudKitEngine.swift */; };
 		CBCB71CC1DE0192800E6D3DE /* KaiserPermanenteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCB71CB1DE0192800E6D3DE /* KaiserPermanenteViewController.swift */; };
 		CBDDAF1C1DEA068000EFE0A7 /* UPAnswersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDDAF1B1DEA068000EFE0A7 /* UPAnswersViewController.swift */; };
+		CBE8A1D61DF3CCB500871CEA /* McDon'sGiftCard.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CBE8A1D51DF3CCB500871CEA /* McDon'sGiftCard.jpg */; };
+		CBE8A1DB1DF3CD6F00871CEA /* SubwayGiftCard.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CBE8A1DA1DF3CD6F00871CEA /* SubwayGiftCard.jpg */; };
 		CBFECFF71DDD5A4000A4ECC6 /* ConsentDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFECFF61DDD5A4000A4ECC6 /* ConsentDocument.swift */; };
 		CBFECFFB1DDD5A5B00A4ECC6 /* ConsentTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFECFFA1DDD5A5B00A4ECC6 /* ConsentTask.swift */; };
 		CBFECFFE1DDD5C2400A4ECC6 /* UPHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFECFFD1DDD5C2400A4ECC6 /* UPHomeViewController.swift */; };
@@ -101,6 +103,8 @@
 		CBC58FBD1DE236E2006F2DC1 /* CloudKitEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitEngine.swift; sourceTree = "<group>"; };
 		CBCB71CB1DE0192800E6D3DE /* KaiserPermanenteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KaiserPermanenteViewController.swift; sourceTree = "<group>"; };
 		CBDDAF1B1DEA068000EFE0A7 /* UPAnswersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UPAnswersViewController.swift; sourceTree = "<group>"; };
+		CBE8A1D51DF3CCB500871CEA /* McDon'sGiftCard.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "McDon'sGiftCard.jpg"; sourceTree = "<group>"; };
+		CBE8A1DA1DF3CD6F00871CEA /* SubwayGiftCard.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SubwayGiftCard.jpg; sourceTree = "<group>"; };
 		CBFECFF61DDD5A4000A4ECC6 /* ConsentDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentDocument.swift; sourceTree = "<group>"; };
 		CBFECFFA1DDD5A5B00A4ECC6 /* ConsentTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentTask.swift; sourceTree = "<group>"; };
 		CBFECFFD1DDD5C2400A4ECC6 /* UPHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UPHomeViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +155,8 @@
 				CBC58FB71DE2342B006F2DC1 /* SpartanSurvey.entitlements */,
 				CB7D4D1B1DC04D7C00CB73A7 /* AppDelegate.swift */,
 				CB7D4D1F1DC04D7C00CB73A7 /* Main.storyboard */,
+				CBE8A1D51DF3CCB500871CEA /* McDon'sGiftCard.jpg */,
+				CBE8A1DA1DF3CD6F00871CEA /* SubwayGiftCard.jpg */,
 				CB0C28661DDD566F0008E12F /* ResearchKit.xcodeproj */,
 				CB7D4D271DC04D7C00CB73A7 /* LaunchScreen.storyboard */,
 				CB7D4D2A1DC04D7C00CB73A7 /* Info.plist */,
@@ -378,7 +384,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBE8A1DB1DF3CD6F00871CEA /* SubwayGiftCard.jpg in Resources */,
 				CB7D4D291DC04D7C00CB73A7 /* LaunchScreen.storyboard in Resources */,
+				CBE8A1D61DF3CCB500871CEA /* McDon'sGiftCard.jpg in Resources */,
 				CB0C22271DDD3EB10008E12F /* funnybabypic.jpg in Resources */,
 				CB7D4D211DC04D7C00CB73A7 /* Main.storyboard in Resources */,
 			);

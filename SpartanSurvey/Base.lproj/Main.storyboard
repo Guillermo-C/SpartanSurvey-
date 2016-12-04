@@ -25,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdm-Kw-yVC">
-                                <rect key="frame" x="165" y="399" width="44" height="30"/>
+                                <rect key="frame" x="165" y="350" width="44" height="30"/>
                                 <state key="normal" title="Begin!"/>
                                 <connections>
                                     <action selector="showWalkThrough" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rb5-43-qnd"/>
@@ -113,7 +113,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HAv-Ft-kk2">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HAv-Ft-kk2">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44.5"/>
                                 <items>
                                     <navigationItem title="QR Code" id="jgD-Au-7z7">
@@ -125,23 +125,23 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="083-mV-5ZQ">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="083-mV-5ZQ">
                                 <rect key="frame" x="35" y="161.5" width="304" height="187.5"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="QR Code Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ADM-3U-lFl">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="QR Code Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ADM-3U-lFl">
                                         <rect key="frame" x="21" y="43.5" width="262" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FYc-Qi-vuN">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FYc-Qi-vuN">
                                         <rect key="frame" x="136.5" y="149.5" width="49" height="30"/>
                                         <state key="normal" title="Submit"/>
                                         <connections>
                                             <action selector="submit:" destination="Q4k-1b-UBw" eventType="touchUpInside" id="uso-rV-07C"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Invalid number?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4m-9S-IZC">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invalid number?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4m-9S-IZC">
                                         <rect key="frame" x="92" y="8" width="138" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -455,7 +455,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J4B-dt-3QI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-305" y="1709"/>
+            <point key="canvasLocation" x="-300" y="1709"/>
         </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="ET0-pz-SAe">
@@ -780,7 +780,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fac-et-EpT" id="uTJ-df-W4E">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -1463,7 +1463,48 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3S5-L9-GgQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2848.8000000000002" y="2242.1289355322342"/>
+            <point key="canvasLocation" x="2249" y="2248"/>
+        </scene>
+        <!--GiftCards-->
+        <scene sceneID="6eB-zN-CWc">
+            <objects>
+                <viewController title="GiftCards" id="GaH-J6-BPg" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="apA-l0-Uix"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ixb-JA-up2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xcH-UA-phF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S8d-lL-yVf">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Gift Cards" id="WAb-KO-TdY"/>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="McDon'sGiftCard.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Hji-cV-guA">
+                                <rect key="frame" x="16" y="122" width="100" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HLt-Nk-wQW">
+                                <rect key="frame" x="16" y="180" width="100" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="S8d-lL-yVf" firstAttribute="top" secondItem="apA-l0-Uix" secondAttribute="bottom" constant="8" id="8jz-te-s1B"/>
+                            <constraint firstItem="S8d-lL-yVf" firstAttribute="leading" secondItem="xcH-UA-phF" secondAttribute="leadingMargin" constant="-16" id="9Se-Wr-KNf"/>
+                            <constraint firstItem="S8d-lL-yVf" firstAttribute="centerX" secondItem="xcH-UA-phF" secondAttribute="centerX" id="JzJ-46-spP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="S8d-lL-yVf" secondAttribute="trailing" constant="-16" id="jdd-K4-EOT"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Gift Cards" id="OdH-ok-2uI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dGP-bM-Ugi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3351" y="2248"/>
         </scene>
         <!--Home-->
         <scene sceneID="61d-ke-gyj">
@@ -1572,6 +1613,7 @@
                         <segue destination="poo-UM-vMr" kind="relationship" relationship="viewControllers" id="McS-8j-pa9"/>
                         <segue destination="yCU-hR-lbM" kind="relationship" relationship="viewControllers" id="tWe-SE-rKg"/>
                         <segue destination="YPA-jj-ZSA" kind="relationship" relationship="viewControllers" id="QK0-Rm-Hsi"/>
+                        <segue destination="GaH-J6-BPg" kind="relationship" relationship="viewControllers" id="Xo3-7e-ZJP"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ERC-2B-6jQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1670,9 +1712,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="McDon'sGiftCard.jpg" width="600" height="480"/>
         <image name="funnybabypic.jpg" width="479" height="656"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GH3-qh-P2t"/>
+        <segue reference="Qre-Mo-Otd"/>
     </inferredMetricsTieBreakers>
 </document>
