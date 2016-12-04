@@ -532,12 +532,21 @@
                                             </segue>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJH-Ts-lRH">
+                                        <rect key="frame" x="240" y="118" width="32" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <state key="normal" title="👁"/>
+                                        <connections>
+                                            <action selector="showOrHide:" destination="1Jy-PA-haE" eventType="touchUpInside" id="BZu-mc-NmX"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="Zxc-H9-MfG" firstAttribute="top" secondItem="FE7-8a-p4d" secondAttribute="bottom" constant="8" id="07x-Et-BJr"/>
                                     <constraint firstItem="6t5-jy-TXh" firstAttribute="top" secondItem="xqk-jO-oVd" secondAttribute="bottom" constant="270" id="1Dv-fT-IEk"/>
                                     <constraint firstItem="LHs-3W-f5s" firstAttribute="leading" secondItem="TPf-Pk-ICn" secondAttribute="leading" constant="8" id="2Sf-9W-Ky5"/>
+                                    <constraint firstItem="eJH-Ts-lRH" firstAttribute="leading" secondItem="2va-KM-l6b" secondAttribute="trailing" constant="-44" id="3hN-tn-uym"/>
                                     <constraint firstAttribute="trailing" secondItem="LHs-3W-f5s" secondAttribute="trailing" constant="8" id="6Yf-o4-R3y"/>
                                     <constraint firstAttribute="trailing" secondItem="xqk-jO-oVd" secondAttribute="trailing" constant="8" id="7mg-Li-Zm7"/>
                                     <constraint firstAttribute="bottom" secondItem="Zxc-H9-MfG" secondAttribute="bottom" constant="194" id="8IZ-bi-gBr"/>
@@ -558,8 +567,10 @@
                                     <constraint firstItem="xqk-jO-oVd" firstAttribute="leading" secondItem="TPf-Pk-ICn" secondAttribute="leading" constant="8" id="Vzj-dV-T55"/>
                                     <constraint firstItem="N9X-US-gUX" firstAttribute="height" secondItem="LHs-3W-f5s" secondAttribute="height" id="WsF-Fz-1c3"/>
                                     <constraint firstItem="WV6-3V-7Fo" firstAttribute="centerX" secondItem="xqk-jO-oVd" secondAttribute="centerX" id="Wwm-QI-Q28"/>
+                                    <constraint firstItem="eJH-Ts-lRH" firstAttribute="trailing" secondItem="KQE-op-zEj" secondAttribute="trailing" id="ZhS-n7-n2c"/>
                                     <constraint firstItem="LHs-3W-f5s" firstAttribute="height" secondItem="2va-KM-l6b" secondAttribute="height" id="c59-hJ-2o9"/>
                                     <constraint firstItem="FE7-8a-p4d" firstAttribute="top" secondItem="z1q-8F-CBn" secondAttribute="bottom" constant="8" id="cZN-M8-ND6"/>
+                                    <constraint firstItem="eJH-Ts-lRH" firstAttribute="centerY" secondItem="2va-KM-l6b" secondAttribute="centerY" id="eUB-Dd-c6a"/>
                                     <constraint firstItem="2va-KM-l6b" firstAttribute="height" secondItem="xqk-jO-oVd" secondAttribute="height" id="eXx-pc-ww4"/>
                                     <constraint firstItem="z1q-8F-CBn" firstAttribute="leading" secondItem="TPf-Pk-ICn" secondAttribute="leading" constant="8" id="eY1-VP-JpO"/>
                                     <constraint firstItem="WV6-3V-7Fo" firstAttribute="centerX" secondItem="N9X-US-gUX" secondAttribute="centerX" id="gBh-zi-jTW"/>
@@ -568,6 +579,7 @@
                                     <constraint firstItem="6t5-jy-TXh" firstAttribute="trailing" secondItem="xqk-jO-oVd" secondAttribute="trailing" id="hYq-1N-n9I"/>
                                     <constraint firstItem="WV6-3V-7Fo" firstAttribute="centerX" secondItem="TPf-Pk-ICn" secondAttribute="centerX" id="iZd-g0-Fih"/>
                                     <constraint firstItem="xqk-jO-oVd" firstAttribute="top" secondItem="2va-KM-l6b" secondAttribute="bottom" constant="8" id="irz-pz-i7G"/>
+                                    <constraint firstItem="eJH-Ts-lRH" firstAttribute="top" secondItem="LHs-3W-f5s" secondAttribute="bottom" constant="13" id="jaR-6y-OwZ"/>
                                     <constraint firstItem="KQE-op-zEj" firstAttribute="top" secondItem="TPf-Pk-ICn" secondAttribute="top" constant="8" id="jcC-CF-Yii"/>
                                     <constraint firstItem="WV6-3V-7Fo" firstAttribute="leading" secondItem="TPf-Pk-ICn" secondAttribute="leading" constant="53" id="nPE-M6-G06"/>
                                     <constraint firstItem="KQE-op-zEj" firstAttribute="leading" secondItem="WV6-3V-7Fo" secondAttribute="trailing" constant="10" id="qVg-M5-lPy"/>
@@ -614,7 +626,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J4B-dt-3QI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-300" y="1709"/>
+            <point key="canvasLocation" x="-300" y="1708.6956521739132"/>
         </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="ET0-pz-SAe">
@@ -1957,6 +1969,6 @@
         <image name="yogurtLGiftCard.png" width="1200" height="630"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Qre-Mo-Otd"/>
+        <segue reference="PA9-B6-jaZ"/>
     </inferredMetricsTieBreakers>
 </document>
