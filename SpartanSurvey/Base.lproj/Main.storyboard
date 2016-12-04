@@ -139,7 +139,6 @@
                                         <state key="normal" title="Submit"/>
                                         <connections>
                                             <action selector="submit:" destination="Q4k-1b-UBw" eventType="touchUpInside" id="uso-rV-07C"/>
-                                            <segue destination="tST-d8-rpu" kind="show" id="KJM-qV-WA4"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Invalid number?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4m-9S-IZC">
@@ -227,10 +226,10 @@
             </objects>
             <point key="canvasLocation" x="-387.19999999999999" y="799.70014992503752"/>
         </scene>
-        <!--View Controller-->
+        <!--Yogurt Land View Controller-->
         <scene sceneID="Hy0-G4-0nG">
             <objects>
-                <viewController id="tST-d8-rpu" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="yogurtLScreen" id="tST-d8-rpu" customClass="YogurtLandViewController" customModule="SpartanSurvey" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xzM-4q-KT7"/>
                         <viewControllerLayoutGuide type="bottom" id="dUp-Zv-ELt"/>
@@ -358,7 +357,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eBX-dZ-FRq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8056.8000000000002" y="1484.7076461769116"/>
+            <point key="canvasLocation" x="-898" y="847"/>
         </scene>
         <!--SignInPopOver-->
         <scene sceneID="tzo-51-9n6">

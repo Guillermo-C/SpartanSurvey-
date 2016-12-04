@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB05CC2E1DF499D200C46525 /* YogurtLandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB05CC2D1DF499D200C46525 /* YogurtLandViewController.swift */; };
 		CB0C22251DDD3AA80008E12F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0C22241DDD3AA80008E12F /* SignUpViewController.swift */; };
 		CB0C22271DDD3EB10008E12F /* funnybabypic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CB0C22261DDD3EB10008E12F /* funnybabypic.jpg */; };
 		CB0C28701DDD56AE0008E12F /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB0C286D1DDD56700008E12F /* ResearchKit.framework */; };
@@ -79,6 +80,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CB05CC2D1DF499D200C46525 /* YogurtLandViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YogurtLandViewController.swift; sourceTree = "<group>"; };
 		CB0C22241DDD3AA80008E12F /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		CB0C22261DDD3EB10008E12F /* funnybabypic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = funnybabypic.jpg; sourceTree = "<group>"; };
 		CB0C28661DDD566F0008E12F /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = "../../../Downloads/ResearchKit-master/ResearchKit.xcodeproj"; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				CBDDAF1F1DEA0B3C00EFE0A7 /* User Profile */,
 				CB36C46D1DF10FDA00A59EA1 /* Survey.swift */,
 				CBE8A1E01DF3D03D00871CEA /* GiftCardViewController.swift */,
+				CB05CC2D1DF499D200C46525 /* YogurtLandViewController.swift */,
 			);
 			path = SpartanSurvey;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				CBCB71CC1DE0192800E6D3DE /* KaiserPermanenteViewController.swift in Sources */,
 				CB66844C1DE6912F003FB7CB /* SubwayViewController.swift in Sources */,
 				CBFECFFB1DDD5A5B00A4ECC6 /* ConsentTask.swift in Sources */,
+				CB05CC2E1DF499D200C46525 /* YogurtLandViewController.swift in Sources */,
 				CB66844A1DE66A75003FB7CB /* TakeaSurveyViewController.swift in Sources */,
 				CB6C2D3D1DD8146D008A3DD2 /* SurveyTableViewController.swift in Sources */,
 				CBFECFF71DDD5A4000A4ECC6 /* ConsentDocument.swift in Sources */,

@@ -16,6 +16,9 @@ class QRCodeViewController: UIViewController, UIPopoverPresentationControllerDel
     
     var delegate: QRCodeViewControllerDelegate?
     
+    //  qrCode needed to be taken to the appropriate survey. 
+    var qrCode:String = "1A3BZ99"
+    
     @IBOutlet weak var qRCodeEntry: UITextField!
     
     
@@ -46,6 +49,9 @@ class QRCodeViewController: UIViewController, UIPopoverPresentationControllerDel
     @IBAction func submit(_ sender: UIButton) {
         //var number:Int = cloud.getPoints(email: qRCodeEntry.text!)
         //print("Total number of points: \(number)")
+        let viewC:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "yogurtLScreen") as UIViewController
+        
+        self.present(viewC, animated: true, completion: nil)
     }
 
     
