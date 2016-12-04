@@ -137,6 +137,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FYc-Qi-vuN">
                                         <rect key="frame" x="136.5" y="149.5" width="49" height="30"/>
                                         <state key="normal" title="Submit"/>
+                                        <connections>
+                                            <action selector="submit:" destination="Q4k-1b-UBw" eventType="touchUpInside" id="uso-rV-07C"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Invalid number?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4m-9S-IZC">
                                         <rect key="frame" x="92" y="8" width="138" height="20.5"/>
@@ -182,6 +185,9 @@
                             <constraint firstItem="HAv-Ft-kk2" firstAttribute="leading" secondItem="hoH-gV-eGp" secondAttribute="leadingMargin" constant="-16" id="uoz-VJ-QCD"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="qRCodeEntry" destination="ADM-3U-lFl" id="cA9-kO-vDN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8eP-TR-13x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

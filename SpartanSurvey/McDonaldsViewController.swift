@@ -215,6 +215,8 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
                 self.present(viewC, animated: true, completion: nil)
             }))*/
             
+            cloudKitEng.updatePoints(email: emailOfUser)
+            
             present(completionAlert, animated: true, completion: nil)
         }
         

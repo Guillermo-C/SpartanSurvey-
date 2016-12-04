@@ -434,6 +434,97 @@ class CloudKitEngine{
         return ""
     }
     
+    //  func to update the number of points earned by the user after taking a survey 
+    func getPoints() -> Int{
+        if (self.tempRecord.count > 0){
+            let pts:Int = tempRecord[0].value(forKey: "Password") as! Int
+            return pts
+        }
+        return 0
+    }
 
+    
+    //  func to update user's points 
+    var fetchedRecord:CKRecord!
+    func updatePoints(email: String){
+        let recordID:CKRecordID = CKRecordID(recordName: email)
+        //var fetchedRecord:CKRecord!
+        publicDataBase.fetch(withRecordID: recordID){ (record, error) in
+            if error != nil{
+                
+            }else{
+                self.fetchedRecord = record!
+                //record?.setObject(100 as CKRecordValue?, forKey: "Points")
+                self.fetchedRecord?.setObject(100 as CKRecordValue?, forKey: "Points")
+                
+                    
+                    
+                }
+            DispatchQueue.main.async {
+                self.publicDataBase.save(self.fetchedRecord){ (savedRecord, error) -> Void in
+                    if error != nil {
+                        
+                    }
+                    else{
+                        
+                    }
+                }
+                
+            }
+        }
+
+
+
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //  var to hold the number of points of the user
+    //var points:Int = -1
+    //  func to get the current number of points of a user 
+    /*func getPoints(email: String) -> Int {
+        let lookEmail = email
+        let predicate = NSPredicate(format: "Email  = %@", lookEmail)
+        let query = CKQuery(recordType: "UserInfo", predicate: predicate)
+        //var points:Int = -1
+        var record:CKRecord!
+        
+        
+        publicDataBase.perform(query, inZoneWith: nil){ results, error in
+            if error != nil{
+                
+            }
+            else{
+                for result in results!{
+                    //recordFound.append(result)
+                    //record = result
+                    self.points = result.value(forKey: "Points") as! Int
+                    
+                }
+
+            }
+
+        }
+
+        return self.points
+    }*/
+    
+
+    
+    
     
 }

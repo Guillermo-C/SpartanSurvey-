@@ -15,6 +15,10 @@ import UIKit
 class QRCodeViewController: UIViewController, UIPopoverPresentationControllerDelegate {
     
     var delegate: QRCodeViewControllerDelegate?
+    
+    @IBOutlet weak var qRCodeEntry: UITextField!
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +39,14 @@ class QRCodeViewController: UIViewController, UIPopoverPresentationControllerDel
         self.performSegue(withIdentifier: "qRInfoSegue", sender: self)
     }
     
+    
+    //  For testing only
+    
+    var cloud = CloudKitEngine()
+    @IBAction func submit(_ sender: UIButton) {
+        //var number:Int = cloud.getPoints(email: qRCodeEntry.text!)
+        //print("Total number of points: \(number)")
+    }
 
     
     // MARK: - Navigation
