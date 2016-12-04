@@ -9,11 +9,18 @@
 import UIKit
 
 class GiftCardViewController: UIViewController {
+    
+    
+    //  Alert for not sufficient points. Shown when "not enough points"
+    let notEnoughAlert = UIAlertController(title: "Need more points", message: "You can't afford this gift card, go take more surveys!", preferredStyle: UIAlertControllerStyle.alert)
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        //  Add action "Ok" for the wrongCredentialsAlert
+        notEnoughAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+            
+        }))
         // Do any additional setup after loading the view.
     }
 
@@ -26,7 +33,8 @@ class GiftCardViewController: UIViewController {
     
 
     @IBAction func buy(_ sender: UIButton) {
-        mcDonaldsImg.alpha = 0.2
+       // mcDonaldsImg.alpha = 0.2
+        present(notEnoughAlert, animated: true, completion: nil)
     }
 
     /*
