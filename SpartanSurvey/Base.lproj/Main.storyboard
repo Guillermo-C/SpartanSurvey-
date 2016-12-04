@@ -1483,21 +1483,37 @@
                                     <navigationItem title="Gift Cards" id="WAb-KO-TdY"/>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="McDon'sGiftCard.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Hji-cV-guA">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="McDon'sGiftCard.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Hji-cV-guA">
                                 <rect key="frame" x="16" y="122" width="100" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HLt-Nk-wQW">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SubwayGiftCard.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="HLt-Nk-wQW">
                                 <rect key="frame" x="16" y="180" width="100" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="f56-Ja-wqd"/>
+                                    <constraint firstAttribute="height" constant="50" id="nRX-TY-N3m"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yogurtLGiftCard.png" translatesAutoresizingMaskIntoConstraints="NO" id="WH1-6N-eRK">
+                                <rect key="frame" x="16" y="238" width="100" height="50"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="WH1-6N-eRK" firstAttribute="trailing" secondItem="HLt-Nk-wQW" secondAttribute="trailing" id="1Mm-iv-tWZ"/>
                             <constraint firstItem="S8d-lL-yVf" firstAttribute="top" secondItem="apA-l0-Uix" secondAttribute="bottom" constant="8" id="8jz-te-s1B"/>
                             <constraint firstItem="S8d-lL-yVf" firstAttribute="leading" secondItem="xcH-UA-phF" secondAttribute="leadingMargin" constant="-16" id="9Se-Wr-KNf"/>
+                            <constraint firstItem="HLt-Nk-wQW" firstAttribute="trailing" secondItem="Hji-cV-guA" secondAttribute="trailing" id="CK5-y4-aRK"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Hji-cV-guA" secondAttribute="leading" id="CwH-zx-tVi"/>
                             <constraint firstItem="S8d-lL-yVf" firstAttribute="centerX" secondItem="xcH-UA-phF" secondAttribute="centerX" id="JzJ-46-spP"/>
+                            <constraint firstItem="HLt-Nk-wQW" firstAttribute="leading" secondItem="Hji-cV-guA" secondAttribute="leading" id="QFu-mC-7ck"/>
+                            <constraint firstItem="Ixb-JA-up2" firstAttribute="top" secondItem="WH1-6N-eRK" secondAttribute="bottom" constant="330" id="TZG-QG-qgy"/>
+                            <constraint firstItem="WH1-6N-eRK" firstAttribute="top" secondItem="HLt-Nk-wQW" secondAttribute="bottom" constant="8" symbolic="YES" id="VvG-Ug-otK"/>
+                            <constraint firstItem="WH1-6N-eRK" firstAttribute="leading" secondItem="HLt-Nk-wQW" secondAttribute="leading" id="jHq-yf-lDq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="S8d-lL-yVf" secondAttribute="trailing" constant="-16" id="jdd-K4-EOT"/>
+                            <constraint firstItem="HLt-Nk-wQW" firstAttribute="top" secondItem="Hji-cV-guA" secondAttribute="bottom" constant="8" symbolic="YES" id="l7S-yz-4ru"/>
+                            <constraint firstItem="HLt-Nk-wQW" firstAttribute="top" secondItem="Hji-cV-guA" secondAttribute="bottom" constant="8" id="vQQ-DM-XaW"/>
+                            <constraint firstItem="HLt-Nk-wQW" firstAttribute="top" secondItem="xcH-UA-phF" secondAttribute="top" constant="180" id="wzA-Au-zMa"/>
+                            <constraint firstItem="Hji-cV-guA" firstAttribute="top" secondItem="S8d-lL-yVf" secondAttribute="bottom" constant="50" id="xiC-jc-0ec"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Gift Cards" id="OdH-ok-2uI"/>
@@ -1713,7 +1729,9 @@
     </scenes>
     <resources>
         <image name="McDon'sGiftCard.jpg" width="600" height="480"/>
+        <image name="SubwayGiftCard.jpg" width="470" height="300"/>
         <image name="funnybabypic.jpg" width="479" height="656"/>
+        <image name="yogurtLGiftCard.png" width="1200" height="630"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Qre-Mo-Otd"/>
