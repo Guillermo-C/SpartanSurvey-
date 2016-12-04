@@ -13,6 +13,7 @@ class GiftCardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         // Do any additional setup after loading the view.
     }
 
@@ -21,6 +22,12 @@ class GiftCardViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBOutlet weak var mcDonaldsImg: UIImageView!
+    
+
+    @IBAction func buy(_ sender: UIButton) {
+        mcDonaldsImg.alpha = 0.2
+    }
 
     /*
     // MARK: - Navigation

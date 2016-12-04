@@ -1468,7 +1468,7 @@
         <!--GiftCards-->
         <scene sceneID="6eB-zN-CWc">
             <objects>
-                <viewController title="GiftCards" id="GaH-J6-BPg" sceneMemberID="viewController">
+                <viewController title="GiftCards" id="GaH-J6-BPg" customClass="GiftCardViewController" customModule="SpartanSurvey" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="apA-l0-Uix"/>
                         <viewControllerLayoutGuide type="bottom" id="Ixb-JA-up2"/>
@@ -1499,6 +1499,9 @@
                                     <constraint firstAttribute="height" constant="30" id="XcY-di-yAa"/>
                                 </constraints>
                                 <state key="normal" title="Buy"/>
+                                <connections>
+                                    <action selector="buy:" destination="GaH-J6-BPg" eventType="touchUpInside" id="XWq-8q-U13"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Am3-qX-oKd">
                                 <rect key="frame" x="313" y="248" width="46" height="30"/>
@@ -1539,6 +1542,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Gift Cards" id="OdH-ok-2uI"/>
+                    <connections>
+                        <outlet property="mcDonaldsImg" destination="Hji-cV-guA" id="tM8-Yx-ync"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dGP-bM-Ugi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
