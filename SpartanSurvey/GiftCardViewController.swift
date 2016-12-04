@@ -21,7 +21,7 @@ class GiftCardViewController: UIViewController {
     let yogWorth:Int = 60
     
     //  Alert for not sufficient points. Shown when "not enough points"
-    let notEnoughAlert = UIAlertController(title: "Need more points", message: "You can't afford this gift card, go take more surveys!", preferredStyle: UIAlertControllerStyle.alert)
+    let notEnoughAlert = UIAlertController(title: "Need more points!", message: "You can't afford this gift card, go take more surveys!", preferredStyle: UIAlertControllerStyle.alert)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,18 +52,18 @@ class GiftCardViewController: UIViewController {
     }*/
     @IBAction func buyMcDonalds(_ sender: UIButton) {
         let canDo:Bool = canAffordGiftCard(usrPts: Int (userPoints)!, worth: mcDWorth)
-        _ = buyCard(eligible: canDo, img: mcDonaldsImg)
+        _ = buyCard(eligible: canDo, img: mcDonaldsImg, alert: notEnoughAlert, targetVC: self)
         
     }
     
     @IBAction func buySubway(_ sender: UIButton) {
         let canDo:Bool = canAffordGiftCard(usrPts: Int (userPoints)!, worth: subWorth)
-        _ = buyCard(eligible: canDo, img: subwayImg)
+        _ = buyCard(eligible: canDo, img: subwayImg, alert: notEnoughAlert, targetVC: self)
     }
     
     @IBAction func buyYogurtL(_ sender: UIButton) {
         let canDo:Bool = canAffordGiftCard(usrPts: Int (userPoints)!, worth: yogWorth)
-        _ = buyCard(eligible: canDo, img: yogurtLandImg)
+        _ = buyCard(eligible: canDo, img: yogurtLandImg, alert: notEnoughAlert, targetVC: self)
         
     }
     
@@ -90,11 +90,12 @@ class GiftCardViewController: UIViewController {
     }
     
     //  func to check if user can buy gift card. If possible then, grey out the card a little. 
-    func buyCard(eligible: Bool, img: UIImageView){
+    func buyCard(eligible: Bool, img: UIImageView, alert: UIAlertController, targetVC: UIViewController){
         switch eligible {
         case true:
             img.alpha = 0.5
         default:
+            targetVC.present(alert, animated: true, completion: nil)
             print("User couldn't afford it.")
         }
     }
