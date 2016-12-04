@@ -1500,16 +1500,22 @@
                                 </constraints>
                                 <state key="normal" title="Buy"/>
                                 <connections>
-                                    <action selector="buy:" destination="GaH-J6-BPg" eventType="touchUpInside" id="XWq-8q-U13"/>
+                                    <action selector="buyMcDonalds:" destination="GaH-J6-BPg" eventType="touchUpInside" id="oId-SW-U36"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCH-w3-NEd">
                                 <rect key="frame" x="281" y="190" width="46" height="30"/>
                                 <state key="normal" title="Buy"/>
+                                <connections>
+                                    <action selector="buySubway:" destination="GaH-J6-BPg" eventType="touchUpInside" id="2pf-F1-ibS"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Am3-qX-oKd">
                                 <rect key="frame" x="281" y="248" width="46" height="30"/>
                                 <state key="normal" title="Buy"/>
+                                <connections>
+                                    <action selector="buyYogurtL:" destination="GaH-J6-BPg" eventType="touchUpInside" id="dfO-wy-FGL"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppK-Ih-Oav">
                                 <rect key="frame" x="332" y="138" width="39" height="18"/>
@@ -1572,6 +1578,8 @@
                     <tabBarItem key="tabBarItem" title="Gift Cards" id="OdH-ok-2uI"/>
                     <connections>
                         <outlet property="mcDonaldsImg" destination="Hji-cV-guA" id="tM8-Yx-ync"/>
+                        <outlet property="subwayImg" destination="HLt-Nk-wQW" id="N4s-0L-0mV"/>
+                        <outlet property="yogurtLandImg" destination="WH1-6N-eRK" id="TgG-y9-SUf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dGP-bM-Ugi" userLabel="First Responder" sceneMemberID="firstResponder"/>

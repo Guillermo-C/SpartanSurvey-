@@ -11,6 +11,15 @@ import UIKit
 class GiftCardViewController: UIViewController {
     
     
+    //  Points the McDonald's gift card is worth. 
+    let mcDWorth:Int = 100
+    
+    //  Points the Subway gift card is worth.
+    let subWorth:Int = 80
+    
+    //  Points the YogurtLand gift card is worth.
+    let yogWorth:Int = 60
+    
     //  Alert for not sufficient points. Shown when "not enough points"
     let notEnoughAlert = UIAlertController(title: "Need more points", message: "You can't afford this gift card, go take more surveys!", preferredStyle: UIAlertControllerStyle.alert)
 
@@ -31,11 +40,33 @@ class GiftCardViewController: UIViewController {
     
     @IBOutlet weak var mcDonaldsImg: UIImageView!
     
+    @IBOutlet weak var subwayImg: UIImageView!
+    
+    @IBOutlet weak var yogurtLandImg: UIImageView!
+    
+    
 
-    @IBAction func buy(_ sender: UIButton) {
+    /*@IBAction func buy(_ sender: UIButton) {
        // mcDonaldsImg.alpha = 0.2
         present(notEnoughAlert, animated: true, completion: nil)
+    }*/
+    @IBAction func buyMcDonalds(_ sender: UIButton) {
+        let canDo:Bool = canAffordGiftCard(usrPts: Int (userPoints)!, worth: mcDWorth)
+        _ = buyCard(eligible: canDo, img: mcDonaldsImg)
+        
     }
+    
+    @IBAction func buySubway(_ sender: UIButton) {
+        let canDo:Bool = canAffordGiftCard(usrPts: Int (userPoints)!, worth: subWorth)
+        _ = buyCard(eligible: canDo, img: subwayImg)
+    }
+    
+    @IBAction func buyYogurtL(_ sender: UIButton) {
+        let canDo:Bool = canAffordGiftCard(usrPts: Int (userPoints)!, worth: yogWorth)
+        _ = buyCard(eligible: canDo, img: yogurtLandImg)
+        
+    }
+    
 
     /*
     // MARK: - Navigation
@@ -46,5 +77,27 @@ class GiftCardViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    //  func to check if user can afford the gift card
+    func canAffordGiftCard(usrPts: Int, worth: Int) -> Bool{
+        var can:Bool = false
+        
+        if (usrPts >= worth){
+            can = true
+        }
+        
+        return can
+    }
+    
+    //  func to check if user can buy gift card. If possible then, grey out the card a little. 
+    func buyCard(eligible: Bool, img: UIImageView){
+        switch eligible {
+        case true:
+            img.alpha = 0.5
+        default:
+            print("User couldn't afford it.")
+        }
+    }
+    
 
 }
