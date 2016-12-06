@@ -161,12 +161,12 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                 let newRecordName:String = email
                 currentPickerChoice = pickerValue
                 let inputArray = inputAsArray(in0: firstNameEntry.text!, in1: emailEntry.text!, in2: passwordEntry.text!, points: "0", in3: currentPickerChoice, in4: securityQuestionAnswer.text!)
-                cloudKitEng.saveNewDataWRecord(record_Name: newRecordName, recordTypeName: "UserInfo", recordsToSave: inputArray, keyList: keyArray, actInd: activityIndicator)
+                cloudKitEng.saveNewDataWRecord(record_Name: newRecordName, recordTypeName: "UserInfo", recordsToSave: inputArray, keyList: keyArray, actInd: activityIndicator, targetVC: self)
                 print("user has not registered yet")
-                DispatchQueue.main.async {
+                /*DispatchQueue.main.async {
                     let viewC:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "signIn") as UIViewController                    
                     self.present(viewC, animated: true, completion: nil)
-                }
+                }*/
             }
             
         }

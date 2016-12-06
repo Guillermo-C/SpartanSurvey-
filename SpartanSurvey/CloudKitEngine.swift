@@ -81,16 +81,16 @@ class CloudKitEngine{
     }
     
     //  Create a method for saving data with a given record name.
-    func saveNewDataWRecord(record_Name: String, recordTypeName: String, recordsToSave: [String], keyList: [String], actInd: UIActivityIndicatorView){
+    func saveNewDataWRecord(record_Name: String, recordTypeName: String, recordsToSave: [String], keyList: [String], actInd: UIActivityIndicatorView, targetVC: UIViewController){
         let recordId = CKRecordID(recordName: record_Name)
         let store = CKRecord(recordType: recordTypeName, recordID: recordId)
-        actInd.startAnimating()
+        //actInd.startAnimating()
         
         //  Save each attribute in its corresponding key
         for i in 0...keyList.count - 1{
             let saveR = recordsToSave[i]
             let recKey = keyList[i]
-            
+            actInd.startAnimating()
             //  If the record value to store is Int, save it as such.
             if(recKey == "Points"){
                 let intValue:Int = Int(saveR)!
@@ -99,14 +99,10 @@ class CloudKitEngine{
                 publicDataBase.save(store) { (savedRecord, error) -> Void in
                     if (error != nil){
                         print("Error while saving data")
-                        print(error.debugDescription)
                     }
                     else{
                         print("\n\n\n\nSweet...it worked :)")
                     }
-                    /*DispatchQueue.main.async {
-                     actInd.stopAnimating()
-                     }*/
                 }
                 
             }
@@ -116,21 +112,19 @@ class CloudKitEngine{
                 publicDataBase.save(store) { (savedRecord, error) -> Void in
                     if (error != nil){
                         print("Error while saving data")
-                        print(error.debugDescription)
                     }
                     else{
                         print("\n\n\n\nSweet...it worked :)")
                     }
-                    /*DispatchQueue.main.async {
-                     actInd.stopAnimating()
-                     }*/
                 }
                 DispatchQueue.main.async {
                     actInd.stopAnimating()
+                    let viewC:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "signIn") as UIViewController
+                    targetVC.present(viewC, animated: true, completion: nil)
                 }
             }
             
-        }        
+        }
     }
     
     //  Detect if user was previously and still is logged into iCloud on his phone
