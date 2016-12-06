@@ -84,26 +84,52 @@ class CloudKitEngine{
     func saveNewDataWRecord(record_Name: String, recordTypeName: String, recordsToSave: [String], keyList: [String], actInd: UIActivityIndicatorView){
         let recordId = CKRecordID(recordName: record_Name)
         let store = CKRecord(recordType: recordTypeName, recordID: recordId)
+        actInd.startAnimating()
         
         //  Save each attribute in its corresponding key
         for i in 0...keyList.count - 1{
             let saveR = recordsToSave[i]
             let recKey = keyList[i]
             
+            //  If the record value to store is Int, save it as such.
+            if(recKey == "Points"){
+                let intValue:Int = Int(saveR)!
+                
+                store.setObject(intValue as CKRecordValue?, forKey: recKey)
+                publicDataBase.save(store) { (savedRecord, error) -> Void in
+                    if (error != nil){
+                        print("Error while saving data")
+                        print(error.debugDescription)
+                    }
+                    else{
+                        print("\n\n\n\nSweet...it worked :)")
+                    }
+                    /*DispatchQueue.main.async {
+                     actInd.stopAnimating()
+                     }*/
+                }
+                
+            }
+            else{
+                //  If the record value to store is String, save it as such.
+                store.setObject(saveR as CKRecordValue?, forKey: recKey)
+                publicDataBase.save(store) { (savedRecord, error) -> Void in
+                    if (error != nil){
+                        print("Error while saving data")
+                        print(error.debugDescription)
+                    }
+                    else{
+                        print("\n\n\n\nSweet...it worked :)")
+                    }
+                    /*DispatchQueue.main.async {
+                     actInd.stopAnimating()
+                     }*/
+                }
+                DispatchQueue.main.async {
+                    actInd.stopAnimating()
+                }
+            }
             
-            store.setObject(saveR as CKRecordValue?, forKey: recKey)
-            publicDataBase.save(store) { (savedRecord, error) -> Void in
-                if (error != nil){
-                    print("Error while saving data")
-                    print(error.debugDescription)
-                }
-                else{
-                    print("\n\n\n\nSweet...it worked :)")
-                }
-            }
-            DispatchQueue.main.async {
-                actInd.stopAnimating()
-            }
         }        
     }
     
@@ -225,7 +251,12 @@ class CloudKitEngine{
     
     //  func to get the points of the loggedin user
     func pointsOfUser(record: [CKRecord]) -> String{
-        let pass:String = String(describing: record[0].value(forKey: "Points")!)
+        
+        var pass:String = "0"
+        
+        if (record.count > 0){
+            pass = String(describing: record[0].value(forKey: "Points")!)
+        }
         
         return pass
     }

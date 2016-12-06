@@ -91,8 +91,10 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         keyArray.append("FirstName")
         keyArray.append("Email")
         keyArray.append("Password")
+        keyArray.append("Points")
         keyArray.append("SecurityQuestion")
         keyArray.append("SecurityQuestionAnswer")
+        //keyArray.append("Points")
         
         // Do any additional setup after loading the view.
         
@@ -158,7 +160,7 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             else{
                 let newRecordName:String = email
                 currentPickerChoice = pickerValue
-                let inputArray = inputAsArray(in0: firstNameEntry.text!, in1: emailEntry.text!, in2: passwordEntry.text!, in3: currentPickerChoice, in4: securityQuestionAnswer.text!)
+                let inputArray = inputAsArray(in0: firstNameEntry.text!, in1: emailEntry.text!, in2: passwordEntry.text!, points: "0", in3: currentPickerChoice, in4: securityQuestionAnswer.text!)
                 cloudKitEng.saveNewDataWRecord(record_Name: newRecordName, recordTypeName: "UserInfo", recordsToSave: inputArray, keyList: keyArray, actInd: activityIndicator)
                 print("user has not registered yet")
                 DispatchQueue.main.async {
@@ -192,13 +194,15 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     //  func for putting all user's text input into an array for cloud storing
-    func inputAsArray(in0:String, in1: String, in2: String, in3: String, in4: String) -> [String]{
+    func inputAsArray(in0:String, in1: String, in2: String, points:String, in3: String, in4: String) -> [String]{
         var tempArray = [String]()
         tempArray.append(in0)
         tempArray.append(in1)
         tempArray.append(in2)
+        tempArray.append(points)
         tempArray.append(in3)
         tempArray.append(in4)
+        //tempArray.append(in5)
 
         return tempArray
     }
