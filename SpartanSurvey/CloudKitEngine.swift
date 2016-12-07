@@ -82,15 +82,16 @@ class CloudKitEngine{
     
     //  Create a method for saving data with a given record name.
     func saveNewDataWRecord(record_Name: String, recordTypeName: String, recordsToSave: [String], keyList: [String], actInd: UIActivityIndicatorView, targetVC: UIViewController){
+        actInd.startAnimating()
         let recordId = CKRecordID(recordName: record_Name)
         let store = CKRecord(recordType: recordTypeName, recordID: recordId)
-        //actInd.startAnimating()
+
         
         //  Save each attribute in its corresponding key
         for i in 0...keyList.count - 1{
             let saveR = recordsToSave[i]
             let recKey = keyList[i]
-            actInd.startAnimating()
+            //actInd.startAnimating()
             //  If the record value to store is Int, save it as such.
             if(recKey == "Points"){
                 let intValue:Int = Int(saveR)!
@@ -117,13 +118,12 @@ class CloudKitEngine{
                         print("\n\n\n\nSweet...it worked :)")
                     }
                 }
-                DispatchQueue.main.async {
-                    actInd.stopAnimating()
-                    let viewC:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "signIn") as UIViewController
-                    targetVC.present(viewC, animated: true, completion: nil)
-                }
             }
-            
+        }
+        DispatchQueue.main.async {
+            actInd.stopAnimating()
+            let viewC:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "signIn") as UIViewController
+            targetVC.present(viewC, animated: true, completion: nil)
         }
     }
     
@@ -309,7 +309,107 @@ class CloudKitEngine{
 
     }
     
-    func printAnswers(recordArray: [CKRecord], canvas: UITextView) -> [String]{
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //  testing
+    //  purpose: make sure that all the answers of the user are successfully printed.
+    var recordAnswers = [CKRecord]()
+    func retrieveAnswers(email: String){
+        //var stringArray = [String]()
+        //var records = [CKRecord]()
+        
+        let lookEmail = email
+        let predicate = NSPredicate(format: "Email  = %@", lookEmail)
+        let query = CKQuery(recordType: "SurveyData", predicate: predicate)
+        publicDataBase.perform(query, inZoneWith: nil){ results, error in
+            if error != nil{
+                
+            }
+            else{
+                for result in results!{
+                    self.recordAnswers.append(result)
+                    //recordFound.append(result)
+                    print("\nSize of recordAnswers: \(self.recordAnswers.count)")
+                }
+            }
+            //print("\nThe size of the answer record is \(recordFound.count)\n")
+        }
+        
+        
+        //return stringArray
+    }
+    
+    func getAnswers(textBlock: UITextView){
+        /*var stringArray = [String]()
+        let numberOfKeys = recordAnswers[0].allKeys().count
+        var keyArray = [String]()
+        keyArray = recordAnswers[0].allKeys()
+        let numberOfRec = recordAnswers.count*/
+        
+        if (recordAnswers.count > 0){
+            var stringArray = [String]()
+            let numberOfKeys = recordAnswers[0].allKeys().count
+            var keyArray = [String]()
+            keyArray = recordAnswers[0].allKeys()
+            let numberOfRec = recordAnswers.count
+            var currentVal:String = ""
+            
+            for i in 0...numberOfRec - 1{
+                var currentRec = recordAnswers[i]
+                textBlock.text = textBlock.text! + "Key: \(keyArray[i])"
+                for j in 0...numberOfKeys - 1{
+                    //var forKey:String =
+                    currentVal = currentRec.value(forKey: keyArray[j]) as! String
+                    textBlock.text = textBlock.text! + "Key: \(keyArray[i])\t Val: \(currentVal)\n"
+                    
+                }
+            }
+            textBlock.text = textBlock.text! + "\nAnd the size of numberOfKeys was: \(numberOfKeys)"
+            textBlock.text = textBlock.text! + "\nAnd the size of numberOfRec was: \(numberOfRec)"
+        }
+        
+        
+        
+       // return stringArray
+    }
+    
+    
+    
+    //  end of testing
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //  This is the previous printAnswers() used. It works to an extent. Uncomment out when done testing
+    
+    /*func printAnswers(recordArray: [CKRecord], canvas: UITextView) -> [String]{
         var stringArray = [String]()
         var count:Int = 0                    // Keep track of counter for printing values from database
         var sizeToGo:Int = recordArray.count // Number of surveys found taken by the user
@@ -362,7 +462,7 @@ class CloudKitEngine{
         
         
         return stringArray
-    }
+    }*/
 
     var tempRecord = [CKRecord]()
     

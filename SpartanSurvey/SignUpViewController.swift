@@ -145,7 +145,7 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         else{
             let email:String = emailEntry.text!
             let previouslyRegistered = cloudKitEng.userRegistered(email: email)
-            activityIndicator.startAnimating()
+            //activityIndicator.startAnimating()
             //  Continue process
             //activityIndicator.startAnimating()
             //  Stop UI interaction while data process is running
@@ -158,6 +158,7 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                 DispatchQueue.main.async { self.activityIndicator.stopAnimating()}
             }
             else{
+                //activityIndicator.startAnimating()
                 let newRecordName:String = email
                 currentPickerChoice = pickerValue
                 let inputArray = inputAsArray(in0: firstNameEntry.text!, in1: emailEntry.text!, in2: passwordEntry.text!, points: "0", in3: currentPickerChoice, in4: securityQuestionAnswer.text!)

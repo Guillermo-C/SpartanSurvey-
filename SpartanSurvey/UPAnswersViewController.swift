@@ -40,7 +40,23 @@ class UPAnswersViewController: UIViewController {
         cloudKitEng.getAllAnswers(email: emailOfUser)
         if((recordFound.count > 0) && (!didRefresh(canvas: answersBlock, word: screenDisplay))){
             //answersBlock.text = "Wait!, some data came in"
-            cloudKitEng.printAnswers(recordArray: recordFound, canvas: answersBlock)
+            
+            // code below works, uncomment when done testing
+            /*cloudKitEng.printAnswers(recordArray: recordFound, canvas: answersBlock)*/
+            //  end
+            
+            
+            
+            
+            
+            //  start testing 
+            var someArray = [String]()
+            cloudKitEng.retrieveAnswers(email: emailOfUser)
+            //someArray = cloudKitEng.getAnswers(textBlock: answersBlock)
+            cloudKitEng.getAnswers(textBlock: answersBlock)
+            //print("\n\nWhen dumping array: ")
+            //dump(someArray)
+            //  end testing
         }
         
     }
