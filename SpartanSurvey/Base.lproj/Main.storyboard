@@ -1970,6 +1970,73 @@
             </objects>
             <point key="canvasLocation" x="2746" y="124"/>
         </scene>
+        <!--Walkthrough Page View Controller-->
+        <scene sceneID="YK7-Ff-lMR">
+            <objects>
+                <viewController storyboardIdentifier="walk4" id="Xss-4I-ks5" customClass="BWWalkthroughPageViewController" customModule="SpartanSurvey" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="e74-TL-HxN"/>
+                        <viewControllerLayoutGuide type="bottom" id="tDE-PB-esw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AxU-Am-fNY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Page 4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pV-zL-Eb3">
+                                <rect key="frame" x="147" y="323" width="80" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="nvU-gQ-tRT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tDE-PB-esw" firstAttribute="top" secondItem="9pV-zL-Eb3" secondAttribute="bottom" constant="323" id="DHk-ML-ybB"/>
+                            <constraint firstItem="9pV-zL-Eb3" firstAttribute="centerY" secondItem="AxU-Am-fNY" secondAttribute="centerY" id="HhN-gI-wyG"/>
+                            <constraint firstItem="9pV-zL-Eb3" firstAttribute="centerX" secondItem="AxU-Am-fNY" secondAttribute="centerX" id="Inn-OE-NdS"/>
+                            <constraint firstItem="9pV-zL-Eb3" firstAttribute="top" secondItem="e74-TL-HxN" secondAttribute="bottom" constant="303" id="jN1-Uu-rAY"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T1f-ri-hIg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3405.5999999999999" y="123.68815592203899"/>
+        </scene>
+        <!--Walkthrough Page View Controller-->
+        <scene sceneID="SG1-U8-x1X">
+            <objects>
+                <viewController storyboardIdentifier="walk5" id="ZSE-JC-GM8" customClass="BWWalkthroughPageViewController" customModule="SpartanSurvey" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4p5-g2-Heo"/>
+                        <viewControllerLayoutGuide type="bottom" id="FWr-gx-FPD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bqW-U5-EQh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Page 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTA-9C-0LS">
+                                <rect key="frame" x="166" y="323" width="66" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="DTA-9C-0LS" secondAttribute="trailing" constant="127" id="4aW-Hy-g21"/>
+                            <constraint firstItem="FWr-gx-FPD" firstAttribute="top" secondItem="DTA-9C-0LS" secondAttribute="bottom" constant="323" id="EtV-7X-zrV"/>
+                            <constraint firstItem="DTA-9C-0LS" firstAttribute="top" secondItem="4p5-g2-Heo" secondAttribute="bottom" constant="303" id="XX8-rg-kCM"/>
+                            <constraint firstItem="DTA-9C-0LS" firstAttribute="leading" secondItem="bqW-U5-EQh" secondAttribute="leadingMargin" constant="150" id="lKC-Ln-xRt"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TKs-jn-yAM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4093.5999999999999" y="123.68815592203899"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Begin!.png" width="300" height="150"/>

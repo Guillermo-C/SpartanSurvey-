@@ -37,12 +37,16 @@ class ViewController: UIViewController, BWWalkthroughViewControllerDelegate{
         let page_one = stb.instantiateViewController(withIdentifier: "walk1") as UIViewController
         let page_two = stb.instantiateViewController(withIdentifier: "walk2") as UIViewController
         let page_three = stb.instantiateViewController(withIdentifier: "walk3") as UIViewController
+        let page_four = stb.instantiateViewController(withIdentifier: "walk4") as UIViewController
+        let page_five = stb.instantiateViewController(withIdentifier: "walk5") as UIViewController
         
         //  Attach pages to master
         walkthrough.delegate = self
         walkthrough.addViewController(page_one)
         walkthrough.addViewController(page_two)
         walkthrough.addViewController(page_three)
+        walkthrough.addViewController(page_four)
+        walkthrough.addViewController(page_five)
         
         self.present(walkthrough, animated: true, completion: nil)
     }
