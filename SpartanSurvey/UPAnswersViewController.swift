@@ -51,9 +51,9 @@ class UPAnswersViewController: UIViewController {
             
             //  start testing 
             var someArray = [String]()
-            cloudKitEng.retrieveAnswers(email: emailOfUser)
+            cloudKitEng.retrieveAnswers(email: emailOfUser, textblock: answersBlock)
             //someArray = cloudKitEng.getAnswers(textBlock: answersBlock)
-            cloudKitEng.getAnswers(textBlock: answersBlock)
+            //cloudKitEng.getAnswers(textBlock: answersBlock)
             //print("\n\nWhen dumping array: ")
             //dump(someArray)
             //  end testing

@@ -327,7 +327,7 @@ class CloudKitEngine{
     //  testing
     //  purpose: make sure that all the answers of the user are successfully printed.
     var recordAnswers = [CKRecord]()
-    func retrieveAnswers(email: String){
+    func retrieveAnswers(email: String, textblock: UITextView){
         //var stringArray = [String]()
         //var records = [CKRecord]()
         
@@ -347,11 +347,16 @@ class CloudKitEngine{
             }
             //print("\nThe size of the answer record is \(recordFound.count)\n")
         }
+        DispatchQueue.main.async {
+            self.getAnswers(textBlock: textblock)
+        }
         
         
         //return stringArray
     }
     
+    //  func to get the answers to be displayed in a UITextView. 
+    //  This func is called within the retrieveAnswers()
     func getAnswers(textBlock: UITextView){
         /*var stringArray = [String]()
         let numberOfKeys = recordAnswers[0].allKeys().count
@@ -360,22 +365,26 @@ class CloudKitEngine{
         let numberOfRec = recordAnswers.count*/
         
         if (recordAnswers.count > 0){
-            var stringArray = [String]()
+            //var stringArray = [String]()
             let numberOfKeys = recordAnswers[0].allKeys().count
             var keyArray = [String]()
             keyArray = recordAnswers[0].allKeys()
             let numberOfRec = recordAnswers.count
             var currentVal:String = ""
+            textBlock.text = ""
             
             for i in 0...numberOfRec - 1{
-                var currentRec = recordAnswers[i]
-                textBlock.text = textBlock.text! + "Key: \(keyArray[i])"
+                let currentRec = recordAnswers[i]
+                //let currentKey = keyArray[i]
+                //textBlock.text = textBlock.text! + "Key: \(currentKey)"
                 for j in 0...numberOfKeys - 1{
                     //var forKey:String =
+                    let currentKey = keyArray[j]
                     currentVal = currentRec.value(forKey: keyArray[j]) as! String
-                    textBlock.text = textBlock.text! + "Key: \(keyArray[i])\t Val: \(currentVal)\n"
+                    textBlock.text = textBlock.text! + "Key: \(currentKey)\t Val: \(currentVal)\n"
                     
                 }
+                textBlock.text = textBlock.text! + "\n"
             }
             textBlock.text = textBlock.text! + "\nAnd the size of numberOfKeys was: \(numberOfKeys)"
             textBlock.text = textBlock.text! + "\nAnd the size of numberOfRec was: \(numberOfRec)"
