@@ -28,6 +28,11 @@ class UPAnswersViewController: UIViewController {
         answersBlock.isEditable = false
         answersBlock.text = screenDisplay
         // Do any additional setup after loading the view.
+        
+        
+        
+        
+                    cloudKitEng.retrieveAnswers(email: emailOfUser, textblock: answersBlock)
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,8 +55,16 @@ class UPAnswersViewController: UIViewController {
             
             
             //  start testing 
-            var someArray = [String]()
-            cloudKitEng.retrieveAnswers(email: emailOfUser, textblock: answersBlock)
+            /*var someArray = [String]()*/
+            
+            
+            
+            
+            //cloudKitEng.retrieveAnswers(email: emailOfUser, textblock: answersBlock)
+            
+            
+            
+            
             //someArray = cloudKitEng.getAnswers(textBlock: answersBlock)
             //cloudKitEng.getAnswers(textBlock: answersBlock)
             //print("\n\nWhen dumping array: ")
