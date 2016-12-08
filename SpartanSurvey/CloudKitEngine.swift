@@ -326,10 +326,6 @@ class CloudKitEngine{
                 self.getAnswers(textBlock: textblock)
             }
         }
-
-        
-        
-        //return stringArray
     }
     
     //  func to get the answers to be displayed in a UITextView. 

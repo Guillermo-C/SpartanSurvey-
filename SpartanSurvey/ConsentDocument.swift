@@ -9,7 +9,7 @@
 import Foundation
 import ResearchKit
 
-
+//  This var holds all the elements (i.e. overview, dataGathering, privacy, etc.) in the consent.
 public var ConsentDocument: ORKConsentDocument{
 
     //  Document being "ethical mandate"
@@ -27,9 +27,6 @@ public var ConsentDocument: ORKConsentDocument{
         .studyTasks,
         .withdrawing
     ]
-    
-    
-    
     
     //  Mapped consent types
     //  Each section in the consentSectionTypes needs to have its own summary and content. Edit those down below.
@@ -79,11 +76,8 @@ public var ConsentDocument: ORKConsentDocument{
         
         return consentSection
     }
-    
 
-    
-    
-    
+    //  Add all the edited consent sections to the consentDocument. 
     consentDocument.sections = consentSections
     
     

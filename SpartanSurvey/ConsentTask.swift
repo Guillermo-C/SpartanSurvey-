@@ -9,18 +9,18 @@
 import Foundation
 import ResearchKit
 
-//  Consent document to be added to a task
+//  Consent document to be added to a task.
 public var ConsentTask: ORKOrderedTask {
     
+    //  Array of steps
     var steps = [ORKStep]()
     
-    //  This is Visual Content step --------------
+    //  This is Visual Content step.
     let consentDocument = ConsentDocument
     let visualConsentStep = ORKVisualConsentStep(identifier: "VisualConsentStep", document: consentDocument)
     steps += [visualConsentStep]
-    //---------------------------
     
-    //  Consent Review step--------------------
+    //  Consent Review step.
     let signature = consentDocument.signatures!.first! 
     
     let reviewConsentStep = ORKConsentReviewStep(identifier: "ConsentReviewStep", signature: signature, in: consentDocument)
@@ -28,8 +28,9 @@ public var ConsentTask: ORKOrderedTask {
     reviewConsentStep.text = "Review Consent!"
     reviewConsentStep.reasonForConsent = "Consent to join study"
     
+    //  Update (go to next) step.
     steps += [reviewConsentStep]
-    //----------------------
+
     
     return ORKOrderedTask(identifier: "ConsentTask", steps: steps)
 }

@@ -9,12 +9,12 @@
 import Foundation
 import UIKit
 
-
+//  The class Survey is intended to hold the essential elements for each survey provided in the app.
 class Survey{
     
     
     
-    //  func to alert user didn't finish survey.
+    //  func to alert user didn't finish survey. You can specify a custom title or message, or leave it as 'default'.
     func missingQuestionAlert(aTitle: String, aMessage: String) -> UIAlertController{
         var alertTitle =  aTitle
         var alertMessage = aMessage
@@ -42,7 +42,6 @@ class Survey{
             alertMessage = "You just earned 5 points. Note: points might take long to reflect"
         }
         
-        
         let completionAlert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: UIAlertControllerStyle.alert)
         
         if (email == true){
@@ -62,7 +61,7 @@ class Survey{
     }
     
     
-    // func to check all picker questions were answer
+    // func to check all picker questions were answer.
     func pickerQuesAnswered(in0: String, in1: String, in2: String, in3: String) -> Bool {
         var answeredAll:Bool = false
         
@@ -84,7 +83,6 @@ class Survey{
         tempArray.append(in2)
         tempArray.append(in3)
         tempArray.append(in4)
-        
         
         return tempArray
         
