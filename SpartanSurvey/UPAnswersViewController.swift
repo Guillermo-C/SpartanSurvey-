@@ -20,7 +20,7 @@ class UPAnswersViewController: UIViewController {
     
     
     //  var to tell user to refresh to see the answers.
-    var screenDisplay:String = "Please refresh!"
+    var screenDisplay:String = "No survey data found!"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,10 +29,10 @@ class UPAnswersViewController: UIViewController {
         answersBlock.text = screenDisplay
         // Do any additional setup after loading the view.
         
+        _ = cloudKitEng.retrieveAnswers(email: emailOfUser, textblock: answersBlock)
         
         
-        
-                    cloudKitEng.retrieveAnswers(email: emailOfUser, textblock: answersBlock)
+
     }
 
     override func didReceiveMemoryWarning() {

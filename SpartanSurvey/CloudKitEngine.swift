@@ -336,7 +336,7 @@ class CloudKitEngine{
         let query = CKQuery(recordType: "SurveyData", predicate: predicate)
         publicDataBase.perform(query, inZoneWith: nil){ results, error in
             if error != nil{
-                
+                textblock.text = textblock.text! + "\nThere was an internal error in the SpartanSurvey app"
             }
             else{
                 for result in results!{
@@ -346,10 +346,11 @@ class CloudKitEngine{
                 }
             }
             //print("\nThe size of the answer record is \(recordFound.count)\n")
+            DispatchQueue.main.async {
+                self.getAnswers(textBlock: textblock)
+            }
         }
-        DispatchQueue.main.async {
-            self.getAnswers(textBlock: textblock)
-        }
+
         
         
         //return stringArray
@@ -386,8 +387,6 @@ class CloudKitEngine{
                 }
                 textBlock.text = textBlock.text! + "\n"
             }
-            textBlock.text = textBlock.text! + "\nAnd the size of numberOfKeys was: \(numberOfKeys)"
-            textBlock.text = textBlock.text! + "\nAnd the size of numberOfRec was: \(numberOfRec)"
         }
         
         
