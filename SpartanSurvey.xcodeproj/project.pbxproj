@@ -10,6 +10,12 @@
 		B07E927B1DF6739E007DF6EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B07E927A1DF6739E007DF6EF /* Assets.xcassets */; };
 		B07E927F1DF673B4007DF6EF /* Begin!.png in Resources */ = {isa = PBXBuildFile; fileRef = B07E927E1DF673B4007DF6EF /* Begin!.png */; };
 		B07E92811DF67476007DF6EF /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B07E92801DF67476007DF6EF /* Logo.png */; };
+		B07E92861DF92058007DF6EF /* Use QR Codes.png in Resources */ = {isa = PBXBuildFile; fileRef = B07E92851DF92058007DF6EF /* Use QR Codes.png */; };
+		B07E92881DF9205E007DF6EF /* Get Rewarded.png in Resources */ = {isa = PBXBuildFile; fileRef = B07E92871DF9205E007DF6EF /* Get Rewarded.png */; };
+		B07E928A1DF9239B007DF6EF /* JohnCena.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B07E92891DF9239B007DF6EF /* JohnCena.jpg */; };
+		B07E928C1DF92B40007DF6EF /* Create Surveys.png in Resources */ = {isa = PBXBuildFile; fileRef = B07E928B1DF92B40007DF6EF /* Create Surveys.png */; };
+		B07E928E1DF92B46007DF6EF /* Respond to Surveys.png in Resources */ = {isa = PBXBuildFile; fileRef = B07E928D1DF92B46007DF6EF /* Respond to Surveys.png */; };
+		B07E92901DF92B4B007DF6EF /* Create an account.png in Resources */ = {isa = PBXBuildFile; fileRef = B07E928F1DF92B4B007DF6EF /* Create an account.png */; };
 		CB05CC2E1DF499D200C46525 /* YogurtLandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB05CC2D1DF499D200C46525 /* YogurtLandViewController.swift */; };
 		CB0C22251DDD3AA80008E12F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0C22241DDD3AA80008E12F /* SignUpViewController.swift */; };
 		CB0C22271DDD3EB10008E12F /* funnybabypic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CB0C22261DDD3EB10008E12F /* funnybabypic.jpg */; };
@@ -86,6 +92,12 @@
 		B07E927A1DF6739E007DF6EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B07E927E1DF673B4007DF6EF /* Begin!.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Begin!.png"; sourceTree = "<group>"; };
 		B07E92801DF67476007DF6EF /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
+		B07E92851DF92058007DF6EF /* Use QR Codes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Use QR Codes.png"; sourceTree = "<group>"; };
+		B07E92871DF9205E007DF6EF /* Get Rewarded.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Get Rewarded.png"; sourceTree = "<group>"; };
+		B07E92891DF9239B007DF6EF /* JohnCena.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = JohnCena.jpg; sourceTree = "<group>"; };
+		B07E928B1DF92B40007DF6EF /* Create Surveys.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Create Surveys.png"; sourceTree = "<group>"; };
+		B07E928D1DF92B46007DF6EF /* Respond to Surveys.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Respond to Surveys.png"; sourceTree = "<group>"; };
+		B07E928F1DF92B4B007DF6EF /* Create an account.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Create an account.png"; sourceTree = "<group>"; };
 		CB05CC2D1DF499D200C46525 /* YogurtLandViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YogurtLandViewController.swift; sourceTree = "<group>"; };
 		CB0C22241DDD3AA80008E12F /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		CB0C22261DDD3EB10008E12F /* funnybabypic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = funnybabypic.jpg; sourceTree = "<group>"; };
@@ -167,9 +179,15 @@
 				CBC58FB71DE2342B006F2DC1 /* SpartanSurvey.entitlements */,
 				CB7D4D1B1DC04D7C00CB73A7 /* AppDelegate.swift */,
 				CB7D4D1F1DC04D7C00CB73A7 /* Main.storyboard */,
+				B07E928B1DF92B40007DF6EF /* Create Surveys.png */,
+				B07E92851DF92058007DF6EF /* Use QR Codes.png */,
+				B07E928D1DF92B46007DF6EF /* Respond to Surveys.png */,
+				B07E928F1DF92B4B007DF6EF /* Create an account.png */,
 				B07E92801DF67476007DF6EF /* Logo.png */,
 				B07E927E1DF673B4007DF6EF /* Begin!.png */,
+				B07E92891DF9239B007DF6EF /* JohnCena.jpg */,
 				B07E927A1DF6739E007DF6EF /* Assets.xcassets */,
+				B07E92871DF9205E007DF6EF /* Get Rewarded.png */,
 				CBE8A1D51DF3CCB500871CEA /* McDon'sGiftCard.jpg */,
 				CBE8A1DA1DF3CD6F00871CEA /* SubwayGiftCard.jpg */,
 				CBE8A1DE1DF3CE1300871CEA /* yogurtLGiftCard.png */,
@@ -404,13 +422,19 @@
 			files = (
 				B07E92811DF67476007DF6EF /* Logo.png in Resources */,
 				CBE8A1DB1DF3CD6F00871CEA /* SubwayGiftCard.jpg in Resources */,
+				B07E928C1DF92B40007DF6EF /* Create Surveys.png in Resources */,
+				B07E92881DF9205E007DF6EF /* Get Rewarded.png in Resources */,
 				CB7D4D291DC04D7C00CB73A7 /* LaunchScreen.storyboard in Resources */,
 				CBE8A1D61DF3CCB500871CEA /* McDon'sGiftCard.jpg in Resources */,
 				B07E927F1DF673B4007DF6EF /* Begin!.png in Resources */,
 				CB0C22271DDD3EB10008E12F /* funnybabypic.jpg in Resources */,
 				B07E927B1DF6739E007DF6EF /* Assets.xcassets in Resources */,
 				CBE8A1DF1DF3CE1300871CEA /* yogurtLGiftCard.png in Resources */,
+				B07E92901DF92B4B007DF6EF /* Create an account.png in Resources */,
+				B07E928E1DF92B46007DF6EF /* Respond to Surveys.png in Resources */,
+				B07E928A1DF9239B007DF6EF /* JohnCena.jpg in Resources */,
 				CB7D4D211DC04D7C00CB73A7 /* Main.storyboard in Resources */,
+				B07E92861DF92058007DF6EF /* Use QR Codes.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
