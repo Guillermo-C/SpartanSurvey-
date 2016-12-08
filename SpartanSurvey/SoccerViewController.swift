@@ -48,7 +48,7 @@ class SoccerViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     var soccerPositionVals = ["goalkeeper","defensive midfielder","forward","striker"]
     
     //  name of the survey for identification when querying through the database
-    var companyName:String = "McDonald's"
+    var companyName:String = "Soccer"
     
     //  Array holding the key names to properly store the answers of the user.
     var answerKeys = ["SurveyCompany","Email","Answer1","Answer2","Answer3","Answer4","Answer5"]

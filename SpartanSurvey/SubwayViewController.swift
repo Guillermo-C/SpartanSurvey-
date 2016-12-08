@@ -119,6 +119,9 @@ class SubwayViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     //  func for getting current picker choice
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
+        if (pickerView == subOfDayPicker){
+            ans1 = subOfDayTypes[row]
+        }
         if (pickerView == breakFastPicker){
             ans2 = breakFastTypes[row]
         }
@@ -129,9 +132,7 @@ class SubwayViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             ans4 = extrasTypes[row]
         }
         
-        if (pickerView == subOfDayPicker){
-            ans1 = subOfDayTypes[row]
-        }
+
         
         
     }

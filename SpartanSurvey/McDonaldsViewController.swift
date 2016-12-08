@@ -174,6 +174,9 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
     //  func for getting current picker choice
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
+        if (pickerView == burgerPicker){
+            ans1 = burgerTypes[row]
+        }
         if (pickerView == mcNuggetsPicker){
             ans2 = numberOfNuggets[row]
         }
@@ -184,9 +187,6 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
             ans4 = saladTypes[row]
         }
         
-        if (pickerView == burgerPicker){
-            ans1 = burgerTypes[row]
-        }
 
         
     }

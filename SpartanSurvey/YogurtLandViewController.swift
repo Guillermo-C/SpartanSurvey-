@@ -143,19 +143,22 @@ class YogurtLandViewController: UIViewController, UIPickerViewDelegate, UIPicker
     //  func for getting current picker choice
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
+        if (pickerView == friendsPicker){
+            ans4 = friendTypes[row]
+        }
         if (pickerView == flavorPicker){
-            ans2 = flavorTypes[row]
+            ans1 = flavorTypes[row]
         }
         if (pickerView == weatherPicker){
-            ans3 = weatherTypes[row]
+            ans2 = weatherTypes[row]
         }
         if (pickerView == dayPicker){
-            ans4 = dayTypes[row]
+            ans3 = dayTypes[row]
+        }
+        if (pickerView == friendsPicker){
+            ans4 = friendTypes[row]
         }
         
-        if (pickerView == friendsPicker){
-            ans1 = friendTypes[row]
-        }
         
     }
     
