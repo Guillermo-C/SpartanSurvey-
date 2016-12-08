@@ -51,6 +51,9 @@ class KaiserPermanenteViewController: UIViewController, UIPickerViewDelegate, UI
     var ans2:String = ""
     var ans3:String = ""
     var ans4:String = ""
+    
+    //  Number of points this survey will give the user.
+    let worthPoints:Int = 5
 
     //  Array holding the answers of the user.
     var answerArray = [String]()
@@ -168,6 +171,7 @@ class KaiserPermanenteViewController: UIViewController, UIPickerViewDelegate, UI
             answerArray = survey.getAnswerAsArray(company: companyName,email: emailOfUser,in0: ans1, in1: ans2, in2: ans3, in3: ans4, in4: textAnswer.text!)
             
             cloudKitEng.saveUserAnswerData(recordTypeName: "SurveyData", answerKey: answerKeys, answers: answerArray, actInd: actIndicator, targetVC: self, alert: completionAlert)
+            cloudKitEng.updatePoints(email: emailOfUser, worthPts: worthPoints)
             
             present(completionAlert, animated: true, completion: nil)
         }

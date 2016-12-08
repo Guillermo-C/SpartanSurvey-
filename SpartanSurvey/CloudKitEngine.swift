@@ -34,8 +34,7 @@ class CloudKitEngine{
     //  Array holding the registered emails.
     var emailArray = [String]()
     
-    //  Var used as a counter, mainly for testing. Might delete it in the future.
-    var counter:Int = 0
+
     
     
     //  func to be used in the ViewDidLoad() in the SignUpViewController. Mainly for query-testing purposes.
@@ -54,11 +53,10 @@ class CloudKitEngine{
                     self.namesArray.append(result)
                     print("\n\n\(result) would be appended\n\n")
                     print("\n\(self.namesArray.count) is the size of the array")
-                    self.counter += 1
                 }
             }
         }
-        print("\nConunter value at end is \(counter)")
+
     }
 
     //  func to get all emails from the retrieved records (users registed in the system).
@@ -200,21 +198,6 @@ class CloudKitEngine{
                     }
                   
                 }
-                /*let retrievedPass:String = self.loginCredentials[0].value(forKey: "Password") as! String
-                actInd.stopAnimating()
-                
-                if (password == retrievedPass){
-                    let viewC:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "userProfileView") as UIViewController
-                    targetVC.present(viewC, animated: true, completion: nil)
-                    
-                    nameOfUser = self.getNameOfUser(record: self.loginCredentials)
-                    userPoints = self.pointsOfUser(record: self.loginCredentials)
-                    emailOfUser = self.getEmailFromCred(record: self.loginCredentials)
-                    
-                }
-                else{
-                    targetVC.present(alert, animated: true, completion: nil)
-                }*/
             }
         }
 
@@ -275,10 +258,6 @@ class CloudKitEngine{
                 }
                 DispatchQueue.main.async {
                     actInd.stopAnimating()
-                    //targetVC.present(alert, animated: true, completion: nil)
-                    
-                    /*let viewC:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "userProfileView") as UIViewController
-                    targetVC.present(viewC, animated: true, completion: nil)*/
                 }
             }
         }
@@ -328,8 +307,6 @@ class CloudKitEngine{
     //  purpose: make sure that all the answers of the user are successfully printed.
     var recordAnswers = [CKRecord]()
     func retrieveAnswers(email: String, textblock: UITextView){
-        //var stringArray = [String]()
-        //var records = [CKRecord]()
         
         let lookEmail = email
         let predicate = NSPredicate(format: "Email  = %@", lookEmail)
@@ -341,11 +318,10 @@ class CloudKitEngine{
             else{
                 for result in results!{
                     self.recordAnswers.append(result)
-                    //recordFound.append(result)
+
                     print("\nSize of recordAnswers: \(self.recordAnswers.count)")
                 }
             }
-            //print("\nThe size of the answer record is \(recordFound.count)\n")
             DispatchQueue.main.async {
                 self.getAnswers(textBlock: textblock)
             }
@@ -359,14 +335,9 @@ class CloudKitEngine{
     //  func to get the answers to be displayed in a UITextView. 
     //  This func is called within the retrieveAnswers()
     func getAnswers(textBlock: UITextView){
-        /*var stringArray = [String]()
-        let numberOfKeys = recordAnswers[0].allKeys().count
-        var keyArray = [String]()
-        keyArray = recordAnswers[0].allKeys()
-        let numberOfRec = recordAnswers.count*/
         
         if (recordAnswers.count > 0){
-            //var stringArray = [String]()
+
             let numberOfKeys = recordAnswers[0].allKeys().count
             var keyArray = [String]()
             keyArray = recordAnswers[0].allKeys()
@@ -376,10 +347,9 @@ class CloudKitEngine{
             
             for i in 0...numberOfRec - 1{
                 let currentRec = recordAnswers[i]
-                //let currentKey = keyArray[i]
-                //textBlock.text = textBlock.text! + "Key: \(currentKey)"
+                
                 for j in 0...numberOfKeys - 1{
-                    //var forKey:String =
+ 
                     let currentKey = keyArray[j]
                     currentVal = currentRec.value(forKey: keyArray[j]) as! String
                     textBlock.text = textBlock.text! + "Key: \(currentKey)\t Val: \(currentVal)\n"
@@ -388,96 +358,14 @@ class CloudKitEngine{
                 textBlock.text = textBlock.text! + "\n"
             }
         }
-        
-        
-        
-       // return stringArray
     }
     
-    
-    
-    //  end of testing
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    //  This is the previous printAnswers() used. It works to an extent. Uncomment out when done testing
-    
-    /*func printAnswers(recordArray: [CKRecord], canvas: UITextView) -> [String]{
-        var stringArray = [String]()
-        var count:Int = 0                    // Keep track of counter for printing values from database
-        var sizeToGo:Int = recordArray.count // Number of surveys found taken by the user
-        var answerKey = ["Answer1", "Answer2", "Answer3", "Answer4", "Answer5"]
-        canvas.text = ""
-        var loadedAll:Bool = false
-        //  code below works, uncomment when done testing
-        /*for var i in 0...answerKey.count - 1 {
 
-            let currentKey = answerKey[i]
-            let answer = recordArray[count].value(forKey: currentKey) as! NSString
-            canvas.text = canvas.text! + (answer as String) + "\n"
-            stringArray.append(answer as String)
-            
-            if((i == answerKey.count - 1) && (sizeToGo > 0)){
-                i = 0
-                count = 0
-                sizeToGo -= 1
-                canvas.text = canvas.text! + "\ndid go in last if"
-                
-            }
-
-            
-        }*/
-        
-        //  Code below for testing only, delete after
-        while ((sizeToGo >= 0)){
-            
-            for var i in 0...answerKey.count - 1 {
-                
-                let currentKey = answerKey[i]
-                let answer = recordArray[count].value(forKey: currentKey) as! NSString
-                canvas.text = canvas.text! + (answer as String) + "\n"
-                stringArray.append(answer as String)
-                
-                if((i == answerKey.count - 1) && (sizeToGo > 0)){
-                    i = 0
-                    count = 0
-                    sizeToGo -= 1
-                }
-
-                
-            }
-            canvas.text = canvas.text! + "\n"
-            count += 1
-            sizeToGo -= 1
-            
-           
-        }
-        
-        
-        return stringArray
-    }*/
 
     var tempRecord = [CKRecord]()
     
     //  func to get the answer to the security question given by the user, returns answer as String. 
     func getSecurityQuetionAns(email: String, alert: UIAlertController, actInd: UIActivityIndicatorView){
-        //var tempRecord = [CKRecord]()
-        //var answer:String = ""
         actInd.startAnimating()
         let Email = email
         let answer:String = ""
@@ -492,16 +380,9 @@ class CloudKitEngine{
                 }
                 else{
                     for result in results!{
-                        //answer = result.value(forKey: "SecurityQuestionAnswer") as! String
                         
                         self.tempRecord.append(result)
-                        //temp = self.answer
-                        //answer = "Was modified"
-                        //print("\nThe answer retrieved was: \(answer)")
-                        //break
-                        //tempRecord.append(result)
                     }
-                    //answer = tempRecord[0].value(forKey: "SecurityQuestionAnswer") as! String
                 }
                 DispatchQueue.main.async {
                     if (self.tempRecord.count > 0){
@@ -520,31 +401,6 @@ class CloudKitEngine{
                 
             }
         }
-        
-        
-
-        /*publicDataBase.perform(query, inZoneWith: nil){ results, error in
-            if error != nil{
-                
-            }
-            else{
-                for result in results!{
-                    answer = result.value(forKey: "SecurityQuestionAnswer") as! String
-                    //temp = self.answer
-                    //answer = "Was modified"
-                    print("\nThe answer retrieved was: \(answer)")
-                    break
-                    //tempRecord.append(result)
-                }
-                //answer = tempRecord[0].value(forKey: "SecurityQuestionAnswer") as! String
-            }
-
-            
-        }*/
-
-
-        
-        //return answer
     }
     
     //  func to get the answer to the security question to later on compare to user's answer.
@@ -602,10 +458,10 @@ class CloudKitEngine{
                     record?.setObject(points as CKRecordValue?, forKey: "Points")
                     self.publicDataBase.save(self.fetchedRecord){ (savedRecord, error) -> Void in
                         if error != nil {
-                            
+                            print("Points were NOT properly saved.")
                         }
                         else{
-                            
+                            print("Points were properly saved. ")
                         }
                     }
                 }
@@ -613,57 +469,9 @@ class CloudKitEngine{
             }
         }
 
-
-
-
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    //  var to hold the number of points of the user
-    //var points:Int = -1
-    //  func to get the current number of points of a user 
-    /*func getPoints(email: String) -> Int {
-        let lookEmail = email
-        let predicate = NSPredicate(format: "Email  = %@", lookEmail)
-        let query = CKQuery(recordType: "UserInfo", predicate: predicate)
-        //var points:Int = -1
-        var record:CKRecord!
-        
-        
-        publicDataBase.perform(query, inZoneWith: nil){ results, error in
-            if error != nil{
-                
-            }
-            else{
-                for result in results!{
-                    //recordFound.append(result)
-                    //record = result
-                    self.points = result.value(forKey: "Points") as! Int
-                    
-                }
 
-            }
-
-        }
-
-        return self.points
-    }*/
-    
 
     
     

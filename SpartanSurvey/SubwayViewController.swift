@@ -46,6 +46,9 @@ class SubwayViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     var ans3:String = ""
     var ans4:String = ""
     
+    //  Number of points this survey will give the user.
+    let worthPoints:Int = 5
+    
     //  Array holding the answers of the user.
     var answerArray = [String]()
     
@@ -160,7 +163,7 @@ class SubwayViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             answerArray = survey.getAnswerAsArray(company: companyName,email: emailOfUser,in0: ans1, in1: ans2, in2: ans3, in3: ans4, in4: textAnswer.text!)
             
             cloudKitEng.saveUserAnswerData(recordTypeName: "SurveyData", answerKey: answerKeys, answers: answerArray, actInd: actIndicator, targetVC: self, alert: completionAlert)
-            
+            cloudKitEng.updatePoints(email: emailOfUser, worthPts: worthPoints)
             /*completionAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
              let viewC:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "userProfileView") as UIViewController
              self.present(viewC, animated: true, completion: nil)
