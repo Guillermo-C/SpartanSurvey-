@@ -151,7 +151,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.99607843139999996" green="0.74901960779999999" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="J5o-Y9-7a4" firstAttribute="leading" secondItem="083-mV-5ZQ" secondAttribute="leading" constant="262" id="5am-6V-R8V"/>
                                     <constraint firstItem="FYc-Qi-vuN" firstAttribute="leading" secondItem="083-mV-5ZQ" secondAttribute="leading" constant="136.5" id="G7Q-TU-YrX"/>
@@ -194,12 +194,12 @@
                         <viewControllerLayoutGuide type="bottom" id="OlF-gR-0eK"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6Cs-YI-xbr">
-                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use the camera on your phone to scan in a QR code to be automatically prompted to a survey!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RIW-bO-7US">
-                                <rect key="frame" x="16" y="20" width="124" height="90"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="7"/>
+                                <rect key="frame" x="16" y="20" width="274" height="240"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -213,7 +213,7 @@
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="150" height="150"/>
+                    <size key="freeformSize" width="300" height="300"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mpj-gB-7cI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -387,13 +387,13 @@
                         <viewControllerLayoutGuide type="bottom" id="64g-Ob-0fl"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bIy-CO-PfY">
-                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETv-g6-qhU">
-                                <rect key="frame" x="16" y="20" width="107" height="69"/>
+                                <rect key="frame" x="16" y="20" width="257" height="219"/>
                                 <string key="text">If you have forgotten your login credentials, press the "Forgot Password?" link for help. To create a new account, press "Sign Up".</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -408,7 +408,7 @@
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="150" height="150"/>
+                    <size key="freeformSize" width="300" height="300"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U3K-zV-L4E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -423,13 +423,13 @@
                         <viewControllerLayoutGuide type="bottom" id="50a-9H-01m"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="b7j-CS-SOy">
-                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0A-Zb-ezg">
-                                <rect key="frame" x="16" y="35" width="125" height="80"/>
+                                <rect key="frame" x="16" y="35" width="275" height="230"/>
                                 <string key="text">Create an account to get the full benefits from SpartanSurvey. This will allow you to view and respond to surveys. Rewards include gift cards to your favorite places for food, entertainment, and shopping.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -443,7 +443,7 @@
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="150" height="150"/>
+                    <size key="freeformSize" width="300" height="300"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lVR-Ey-Iyp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -538,13 +538,13 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Security Question Answer" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zxc-H9-MfG">
-                                        <rect key="frame" x="8" y="274" width="284" height="30"/>
+                                        <rect key="frame" x="4" y="274" width="284" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
-                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.99607843139999996" green="0.74901960779999999" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="6t5-jy-TXh" firstAttribute="top" secondItem="xqk-jO-oVd" secondAttribute="bottom" constant="270" id="1Dv-fT-IEk"/>
                                     <constraint firstItem="LHs-3W-f5s" firstAttribute="leading" secondItem="TPf-Pk-ICn" secondAttribute="leading" constant="8" id="2Sf-9W-Ky5"/>
@@ -559,9 +559,9 @@
                                     <constraint firstItem="N9X-US-gUX" firstAttribute="leading" secondItem="TPf-Pk-ICn" secondAttribute="leading" constant="8" id="Byx-uS-8xQ"/>
                                     <constraint firstItem="FE7-8a-p4d" firstAttribute="top" secondItem="z1q-8F-CBn" secondAttribute="bottom" constant="13" id="EqI-kv-0nI"/>
                                     <constraint firstAttribute="bottom" secondItem="6t5-jy-TXh" secondAttribute="bottom" constant="8" id="Gvo-RK-xcm"/>
-                                    <constraint firstItem="Zxc-H9-MfG" firstAttribute="leading" secondItem="TPf-Pk-ICn" secondAttribute="leading" constant="8" id="JrG-H3-Dlz"/>
-                                    <constraint firstItem="FE7-8a-p4d" firstAttribute="trailing" secondItem="Zxc-H9-MfG" secondAttribute="trailing" id="LCu-BD-joJ"/>
-                                    <constraint firstAttribute="trailing" secondItem="Zxc-H9-MfG" secondAttribute="trailing" id="Lyn-Ki-8NZ"/>
+                                    <constraint firstItem="Zxc-H9-MfG" firstAttribute="leading" secondItem="TPf-Pk-ICn" secondAttribute="leading" constant="4" id="JrG-H3-Dlz"/>
+                                    <constraint firstItem="FE7-8a-p4d" firstAttribute="trailing" secondItem="Zxc-H9-MfG" secondAttribute="trailing" constant="4" id="LCu-BD-joJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="Zxc-H9-MfG" secondAttribute="trailing" constant="4" id="Lyn-Ki-8NZ"/>
                                     <constraint firstItem="2va-KM-l6b" firstAttribute="width" secondItem="xqk-jO-oVd" secondAttribute="width" id="Nax-Uw-E5l"/>
                                     <constraint firstItem="N9X-US-gUX" firstAttribute="width" secondItem="LHs-3W-f5s" secondAttribute="width" id="OmW-Zs-4Ul"/>
                                     <constraint firstAttribute="trailing" secondItem="N9X-US-gUX" secondAttribute="trailing" constant="8" id="PfT-tj-wZL"/>
@@ -690,7 +690,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.99607843139999996" green="0.74901960779999999" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="SMV-k1-Pao" secondAttribute="bottom" id="0F8-Gg-Psi"/>
                                     <constraint firstItem="qSQ-7n-874" firstAttribute="width" secondItem="vr6-3w-ehv" secondAttribute="width" id="1Tm-EU-ROo"/>
@@ -737,13 +737,13 @@
                         <viewControllerLayoutGuide type="bottom" id="cfo-sy-KHG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Bdf-Z0-lUA">
-                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vY9-fW-aEI">
-                                <rect key="frame" x="16" y="28" width="118" height="102"/>
+                                <rect key="frame" x="16" y="28" width="268" height="252"/>
                                 <string key="text">Have you forgotten your password? No Problem! Simply provide the correct answer to your security question to be automatically logged in.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -757,7 +757,7 @@
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="150" height="150"/>
+                    <size key="freeformSize" width="300" height="300"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t7I-Fx-Pge" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -842,7 +842,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.99607843137254903" green="0.74901960784313726" blue="0.3411764705882353" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="8Wr-bu-jsE" firstAttribute="leading" secondItem="i44-2M-0PL" secondAttribute="leading" id="4r1-db-wmP"/>
                                     <constraint firstAttribute="bottom" secondItem="sUf-2t-dFx" secondAttribute="bottom" constant="38" id="8sb-Gy-39v"/>
@@ -970,7 +970,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fac-et-EpT" id="uTJ-df-W4E">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -1594,7 +1594,7 @@
         <scene sceneID="s4t-ts-ZgJ">
             <objects>
                 <navigationController id="52C-q6-fNo" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="cwa-B2-878">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cwa-B2-878">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2091,6 +2091,6 @@
         <image name="yogurtLGiftCard.png" width="1200" height="630"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PA9-B6-jaZ"/>
+        <segue reference="Qre-Mo-Otd"/>
     </inferredMetricsTieBreakers>
 </document>
