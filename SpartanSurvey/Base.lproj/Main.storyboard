@@ -597,7 +597,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iOp-Br-eVK">
                                 <rect key="frame" x="0.0" y="28" width="375" height="38"/>
                                 <items>
-                                    <navigationItem title="Sing Up" id="L87-SA-wvn">
+                                    <navigationItem title="Sign Up" id="L87-SA-wvn">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="IPe-KH-SgI">
                                             <connections>
                                                 <segue destination="BYZ-38-t0r" kind="show" id="PA9-B6-jaZ"/>
@@ -2091,6 +2091,6 @@
         <image name="yogurtLGiftCard.png" width="1200" height="630"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Qre-Mo-Otd"/>
+        <segue reference="PA9-B6-jaZ"/>
     </inferredMetricsTieBreakers>
 </document>
