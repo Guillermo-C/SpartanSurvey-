@@ -586,16 +586,20 @@ class CloudKitEngine{
     func updatePoints(email: String, worthPts: Int){
         if (email != "No Email"){
             let recordID:CKRecordID = CKRecordID(recordName: email)
-            var points:Int = getPoints()
+            //var points:Int = getPoints()
+            var points:Int = Int(userPoints)!
+            points += worthPts
+            
+            userPoints = String(points)
+            print("\n\n\nThe updatePoints() was executed\nCurrent points: \(points)")
             publicDataBase.fetch(withRecordID: recordID){ (record, error) in
                 if error != nil{
                     
                 }else{
                     self.fetchedRecord = record!
-                    points += worthPts
-                    self.fetchedRecord?.setObject(points as CKRecordValue?, forKey: "Points")
-                }
-                DispatchQueue.main.async {
+                    //points += worthPts
+                    //self.fetchedRecord?.setObject(points as CKRecordValue?, forKey: "Points")
+                    record?.setObject(points as CKRecordValue?, forKey: "Points")
                     self.publicDataBase.save(self.fetchedRecord){ (savedRecord, error) -> Void in
                         if error != nil {
                             
@@ -604,8 +608,8 @@ class CloudKitEngine{
                             
                         }
                     }
-                    
                 }
+
             }
         }
 
