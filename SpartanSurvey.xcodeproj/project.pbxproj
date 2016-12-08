@@ -184,6 +184,8 @@
 				CBCED22E1DE772040046897D /* Surveys */,
 				CBDDAF1F1DEA0B3C00EFE0A7 /* User Profile */,
 				CB36C46D1DF10FDA00A59EA1 /* Survey.swift */,
+				CBFECFFD1DDD5C2400A4ECC6 /* UPHomeViewController.swift */,
+				CBDDAF1B1DEA068000EFE0A7 /* UPAnswersViewController.swift */,
 				CBE8A1E01DF3D03D00871CEA /* GiftCardViewController.swift */,
 			);
 			path = SpartanSurvey;
@@ -254,8 +256,6 @@
 			isa = PBXGroup;
 			children = (
 				CB0C22261DDD3EB10008E12F /* funnybabypic.jpg */,
-				CBFECFFD1DDD5C2400A4ECC6 /* UPHomeViewController.swift */,
-				CBDDAF1B1DEA068000EFE0A7 /* UPAnswersViewController.swift */,
 			);
 			name = "User Profile";
 			sourceTree = "<group>";
