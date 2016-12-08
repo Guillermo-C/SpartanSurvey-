@@ -8,11 +8,7 @@
 
 import UIKit
 
-
-
-//  GitHub commit/push test
-//  Verify submission is succesful
-
+//  The class ViewController is intended to be the 'landing page'. This class, being the 'master', also hosts the walkthrough.
 class ViewController: UIViewController, BWWalkthroughViewControllerDelegate{
 
     override func viewDidLoad() {
@@ -27,7 +23,6 @@ class ViewController: UIViewController, BWWalkthroughViewControllerDelegate{
     }
 
     @IBAction func showWalkThrough() {
-        print("walkthrough button pressed")
         
         //  Instantiate main storyboard for providing viewing priviledge to the walkthrough 
         let stb = UIStoryboard(name: "Main", bundle: nil)
@@ -40,7 +35,7 @@ class ViewController: UIViewController, BWWalkthroughViewControllerDelegate{
         let page_four = stb.instantiateViewController(withIdentifier: "walk4") as UIViewController
         let page_five = stb.instantiateViewController(withIdentifier: "walk5") as UIViewController
         
-        //  Attach pages to master
+        //  Attach pages to master.
         walkthrough.delegate = self
         walkthrough.addViewController(page_one)
         walkthrough.addViewController(page_two)
@@ -51,6 +46,7 @@ class ViewController: UIViewController, BWWalkthroughViewControllerDelegate{
         self.present(walkthrough, animated: true, completion: nil)
     }
     
+    //  Dismiss the walkthrough if the close button is pressed. 
     func walkthroughCloseButtonPressed() {
         self.dismiss(animated: true, completion: nil)
     }
