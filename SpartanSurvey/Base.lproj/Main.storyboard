@@ -1366,6 +1366,9 @@
                                     <constraint firstAttribute="width" constant="46" id="70l-ax-4lt"/>
                                 </constraints>
                                 <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="done:" destination="tLn-Yw-QHR" eventType="touchUpInside" id="q9L-vj-Y7P"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you like the most about soccer?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o7O-kV-ePD">
                                 <rect key="frame" x="16" y="496" width="343" height="21"/>
@@ -1415,6 +1418,7 @@
                         <outlet property="nationalTeamPicker" destination="1Wx-TZ-x0w" id="sc4-hA-isp"/>
                         <outlet property="soccerPlayerPicker" destination="a2F-5X-ofY" id="KUs-Rl-jtd"/>
                         <outlet property="soccerTeamPicker" destination="OEK-9w-496" id="E1I-KS-kAW"/>
+                        <outlet property="textAnswer" destination="N0a-xo-IVI" id="4aB-Al-pJV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XDB-ml-bnR" userLabel="First Responder" sceneMemberID="firstResponder"/>

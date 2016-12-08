@@ -32,7 +32,7 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
     //  Number of points this survey will give the user. 
     let worthPoints:Int = 5
     
-    //
+    //  Name of the company, used for description in the database.
     var titleString: String = "McDonald's"
     
     //  Array holding the answers of the user. 
@@ -71,7 +71,11 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
     var survey =  Survey()
     
 
-    
+    //  vars for storing the answers from the pickers.
+    var ans1:String = ""
+    var ans2:String = ""
+    var ans3:String = ""
+    var ans4:String = ""
     
     
     
@@ -100,11 +104,7 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
         // Dispose of any resources that can be recreated.
     }
     
-    //  vars for storing the answers from the pickers.
-    var ans1:String = ""
-    var ans2:String = ""
-    var ans3:String = ""
-    var ans4:String = ""
+
     
     //  func to apply custom font to the pickers.
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {

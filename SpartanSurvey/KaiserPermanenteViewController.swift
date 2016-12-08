@@ -127,17 +127,17 @@ class KaiserPermanenteViewController: UIViewController, UIPickerViewDelegate, UI
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         if (pickerView == physicallyHealthyPicker){
-            ans2 = physicallyHealthyTypes[row]
+            ans1 = physicallyHealthyTypes[row]
         }
         if (pickerView == exerciseImportancePicker){
-            ans3 = exerciseImportanceTypes[row]
+            ans2 = exerciseImportanceTypes[row]
         }
         if (pickerView == exerciseFrequencyPicker){
-            ans4 = exerciseFrequencyTypes[row]
+            ans3 = exerciseFrequencyTypes[row]
         }
         
         if (pickerView == mealsPicker){
-            ans1 = mealsTypes[row]
+            ans4 = mealsTypes[row]
         }
         
         
