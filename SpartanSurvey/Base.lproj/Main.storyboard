@@ -462,7 +462,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TPf-Pk-ICn">
-                                <rect key="frame" x="41" y="154" width="292" height="498"/>
+                                <rect key="frame" x="41" y="112" width="292" height="498"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N9X-US-gUX">
                                         <rect key="frame" x="8" y="37" width="276" height="30"/>
@@ -595,7 +595,7 @@
                                 </constraints>
                             </view>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iOp-Br-eVK">
-                                <rect key="frame" x="0.0" y="28" width="375" height="38"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="37.5"/>
                                 <items>
                                     <navigationItem title="Sign Up" id="L87-SA-wvn">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="IPe-KH-SgI">
@@ -611,8 +611,8 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="iOp-Br-eVK" secondAttribute="trailing" constant="-16" id="4bL-5Z-4a6"/>
                             <constraint firstItem="iOp-Br-eVK" firstAttribute="leading" secondItem="f8n-Ao-v23" secondAttribute="leadingMargin" constant="-16" id="JJB-fY-AFp"/>
-                            <constraint firstItem="TPf-Pk-ICn" firstAttribute="centerY" secondItem="f8n-Ao-v23" secondAttribute="centerY" constant="69" id="OiC-1z-lNV"/>
-                            <constraint firstItem="TPf-Pk-ICn" firstAttribute="top" secondItem="iOp-Br-eVK" secondAttribute="bottom" constant="88" id="fT9-OQ-zsv"/>
+                            <constraint firstItem="TPf-Pk-ICn" firstAttribute="centerY" secondItem="f8n-Ao-v23" secondAttribute="centerY" constant="27.5" id="OiC-1z-lNV"/>
+                            <constraint firstItem="TPf-Pk-ICn" firstAttribute="top" secondItem="iOp-Br-eVK" secondAttribute="bottom" constant="46.5" id="fT9-OQ-zsv"/>
                             <constraint firstItem="TPf-Pk-ICn" firstAttribute="leading" secondItem="f8n-Ao-v23" secondAttribute="leadingMargin" constant="25" id="qIb-bF-XHv"/>
                             <constraint firstItem="iOp-Br-eVK" firstAttribute="centerX" secondItem="f8n-Ao-v23" secondAttribute="centerX" id="qcg-o4-ASf"/>
                             <constraint firstItem="iOp-Br-eVK" firstAttribute="top" secondItem="f14-KA-rKS" secondAttribute="bottom" constant="8" id="qzH-0x-Gd8"/>
