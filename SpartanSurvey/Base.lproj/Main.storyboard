@@ -122,7 +122,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HAv-Ft-kk2">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44.5"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="QR Code" id="jgD-Au-7z7">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="jDG-Ng-Oa3">
@@ -134,30 +134,23 @@
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="083-mV-5ZQ">
-                                <rect key="frame" x="35" y="161.5" width="304" height="187.5"/>
+                                <rect key="frame" x="35" y="161" width="304" height="188"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="QR Code Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ADM-3U-lFl">
-                                        <rect key="frame" x="21" y="43.5" width="262" height="30"/>
+                                        <rect key="frame" x="21" y="44" width="262" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FYc-Qi-vuN">
-                                        <rect key="frame" x="136.5" y="149.5" width="49" height="30"/>
+                                        <rect key="frame" x="137" y="150" width="49" height="30"/>
                                         <state key="normal" title="Submit"/>
                                         <connections>
                                             <action selector="submit:" destination="Q4k-1b-UBw" eventType="touchUpInside" id="uso-rV-07C"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invalid number?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4m-9S-IZC">
-                                        <rect key="frame" x="92" y="8" width="138" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J5o-Y9-7a4">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J5o-Y9-7a4">
                                         <rect key="frame" x="262" y="12" width="22" height="22"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <action selector="showInfo:" destination="Q4k-1b-UBw" eventType="touchUpInside" id="ySs-zA-3sV"/>
                                             <segue destination="hu9-SG-4bK" kind="popoverPresentation" identifier="qRInfoSegue" popoverAnchorView="J5o-Y9-7a4" id="tRD-Vp-PI9">
@@ -168,16 +161,15 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="w4m-9S-IZC" firstAttribute="top" secondItem="083-mV-5ZQ" secondAttribute="top" constant="8" id="2Gd-aM-8Gt"/>
+                                    <constraint firstItem="J5o-Y9-7a4" firstAttribute="leading" secondItem="083-mV-5ZQ" secondAttribute="leading" constant="262" id="5am-6V-R8V"/>
                                     <constraint firstItem="FYc-Qi-vuN" firstAttribute="leading" secondItem="083-mV-5ZQ" secondAttribute="leading" constant="136.5" id="G7Q-TU-YrX"/>
-                                    <constraint firstItem="ADM-3U-lFl" firstAttribute="top" secondItem="w4m-9S-IZC" secondAttribute="bottom" constant="15" id="QHc-OD-C0h"/>
                                     <constraint firstItem="FYc-Qi-vuN" firstAttribute="top" secondItem="ADM-3U-lFl" secondAttribute="bottom" constant="76" id="Tjh-8R-WiN"/>
                                     <constraint firstAttribute="bottom" secondItem="FYc-Qi-vuN" secondAttribute="bottom" constant="8" id="ZxB-OM-EZI"/>
-                                    <constraint firstAttribute="trailing" secondItem="w4m-9S-IZC" secondAttribute="trailing" constant="74" id="bkG-vo-feL"/>
+                                    <constraint firstItem="J5o-Y9-7a4" firstAttribute="top" secondItem="083-mV-5ZQ" secondAttribute="top" constant="12" id="kaN-df-Ftn"/>
                                     <constraint firstItem="ADM-3U-lFl" firstAttribute="leading" secondItem="083-mV-5ZQ" secondAttribute="leading" constant="21" id="kiO-ln-5en"/>
                                     <constraint firstAttribute="trailing" secondItem="ADM-3U-lFl" secondAttribute="trailing" constant="21" id="o9S-wx-oPi"/>
-                                    <constraint firstItem="w4m-9S-IZC" firstAttribute="leading" secondItem="083-mV-5ZQ" secondAttribute="leading" constant="92" id="qNp-73-Bzy"/>
                                     <constraint firstAttribute="trailing" secondItem="FYc-Qi-vuN" secondAttribute="trailing" constant="118.5" id="qd1-jg-t7X"/>
+                                    <constraint firstAttribute="trailing" secondItem="J5o-Y9-7a4" secondAttribute="trailing" constant="20" id="wBe-VB-6nj"/>
                                 </constraints>
                             </view>
                         </subviews>
