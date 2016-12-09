@@ -8,18 +8,23 @@
 
 import UIKit
 
+//  Class for the Yogurtland survey; which is accessed through the QR Code.
 class YogurtLandViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     
-    
+    //  UIPickerView for the flavor question.
     @IBOutlet weak var flavorPicker: UIPickerView!
     
+    //  UIPickerView for the weather question.
     @IBOutlet weak var weatherPicker: UIPickerView!
     
+    //  UIPickerView for the day question.
     @IBOutlet weak var dayPicker: UIPickerView!
     
+    //  UIPickerView for the friends question.
     @IBOutlet weak var friendsPicker: UIPickerView!
     
+    // UITextField to hold the answer of text.
     @IBOutlet weak var textAnswer: UITextField!
 
     override func viewDidLoad() {
@@ -33,12 +38,16 @@ class YogurtLandViewController: UIViewController, UIPickerViewDelegate, UIPicker
         // Dispose of any resources that can be recreated.
     }
     
+    //  Arrays with the values for the flavor question.
     var flavorTypes = ["↓ Scroll down ↓","Birthday Cupcake Batter","Almond Midnight Mocha","DJ Suki's Cranberry Raspberry Tart","Creek's Butterscotch Pudding Gelato","Guy Diamond's White Chocolate Peppermint","Pineapple Sorbet"]
     
+    //  Arrays with the values for the weather question.
     var weatherTypes = ["↓ Scroll down ↓","Sunny","Cloudy","Rainy","Windy","Snowy"]
 
+    //  Arrays with the values for the day question.
     var dayTypes = ["↓ Scroll down ↓","Sunday","Monday","Tuesday","Wednesday","Thursday","Friday", "Saturday"]
     
+    //  Arrays with the values for the friends question.
     var friendTypes = ["↓ Scroll down ↓","0","1","2","3", "more than 3"]
     
     //  Array holding the key names to properly store the answers of the user.
@@ -52,7 +61,6 @@ class YogurtLandViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     //  change the value of the user email since survey won't affect the user's account. 
     var emailQR:String = "No Email"
-    
     
     //  Invoke the class CloudKitEngine for saving data in the cloud.
     let cloudKitEng = CloudKitEngine()
@@ -162,6 +170,7 @@ class YogurtLandViewController: UIViewController, UIPickerViewDelegate, UIPicker
         
     }
     
+    //  When the user's done then save the user's answers on the database and alert the user of survey completion success.
     @IBAction func done(_ sender: UIButton) {
         let allPickerQsAnswered = survey.pickerQuesAnswered(in0: ans1, in1: ans2, in2: ans3, in3: ans4)
         
