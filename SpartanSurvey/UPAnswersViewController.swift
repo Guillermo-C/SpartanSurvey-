@@ -41,40 +41,11 @@ class UPAnswersViewController: UIViewController {
     }
     
     
-    @IBAction func refresh(_ sender: UIBarButtonItem) {
-        cloudKitEng.getAllAnswers(email: emailOfUser)
-        if((recordFound.count > 0) && (!didRefresh(canvas: answersBlock, word: screenDisplay))){
-            //answersBlock.text = "Wait!, some data came in"
-            
-            // code below works, uncomment when done testing
-            /*cloudKitEng.printAnswers(recordArray: recordFound, canvas: answersBlock)*/
-            //  end
-            
-            
-            
-            
-            
-            //  start testing 
-            /*var someArray = [String]()*/
-            
-            
-            
-            
-            //cloudKitEng.retrieveAnswers(email: emailOfUser, textblock: answersBlock)
-            
-            
-            
-            
-            //someArray = cloudKitEng.getAnswers(textBlock: answersBlock)
-            //cloudKitEng.getAnswers(textBlock: answersBlock)
-            //print("\n\nWhen dumping array: ")
-            //dump(someArray)
-            //  end testing
-        }
+    @IBAction func signOut(_ sender: UIBarButtonItem) {
+        let viewC:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "welcomeScreen") as UIViewController
         
+        self.present(viewC, animated: true, completion: nil)
     }
-    
-
     
     
     //  func to check initial refreshing

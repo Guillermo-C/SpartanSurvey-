@@ -32,13 +32,13 @@ class KaiserPermanenteViewController: UIViewController, UIPickerViewDelegate, UI
     
     
     
-    var physicallyHealthyTypes = ["Extremely healthy","Healthy","Not at all healthy"]
+    var physicallyHealthyTypes = ["↓ Scroll down ↓","Extremely healthy","Healthy","Not at all healthy"]
     
-    var exerciseImportanceTypes = ["Extremely important","Not at all important","N/A"]
+    var exerciseImportanceTypes = ["↓ Scroll down ↓","Extremely important","Not at all important","N/A"]
     
-    var exerciseFrequencyTypes = ["Lift weights","Walk","Run","Hike","Dance"]
+    var exerciseFrequencyTypes = ["↓ Scroll down ↓","Lift weights","Walk","Run","Hike","Dance"]
     
-    var mealsTypes = ["1","2","3","4", "5", "more than 5"]
+    var mealsTypes = ["↓ Scroll down ↓","1","2","3","4", "5", "more than 5"]
     
     //  name of the survey for identification when querying through the database
     var companyName:String = "Kaiser"

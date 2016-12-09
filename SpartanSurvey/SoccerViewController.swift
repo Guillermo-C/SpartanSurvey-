@@ -39,13 +39,13 @@ class SoccerViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     var survey =  Survey()
     
-    var soccerPlayerVals = ["Cristiano Ronaldo","Lionel Messi","Gareth Bale","Manuel Neuer","Wayne Rooney","Iker Casillas"]
+    var soccerPlayerVals = ["↓ Scroll down ↓","Cristiano Ronaldo","Lionel Messi","Gareth Bale","Manuel Neuer","Wayne Rooney","Iker Casillas"]
     
-    var teamVals = ["Real Madrid C.F.","Inter Milan","Atlético Madrid","FC Barcelona","Arsenal F.C."]
+    var teamVals = ["↓ Scroll down ↓","Real Madrid C.F.","Inter Milan","Atlético Madrid","FC Barcelona","Arsenal F.C."]
     
-    var nationalTeamVals = ["Japan National Team","USA National Team","Spain National Team","Argentina National Team"]
+    var nationalTeamVals = ["↓ Scroll down ↓","Japan National Team","USA National Team","Spain National Team","Argentina National Team"]
     
-    var soccerPositionVals = ["goalkeeper","defensive midfielder","forward","striker"]
+    var soccerPositionVals = ["↓ Scroll down ↓","goalkeeper","defensive midfielder","forward","striker"]
     
     //  name of the survey for identification when querying through the database
     var companyName:String = "Soccer"

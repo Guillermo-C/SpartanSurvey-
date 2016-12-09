@@ -50,6 +50,13 @@ class GiftCardViewController: UIViewController {
        // mcDonaldsImg.alpha = 0.2
         present(notEnoughAlert, animated: true, completion: nil)
     }*/
+    
+    @IBAction func signOut(_ sender: UIBarButtonItem) {
+        let viewC:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "welcomeScreen") as UIViewController
+        
+        self.present(viewC, animated: true, completion: nil)
+    }
+    
     @IBAction func buyMcDonalds(_ sender: UIButton) {
         let canDo:Bool = canAffordGiftCard(usrPts: Int (userPoints)!, worth: mcDWorth)
         _ = buyCard(eligible: canDo, img: mcDonaldsImg, alert: notEnoughAlert, targetVC: self)
@@ -66,6 +73,7 @@ class GiftCardViewController: UIViewController {
         _ = buyCard(eligible: canDo, img: yogurtLandImg, alert: notEnoughAlert, targetVC: self)
         
     }
+    
     
 
     /*

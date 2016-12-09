@@ -10,19 +10,18 @@ import UIKit
 
 
 class ForgotPasswordViewController: UIViewController, UIPopoverPresentationControllerDelegate, UITextFieldDelegate{
-    
-    //  for testing only
-    //  Alert for wrong credentials
+
+    //  Alert for wrong credentials.
     let secQuesAlert = UIAlertController(title: "Security Question", message: "", preferredStyle: UIAlertControllerStyle.alert)
-    //  end for testing
     
-    
+    //  UITextField for the user to type the answer to the security question.
     var passwordTextField: UITextField?
     
+    //  UITextField to hold the user's email.
     @IBOutlet weak var emailEntry: UITextField!
     
+    //  UITextField to display the user's password once the security answer is properly answered.
     @IBOutlet weak var answerDisplay: UITextField!
-    
 
     //  Invoke the class CloudKitEngine for saving data in the cloud
     let cloudKitEng = CloudKitEngine()
@@ -35,12 +34,6 @@ class ForgotPasswordViewController: UIViewController, UIPopoverPresentationContr
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-        
-        
-
         
         // user shouldn't be able to type into the answerDisplay
         answerDisplay.textColor = UIColor.blue
@@ -131,9 +124,7 @@ class ForgotPasswordViewController: UIViewController, UIPopoverPresentationContr
         }
     }
     
-
-    
-    
+    //  func required for the PopOver.
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
     }

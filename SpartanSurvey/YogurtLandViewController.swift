@@ -33,13 +33,13 @@ class YogurtLandViewController: UIViewController, UIPickerViewDelegate, UIPicker
         // Dispose of any resources that can be recreated.
     }
     
-    var flavorTypes = ["Birthday Cupcake Batter","Almond Midnight Mocha","DJ Suki's Cranberry Raspberry Tart","Creek's Butterscotch Pudding Gelato","Guy Diamond's White Chocolate Peppermint","Pineapple Sorbet"]
+    var flavorTypes = ["↓ Scroll down ↓","Birthday Cupcake Batter","Almond Midnight Mocha","DJ Suki's Cranberry Raspberry Tart","Creek's Butterscotch Pudding Gelato","Guy Diamond's White Chocolate Peppermint","Pineapple Sorbet"]
     
-    var weatherTypes = ["Sunny","Cloudy","Rainy","Windy","Snowy"]
+    var weatherTypes = ["↓ Scroll down ↓","Sunny","Cloudy","Rainy","Windy","Snowy"]
 
-    var dayTypes = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday", "Saturday"]
+    var dayTypes = ["↓ Scroll down ↓","Sunday","Monday","Tuesday","Wednesday","Thursday","Friday", "Saturday"]
     
-    var friendTypes = ["0","1","2","3", "more than 3"]
+    var friendTypes = ["↓ Scroll down ↓","0","1","2","3", "more than 3"]
     
     //  Array holding the key names to properly store the answers of the user.
     var answerKeys = ["SurveyCompany","Email","Answer1","Answer2","Answer3","Answer4","Answer5"]

@@ -26,13 +26,13 @@ class SubwayViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet weak var extrasPicker: UIPickerView!
     @IBOutlet weak var textAnswer: UITextField!
     
-    var subOfDayTypes = ["Sweet Onion Chicken Teriyaki","Oven Roasted Chicken","Turkey Breast","Classic Tuna","Black Forest Ham"]
+    var subOfDayTypes = ["↓ Scroll down ↓","Sweet Onion Chicken Teriyaki","Oven Roasted Chicken","Turkey Breast","Classic Tuna","Black Forest Ham"]
     
-    var breakFastTypes = ["Beacon, Egg & Cheese","Egg & Cheese","Steak, Egg & Cheese"]
+    var breakFastTypes = ["↓ Scroll down ↓","Beacon, Egg & Cheese","Egg & Cheese","Steak, Egg & Cheese"]
     
-    var saladTypes = ["Corned Beef Reuben Salad","Turkey Reuben Salad","Spicy Italian Salad","Veggie Delite Salad","Tuna Salad","Subway Club Salad"]
+    var saladTypes = ["↓ Scroll down ↓","Corned Beef Reuben Salad","Turkey Reuben Salad","Spicy Italian Salad","Veggie Delite Salad","Tuna Salad","Subway Club Salad"]
     
-    var extrasTypes = ["Pepperoni","Cheese","Bacon"]
+    var extrasTypes = ["↓ Scroll down ↓","Pepperoni","Cheese","Bacon"]
     
     //  name of the survey for identification when querying through the database
     var companyName:String = "Subway"

@@ -9,7 +9,7 @@
 import UIKit
 
 
-
+//  This class is intended to get information from the user, including credentials that will be needed to use this app. This class relies on highly on the CloudKitEngine class for storing data in the cloud.
 class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UIPopoverPresentationControllerDelegate {
 
     //  User's first name input
@@ -59,9 +59,6 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //  Fulfill delegate & dataSource requirements for securityQPicker
-        securityQPicker.delegate = self
-        securityQPicker.dataSource = self
         
         //  Popullate securityQArray
         securityQArray = ["What's your pet's name?",
@@ -128,6 +125,11 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         return 1
     }
     
+    //  func with the "eye" button as a sender to hide or show the 'password' UITextField and the 'confirm password' UITextField
+    @IBAction func showOrHide(_ sender: UIButton) {
+        showOrHidePassword(passF: passwordEntry, confPassF: confirmPassEntry)
+    }
+    
     //  Action for when save button is pressed
     @IBAction func saveButton(_ sender: UIButton) {
         
@@ -145,11 +147,6 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         else{
             let email:String = emailEntry.text!
             let previouslyRegistered = cloudKitEng.userRegistered(email: email)
-            //activityIndicator.startAnimating()
-            //  Continue process
-            //activityIndicator.startAnimating()
-            //  Stop UI interaction while data process is running
-            //UIApplication.shared.beginIgnoringInteractionEvents()
             cloudKitEng.retrieveEmails()
             
             
@@ -164,10 +161,6 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                 let inputArray = inputAsArray(in0: firstNameEntry.text!, in1: emailEntry.text!, in2: passwordEntry.text!, points: "0", in3: currentPickerChoice, in4: securityQuestionAnswer.text!)
                 cloudKitEng.saveNewDataWRecord(record_Name: newRecordName, recordTypeName: "UserInfo", recordsToSave: inputArray, keyList: keyArray, actInd: activityIndicator, targetVC: self)
                 print("user has not registered yet")
-                /*DispatchQueue.main.async {
-                    let viewC:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "signIn") as UIViewController                    
-                    self.present(viewC, animated: true, completion: nil)
-                }*/
             }
             
         }
@@ -242,16 +235,13 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         }
     }
     
+    //  func required for the PopOver.
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
     }
     
     
-    @IBAction func showOrHide(_ sender: UIButton) {
-        showOrHidePassword(passF: passwordEntry, confPassF: confirmPassEntry)
-    }
-    
-    //  func to show or hide the password
+    //  func to show or hide the password in the 'password' UITextField and the 'confirm password' UITextField
     func showOrHidePassword(passF: UITextField, confPassF:UITextField){
         let isVisible:Bool = passF.isSecureTextEntry
         
