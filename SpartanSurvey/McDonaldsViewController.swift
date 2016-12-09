@@ -8,7 +8,7 @@
 
 import UIKit
 
-
+//  Class for the McDonalds survey. 
 class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource {
     
     //  UIPickerView for the mcNuggets question.
@@ -23,7 +23,7 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
     //  UIPickerView for salad question.
     @IBOutlet weak var saladPicker: UIPickerView!
 
-    
+    //  Title of the company
     @IBOutlet weak var titleLabel: UILabel!
     
     // UITextField to hold the answer of text. 

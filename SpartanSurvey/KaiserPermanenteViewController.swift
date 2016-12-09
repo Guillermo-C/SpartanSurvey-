@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+//  Class for the Kaiser survey. 
 class KaiserPermanenteViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     override func viewDidLoad() {
@@ -21,26 +23,36 @@ class KaiserPermanenteViewController: UIViewController, UIPickerViewDelegate, UI
         // Dispose of any resources that can be recreated.
     }
     
+    //  UIPickerView for the physically healthy question.
     @IBOutlet weak var physicallyHealthyPicker: UIPickerView!
+    
+    //  UIPickerView for the exercise importance question.
     @IBOutlet weak var exerciseImportancePicker: UIPickerView!
+    
+    //  UIPickerView for the the exercise frequency question.
     @IBOutlet weak var exerciseFrequencyPicker: UIPickerView!
+    
+    //  UIPickerView for the meals with fruits question.
     @IBOutlet weak var mealsPicker: UIPickerView!
     
-    
+    // UITextField to hold the answer of text.
     @IBOutlet weak var textAnswer: UITextField!
     
     
     
-    
+    // Array with the values for the physically healthy question.
     var physicallyHealthyTypes = ["↓ Scroll down ↓","Extremely healthy","Healthy","Not at all healthy"]
     
+    // Array with the values for the importance question.
     var exerciseImportanceTypes = ["↓ Scroll down ↓","Extremely important","Not at all important","N/A"]
     
+    // Array with the values for the exercise frequency question.
     var exerciseFrequencyTypes = ["↓ Scroll down ↓","Lift weights","Walk","Run","Hike","Dance"]
     
+    // Array with the values for the meals with fruits question.
     var mealsTypes = ["↓ Scroll down ↓","1","2","3","4", "5", "more than 5"]
     
-    //  name of the survey for identification when querying through the database
+    //  name of the survey for identification when querying through the database.
     var companyName:String = "Kaiser"
     
     //  Array holding the key names to properly store the answers of the user.
@@ -90,7 +102,7 @@ class KaiserPermanenteViewController: UIViewController, UIPickerViewDelegate, UI
     }
     
     
-    
+    //  func to return proper picker content.
     public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
         if (pickerView == physicallyHealthyPicker){
@@ -109,6 +121,7 @@ class KaiserPermanenteViewController: UIViewController, UIPickerViewDelegate, UI
         return mealsTypes[row]
     }
     
+    //  func to return proper number of selections in a particular picker.
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
         
         if (pickerView == physicallyHealthyPicker){
@@ -146,11 +159,13 @@ class KaiserPermanenteViewController: UIViewController, UIPickerViewDelegate, UI
         
     }
  
+    //  func to return number of components of picker, all need a value of 1.
     public func numberOfComponents(in pickerView: UIPickerView) -> Int{
         
         return 1
     }
     
+    //  When the user's done then save the user's answers on the database and alert the user of survey completion success.
     @IBAction func done(_ sender: Any) {
         
         let allPickerQsAnswered = survey.pickerQuesAnswered(in0: ans1, in1: ans2, in2: ans3, in3: ans4)
