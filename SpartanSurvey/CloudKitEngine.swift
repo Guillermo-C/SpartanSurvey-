@@ -16,7 +16,7 @@ import UIKit
 var recordFound = [CKRecord]()
 
 
-
+//  This class is intended to handle all the variables/constant and functions that interact with the database in iCloud.
 class CloudKitEngine{
     
     //  Connect to the default public database in iCloud.
@@ -33,9 +33,6 @@ class CloudKitEngine{
     
     //  Array holding the registered emails.
     var emailArray = [String]()
-    
-
-    
     
     //  func to be used in the ViewDidLoad() in the SignUpViewController. Mainly for query-testing purposes.
     func checkIfUserRegistered(){
@@ -89,7 +86,6 @@ class CloudKitEngine{
         for i in 0...keyList.count - 1{
             let saveR = recordsToSave[i]
             let recKey = keyList[i]
-            //actInd.startAnimating()
             //  If the record value to store is Int, save it as such.
             if(recKey == "Points"){
                 let intValue:Int = Int(saveR)!
@@ -237,7 +233,6 @@ class CloudKitEngine{
         
         return pass
     }
-
     
     //  func to save the questions 
     func saveUserAnswerData(recordTypeName: String, answerKey: [String], answers: [String], actInd: UIActivityIndicatorView, targetVC: UIViewController, alert: UIAlertController){
@@ -287,23 +282,7 @@ class CloudKitEngine{
         }
 
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    //  testing
+
     //  purpose: make sure that all the answers of the user are successfully printed.
     var recordAnswers = [CKRecord]()
     func retrieveAnswers(email: String, textblock: UITextView){
@@ -355,9 +334,8 @@ class CloudKitEngine{
             }
         }
     }
-    
 
-
+    //  var used for holding temporary records when needed.
     var tempRecord = [CKRecord]()
     
     //  func to get the answer to the security question given by the user, returns answer as String. 
@@ -427,10 +405,6 @@ class CloudKitEngine{
         }
         return 0
     }
-
-    
-    
-    
     
     //  func to update user's points 
     var fetchedRecord:CKRecord!

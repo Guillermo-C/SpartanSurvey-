@@ -8,7 +8,7 @@
 
 import UIKit
 
-
+//  This class is intended for the forgot password UI.
 class ForgotPasswordViewController: UIViewController, UIPopoverPresentationControllerDelegate, UITextFieldDelegate{
 
     //  Alert for wrong credentials.
@@ -97,21 +97,12 @@ class ForgotPasswordViewController: UIViewController, UIPopoverPresentationContr
         }
     }
     
+    //  Get the user's password, assuming security question is properly answered, and display it on "your password" textfield.
     @IBAction func go(_ sender: UIButton) {
-        
-        //let alert:UIAlertController = cloudKitEng.presentAlertForForgotPass(answerDis: answerDisplay, passField: passwordTextField!, targetVC: self)
         
         _ = cloudKitEng.getSecurityQuetionAns(email: emailEntry.text!, alert: secQuesAlert, actInd: actIndicator)
         
-        
-        //var doit:String = cloudKitEng.getAns()
-        //print("\nThe realAnswer is: \(doit)")
-        //present(secQuesAlert, animated: true, completion: nil)
-        //realAnswer = cloudKitEng.getAns()
-        
         present(secQuesAlert, animated: true, completion: nil)
-
-        
         
     }
     

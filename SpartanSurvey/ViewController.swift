@@ -22,6 +22,7 @@ class ViewController: UIViewController, BWWalkthroughViewControllerDelegate{
         // Dispose of any resources that can be recreated.
     }
 
+    //  Start the walkthrough as soon as the 'Begin!' button is pressed.
     @IBAction func showWalkThrough() {
         
         //  Instantiate main storyboard for providing viewing priviledge to the walkthrough 
