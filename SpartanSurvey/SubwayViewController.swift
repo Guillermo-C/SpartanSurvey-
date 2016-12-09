@@ -55,7 +55,7 @@ class SubwayViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     //  Invoke the class CloudKitEngine for saving data in the cloud
     let cloudKitEng = CloudKitEngine()
     
-    
+        //  Invoke the class Survey for implementing survey completion elements.
     var survey =  Survey()
     
     //  func to apply custom font to the pickers.

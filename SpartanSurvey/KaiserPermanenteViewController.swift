@@ -61,7 +61,7 @@ class KaiserPermanenteViewController: UIViewController, UIPickerViewDelegate, UI
     //  Invoke the class CloudKitEngine for saving data in the cloud
     let cloudKitEng = CloudKitEngine()
     
-    
+    //  Invoke the class Survey for implementing survey completion elements.
     var survey =  Survey()
 
     

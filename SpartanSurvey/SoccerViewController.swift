@@ -37,6 +37,7 @@ class SoccerViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     //  Invoke the class CloudKitEngine for saving data in the cloud
     let cloudKitEng = CloudKitEngine()
     
+    //  Invoke the class Survey for implementing survey completion elements.
     var survey =  Survey()
     
     var soccerPlayerVals = ["↓ Scroll down ↓","Cristiano Ronaldo","Lionel Messi","Gareth Bale","Manuel Neuer","Wayne Rooney","Iker Casillas"]

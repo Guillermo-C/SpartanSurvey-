@@ -61,13 +61,8 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
     
     //  Array holding the key names to properly store the answers of the user.
     var answerKeys = ["SurveyCompany","Email","Answer1","Answer2","Answer3","Answer4","Answer5"]
-    
-    //  Alert for user when the survey is completed.
-    /*let completionAlert = UIAlertController(title: "Congrats!", message: "You just earned 5 points. Note: points might take long to reflect", preferredStyle: UIAlertControllerStyle.alert)*/
-    
-    
-    
 
+    //  Invoke the class Survey for implementing survey completion elements.
     var survey =  Survey()
     
 
@@ -77,11 +72,7 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
     var ans3:String = ""
     var ans4:String = ""
     
-    
-    
-    
-    
-    
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -92,9 +83,6 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
         actIndicator.hidesWhenStopped = true
         actIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
         view.addSubview(actIndicator)
-
-        
-        
         
         // Do any additional setup after loading the view.
     }
@@ -104,8 +92,7 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
         // Dispose of any resources that can be recreated.
     }
     
-
-    
+   
     //  func to apply custom font to the pickers.
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let pickerLabel = UILabel()
@@ -193,11 +180,8 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
     
     //  When the user's done then save the user's answers on the database and alert the user of survey completion success.
     @IBAction func done(_ sender: UIButton) {
+        
         let allPickerQsAnswered = survey.pickerQuesAnswered(in0: ans1, in1: ans2, in2: ans3, in3: ans4)
-        
-        
-        
-        
         let missingQ = survey.missingQuestionAlert(aTitle: "default", aMessage: "default")
         let completionAlert = survey.completionAlert(aTitle: "default", aMessage: "default", targetVC: self, email: true)
         
@@ -212,11 +196,6 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
             
             cloudKitEng.saveUserAnswerData(recordTypeName: "SurveyData", answerKey: answerKeys, answers: answerArray, actInd: actIndicator, targetVC: self, alert: completionAlert)
             
-            /*completionAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
-                let viewC:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "userProfileView") as UIViewController
-                self.present(viewC, animated: true, completion: nil)
-            }))*/
-            
             cloudKitEng.updatePoints(email: emailOfUser, worthPts: worthPoints)
             
             present(completionAlert, animated: true, completion: nil)
@@ -224,45 +203,5 @@ class McDonaldsViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
         
     }
     
-    //  func to put answers into an array
-    /*func getAnswerAsArray(email: String, in0:String, in1: String, in2:String, in3:String, in4: String) -> [String]{
-        var tempArray = [String]()
-        
-        tempArray.append(email)
-        tempArray.append(in0)
-        tempArray.append(in1)
-        tempArray.append(in2)
-        tempArray.append(in3)
-        tempArray.append(in4)
-        
-        
-        return tempArray
-        
-    }*/
-    
-
-    
-    // func to check all picker questions were answer 
-    /*func pickerQuesAnswered(in0: String, in1: String, in2: String, in3: String) -> Bool {
-        var answeredAll:Bool = false
-        
-        if ((in0 != "") && (in1 != "") && (in2 != "") && (in3 != "")){
-            answeredAll = true
-        }
-        
-        return answeredAll
-    }*/
-    
-
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
