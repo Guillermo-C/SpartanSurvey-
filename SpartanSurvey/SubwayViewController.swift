@@ -8,6 +8,7 @@
 
 import UIKit
 
+//  Class for the Subway survey.
 class SubwayViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     override func viewDidLoad() {
@@ -20,18 +21,32 @@ class SubwayViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //  UIPickerView for the sub of the day question.
     @IBOutlet weak var subOfDayPicker: UIPickerView!
+    
+    //  UIPickerView for the favorite breakfast question.
     @IBOutlet weak var breakFastPicker: UIPickerView!
+    
+    //  UIPickerView for the favorite salad question.
     @IBOutlet weak var saladPicker: UIPickerView!
+    
+    //  UIPickerView for the extras question.
     @IBOutlet weak var extrasPicker: UIPickerView!
+    
+    // UITextField to hold the answer of text.
     @IBOutlet weak var textAnswer: UITextField!
     
+    //  Array with the values for the sub of the day question.
     var subOfDayTypes = ["↓ Scroll down ↓","Sweet Onion Chicken Teriyaki","Oven Roasted Chicken","Turkey Breast","Classic Tuna","Black Forest Ham"]
     
+    //  Array with the values for the favorite breakfast question.
     var breakFastTypes = ["↓ Scroll down ↓","Beacon, Egg & Cheese","Egg & Cheese","Steak, Egg & Cheese"]
     
+    //  Array with the values for favorite salad question.
     var saladTypes = ["↓ Scroll down ↓","Corned Beef Reuben Salad","Turkey Reuben Salad","Spicy Italian Salad","Veggie Delite Salad","Tuna Salad","Subway Club Salad"]
     
+    //  Array with the values for the extras question.
     var extrasTypes = ["↓ Scroll down ↓","Pepperoni","Cheese","Bacon"]
     
     //  name of the survey for identification when querying through the database
@@ -83,7 +98,7 @@ class SubwayViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     
-    
+    //  func to apply custom font to the pickers.
     public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
         if (pickerView == breakFastPicker){
@@ -102,6 +117,7 @@ class SubwayViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         return subOfDayTypes[row]
     }
     
+    //  func to return proper number of selections in a particular picker.
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
         
         if (pickerView == breakFastPicker){
@@ -142,12 +158,13 @@ class SubwayViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     
     
-    
+    //  func to return number of components of picker, all need a value of 1.
     public func numberOfComponents(in pickerView: UIPickerView) -> Int{
         
         return 1
     }
     
+    //  When the user's done then save the user's answers on the database and alert the user of survey completion success.
     @IBAction func done(_ sender: UIButton) {
         let allPickerQsAnswered = survey.pickerQuesAnswered(in0: ans1, in1: ans2, in2: ans3, in3: ans4)
         

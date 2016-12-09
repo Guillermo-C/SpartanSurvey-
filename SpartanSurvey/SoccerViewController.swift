@@ -8,6 +8,7 @@
 
 import UIKit
 
+//  Class for the Soccer survey. 
 class SoccerViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
     override func viewDidLoad() {
@@ -22,10 +23,19 @@ class SoccerViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         // Dispose of any resources that can be recreated.
     }
     
+    //  UIPickerView for the favorite soccer player question.
     @IBOutlet weak var soccerPlayerPicker: UIPickerView!
+    
+    //  UIPickerView for the favorite soccer team question.
     @IBOutlet weak var soccerTeamPicker: UIPickerView!
+    
+    //  UIPickerView for the favorite national team question.
     @IBOutlet weak var nationalTeamPicker: UIPickerView!
+    
+    //  UIPickerView for the desired position question.
     @IBOutlet weak var desiredPositionPicker: UIPickerView!
+    
+    // UITextField to hold the answer of text.
     @IBOutlet weak var textAnswer: UITextField!
     
     //  Number of points this survey will give the user.
@@ -40,12 +50,16 @@ class SoccerViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     //  Invoke the class Survey for implementing survey completion elements.
     var survey =  Survey()
     
+    //  Array with the values for the favorite soccer player question.
     var soccerPlayerVals = ["↓ Scroll down ↓","Cristiano Ronaldo","Lionel Messi","Gareth Bale","Manuel Neuer","Wayne Rooney","Iker Casillas"]
     
+    //  Array with the values for the favorite soccer team question.
     var teamVals = ["↓ Scroll down ↓","Real Madrid C.F.","Inter Milan","Atlético Madrid","FC Barcelona","Arsenal F.C."]
     
+    //  Array with the values for the favorite national team question.
     var nationalTeamVals = ["↓ Scroll down ↓","Japan National Team","USA National Team","Spain National Team","Argentina National Team"]
     
+    //  Array with the values for the desired position question.
     var soccerPositionVals = ["↓ Scroll down ↓","goalkeeper","defensive midfielder","forward","striker"]
     
     //  name of the survey for identification when querying through the database
@@ -69,6 +83,7 @@ class SoccerViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     }
     */
     
+    //  func to apply custom font to the pickers.
     public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
         if (pickerView == soccerPlayerPicker){
@@ -87,6 +102,7 @@ class SoccerViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         return soccerPositionVals[row]
     }
     
+    //  func to return proper number of selections in a particular picker.
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
         
         if (pickerView == soccerPlayerPicker){
@@ -106,6 +122,7 @@ class SoccerViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
 
     }
     
+    //  func to return number of components of picker, all need a value of 1.
     public func numberOfComponents(in pickerView: UIPickerView) -> Int{
         
         return 1
@@ -132,6 +149,7 @@ class SoccerViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         
     }
     
+    //  When the user's done then save the user's answers on the database and alert the user of survey completion success.
     @IBAction func done(_ sender: UIButton) {
         let allPickerQsAnswered = survey.pickerQuesAnswered(in0: ans1, in1: ans2, in2: ans3, in3: ans4)
         
@@ -149,18 +167,13 @@ class SoccerViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             
             cloudKitEng.saveUserAnswerData(recordTypeName: "SurveyData", answerKey: answerKeys, answers: answerArray, actInd: actIndicator, targetVC: self, alert: completionAlert)
             
-            /*completionAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
-             let viewC:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "userProfileView") as UIViewController
-             self.present(viewC, animated: true, completion: nil)
-             }))*/
-            
             cloudKitEng.updatePoints(email: emailOfUser, worthPts: worthPoints)
             
             present(completionAlert, animated: true, completion: nil)
         }
         
     }
-    //}
+
     
 
 }
