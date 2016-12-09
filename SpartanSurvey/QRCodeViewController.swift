@@ -8,7 +8,7 @@
 
 import UIKit
 
-//  Create an obj protcol for using the back button within the walkthrough, .
+//  Create an obj protcol for using the back button within the walkthrough.
 @objc protocol QRCodeViewControllerDelegate{
     @objc optional func QRBackButtonPressed()
 }

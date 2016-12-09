@@ -8,11 +8,12 @@
 
 import UIKit
 
-
+//  Create an obj protcol for using the back button within the walkthrough.
 @objc protocol SignInViewControllerDelegate{
     @objc optional func signInBackButtonPressed()
 }
 
+//  The following vars are intended to be used as 'global variables' since they'll be used throughout the app.
 //  Name of user that logged in.
 var nameOfUser:String = ""
 
@@ -25,21 +26,31 @@ var emailOfUser:String = ""
 //  Activity indicator. 
 var actIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
 
+
+//  This class is for the sign in. This class is partially relied on the data stored in the public database in the cloud.
 class SignInViewController: UIViewController, UIPopoverPresentationControllerDelegate, UITextFieldDelegate{
 
+    //  Delegate var for the SignInViewController class which is used in the walkthrough.
     var delegate: SignInViewControllerDelegate?
     
+    //  UITextField to hold user's email.
     @IBOutlet weak var emailEntry: UITextField!
     
+    //  UITextField to hold user's password.
     @IBOutlet weak var passwordEntry: UITextField!
-    
-    
     
     //  Alert for wrong credentials
     let wrongCredentialsAlert = UIAlertController(title: "Invalid Credentials", message: "Double-check your email and password. Or,sign up!", preferredStyle: UIAlertControllerStyle.alert)
     
     //  Invoke the class CloudKitEngine for saving data in the cloud
     let cloudKitEng = CloudKitEngine()
+    
+    //  Back button for the bar menu in this SignInViewController.
+    @IBAction func SignInBackButtunPressed(_ sender: UIBarButtonItem) {
+        
+        delegate?.signInBackButtonPressed!()
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +67,7 @@ class SignInViewController: UIViewController, UIPopoverPresentationControllerDel
         actIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
         view.addSubview(actIndicator)
         
+        //  Make the password field initially secure/invisible.
         passwordEntry.isSecureTextEntry = true
         
         emailEntry.delegate = self
@@ -66,22 +78,14 @@ class SignInViewController: UIViewController, UIPopoverPresentationControllerDel
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func SignInBackButtunPressed(_ sender: UIBarButtonItem) {
-        
-        delegate?.signInBackButtonPressed!()
-        
-    }
+
     
     //  Call getLogINCredentials() from the CloudKitEng. If the user provides the right credentials, grant access. Aler the user otherwise.
     @IBAction func signIn(_ sender: UIButton) {
+        
         let email = emailEntry.text!
         let password = passwordEntry.text!
         
-        
-        //_ = cloudKitEng.getLogInCredentials(email: email, password: password, actInd: actIndicator, targetVC: self, alert: wrongCredentialsAlert)
-        
-        // testing
         let userProvidedCred:Bool = userProvidedCreds(emailField: emailEntry, passWField: passwordEntry)
         
         if (userProvidedCred == true){
@@ -97,6 +101,7 @@ class SignInViewController: UIViewController, UIPopoverPresentationControllerDel
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+        //  func prepare() is used for the segue 'signInInfoSegue'
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "signInInfoSegue"{
             
@@ -110,6 +115,13 @@ class SignInViewController: UIViewController, UIPopoverPresentationControllerDel
         }
     }
     
+    
+    
+    //  Show or hide the password when the "eye" button is pressed
+    @IBAction func showOrHide(_ sender: UIButton) {
+        showOrHidePassword(textF: passwordEntry)
+    }
+    
     //  func to prevent spaces in the email text field
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if string == " " && textField == emailEntry{
@@ -119,6 +131,7 @@ class SignInViewController: UIViewController, UIPopoverPresentationControllerDel
         }
     }
     
+    //  func required for the PopOver.
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
     }
@@ -129,12 +142,6 @@ class SignInViewController: UIViewController, UIPopoverPresentationControllerDel
             return true
         }
         return false
-    }
-    
-    
-    //  Show or hide the password when the "eye" button is pressed
-    @IBAction func showOrHide(_ sender: UIButton) {
-        showOrHidePassword(textF: passwordEntry)
     }
     
     //  func to show or hide the password 
